@@ -122,10 +122,12 @@ function badge(kind,x,y){
     resting:`<circle r="5.4" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M0-2.8V0.4L2.2 1.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round"/>`}[kind];
   return `<g transform="translate(${x} ${y})"><circle r="13" fill="#fff"/><circle r="11" fill="${bg}"/>${g}</g>`;
 }
-window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle="",hideLabel=false,photo=""}={}){
+window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle="",hideLabel=false,photo="",distance="",countdown=""}={}){
   const id="ds"+(++uid); const [c4,c1,c0,c7]=COL[color]; name=(name||wiIconDef(icon).label).toUpperCase();
   const locked=state==="locked", seasonal=state==="seasonal";
-  const pad=11, iw=w-pad*2, ih=hideLabel?(h-pad*2):(h-pad*2-34);
+  const pad=11;
+  const labelBlock = hideLabel ? 0 : (distance ? 54 : 34);
+  const iw=w-pad*2, ih=h-pad*2-labelBlock;
   /* Locked keeps palette color (Armenia-style) — lock badge shows state, not gray art */
   const paper= "#FFFFFF";
   const tileTop= seasonal?"#F7F3FF":c0, tileBot= seasonal?"#EEE7FA":c1;
@@ -144,8 +146,18 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
     <rect x="${pad}" y="${pad+ih*0.8}" width="${iw}" height="${ih*0.2}" fill="${seasonal?"#6B3FC4":c4}" opacity="${locked?0.22:0.35}"/>
     ${wiIconG(icon,{x:ix,y:iy,size:iconSize,stroke:ink,sw:2.3,fill:seasonal?"#ffffff":c4,offset:iconSize*0.06})}`;
   const tile = art;
-  const label=hideLabel?"":`<text x="${w/2}" y="${h-pad-15}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${NAVY}" opacity="${locked?0.72:1}">${name}</text>`;
-  const sub = (!hideLabel && note)?`<text x="${w/2}" y="${h-pad-1}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="600" font-size="10" fill="${locked?"#5C6680":(state==="resting"?"#5C6680":c7)}">${note}</text>`:"";
+  const statusGreen = "#0F7F5F";
+  const noteFill = (state==="earned") ? statusGreen : (locked || state==="resting" ? "#5C6680" : c7);
+  const labelY = distance ? (h-pad-36) : (h-pad-15);
+  const noteY = distance ? (h-pad-22) : (h-pad-1);
+  const label=hideLabel?"":`<text x="${w/2}" y="${labelY}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${NAVY}" opacity="${locked?0.72:1}">${name}</text>`;
+  const sub = (!hideLabel && note)?`<text x="${w/2}" y="${noteY}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="10" fill="${noteFill}">${note}</text>`:"";
+  const distLine = (!hideLabel && distance)?`<text x="${w/2}" y="${h-pad-6}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="600" font-size="9.5" fill="#5C6680">${String(distance).replace(/&/g,"&amp;").replace(/</g,"&lt;")}</text>`:"";
+  const cdEsc = String(countdown||"").replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  const cdPill = countdown?`<g transform="translate(${w-pad-4} ${pad+6})" data-stamp-cd-wrap="${icon}">
+    <rect x="-62" y="0" width="62" height="18" rx="9" fill="#1B2747"/>
+    <text x="-31" y="12.5" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="9" fill="#fff" data-stamp-cd="${icon}">${cdEsc}</text>
+  </g>`:"";
   const lvl = level>1?`<g transform="translate(${pad+8} ${pad+8})"><rect width="30" height="19" rx="9.5" fill="${NAVY}"/><text x="15" y="13.6" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="11" fill="#fff">×${level}</text></g>`:"";
   const ribbon = seasonal?`<g transform="translate(${pad+8} ${pad+8})"><rect width="72" height="19" rx="9.5" fill="#6B3FC4"/><text x="36" y="13.4" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="10" letter-spacing=".5" fill="#fff">SEASONAL</text></g>`:"";
   const giftFrame = state==="gifted"?`<rect x="${pad-4}" y="${pad-4}" width="${iw+8}" height="${h-pad*2+8}" rx="10" fill="none" stroke="${c7}" stroke-width="1.4" stroke-dasharray="4 3"/>`:"";
@@ -163,7 +175,7 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
    ${seasonalFrame}
    <g filter="url(#${id}sh)"><rect width="${w}" height="${h}" fill="${seasonal?`url(#${id}sg)`:paper}" mask="url(#${id}m)"/></g>
    ${here?`<rect x="-5" y="-5" width="${w+10}" height="${h+10}" rx="10" fill="none" stroke="#FF5B4A" stroke-width="2.5" stroke-dasharray="6 5"/>`:""}
-   ${tile}${giftFrame}${label}${sub}${lvl}${ribbon}
+   ${tile}${giftFrame}${label}${sub}${distLine}${lvl}${ribbon}${cdPill}
    ${badge(state,w-16,h-16)}
   </svg>`;
 };

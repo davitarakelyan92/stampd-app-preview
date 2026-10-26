@@ -8,7 +8,7 @@
     orange: "#7A3F18",
   };
 
-  const STAMP_OPTS = { w: 150, h: 182, P: 10, labelFont: "Plus Jakarta Sans", labelW: 800, labelSize: 11.5 };
+  const STAMP_OPTS = { w: 150, h: 218, P: 10, labelFont: "Plus Jakarta Sans", labelW: 800, labelSize: 11.5 };
   const STAMP_COLORS = ["coral", "sky", "sunny", "mint", "twilight"];
   const CHAPTER_ORDER = ["Monuments", "Foods", "Visit", "Seasonal"];
   const DEMO_ICON_IDS = ["eiffel", "taj", "lantern", "colosseum", "trevi", "pantheon", "pizza", "gelato"];
@@ -997,12 +997,16 @@
       if (v) v.textContent = label;
       else el.innerHTML = `<span class="tc-k">Again in</span><span class="tc-v">${label}</span>`;
     });
+    document.querySelectorAll("[data-stamp-cd]").forEach((el) => {
+      const id = el.getAttribute("data-stamp-cd");
+      el.textContent = formatCountdown(tradeCountdownMs(id));
+    });
   }
 
   function ensureTradeCountdownTicker() {
     if (state.tradeCountdownTimer) return;
     state.tradeCountdownTimer = setInterval(() => {
-      if (state.screen !== "trade") return;
+      if (state.screen !== "trade" && state.screen !== "album") return;
       refreshTradeCountdowns();
     }, 1000);
   }
@@ -1346,15 +1350,13 @@
           note: s.note,
           name: s.placeName,
           photo: s.photo || photoForPlace(s.icon) || "",
+          distance: distanceLabelFor(s) || "",
+          countdown: formatCountdown(tradeCountdownMs(s.icon)),
         };
         if (s.level) opts.level = s.level;
         if (s.here && s.state === "locked") opts.here = true;
         const svg = digitalStamp(opts);
-        const dist = distanceLabelFor(s);
-        const distHtml = dist
-          ? `<div class="stamp-dist">${dist}</div>`
-          : `<div class="stamp-dist stamp-dist-empty" aria-hidden="true"></div>`;
-        return `<div class="stamp-card" role="button" tabindex="0" data-stamp="${s.icon}">${svg}${distHtml}</div>`;
+        return `<div class="stamp-card" role="button" tabindex="0" data-stamp="${s.icon}">${svg}</div>`;
       })
       .join("");
 
@@ -1370,6 +1372,7 @@
     });
 
     renderChips();
+    ensureTradeCountdownTicker();
 
     const total = stamps.length;
     const n = Math.min(state.collected, total);
