@@ -1,7 +1,7 @@
 # Stampd places — world catalog (v4)
 
 **Files:**
-- `places.json` · **Updated:** 26 Oct 2026 (Asia/Yerevan) · **version 4**
+- `places.json` · **Updated:** 26 Oct 2026 (Asia/Yerevan) · **version 5**
 - `countries.json` · synced `countries[]` (+ `cloth_families`, `cover_ui`)
 - `me.json` · sample profile kept; `collected_place_ids` unchanged; country list expanded to 50
 - Photos: `app-preview/assets/places/<id>.jpg` and/or `photo_url` (Commons)
@@ -69,14 +69,13 @@ Target formula ≈ 16 × 50 = 800. Actual catalog rows ≈ 811 (AM/IT keep extra
 - **black** `#1A1A1E`: be, de, eg, ke
 - **orange** `#7A3F18`: es, in, nl
 
-## Photo strategy (pragmatic at ~800 scale)
+## Photo strategy (v5 — local-first)
 
 1. **Kept** all prior local JPEGs under `assets/places/` (AM/IT/sample set).
-2. **Downloaded** additional Commons thumbs (resized via `iiurlwidth=1200`) into `assets/places/<id>.jpg` where feasible (cap in build run).
-3. **URL-only**: many rows set `photo: null` + `photo_url` / `photo_credit` / `photo_source` pointing at Wikimedia Commons (stable File page + thumb URL). Mos may hot-cache or download later.
-4. **Remaining without photo**: listed in build log as still needing a Commons match — use branded placeholder until filled. Do **not** hotlink random blogs.
-
-Re-check live counts after any photo pass; see validation section below for the numbers at last write.
+2. **Downloaded** Commons thumbs (via API / existing `photo_url`, resized ≤1200px edge, JPEG ≤~500KB) into `assets/places/<id>.jpg` for **every** place.
+3. Each place sets `photo` to `assets/places/<id>.jpg` plus `photo_credit` + `photo_source` (Commons File page).
+4. **URL-only is not used** in v5 — local files are required for Pages reliability. Re-download script: `data/build/download_photos.py`.
+5. AM Foods **10** and IT extras (8 Monuments / 7 Visit / 2 Seasonal) remain **intentional** — do not trim.
 
 ## Home
 
@@ -159,33 +158,37 @@ Sample of new ids (first 80): aalborg-food, aarhus-den-gamle, aarhus-festuge, aa
 - Descriptions are original visitor-facing copy; no invented rankings, prices, or stats.
 
 
-## Photo counts (final, 26 Oct 2026 Asia/Yerevan)
+## Photo counts (final, 26 Oct 2026 Asia/Yerevan — v5)
 
 | Kind | Count |
 | --- | ---: |
-| Local `assets/places/<id>.jpg` | **123** |
-| URL-only (`photo_url` Commons) | **616** |
-| No photo yet (placeholder) | **73** |
-| Files on disk in assets/places | **123** |
+| Local `assets/places/<id>.jpg` | **812** |
+| URL-only (`photo_url` only) | **0** |
+| No photo yet | **0** |
+| Files on disk in assets/places | **812** |
 
-Mos: prefer `photo` when set; else load `photo_url`; else branded placeholder.
+Mos: use `photo` (always set in v5). `photo_url` may still be present as a Commons mirror but is not required.
 
 ## Validation snapshot (at notes write)
 
-- JSON parses: yes (builder wrote pretty JSON)
+- JSON parses: yes
+- `places.json` version: **5** · updated **2026-10-26**
 - Countries: 50 + default
-- Places: 812
-- Unique ids: required
+- Places: **812** · unique ids: yes
 - Every place has lat/lng + description + Mos country keys
+- Every place has local `photo` path that exists and is **>5KB**
+- AM chapters unchanged: Monuments 5 · Foods **10** · Visit 5 · Seasonal 1
+- IT chapters unchanged: Monuments **8** · Foods 5 · Visit **7** · Seasonal **2**
+- `me.json` untouched by photo pass
 
-Photo local / URL-only / none: **re-count after photo jobs finish** with:
+Photo recount:
 
 ```bash
 python3 -c "import json;p=json.load(open('places.json'))['places'];print(sum(1 for x in p if (x.get('photo') or '').startswith('assets/')), sum(1 for x in p if x.get('photo_url') and not (x.get('photo') or '').startswith('assets/')), sum(1 for x in p if not x.get('photo') and not x.get('photo_url')))"
 ```
 
-## Places still without photo (73)
+## Places still without photo
 
-Use branded placeholder until Commons match found. Mostly Foods neighbourhood rows:
+**None** (0). Stubborn id during batching (`kungsleden`) resolved with Commons File:Abisko Kungsleden start.jpg.
 
-tsukiji-outer, dezertirebi, kutaisi-market, signagi-wine, amazon-manaus, global-village, al-qattara, san-sebastian-old-town, ciya-sofrasi, gaziantep-baklava, old-cairo-food, ramadan-cairo, bo-kaap-food, joburg-market, mombasa-old-town-food, nakumatt-note, kisumu-food, shanghai-yuyuan-bazaar, guangzhou-food, jeonju-hanok-food, insadong, chiang-mai-night, phuket-sunday, jimbaran, bandung-food, puebla-food, mendoza-andes, salta-plaza, mendoza-bodegas, rosario-food, cordoba-guemes, valpo-food, concepcion-food, punta-arenas-food, trujillo-food, medellin-mercado, cali-food, barranquilla-food, orebro-castle, kungsleden, goteborg-market, fika-gamla, tromso-food, legoland-billund-note, odense-food, aalborg-food, markthal-food, utrecht-foodhall, chocolate-sablon, antwerp-eat-street, ghent-food, liege-waffles, zurich-market, bern-market, linz-market, graz-farmers, krakow-cloth-hall, gdansk-olong, poznan-stary, karlstejn, ostrava-food, pecs-food, killarney-food, penang-hawker, ipoh-food, iloilo-food, jaffa-food, haifa-food, diriyah-food, jeddah-balad-food, riyadh-takhasusi, khobar-corniche-food, abha-food
+Batch progress log: `photo-batch-status.json`.
