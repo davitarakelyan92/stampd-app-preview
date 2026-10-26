@@ -340,74 +340,177 @@ window.WI_ICONS = {
       M18 8 H46 M22 10 H42
       M30 22 V30
       M8 58 H56 M18 58 V54 H46 V58`,
-    fill:`M22 30H38V36Q38 50 30 54Q22 50 22 36Z M10 14H54V22H10Z`}
-};
+    fill:`M22 30H38V36Q38 50 30 54Q22 50 22 36Z M10 14H54V22H10Z`},
 
-/* Chapter graphic marks when a place has no custom landmark icon (never a bare pin). */
-window.WI_ICON_CHAPTER_FALLBACK = {
-  Monuments: {
-    label: "Monument",
-    chapter: "Monuments",
-    line: `M10 54H54 M16 54V28H48V54 M20 28V18H44V28 M24 18V12H40V18 M18 12H46 M28 36H36V54 M22 40H26 M38 40H42 M22 46H26 M38 46H42`,
-    fill: `M20 28H44V18H20Z M16 54V28H48V54H16Z`
-  },
-  Fountains: {
-    label: "Fountain",
-    chapter: "Fountains",
-    line: `M32 10c0 8-10 12-10 20a10 10 0 0 0 20 0c0-8-10-12-10-20z M18 52H46 M22 46H42 M26 40H38`,
-    fill: `M32 14c-2 6-8 10-8 16a8 8 0 0 0 16 0c0-6-6-10-8-16z`
-  },
-  "Natural wonders": {
-    label: "Nature",
-    chapter: "Natural wonders",
-    line: `M8 48L24 20L32 34L40 16L56 48Z M8 52H56`,
-    fill: `M8 48L24 20L32 34L40 16L56 48Z`
-  },
-  Foods: {
-    label: "Food",
-    chapter: "Foods",
-    line: `M12 38c0-10 8-16 20-16s20 6 20 16v4H12v-4z M18 28c2-6 8-10 14-10s12 4 14 10 M20 48H44 M24 52H40`,
-    fill: `M14 38c0-8 7-14 18-14s18 6 18 14v2H14v-2z`
-  },
-  Festivals: {
-    label: "Festival",
-    chapter: "Festivals",
-    line: `M32 8L36 20H48L38 28L42 40L32 32L22 40L26 28L16 20H28Z M18 50H46 M24 54H40`,
-    fill: `M32 12L35 21H44L37 27L40 36L32 30L24 36L27 27L20 21H29Z`
-  },
-  Seasonal: {
-    label: "Seasonal",
-    chapter: "Seasonal",
-    line: `M32 10v6 M32 48v6 M10 32h6 M48 32h6 M16 16l4 4 M44 44l4 4 M48 16l-4 4 M16 48l4-4 M32 20a12 12 0 1 1 0 24a12 12 0 1 1 0-24`,
-    fill: `M32 22a10 10 0 1 1 0 20a10 10 0 1 1 0-20`
-  },
-  Visit: {
-    label: "Visit",
-    chapter: "Visit",
-    line: `M12 44c8-16 20-22 32-22 M20 48c6-10 14-14 24-14 M28 18a6 6 0 0 1 6 6c0 6-6 12-6 12s-6-6-6-12a6 6 0 0 1 6-6z M28 24a2.5 2.5 0 1 0 0.01 0`,
-    fill: `M28 18a6 6 0 0 1 6 6c0 6-6 12-6 12s-6-6-6-12a6 6 0 0 1 6-6z`
-  },
-};
-window.WI_ICON_FALLBACK = window.WI_ICON_CHAPTER_FALLBACK.Visit;
-
-window.wiIconDef = function(name){
-  if (WI_ICONS && WI_ICONS[name]) return WI_ICONS[name];
-  /* Prefer chapter graphic from place data when available */
-  let chapter = null;
-  try {
-    if (typeof window.stampdPlaceChapter === "function") chapter = window.stampdPlaceChapter(name);
-  } catch (_) {}
-  const fb = (chapter && WI_ICON_CHAPTER_FALLBACK[chapter]) || WI_ICON_FALLBACK;
-  return Object.assign({ label: name }, fb);
-};
-
-window.wiIcon = function(name,{size=64,stroke="currentColor",sw=2.4,cls=""}={}){
-  const i = wiIconDef(name);
-  return `<svg class="${cls}" width="${size}" height="${size}" viewBox="0 0 64 64" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"><path d="${i.line}"/></svg>`;
-};
-/* svg fragment (no outer svg) for embedding inside other svgs */
-window.wiIconG = function(name,{x=0,y=0,size=64,stroke="#000",sw=2.4,fill=null,offset=0}={}){
-  const i=wiIconDef(name), k=size/64;
-  const f = fill ? `<path d="${i.fill}" fill="${fill}" fill-opacity="0.7" stroke="none" transform="translate(${offset/k} ${offset/k})"/>` : "";
-  return `<g transform="translate(${x} ${y}) scale(${k})">${f}<path d="${i.line}" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+  /* ——— Georgia Monuments ——— */
+  "svetitskhoveli":{label:"Svetitskhoveli Cathedral", chapter:"Monuments",
+    line:`M6 56H58 M12 56V40 H52 V56
+      M16 40 L32 18 L48 40
+      M32 18V10 M28 10H36 M30 10 Q32 4 34 10
+      M18 40V34 Q22 28 26 34 V40
+      M38 40V34 Q42 28 46 34 V40
+      M22 48H42 M26 40V56 M38 40V56
+      M28 44h3v5h-3z M33 44h3v5h-3z
+      M20 36H24 M40 36H44`,
+    fill:`M12 56V40H16L32 18L48 40H52V56Z`},
+  "narikala":{label:"Narikala Fortress", chapter:"Monuments",
+    line:`M4 56 L10 44 H18 L14 56 Z M18 56 L22 38 H50 L54 56 Z
+      M4 56H60
+      M22 38V26 H30 V38 M32 38V22 H42 V38 M44 38V28 H50 V38
+      M22 26 L26 18 L30 26
+      M32 22 L37 12 L42 22
+      M12 44V38 H18 V44
+      M24 44h4v6h-4z M36 44h4v6h-4z M46 44h3v5h-3z
+      M8 50H16 M52 50H58
+      M48 16 a2.5 2.5 0 1 1 0 0.1`,
+    fill:`M4 56L10 44H18L14 56Z M18 56L22 38H50L54 56Z M22 38V26H30V38Z M32 38V22H42V38Z M44 38V28H50V38Z`},
+  "gergeti":{label:"Gergeti Trinity Church", chapter:"Monuments",
+    line:`M4 50 L24 14 L32 28 L40 10 L60 50 Z M4 50H60
+      M26 50V34 H38 V50
+      M28 34 L32 24 L36 34
+      M32 24V18 M29 18H35 M30 18 Q32 12 34 18
+      M30 40H34 M29 46H35
+      M14 40 Q18 32 22 40 M42 38 Q46 30 50 38`,
+    fill:`M4 50L24 14L32 28L40 10L60 50Z M26 50V34H38V50Z`},
+  "gelati":{label:"Gelati Monastery", chapter:"Monuments",
+    line:`M6 56H58 M10 56V42 H54 V56
+      M14 42 L22 28 L30 42 M34 42 L42 24 L50 42
+      M22 28V22 M20 22H24 M21 22 Q22 16 23 22
+      M42 24V16 M39 16H45 M40 16 Q42 10 44 16
+      M18 48H28 M36 48H50
+      M20 42V56 M26 42V56 M38 42V56 M46 42V56
+      M22 50h3v4h-3z M40 50h4v4h-4z`,
+    fill:`M10 56V42H14L22 28L30 42H34L42 24L50 42H54V56Z`},
+  "sameba":{label:"Holy Trinity Cathedral", chapter:"Monuments",
+    line:`M6 58H58 M12 58V44 H52 V58
+      M20 44 L32 8 L44 44
+      M32 8V2 M28 2H36 M30 2 Q32 -2 34 2
+      M14 44V36 L20 28 L26 36 V44
+      M38 44V36 L44 28 L50 36 V44
+      M26 44V58 M38 44V58
+      M24 50H40
+      M28 48h3v5h-3z M33 48h3v5h-3z
+      M16 40H20 M44 40H48`,
+    fill:`M12 58V44H20L32 8L44 44H52V58Z`},
+  /* ——— Georgia Visit ——— */
+  "old-tbilisi":{label:"Old Tbilisi sulfur baths", chapter:"Visit",
+    line:`M6 52H58 M8 52V40 H56 V52
+      M12 40 Q16 22 22 40 M24 40 Q28 18 34 40 M36 40 Q40 22 46 40 M48 40 Q52 26 56 40
+      M16 28 a2 2 0 1 1 0 0.1 M28 24 a2 2 0 1 1 0 0.1 M40 28 a2 2 0 1 1 0 0.1 M52 30 a1.8 1.8 0 1 1 0 0.1
+      M14 46H22 M26 46H34 M38 46H46
+      M10 56H54`,
+    fill:`M8 52V40Q16 22 22 40Q28 18 34 40Q40 22 46 40Q52 26 56 40V52Z`},
+  "kazbegi":{label:"Kazbegi / Stepantsminda", chapter:"Visit",
+    line:`M4 52 L22 16 Q26 10 30 16 L38 30 L46 20 Q48 16 50 20 L60 52 Z
+      M4 52H60
+      M28 52V40 H36 V52
+      M30 40 L32 34 L34 40
+      M32 34V30 M30 30H34
+      M18 36 Q22 28 26 36 M42 34 Q46 26 50 34
+      M48 12 a3 3 0 1 1 0 0.1`,
+    fill:`M4 52L22 16Q26 10 30 16L38 30L46 20Q48 16 50 20L60 52Z`},
+  "svaneti":{label:"Ushguli", chapter:"Visit",
+    line:`M4 56H60
+      M8 56V28 H16 V56 M18 56V20 H28 V56 M30 56V32 H38 V56 M40 56V16 H52 V56
+      M8 28 L12 20 L16 28 M18 20 L23 8 L28 20 M30 32 L34 24 L38 32 M40 16 L46 4 L52 16
+      M10 40h4v8h-4z M21 36h4v10h-4z M33 42h3v6h-3z M44 34h4v12h-4z
+      M12 48H14 M23 48H25 M45 48H48`,
+    fill:`M8 56V28H16V56Z M18 56V20H28V56Z M30 56V32H38V56Z M40 56V16H52V56Z`},
+  "prometheus-cave":{label:"Prometheus Cave", chapter:"Visit",
+    line:`M8 54 H56 V58 H8 Z
+      M10 54 Q10 20 32 12 Q54 20 54 54
+      M18 54 Q18 30 32 24 Q46 30 46 54
+      M22 28 L24 40 M28 22 L30 38 M36 22 L34 38 M42 28 L40 40
+      M24 48 a3 4 0 1 1 0 0.1 M36 46 a3 4 0 1 1 0 0.1
+      M32 12V8`,
+    fill:`M10 54Q10 20 32 12Q54 20 54 54H10Z`},
+  "batumi-boulevard":{label:"Batumi Boulevard", chapter:"Visit",
+    line:`M4 46 Q20 42 40 44 Q52 45 60 42 M4 54 H60 M4 50 H60
+      M12 46 V28 M10 28 Q12 18 14 28 M8 32 H16
+      M26 46 V22 M24 22 Q26 10 28 22 M22 26 H30
+      M42 46 V30 M40 30 Q42 20 44 30 M38 34 H46
+      M52 18 a3 3 0 1 1 0 0.1
+      M16 40H20 M30 38H34 M46 40H50`,
+    fill:`M12 46V28Q12 18 14 28H10ZM26 46V22Q26 10 28 22H24ZM42 46V30Q42 20 44 30H40Z`},
+  /* ——— Georgia Foods ——— */
+  "dry-bridge":{label:"Dry Bridge Market", chapter:"Foods",
+    line:`M4 48 H60 M8 48 Q32 28 56 48
+      M14 42 V26 H22 V42 M24 40 V22 H32 V40 M34 40 V22 H42 V40 M44 42 V26 H52 V42
+      M14 26 L18 16 L22 26 M24 22 L28 12 L32 22 M34 22 L38 12 L42 22 M44 26 L48 16 L52 26
+      M16 32h4v5h-4z M26 28h4v5h-4z M36 28h4v5h-4z M46 32h4v5h-4z
+      M10 48 V56 M54 48 V56 M4 56 H16 M48 56 H60
+      M18 48 Q32 36 46 48`,
+    fill:`M14 42V26H22V42Z M24 40V22H32V40Z M34 40V22H42V40Z M44 42V26H52V42Z`},
+  "dezertirebi":{label:"Deserter's Bazaar", chapter:"Foods",
+    line:`M6 54H58 M10 54V32 H54 V54
+      M10 32 L32 14 L54 32
+      M16 32V54 M24 32V54 M32 32V54 M40 32V54 M48 32V54
+      M14 40 H22 M26 40 H38 M42 40 H50
+      M14 48 H22 M26 48 H38 M42 48 H50
+      M18 36 a2.5 2.5 0 0 1 5 0 M29.5 36 a2.5 2.5 0 0 1 5 0 M41 36 a2.5 2.5 0 0 1 5 0
+      M20 24 H24 M30 20 H34 M42 24 H46`,
+    fill:`M10 54V32L32 14L54 32V54Z`},
+  "rustaveli-cafes":{label:"Rustaveli Avenue cafés", chapter:"Foods",
+    line:`M8 56 V24 H56 V56 M8 24 L32 8 L56 24
+      M18 56 V36 H30 V56 M34 56 V36 H46 V56
+      M20 44 a3 3 0 1 1 0 0.1 M36 44 a3 3 0 1 1 0 0.1
+      M14 30 H26 M38 30 H50
+      M16 34 H24 M40 34 H48
+      M28 14 H36
+      M22 50 H26 M38 50 H42
+      M48 40 Q52 34 56 38 M54 36 L58 28`,
+    fill:`M8 56V24L32 8L56 24V56Z`},
+  "kutaisi-market":{label:"Kutaisi central market", chapter:"Foods",
+    line:`M6 52H58 M10 52V34 H54 V52
+      M10 34 L18 22 L26 34 M28 34 L36 18 L44 34 M46 34 L52 24 L58 34
+      M14 40 a4 5 0 1 1 0 0.1 M26 38 a4 6 0 1 1 0 0.1 M38 40 a4 5 0 1 1 0 0.1 M48 40 a3.5 4.5 0 1 1 0 0.1
+      M16 46 H22 M28 46 H34 M40 46 H46
+      M12 56H52`,
+    fill:`M10 52V34L18 22L26 34H28L36 18L44 34H46L52 24L58 34V52H10Z`},
+  "signagi-wine":{label:"Sighnaghi wine terraces", chapter:"Foods",
+    line:`M8 50 Q16 42 28 44 Q36 46 40 40 Q48 34 56 38
+      M8 54 H56 M10 46 H20 M24 44 H34 M38 40 H50
+      M22 36 H38 V42 Q38 54 30 58 H30 Q22 54 22 42 Z
+      M24 36 V30 H36 V36 M26 42 H34 M26 50 H34
+      M42 28 Q46 20 50 28 Q48 34 42 28
+      M44 22 L48 14 M46 16 H52`,
+    fill:`M22 36H38V42Q38 54 30 58Q22 54 22 42Z`},
+  /* ——— Georgia Seasonal ——— */
+  "tbilisoba":{label:"Tbilisoba", chapter:"Seasonal",
+    line:`M10 48 H54 V54 H10 Z
+      M16 48 V34 H24 V48 M26 48 V28 H38 V48 M40 48 V34 H50 V48
+      M16 34 L20 24 L24 34 M26 28 L32 14 L38 28 M40 34 L45 24 L50 34
+      M32 14 V8 M28 10 H36
+      M20 40H22 M30 36H34 M44 40H46
+      M48 18 a3 3 0 1 1 0 0.1
+      M6 58 H58
+      M12 30 Q14 22 18 28 M46 28 Q50 20 54 26`,
+    fill:`M10 48H54V54H10Z M16 48V34H24V48Z M26 48V28H38V48Z M40 48V34H50V48Z`},
+  /* ——— AM / IT gaps ——— */
+  "sevanavank":{label:"Sevanavank", chapter:"Visit",
+    line:`M4 48 Q20 44 40 46 Q52 47 60 44 M4 54 H60
+      M16 48 V34 H26 V48 M28 48 V30 H40 V48
+      M16 34 L21 22 L26 34 M28 30 L34 16 L40 30
+      M21 22 V16 M19 16H23 M20 16 Q21 12 22 16
+      M34 16 V10 M31 10H37 M32 10 Q34 4 36 10
+      M18 40H24 M30 38H38
+      M12 44H20 M44 44H54`,
+    fill:`M16 48V34L21 22L26 34V48Z M28 48V30L34 16L40 30V48Z`},
+  "testaccio-market":{label:"Mercato di Testaccio", chapter:"Foods",
+    line:`M6 52H58 M10 52V30 H54 V52
+      M10 30 H54 M10 26 H54
+      M16 30V52 M24 30V52 M32 30V52 M40 30V52 M48 30V52
+      M14 38 H22 M26 38 H38 M42 38 H50
+      M14 46 H22 M26 46 H38 M42 46 H50
+      M18 34 a2.5 2.5 0 0 1 5 0 M29.5 34 a2.5 2.5 0 0 1 5 0 M41 34 a2.5 2.5 0 0 1 5 0
+      M20 22 H24 M30 20 H34 M42 22 H46`,
+    fill:`M10 52V30H54V52Z`},
+  "porta-palazzo":{label:"Porta Palazzo Market", chapter:"Foods",
+    line:`M4 50H60 M6 50V32 H20 V50 M22 50V28 H42 V50 M44 50V32 H58 V50
+      M6 32 L13 18 L20 32 M22 28 L32 12 L42 28 M44 32 L51 18 L58 32
+      M10 38h6v8h-6z M26 34h8v10h-8z M48 38h6v8h-6z
+      M12 42H16 M28 40H34 M50 42H54
+      M8 46H18 M24 46H40 M46 46H56
+      M8 56H56`,
+    fill:`M6 50V32L13 18L20 32V50Z M22 50V28L32 12L42 28V50Z M44 50V32L51 18L58 32V50Z`}
 };
