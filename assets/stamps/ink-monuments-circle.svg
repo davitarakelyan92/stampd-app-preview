@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="ink-stamp" width="400" height="400" viewBox="-6 -6 212 212" style="transform:rotate(0deg);opacity:0.9">
+    <defs><filter id="ink1f" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+   <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="2" result="n"/>
+   <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G" result="d"/>
+   <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="13" result="b"/>
+   <feColorMatrix in="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.6 0 0 0 2.25" result="bm"/>
+   <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="5" result="s"/>
+   <feColorMatrix in="s" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 8.2" result="sm"/>
+   <feComposite in="d" in2="bm" operator="in" result="d2"/>
+   <feComposite in="d2" in2="sm" operator="in"/>
+  </filter></defs>
+    <g filter="url(#ink1f)" fill="none" stroke="#2B3F73"><circle cx="100" cy="100" r="93" stroke-width="4.5"/><circle cx="100" cy="100" r="67" stroke-width="1.6"/><g transform="translate(56 55) scale(1.375)"><path d="M5 54H59 M9 54V16H37V19.5H43V24.5H49V30H55V54 M9 26H49 M9 36H55 M9 45H55
+      M13 19.5h3.5v3.5h-3.5z M21.5 19.5h3.5v3.5h-3.5z M30 19.5h3.5v3.5h-3.5z
+      M11.5 36v-4.2a2.5 2.5 0 0 1 5 0V36 M18.5 36v-4.2a2.5 2.5 0 0 1 5 0V36 M25.5 36v-4.2a2.5 2.5 0 0 1 5 0V36 M32.5 36v-4.2a2.5 2.5 0 0 1 5 0V36 M39.5 36v-4.2a2.5 2.5 0 0 1 5 0V36
+      M11.5 45v-4.2a2.5 2.5 0 0 1 5 0V45 M18.5 45v-4.2a2.5 2.5 0 0 1 5 0V45 M25.5 45v-4.2a2.5 2.5 0 0 1 5 0V45 M32.5 45v-4.2a2.5 2.5 0 0 1 5 0V45 M39.5 45v-4.2a2.5 2.5 0 0 1 5 0V45 M46.5 45v-4.2a2.5 2.5 0 0 1 5 0V45
+      M11.5 54v-4.2a2.5 2.5 0 0 1 5 0V54 M18.5 54v-4.2a2.5 2.5 0 0 1 5 0V54 M25.5 54v-4.2a2.5 2.5 0 0 1 5 0V54 M32.5 54v-4.2a2.5 2.5 0 0 1 5 0V54 M39.5 54v-4.2a2.5 2.5 0 0 1 5 0V54 M46.5 54v-4.2a2.5 2.5 0 0 1 5 0V54" fill="none" stroke="#2B3F73" stroke-width="2.55" stroke-linecap="round" stroke-linejoin="round"/></g><path id="ink1t" d="M27 100A73 73 0 0 1 173 100" fill="none" stroke="none"/>
+         <path id="ink1b" d="M13 100A87 87 0 0 0 187 100" fill="none" stroke="none"/>
+         <text font-family="Barlow Condensed" font-weight="600" style="" font-size="18" letter-spacing="2.2" fill="#2B3F73" stroke="none"><textPath href="#ink1t" startOffset="50%" text-anchor="middle">ROMA · ITALIA</textPath></text>
+         <text font-family="Plus Jakarta Sans" font-weight="600" font-size="14" letter-spacing="0.6" fill="#2B3F73" stroke="none"><textPath href="#ink1b" startOffset="50%" text-anchor="middle">12 OCT 2026</textPath></text>
+         <path d="M20 104l3 0 M177 104l3 0" stroke-width="3"/></g></svg>

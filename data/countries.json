@@ -1,0 +1,170 @@
+{
+  "version": 3,
+  "updated": "2026-10-26",
+  "coordinate_system": "WGS84",
+  "units": "decimal_degrees",
+  "cloth_families": {
+    "blue": "#1B2747",
+    "red": "#8B1E2D",
+    "green": "#1E3B32",
+    "black": "#1A1A1E",
+    "orange": "#7A3F18"
+  },
+  "cover_ui": {
+    "show_on_cover": [
+      "country name only"
+    ],
+    "hide_on_cover": [
+      "family colour name",
+      "cloth hex",
+      "Stampd / Pin Stamp logo lockup as cover title"
+    ],
+    "note": "Davit (via Nar): each passport cover shows the country name only. Remove colour/family name and hex labels from the cover face. Mos builds UI — this is a requirement note, not an app.js edit."
+  },
+  "countries": [
+    {
+      "id": "default",
+      "name": "Default / unset",
+      "family": "blue",
+      "cloth_hex": "#1B2747",
+      "status": "live",
+      "lat": 40.1777,
+      "lng": 44.5126,
+      "note": "Navy cloth until a country is chosen. Lat/lng mirror home (Yerevan) as placeholder only.",
+      "source": "https://nominatim.openstreetmap.org/search?q=Yerevan%2C%20Armenia&format=json&limit=1",
+      "source_label": "OSM Nominatim · Yerevan (placeholder)"
+    },
+    {
+      "id": "am",
+      "name": "Armenia",
+      "family": "red",
+      "status": "live",
+      "lat": 40.1777,
+      "lng": 44.5126,
+      "note": "Capital Yerevan (not country centroid). Live because Ararat is on the identity stamp board and in places[].",
+      "source": "https://nominatim.openstreetmap.org/search?q=Yerevan%2C%20Armenia&format=json&limit=1",
+      "source_label": "OSM Nominatim · Yerevan",
+      "cloth_hex": "#8B1E2D"
+    },
+    {
+      "id": "jp",
+      "name": "Japan",
+      "family": "red",
+      "status": "coming_soon",
+      "lat": 35.6769,
+      "lng": 139.7639,
+      "note": "Capital Tokyo (not country centroid). No stamp place in this file yet.",
+      "source": "https://nominatim.openstreetmap.org/search?q=Tokyo%2C%20Japan&format=json&limit=1",
+      "source_label": "OSM Nominatim · Tokyo",
+      "cloth_hex": "#8B1E2D"
+    },
+    {
+      "id": "ge",
+      "name": "Georgia",
+      "family": "red",
+      "status": "coming_soon",
+      "lat": 41.6935,
+      "lng": 44.8014,
+      "note": "Capital Tbilisi (not country centroid).",
+      "source": "https://nominatim.openstreetmap.org/search?q=Tbilisi%2C%20Georgia&format=json&limit=1",
+      "source_label": "OSM Nominatim · Tbilisi",
+      "cloth_hex": "#8B1E2D"
+    },
+    {
+      "id": "it",
+      "name": "Italy",
+      "family": "green",
+      "status": "live",
+      "lat": 41.8933,
+      "lng": 12.4829,
+      "note": "Capital Rome. Live — Rome sample album in app-preview.",
+      "source": "https://nominatim.openstreetmap.org/search?q=Rome%2C%20Italy&format=json&limit=1",
+      "source_label": "OSM Nominatim · Rome",
+      "cloth_hex": "#1E3B32"
+    },
+    {
+      "id": "br",
+      "name": "Brazil",
+      "family": "green",
+      "status": "coming_soon",
+      "lat": -15.794,
+      "lng": -47.8828,
+      "note": "Capital Brasília (not country centroid).",
+      "source": "https://nominatim.openstreetmap.org/search?q=Bras%C3%ADlia%2C%20Brazil&format=json&limit=1",
+      "source_label": "OSM Nominatim · Brasília",
+      "cloth_hex": "#1E3B32"
+    },
+    {
+      "id": "ae",
+      "name": "UAE",
+      "family": "green",
+      "status": "coming_soon",
+      "lat": 24.4538,
+      "lng": 54.3774,
+      "note": "Capital Abu Dhabi (not country centroid).",
+      "source": "https://nominatim.openstreetmap.org/search?q=Abu%20Dhabi%2C%20United%20Arab%20Emirates&format=json&limit=1",
+      "source_label": "OSM Nominatim · Abu Dhabi",
+      "cloth_hex": "#1E3B32"
+    },
+    {
+      "id": "fr",
+      "name": "France",
+      "family": "blue",
+      "status": "coming_soon",
+      "lat": 48.8589,
+      "lng": 2.32,
+      "note": "Capital Paris. Eiffel place coords are ready in places[] but FR is coming_soon until the album ships (icon only today).",
+      "source": "https://nominatim.openstreetmap.org/search?q=Paris%2C%20France&format=json&limit=1",
+      "source_label": "OSM Nominatim · Paris",
+      "cloth_hex": "#1B2747"
+    },
+    {
+      "id": "us",
+      "name": "USA",
+      "family": "blue",
+      "status": "coming_soon",
+      "lat": 38.8951,
+      "lng": -77.0364,
+      "note": "Capital Washington, D.C. (not country centroid).",
+      "source": "https://nominatim.openstreetmap.org/search?q=Washington%2C%20D.C.%2C%20United%20States&format=json&limit=1",
+      "source_label": "OSM Nominatim · Washington, D.C.",
+      "cloth_hex": "#1B2747"
+    },
+    {
+      "id": "uk",
+      "name": "United Kingdom",
+      "family": "blue",
+      "status": "coming_soon",
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "note": "Capital London (not country centroid).",
+      "source": "https://nominatim.openstreetmap.org/search?q=London%2C%20United%20Kingdom&format=json&limit=1",
+      "source_label": "OSM Nominatim · London",
+      "cloth_hex": "#1B2747"
+    },
+    {
+      "id": "de",
+      "name": "Germany",
+      "family": "black",
+      "status": "coming_soon",
+      "lat": 52.5174,
+      "lng": 13.3951,
+      "note": "Capital Berlin (not country centroid).",
+      "source": "https://nominatim.openstreetmap.org/search?q=Berlin%2C%20Germany&format=json&limit=1",
+      "source_label": "OSM Nominatim · Berlin",
+      "cloth_hex": "#1A1A1E"
+    },
+    {
+      "id": "in",
+      "name": "India",
+      "family": "orange",
+      "status": "coming_soon",
+      "lat": 28.6139,
+      "lng": 77.209,
+      "note": "Capital New Delhi. Taj place coords are ready in places[] but IN is coming_soon until the album ships (icon only today).",
+      "source": "https://nominatim.openstreetmap.org/search?q=New%20Delhi%2C%20India&format=json&limit=1",
+      "source_label": "OSM Nominatim · New Delhi",
+      "cloth_hex": "#7A3F18"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="ink-stamp" width="420" height="380" viewBox="-6 -6 222 202" style="transform:rotate(0deg);opacity:0.9">
+    <defs><filter id="ink4f" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+   <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="12" result="n"/>
+   <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G" result="d"/>
+   <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="23" result="b"/>
+   <feColorMatrix in="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.6 0 0 0 2.25" result="bm"/>
+   <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="15" result="s"/>
+   <feColorMatrix in="s" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 8.2" result="sm"/>
+   <feComposite in="d" in2="bm" operator="in" result="d2"/>
+   <feComposite in="d2" in2="sm" operator="in"/>
+  </filter></defs>
+    <g filter="url(#ink4f)" fill="none" stroke="#8A6A2E"><path d="M24 4H186A20 20 0 0 0 206 24V166A20 20 0 0 0 186 186H24A20 20 0 0 0 4 166V24A20 20 0 0 0 24 4Z" stroke-width="4.5"/><path d="M28 15H182A13 13 0 0 0 195 28V162A13 13 0 0 0 182 175H28A13 13 0 0 0 15 162V28A13 13 0 0 0 28 15Z" stroke-width="1.6"/>
+          <path d="M15 52H195 M15 142H195" stroke-width="1.6"/><g transform="translate(68 60) scale(1.15625)"><path d="M10 15Q32 7 54 15L33 58Q32 59.6 31 58Z M12.8 20.6Q32 13.2 51.2 20.6
+      M25 23a4 4 0 1 1 0 8a4 4 0 1 1 0-8 M39 26.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 1 1 0-7 M32 38.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 1 1 0-7
+      M22 36.5q2.5-2.2 4.5 0q-2.5 1.8-4.5 0" fill="none" stroke="#8A6A2E" stroke-width="2.55" stroke-linecap="round" stroke-linejoin="round"/></g><text x="105" y="40" text-anchor="middle" font-family="Barlow Condensed" font-weight="600" style="" font-size="17" letter-spacing="1.9000000000000004" fill="#8A6A2E" stroke="none">NAPOLI · ITALIA</text>
+         <text x="105" y="164" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="600" font-size="14" letter-spacing="0.6" fill="#8A6A2E" stroke="none">09 JUN 2026</text></g></svg>

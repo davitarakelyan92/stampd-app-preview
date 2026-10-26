@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="ink-stamp" width="400" height="400" viewBox="-6 -6 212 212" style="transform:rotate(0deg);opacity:0.9">
+    <defs><filter id="ink5f" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+   <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="15" result="n"/>
+   <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G" result="d"/>
+   <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="26" result="b"/>
+   <feColorMatrix in="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.6 0 0 0 2.25" result="bm"/>
+   <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="18" result="s"/>
+   <feColorMatrix in="s" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 8.2" result="sm"/>
+   <feComposite in="d" in2="bm" operator="in" result="d2"/>
+   <feComposite in="d2" in2="sm" operator="in"/>
+  </filter></defs>
+    <g filter="url(#ink5f)" fill="none" stroke="#8E3430"><path d="M188.00 100.00Q196.01 113.80 184.44 124.79Q188.23 140.30 174.03 147.58Q173.31 163.52 157.63 166.51Q152.44 181.60 136.56 180.05Q127.33 193.07 112.52 187.10Q100.00 197.00 87.48 187.10Q72.67 193.07 63.44 180.05Q47.56 181.60 42.37 166.51Q26.69 163.52 25.97 147.58Q11.77 140.30 15.56 124.79Q3.99 113.80 12.00 100.00Q3.99 86.20 15.56 75.21Q11.77 59.70 25.97 52.42Q26.69 36.48 42.37 33.49Q47.56 18.40 63.44 19.95Q72.67 6.93 87.48 12.90Q100.00 3.00 112.52 12.90Q127.33 6.93 136.56 19.95Q152.44 18.40 157.63 33.49Q173.31 36.48 174.03 52.42Q188.23 59.70 184.44 75.21Q196.01 86.20 188.00 100.00Z" stroke-width="4"/><circle cx="100" cy="100" r="64" stroke-width="1.6" stroke-dasharray="1 4.2"/><g transform="translate(56 55) scale(1.375)"><path d="M32 5V11 M26 11H38 M24 15Q32 10 40 15 M24 15C18 22 18 38 24 45H40C46 38 46 22 40 15Z M28 16C25.5 24 25.5 36 28 44 M36 16C38.5 24 38.5 36 36 44 M32 15V45 M26 45V49H38V45 M32 49V56 M29 56H35" fill="none" stroke="#8E3430" stroke-width="2.55" stroke-linecap="round" stroke-linejoin="round"/></g><path id="ink5t" d="M30 100A70 70 0 0 1 170 100" fill="none" stroke="none"/>
+         <path id="ink5b" d="M16 100A84 84 0 0 0 184 100" fill="none" stroke="none"/>
+         <text font-family="Barlow Condensed" font-weight="600" style="" font-size="18" letter-spacing="2.2" fill="#8E3430" stroke="none"><textPath href="#ink5t" startOffset="50%" text-anchor="middle">TAIPEI · TAIWAN</textPath></text>
+         <text font-family="Plus Jakarta Sans" font-weight="600" font-size="14" letter-spacing="0.6" fill="#8E3430" stroke="none"><textPath href="#ink5b" startOffset="50%" text-anchor="middle">24 FEB 2026</textPath></text>
+         <path d="M20 104l3 0 M177 104l3 0" stroke-width="3"/></g></svg>

@@ -1,0 +1,34 @@
+/* Stampd — shared design tokens
+   Font: Plus Jakarta Sans, SIL Open Font License 1.1 (Google Fonts). One family for display, text, UI, stamp lettering. */
+:root{
+  /* Primary Coral #FF5B4A · Secondary Navy #1B2747 (locked). Wordmark weight 900 (ExtraBold max of family). */
+  --stampd-coral:#FF5B4A; --stampd-coral-600:#C8372A; --stampd-coral-100:#FFDCD5; --stampd-coral-50:#FFF1EE;
+  --stampd-navy:#1B2747;  --stampd-navy-600:#5C6680;  --stampd-navy-200:#D5D9E3; --stampd-navy-50:#F3F5F9;
+
+  /* Neutrals */
+  --ink:#2A2420; --paper:#F4ECDA; --paper-aged:#E7D9BA; --shell:#FFF7F1; --white:#FFFFFF; --muted:#5C6680;
+
+  /* Status colours · twilight seasonal locked */
+  --mint:#34D1A0; --mint-700:#0F7F5F; --mint-100:#C6F1E1;
+  --sunny:#FFA234; --sunny-700:#A35A00; --sunny-100:#FFE3BD;
+  --sky:#2E9BEA; --sky-700:#1471B8; --sky-100:#CDE7FA;
+  --twilight:#6B3FC4; --twilight-100:#E6DCFA; /* seasonal only — locked */
+  --lock:#7A8296; --lock-bg:#EEF0F4; --night:#121A30;
+
+  /* Cover system: white solid type on country cloths. Navy = default/home before a country is chosen. */
+  --cover-default:#1B2747; /* navy · default/home until a country is chosen */
+  --cover-type:#FFFFFF;    /* LOCKED solid white — no foil */
+
+  /* Type — ONE family */
+  --f:"Plus Jakarta Sans", system-ui, sans-serif;
+
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:24px; --s-6:32px; --s-7:48px; --s-8:64px; --s-9:96px;
+  --r-s:8px; --r-m:14px; --r-l:22px; --r-xl:32px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;font-family:var(--f)}
+.prop{display:inline-block;font-family:var(--f);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  padding:5px 10px;border-radius:99px;background:#FFF1EE;color:#C8372A;border:1px solid #FFDCD5}
+.prop.s{font-size:10px;padding:3px 8px}
+.locked{display:inline-block;font-family:var(--f);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  padding:5px 10px;border-radius:99px;background:#E8FAF3;color:#0F7F5F;border:1px solid #C6F1E1}

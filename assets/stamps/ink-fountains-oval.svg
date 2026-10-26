@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="ink-stamp" width="480" height="360" viewBox="-6 -6 252 192" style="transform:rotate(0deg);opacity:0.9">
+    <defs><filter id="ink2f" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+   <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="5" result="n"/>
+   <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G" result="d"/>
+   <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="16" result="b"/>
+   <feColorMatrix in="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.6 0 0 0 2.25" result="bm"/>
+   <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="8" result="s"/>
+   <feColorMatrix in="s" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 8.2" result="sm"/>
+   <feComposite in="d" in2="bm" operator="in" result="d2"/>
+   <feComposite in="d2" in2="sm" operator="in"/>
+  </filter></defs>
+    <g filter="url(#ink2f)" fill="none" stroke="#8E3430"><ellipse cx="120" cy="90" rx="114" ry="84" stroke-width="4.5"/><ellipse cx="120" cy="90" rx="88" ry="60" stroke-width="1.6"/><g transform="translate(84 53) scale(1.125)"><path d="M8 40V16H56V40 M11 16V11H53V16 M28 11V7.5H36V11 M14 19V37 M19 19V37 M45 19V37 M50 19V37
+      M26 40V27Q26 20.5 32 20Q38 20.5 38 27V40 M29 27.5H35 M28.5 32H35.5 M27.5 36.5H36.5
+      M4 44H60 M27 40Q26 42.5 23.5 44 M37 40Q38 42.5 40.5 44 M32 38V44
+      M8 51q3-3 6 0t6 0t6 0t6 0t6 0t6 0t6 0t6 0 M11 57q3-3 6 0t6 0t6 0t6 0t6 0t6 0t6 0" fill="none" stroke="#8E3430" stroke-width="2.55" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M2 70q7-5 14 0t14 0 M2 82q7-5 14 0t14 0 M210 98q7-5 14 0t14 0 M210 110q7-5 14 0t14 0" stroke-width="2.6"/><path id="ink2t" d="M23 90A97 67 0 0 1 217 90" fill="none" stroke="none"/>
+         <path id="ink2b" d="M14 90A106 76 0 0 0 226 90" fill="none" stroke="none"/>
+         <text font-family="Barlow Condensed" font-weight="600" style="" font-size="18" letter-spacing="2.2" fill="#8E3430" stroke="none"><textPath href="#ink2t" startOffset="50%" text-anchor="middle">ROMA · ITALIA</textPath></text>
+         <text font-family="Plus Jakarta Sans" font-weight="600" font-size="14" letter-spacing="0.6" fill="#8E3430" stroke="none"><textPath href="#ink2b" startOffset="50%" text-anchor="middle">13 OCT 2026</textPath></text></g></svg>
