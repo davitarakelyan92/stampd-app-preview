@@ -93,7 +93,8 @@ body{
 .top-places-track{
   display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;scrollbar-width:none;
-  padding:0 16px 8px;
+  padding:0 24px 8px 24px;
+  margin-left:0;
 }
 .top-places-track::-webkit-scrollbar{display:none}
 .top-place-card{
@@ -106,14 +107,6 @@ body{
   width:100%;aspect-ratio:3/4;object-fit:cover;display:block;
   border-radius:16px;background:#EDE8E0;
   box-shadow:0 1px 0 #1B27470a,0 8px 20px -14px #1B274755;
-}
-.top-place-name{
-  margin:8px 2px 0;font-size:13px;font-weight:800;letter-spacing:-.01em;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
-.top-place-sub{
-  margin:2px 2px 0;font-size:11.5px;font-weight:600;color:var(--muted);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 
 .btn-primary{

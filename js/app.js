@@ -422,8 +422,15 @@
 
   function topPlacesForCarousel(limit) {
     const places = (state.placesData && state.placesData.places) || [];
-    const withPhoto = places.filter((p) => p && (p.photo || p.image || p.photo_url));
-    const sorted = sortPlaces(withPhoto.length ? withPhoto : places.slice());
+    /* Places only — no Foods (food/people) or Seasonal event shots */
+    const placeChapters = new Set(["Monuments", "Visit"]);
+    const withPhoto = places.filter(
+      (p) =>
+        p &&
+        placeChapters.has(p.chapter) &&
+        (p.photo || p.image || p.photo_url)
+    );
+    const sorted = sortPlaces(withPhoto.length ? withPhoto : []);
     const n = typeof limit === "number" ? limit : 12;
     return sorted.slice(0, n);
   }
@@ -439,15 +446,9 @@
     track.innerHTML = list
       .map((p) => {
         const src = p.photo || p.image || p.photo_url || "";
-        const name = String(p.name || p.id).replace(/</g, "&lt;");
         const safeName = String(p.name || p.id).replace(/"/g, "&quot;");
-        const dist = distanceLabelFor({ icon: p.id, lat: p.lat, lng: p.lng }) || "";
-        const country = countryNameForPlace(p) || "";
-        const sub = [country, dist].filter(Boolean).join(" · ");
         return `<button type="button" class="top-place-card" role="listitem" data-top-place="${p.id}" aria-label="${safeName}">
           <img class="top-place-img" src="${src}" alt="" loading="lazy" width="160" height="213"/>
-          <div class="top-place-name">${name}</div>
-          <div class="top-place-sub">${sub.replace(/</g, "&lt;")}</div>
         </button>`;
       })
       .join("");
