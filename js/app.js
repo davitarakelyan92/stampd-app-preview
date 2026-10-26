@@ -356,6 +356,7 @@
     const color = stampColorForId(place.id, index || 0);
     let svg = "";
     if (typeof digitalStamp === "function") {
+      /* Full stamp art at gallery aspect (150×218), CSS scales to thumb */
       svg = digitalStamp({
         ...STAMP_OPTS,
         icon: place.id,
@@ -363,13 +364,15 @@
         state: "earned",
         name: place.name || place.id,
         note: "",
-        w: 36,
-        h: 44,
-        P: 2,
-        labelSize: 6,
+        w: 150,
+        h: 218,
+        P: 6,
+        labelSize: 11.5,
         hideLabel: true,
         hideBadge: true,
         photo: "",
+        distance: "",
+        countdown: "",
       });
     }
     const title = String(place.name || place.id).replace(/"/g, "&quot;");

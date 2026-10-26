@@ -297,14 +297,18 @@ body{
 .country-card .info .hx{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:4px}
 .country-card .info .stat{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:3px}
 .stamp-thumbs{
-  display:flex;align-items:flex-end;gap:5px;margin-top:8px;pointer-events:none;
+  display:flex;align-items:flex-end;gap:6px;margin-top:8px;pointer-events:none;
 }
 .stamp-thumb{
-  width:36px;height:44px;border-radius:0;flex:none;
+  /* Match gallery stamp aspect 150×218 */
+  width:40px;height:calc(40px * 218 / 150);border-radius:0;flex:none;
   display:inline-flex;align-items:center;justify-content:center;
-  overflow:visible;position:relative;background:transparent;border:0;
+  overflow:hidden;position:relative;background:transparent;border:0;
 }
-.stamp-thumb > svg{display:block;width:36px;height:44px}
+.stamp-thumb > svg{
+  display:block;width:100%;height:100%;
+  max-width:none;max-height:none;
+}
 .stamp-thumb.is-missing{filter:grayscale(1);opacity:0.72}
 .country-card.on{box-shadow:0 1px 0 #1B27470a,0 6px 16px -12px #1B274733} /* selection check removed */
 
