@@ -96,7 +96,7 @@ body{
 }
 .top-places-track::-webkit-scrollbar{display:none}
 .top-place-card{
-  flex:0 0 42%;max-width:160px;scroll-snap-align:start;
+  flex:0 0 calc((100% - 20px) / 3);min-width:0;max-width:none;scroll-snap-align:start;
   border:0;padding:0;background:transparent;cursor:pointer;
   font-family:inherit;text-align:left;color:var(--navy);
 }
