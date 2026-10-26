@@ -243,15 +243,15 @@ table.data .row-actions{display:flex;gap:4px;justify-content:flex-end}
 .thumb.ph{display:grid;place-items:center;color:var(--muted)}
 
 .toggle{
-  width:36px;height:20px;border-radius:99px;background:var(--stampd-navy-200);
-  position:relative;border:0;cursor:pointer;flex:none;
+  width:44px;height:26px;border-radius:99px;background:var(--stampd-navy-200);
+  position:relative;border:0;cursor:pointer;flex:none;padding:0;
 }
 .toggle.on{background:var(--stampd-coral)}
 .toggle::after{
-  content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;
+  content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;
   background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.15);transition:left .15s;
 }
-.toggle.on::after{left:18px}
+.toggle.on::after{left:21px}
 
 /* Countries lists */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
