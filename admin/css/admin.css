@@ -392,7 +392,7 @@ table.data .row-actions{display:flex;gap:4px;justify-content:flex-end}
 }
 .modal-backdrop.on{display:flex}
 .modal{
-  background:#fff;border-radius:16px;width:min(560px,100%);max-height:min(86vh,720px);
+  background:#fff;border-radius:16px;width:min(640px,100%);max-height:min(90vh,860px);
   display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(27,39,71,.25)
 }
 .modal-h{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line)}
@@ -430,3 +430,32 @@ table.data .row-actions{display:flex;gap:4px;justify-content:flex-end}
 .side-foot{flex:none}
 .nav button{flex:none}
 .btn-primary{background:var(--stampd-coral-600,#C8372A);color:#fff}
+
+/* Place editor — graphic stamp */
+.stamp-edit{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 132px;
+  gap:14px;
+  align-items:start;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--stampd-navy-50,#F3F5F9);
+}
+.stamp-edit .field{margin-bottom:10px}
+.stamp-edit .field:last-of-type{margin-bottom:8px}
+.stamp-note{margin:0;font-size:11.5px;line-height:1.4;color:var(--muted);font-weight:500}
+.stamp-preview{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  position:sticky;top:0;
+}
+.stamp-preview .d-stamp{width:108px;height:auto}
+.stamp-preview-cap{font-size:11px;font-weight:700;color:var(--muted);text-align:center;line-height:1.35}
+.stamp-mini{
+  width:32px;height:40px;flex:none;display:grid;place-items:center;
+}
+.stamp-mini .d-stamp{width:32px;height:auto;display:block}
+@media (max-width:640px){
+  .stamp-edit{grid-template-columns:1fr}
+  .stamp-preview{position:static}
+}

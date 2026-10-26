@@ -429,6 +429,167 @@
     );
   }
 
+  /* —— Stamp graphic (shared WI_ICONS / WI_COL) —— */
+  const STAMP_COLOR_ORDER = ["coral", "sky", "sunny", "mint", "twilight"];
+  const STAMP_COLOR_LABEL = {
+    coral: "Coral",
+    sunny: "Sunny",
+    sky: "Sky",
+    mint: "Mint",
+    twilight: "Twilight",
+  };
+
+  function installStampChapterLookup() {
+    window.stampdPlaceChapter = function (name) {
+      const places = (state.placesDoc && state.placesDoc.places) || [];
+      const byId = places.find((p) => p.id === name);
+      if (byId && byId.chapter) return byId.chapter;
+      const prev = state.stampPreview;
+      if (prev && prev.icon === name && prev.chapter) return prev.chapter;
+      const via = places.find((p) => String(p.stamp_icon || "").trim() === name);
+      return (via && via.chapter) || null;
+    };
+  }
+
+  function stampColorKeys() {
+    const map = typeof WI_COL === "object" && WI_COL ? WI_COL : {};
+    const known = STAMP_COLOR_ORDER.filter((k) => map[k]);
+    const extra = Object.keys(map).filter((k) => known.indexOf(k) === -1);
+    return known.concat(extra);
+  }
+
+  function stampIconChoices() {
+    const map = typeof WI_ICONS === "object" && WI_ICONS ? WI_ICONS : {};
+    return Object.keys(map)
+      .map((key) => ({ key, label: (map[key] && map[key].label) || key }))
+      .sort((a, b) => a.label.localeCompare(b.label) || a.key.localeCompare(b.key));
+  }
+
+  function sampleStampColor(id, chapter) {
+    if (chapter === "Seasonal") return "twilight";
+    const keys = stampColorKeys();
+    if (!keys.length) return "coral";
+    let h = 0;
+    const s = String(id || "");
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return keys[h % keys.length];
+  }
+
+  function readStampForm() {
+    const id = ($("#f-pid") && $("#f-pid").value.trim()) || "place";
+    const name = ($("#f-pname") && $("#f-pname").value.trim()) || id;
+    const chapter = ($("#f-pch") && $("#f-pch").value.trim()) || "Visit";
+    const custom = ($("#f-picon-custom") && $("#f-picon-custom").value.trim()) || "";
+    const selected = ($("#f-picon") && $("#f-picon").value) || "__default";
+    const iconLocked = !!(custom || (selected && selected !== "__default"));
+    const icon = custom || (selected !== "__default" ? selected : id);
+    const colorSel = ($("#f-pcolor") && $("#f-pcolor").value) || "__default";
+    const colorLocked = colorSel !== "__default" && stampColorKeys().indexOf(colorSel) !== -1;
+    const color = colorLocked ? colorSel : sampleStampColor(id, chapter);
+    const labelRaw = ($("#f-plabel") && $("#f-plabel").value.trim()) || "";
+    const label = labelRaw || name;
+    return { id, name, chapter, icon, color, label, labelRaw, iconLocked, colorLocked, custom, selected };
+  }
+
+  function renderDigitalStamp(opts, chapter) {
+    if (typeof digitalStamp !== "function") return "";
+    state.stampPreview = { icon: opts.icon, chapter: chapter || "" };
+    try {
+      return digitalStamp(opts);
+    } finally {
+      state.stampPreview = null;
+    }
+  }
+
+  function miniStampHtml(p) {
+    const icon = (p.stamp_icon && String(p.stamp_icon).trim()) || p.id;
+    const color =
+      p.stamp_color && stampColorKeys().indexOf(String(p.stamp_color).trim()) !== -1
+        ? String(p.stamp_color).trim()
+        : sampleStampColor(p.id, p.chapter);
+    const svg = renderDigitalStamp(
+      {
+        icon,
+        color,
+        state: "earned",
+        name: (p.stamp_label && String(p.stamp_label).trim()) || p.name || p.id,
+        w: 72,
+        h: 90,
+        P: 2,
+        hideLabel: true,
+        hideBadge: true,
+        photo: "",
+      },
+      p.chapter
+    );
+    if (!svg) return "";
+    return `<span class="stamp-mini" aria-hidden="true">${svg}</span>`;
+  }
+
+  function refreshStampPreview() {
+    const host = $("#stamp-preview");
+    if (!host) return;
+    const draft = readStampForm();
+    const svg = renderDigitalStamp(
+      {
+        icon: draft.icon,
+        color: draft.color,
+        state: "earned",
+        name: draft.label,
+        w: 120,
+        h: 156,
+        P: 4,
+        hideBadge: true,
+        photo: "",
+      },
+      draft.chapter
+    );
+    const known = typeof WI_ICONS === "object" && WI_ICONS && WI_ICONS[draft.icon];
+    const artNote = known
+      ? known.label
+      : "Chapter mark (no line icon for this key yet)";
+    const colorNote = draft.colorLocked
+      ? STAMP_COLOR_LABEL[draft.color] || draft.color
+      : draft.chapter === "Seasonal"
+        ? "Default · seasonal is twilight"
+        : "Default · app color varies by place";
+    host.innerHTML = svg
+      ? `${svg}<span class="stamp-preview-cap">${esc(artNote)}<br>${esc(colorNote)}</span>`
+      : `<span class="stamp-preview-cap">Stamp preview unavailable</span>`;
+  }
+
+  function bindStampPreview() {
+    ["f-pid", "f-pname", "f-pch", "f-picon", "f-picon-custom", "f-pcolor", "f-plabel"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener("input", () => {
+        if (id === "f-picon-custom" && el.value.trim()) {
+          const sel = $("#f-picon");
+          if (sel) sel.value = "__default";
+        }
+        refreshStampPreview();
+      });
+      el.addEventListener("change", () => {
+        if (id === "f-picon" && el.value !== "__default") {
+          const custom = $("#f-picon-custom");
+          if (custom) custom.value = "";
+        }
+        refreshStampPreview();
+      });
+    });
+    refreshStampPreview();
+  }
+
+  function applyStampFields(next) {
+    const draft = readStampForm();
+    if (draft.iconLocked && draft.icon && draft.icon !== next.id) next.stamp_icon = draft.icon;
+    else delete next.stamp_icon;
+    if (draft.colorLocked) next.stamp_color = draft.color;
+    else delete next.stamp_color;
+    if (draft.labelRaw) next.stamp_label = draft.labelRaw;
+    else delete next.stamp_label;
+  }
+
   /* —— Places —— */
   function filteredPlaces() {
     let list = state.placesDoc.places.slice();
@@ -473,8 +634,9 @@
         const thumb = src
           ? `<img class="thumb" src="${esc(src)}" alt="" onerror="this.classList.add('ph');this.removeAttribute('src')">`
           : `<div class="thumb ph" aria-hidden="true">◇</div>`;
+        const stamp = miniStampHtml(p);
         return `<tr>
-          <td><div class="row-name">${thumb}<div><b>${esc(p.name)}</b><span>${esc(p.id)} · ${esc(p.city || "")}</span></div></div></td>
+          <td><div class="row-name">${stamp}${thumb}<div><b>${esc(p.name)}</b><span>${esc(p.id)} · ${esc(p.city || "")}</span></div></div></td>
           <td>${esc(p.country_name || p.country_id || "")}</td>
           <td><span class="chip chip-chapter">${esc(p.chapter || "—")}</span></td>
           <td class="num" style="font-variant-numeric:tabular-nums;font-size:12px">${esc(String(p.lat ?? "—"))}, ${esc(String(p.lng ?? "—"))}</td>
@@ -514,6 +676,30 @@
       .filter((c) => c.id !== "default")
       .map((c) => `<option value="${esc(c.id)}" ${draft.country_id === c.id ? "selected" : ""}>${esc(c.name)}</option>`)
       .join("");
+    const icons = stampIconChoices();
+    const currentIcon = draft.stamp_icon != null ? String(draft.stamp_icon).trim() : "";
+    const iconInList = currentIcon && icons.some((i) => i.key === currentIcon);
+    const iconOpts =
+      `<option value="__default" ${!iconInList ? "selected" : ""}>Default — place id</option>` +
+      icons
+        .map(
+          (i) =>
+            `<option value="${esc(i.key)}" ${iconInList && i.key === currentIcon ? "selected" : ""}>${esc(i.label)} · ${esc(i.key)}</option>`
+        )
+        .join("");
+    const colors = stampColorKeys();
+    const currentColor = draft.stamp_color != null ? String(draft.stamp_color).trim() : "";
+    const colorInList = currentColor && colors.indexOf(currentColor) !== -1;
+    const colorOpts =
+      `<option value="__default" ${!colorInList ? "selected" : ""}>Default</option>` +
+      colors
+        .map((k) => {
+          const hex = window.WI_COL && WI_COL[k] ? WI_COL[k][0] : "";
+          const label = STAMP_COLOR_LABEL[k] || k;
+          return `<option value="${esc(k)}" ${colorInList && k === currentColor ? "selected" : ""}>${esc(label)}${hex ? " · " + esc(hex) : ""}</option>`;
+        })
+        .join("");
+    const customIcon = currentIcon && !iconInList ? currentIcon : "";
     openModal(
       isNew ? "Add place" : "Edit place",
       `
@@ -530,6 +716,16 @@
       </div>
       <div class="field"><label>Photo path</label><input id="f-pphoto" value="${esc(draft.photo || "")}" placeholder="assets/places/….jpg"></div>
       <div class="field"><label>Description</label><textarea id="f-pdesc" rows="4">${esc(draft.description || "")}</textarea></div>
+      <div class="stamp-edit">
+        <div>
+          <div class="field"><label>Stamp icon</label><select id="f-picon">${iconOpts}</select></div>
+          <div class="field"><label>Custom icon key</label><input id="f-picon-custom" value="${esc(customIcon)}" placeholder="Leave blank to use the menu" autocomplete="off"></div>
+          <div class="field"><label>Stamp color</label><select id="f-pcolor">${colorOpts}</select></div>
+          <div class="field"><label>Stamp label</label><input id="f-plabel" value="${esc(draft.stamp_label || "")}" placeholder="Place name" autocomplete="off"></div>
+          <p class="stamp-note">Graphic only — photos never go on the stamp face. A key that isn’t drawn yet uses that chapter’s mark.</p>
+        </div>
+        <div class="stamp-preview" id="stamp-preview" aria-live="polite"></div>
+      </div>
       `,
       [
         { label: "Cancel", className: "btn btn-secondary", onClick: closeModal },
@@ -556,11 +752,15 @@
               photo: $("#f-pphoto").value.trim() || null,
               description: $("#f-pdesc").value.trim() || null,
             };
+            applyStampFields(next);
             if (isNew) {
               if (state.placesDoc.places.some((x) => x.id === idVal)) return toast("ID exists");
               state.placesDoc.places.push(next);
             } else {
               Object.assign(p, next);
+              if (!Object.prototype.hasOwnProperty.call(next, "stamp_icon")) delete p.stamp_icon;
+              if (!Object.prototype.hasOwnProperty.call(next, "stamp_color")) delete p.stamp_color;
+              if (!Object.prototype.hasOwnProperty.call(next, "stamp_label")) delete p.stamp_label;
             }
             persist();
             closeModal();
@@ -569,6 +769,7 @@
         },
       ]
     );
+    bindStampPreview();
   }
 
   function deletePlace(id) {
@@ -1254,6 +1455,7 @@
     }
   }
 
+  installStampChapterLookup();
   bind();
   boot(false);
   window.__stampdAdminShow = show;

@@ -86,7 +86,11 @@
 
   window.stampdPlaceChapter = function (id) {
     const p = placeById(id);
-    return (p && p.chapter) || null;
+    if (p && p.chapter) return p.chapter;
+    /* Custom stamp_icon keys are not place ids — use that place's chapter mark. */
+    const places = (state.placesData && state.placesData.places) || [];
+    const via = places.find((x) => x && String(x.stamp_icon || "").trim() === id);
+    return (via && via.chapter) || null;
   };
 
   function placeById(id) {
@@ -194,6 +198,28 @@
   }
 
 
+  /* Optional place overrides: stamp_icon, stamp_color, stamp_label.
+     Unset fields keep today's icon (place.id), palette, and place name. */
+  function stampIconKey(place) {
+    if (!place) return "";
+    const override = place.stamp_icon != null ? String(place.stamp_icon).trim() : "";
+    return override || place.id || "";
+  }
+
+  function stampColorOverride(place) {
+    if (!place || place.stamp_color == null) return "";
+    const key = String(place.stamp_color).trim();
+    if (!key) return "";
+    if (typeof WI_COL === "object" && WI_COL && WI_COL[key]) return key;
+    return "";
+  }
+
+  function stampFaceName(place, fallback) {
+    const label = place && place.stamp_label != null ? String(place.stamp_label).trim() : "";
+    if (label) return label;
+    return fallback;
+  }
+
   function stampFromPlace(place, index, collected) {
     const colors = STAMP_COLORS;
     let color = colors[index % colors.length];
@@ -214,13 +240,17 @@
       note = place.seasonal_label ? `Seasonal · ${place.seasonal_label}` : "Seasonal";
     }
 
+    const forced = stampColorOverride(place);
+    if (forced) color = forced;
+
     return {
       icon: place.id,
+      artIcon: stampIconKey(place),
       color,
       state: st,
       note,
       chapter: place.chapter || "Other",
-      placeName: place.name,
+      placeName: stampFaceName(place, place.name),
       photo: place.photo || place.image || "",
       level: level || undefined,
       here: here || undefined,
@@ -314,7 +344,7 @@
   function thumbKindForPlace(place, collected) {
     if (collected.has(place.id)) return "collected";
     /* Seasonal not yet earned, or missing art → unavailable */
-    if (place.chapter === "Seasonal" || !hasStampIcon(place.id)) return "unavailable";
+    if (place.chapter === "Seasonal" || !hasStampIcon(stampIconKey(place))) return "unavailable";
     return "open";
   }
 
@@ -362,10 +392,10 @@
       /* Full stamp art at gallery aspect (150×218), CSS scales to thumb */
       svg = digitalStamp({
         ...STAMP_OPTS,
-        icon: place.id,
+        icon: stampIconKey(place),
         color,
         state: "earned",
-        name: place.name || place.id,
+        name: stampFaceName(place, place.name || place.id),
         note: "",
         w: 150,
         h: 218,
@@ -492,10 +522,10 @@
         if (typeof digitalStamp === "function") {
           stamp = digitalStamp({
             ...STAMP_OPTS,
-            icon: p.id,
+            icon: stampIconKey(p),
             color,
             state: "earned",
-            name: p.name || p.id,
+            name: stampFaceName(p, p.name || p.id),
             note: "",
             w: 150,
             h: 218,
@@ -799,6 +829,8 @@
   }
 
   function stampColorForId(id, index) {
+    const forced = stampColorOverride(placeById(id));
+    if (forced) return forced;
     const existing = stamps.find((s) => s.icon === id);
     if (existing && existing.color) return existing.color;
     let h = 0;
@@ -840,11 +872,11 @@
     const color = stampColorForId(dup.id, index);
     const opts = {
       ...STAMP_OPTS,
-      icon: dup.id,
+      icon: place ? stampIconKey(place) : dup.id,
       color,
       state: "earned",
       note: "",
-      name,
+      name: place ? stampFaceName(place, name) : name,
       w: 78,
       h: 96,
       P: 6,
@@ -864,11 +896,11 @@
     const copies = copiesForPlaceId(id);
     const opts = {
       ...STAMP_OPTS,
-      icon: id,
+      icon: stampIconKey(place),
       color,
       state: "earned",
       note: "",
-      name,
+      name: stampFaceName(place, name),
       w: 118,
       h: 146,
       P: 8,
@@ -1458,7 +1490,7 @@
       .map((s) => {
         const opts = {
           ...STAMP_OPTS,
-          icon: s.icon,
+          icon: s.artIcon || s.icon,
           color: s.color,
           state: s.state,
           note: s.note,
@@ -1589,7 +1621,7 @@
 
     const opts = {
       ...STAMP_OPTS,
-      icon: stamp.icon,
+      icon: stamp.artIcon || stamp.icon,
       color: stamp.color,
       state: stamp.state,
       note: stamp.note,
@@ -1751,10 +1783,10 @@
         if (typeof digitalStamp === "function") {
           svg = digitalStamp({
             ...STAMP_OPTS,
-            icon: place.id,
+            icon: stampIconKey(place),
             color,
             state: "earned",
-            name: place.name || place.id,
+            name: stampFaceName(place, place.name || place.id),
             hideLabel: true,
             hideBadge: true,
             w: 150,
@@ -1848,11 +1880,11 @@
       const color = stampColorForId(id, 0);
       preview.innerHTML = digitalStamp({
         ...STAMP_OPTS,
-        icon: id,
+        icon: place ? stampIconKey(place) : id,
         color,
         state: "earned",
         note: "Collected",
-        name,
+        name: place ? stampFaceName(place, name) : name,
         w: 140,
         h: 170,
         hideBadge: false,

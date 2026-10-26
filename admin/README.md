@@ -29,6 +29,18 @@ Ads, moderation tickets, extra users, and roles are seeded into **admin-extras**
 
 **Import** accepts a single file: either one of those JSON docs, or a packed object `{ places, countries, me, extras }`.
 
+## Stamp graphic
+
+On **Places / stamps → Edit**, each place can override the digital stamp (graphic only — never a photo on the face):
+
+| Field | When set | When omitted |
+| --- | --- | --- |
+| `stamp_icon` | `WI_ICONS` key, or any other string | App uses `place.id` |
+| `stamp_color` | Palette key from `WI_COL`: `coral`, `sunny`, `sky`, `mint`, `twilight` | App keeps today’s color (seasonal → twilight; otherwise it varies by place) |
+| `stamp_label` | Text drawn on the stamp | App uses the place name |
+
+The icon menu and color menu are built from `WI_ICONS` and `WI_COL` at runtime. To use a key that isn’t drawn yet, type it in **Custom icon key**. The stamp still renders: `wiIconDef` falls back to that place’s chapter mark (Monument, Food, Visit, and so on), or the Visit mark if the chapter is unknown. Save, Export, and Import keep these fields on the place object in `places.json`. The app preview reads them after you replace `data/places.json` (or load that export).
+
 ## Brand
 
 Coral `#FF5B4A` · Coral 600 `#C8372A` · Navy `#1B2747` · Plus Jakarta Sans. No VBET references.

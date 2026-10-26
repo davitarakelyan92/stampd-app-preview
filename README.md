@@ -14,7 +14,7 @@ Catalog console (static — edits stay in the browser until you export JSON):
 
 https://davitarakelyan92.github.io/stampd-app-preview/admin/
 
-See [admin/README.md](admin/README.md).
+See [admin/README.md](admin/README.md). Place rows may include optional `stamp_icon`, `stamp_color`, and `stamp_label` (graphic stamp overrides).
 
 ## Local
 
