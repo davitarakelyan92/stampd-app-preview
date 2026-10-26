@@ -176,6 +176,16 @@
     return new Set(ids);
   }
 
+  function photoForPlace(placeOrId) {
+    if (!placeOrId) return "";
+    const place = typeof placeOrId === "string" ? placeById(placeOrId) : placeOrId;
+    if (!place) return "";
+    const raw = place.photo || place.image || "";
+    if (!raw) return "";
+    return String(raw);
+  }
+
+
   function stampFromPlace(place, index, collected) {
     const colors = STAMP_COLORS;
     let color = colors[index % colors.length];
@@ -203,6 +213,7 @@
       note,
       chapter: place.chapter || "Other",
       placeName: place.name,
+      photo: place.photo || place.image || "",
       level: level || undefined,
       here: here || undefined,
     };
@@ -641,6 +652,7 @@
       P: 6,
       labelSize: 8.5,
       hideLabel: true,
+      photo: (place && (place.photo || place.image)) || photoForPlace(dup.id) || "",
     };
     const svg = typeof digitalStamp === "function" ? digitalStamp(opts) : "";
     const copies = ownedCopyCount(dup);
@@ -663,6 +675,7 @@
       h: 146,
       P: 8,
       labelSize: 10,
+      photo: place.photo || place.image || photoForPlace(id) || "",
     };
     const svg = typeof digitalStamp === "function" ? digitalStamp(opts) : "";
     const safe = String(name).replace(/"/g, "&quot;");
@@ -1182,6 +1195,7 @@
           state: s.state,
           note: s.note,
           name: s.placeName,
+          photo: s.photo || photoForPlace(s.icon) || "",
         };
         if (s.level) opts.level = s.level;
         if (s.here && s.state === "locked") opts.here = true;
@@ -1316,6 +1330,7 @@
       h: 244,
       P: 12,
       labelSize: 13,
+      photo: stamp.photo || (place && (place.photo || place.image)) || photoForPlace(stamp.icon) || "",
     };
     if (stamp.level) opts.level = stamp.level;
     if (stamp.here && stamp.state === "locked") opts.here = true;
@@ -1401,6 +1416,7 @@
       note: "You're here",
       w: 140,
       h: 170,
+      photo: photoForPlace("trevi") || "",
     });
     bd.classList.add("on");
   }
@@ -1433,6 +1449,7 @@
       note: "Collected Oct 2026",
       w: 140,
       h: 170,
+      photo: photoForPlace("trevi") || "",
     });
     earned.classList.add("on");
     confirmBtn.style.display = "none";
@@ -1623,14 +1640,22 @@
   document.addEventListener("DOMContentLoaded", () => {
     wire();
     Promise.all([loadPlaces(), tryGeolocation(), loadMe()]).then(() => {
-      const resolved = resolveCountryId(state.countryId);
+      const params = new URLSearchParams(location.search || "");
+      const smokeCountry = (params.get("country") || params.get("smokeCountry") || "").trim();
+      const smokeDetail = (params.get("detail") || params.get("smokeDetail") || "").trim();
+      const resolved = resolveCountryId(smokeCountry || state.countryId);
       state.countryId = resolved;
       localStorage.setItem("stampd-preview-country", resolved);
       if (localStorage.getItem("stampd-preview-country") === "default") {
         localStorage.setItem("stampd-preview-country", resolved);
       }
       rebuildStampsFromPlaces();
-      showScreen("home");
+      if (smokeCountry) {
+        openCountryGallery(resolved);
+        if (smokeDetail) openDetail(smokeDetail);
+      } else {
+        showScreen("home");
+      }
     });
   });
 })();

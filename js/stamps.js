@@ -122,7 +122,7 @@ function badge(kind,x,y){
     resting:`<circle r="5.4" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M0-2.8V0.4L2.2 1.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round"/>`}[kind];
   return `<g transform="translate(${x} ${y})"><circle r="13" fill="#fff"/><circle r="11" fill="${bg}"/>${g}</g>`;
 }
-window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle="",hideLabel=false}={}){
+window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle="",hideLabel=false,photo=""}={}){
   const id="ds"+(++uid); const [c4,c1,c0,c7]=COL[color]; name=(name||wiIconDef(icon).label).toUpperCase();
   const locked=state==="locked", seasonal=state==="seasonal";
   const pad=11, iw=w-pad*2, ih=hideLabel?(h-pad*2):(h-pad*2-34);
@@ -131,10 +131,18 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
   const ink= locked?"#A3AABA":NAVY;
   const iconSize=Math.min(iw,ih)*0.78, ix=pad+(iw-iconSize)/2, iy=pad+(ih-iconSize)/2+4;
   const sunR=iconSize*0.2;
-  const tile=`<rect x="${pad}" y="${pad}" width="${iw}" height="${ih}" rx="8" fill="url(#${id}g)"/>
+  const hasPhoto = !!(photo && String(photo).trim());
+  /* Prefer real place photo over pin fallback — Davit: no gray pin placeholders */
+  const usePhoto = hasPhoto;
+  const photoFilter = locked ? ` filter="url(#${id}pg)"` : (seasonal ? ` filter="url(#${id}ps)"` : "");
+  const art = usePhoto
+    ? `<image href="${String(photo).replace(/"/g,"")}" x="${pad}" y="${pad}" width="${iw}" height="${ih}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id}clip)"${photoFilter}/>
+    <rect x="${pad}" y="${pad+ih*0.72}" width="${iw}" height="${ih*0.28}" fill="${locked?"#1B2747":(seasonal?"#6B3FC4":c4)}" opacity="${locked?.45:.28}"/>`
+    : `<rect x="${pad}" y="${pad}" width="${iw}" height="${ih}" rx="8" fill="url(#${id}g)"/>
     ${locked?"":`<circle cx="${pad+iw*0.76}" cy="${pad+ih*0.27}" r="${sunR}" fill="${seasonal?"#6B3FC4":c4}" opacity="${seasonal?.22:.28}"/>`}
     <rect x="${pad}" y="${pad+ih*0.8}" width="${iw}" height="${ih*0.2}" fill="${locked?"#DADDE4":c4}" opacity="${locked?1:.35}"/>
     ${wiIconG(icon,{x:ix,y:iy,size:iconSize,stroke:ink,sw:2.3,fill:locked?null:(seasonal?"#ffffff":c4),offset:locked?0:iconSize*0.06})}`;
+  const tile = art;
   const label=hideLabel?"":`<text x="${w/2}" y="${h-pad-15}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${locked?"#5C6680":NAVY}">${name}</text>`;
   const sub = (!hideLabel && note)?`<text x="${w/2}" y="${h-pad-1}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="600" font-size="10" fill="${locked?"#5C6680":(state==="resting"?"#5C6680":c7)}">${note}</text>`:"";
   const lvl = level>1?`<g transform="translate(${pad+8} ${pad+8})"><rect width="30" height="19" rx="9.5" fill="${NAVY}"/><text x="15" y="13.6" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="11" fill="#fff">×${level}</text></g>`:"";
@@ -144,8 +152,11 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
   const seasonalFrame = seasonal?`<rect x="-3" y="-3" width="${w+6}" height="${h+6}" rx="14" fill="none" stroke="#6B3FC4" stroke-width="2"/><rect x="1" y="1" width="${w-2}" height="${h-2}" rx="11" fill="none" stroke="#6B3FC4" stroke-width="1" opacity=".35"/>`:"";
   return `<svg class="d-stamp" width="${w+2*P}" height="${h+2*P}" viewBox="${-P} ${-P} ${w+2*P} ${h+2*P}">
    <defs>${perfMask(id+"m",w,h,5.2,13)}
+     <clipPath id="${id}clip"><rect x="${pad}" y="${pad}" width="${iw}" height="${ih}" rx="8"/></clipPath>
      <linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${tileTop}"/><stop offset="1" stop-color="${tileBot}"/></linearGradient>
      <filter id="${id}sh" x="-20%" y="-20%" width="140%" height="140%">${hard?`<feDropShadow dx="4" dy="4" stdDeviation="0" flood-color="#1B2747" flood-opacity="${locked?.25:1}"/>`:`<feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#1B2747" flood-opacity="${locked?.08:.16}"/>`}</filter>
+     <filter id="${id}pg"><feColorMatrix type="saturate" values="0.15"/><feComponentTransfer><feFuncA type="linear" slope="0.92"/></feComponentTransfer></filter>
+     <filter id="${id}ps"><feColorMatrix type="matrix" values="0.85 0.1 0.25 0 0.05  0.1 0.7 0.35 0 0.02  0.2 0.15 0.95 0 0.08  0 0 0 1 0"/></filter>
      ${seasonal?`<linearGradient id="${id}sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F3FF"/><stop offset="1" stop-color="#EEE7FA"/></linearGradient>`:""}
    </defs>
    ${seasonalFrame}
