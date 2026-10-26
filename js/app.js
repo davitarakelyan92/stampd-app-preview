@@ -481,11 +481,34 @@
       return;
     }
     track.innerHTML = list
-      .map((p) => {
+      .map((p, i) => {
         const src = p.photo || p.image || p.photo_url || "";
         const safeName = String(p.name || p.id).replace(/"/g, "&quot;");
+        const color = stampColorForId(p.id, i);
+        let stamp = "";
+        if (typeof digitalStamp === "function") {
+          stamp = digitalStamp({
+            ...STAMP_OPTS,
+            icon: p.id,
+            color,
+            state: "earned",
+            name: p.name || p.id,
+            note: "",
+            w: 150,
+            h: 218,
+            P: 6,
+            hideLabel: true,
+            hideBadge: true,
+            photo: "",
+            distance: "",
+            countdown: "",
+          });
+        }
         return `<button type="button" class="top-place-card" role="listitem" data-top-place="${p.id}" aria-label="${safeName}">
-          <img class="top-place-img" src="${src}" alt="" loading="lazy" width="160" height="213"/>
+          <span class="top-place-media">
+            <img class="top-place-img" src="${src}" alt="" loading="lazy" width="160" height="213"/>
+            <span class="top-place-stamp" aria-hidden="true">${stamp}</span>
+          </span>
         </button>`;
       })
       .join("");
