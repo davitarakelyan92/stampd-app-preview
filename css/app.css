@@ -86,6 +86,35 @@ body{
 .countries-title{
   font-weight:800;font-size:28px;letter-spacing:-.03em;color:var(--navy);margin:0;
 }
+/* Top Places carousel — Countries */
+.top-places{margin:4px 0 6px}
+.top-places-k{margin:12px 24px 10px;color:var(--coral-600,#C8372A)}
+.top-places-track{
+  display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  padding:0 16px 8px;
+}
+.top-places-track::-webkit-scrollbar{display:none}
+.top-place-card{
+  flex:0 0 42%;max-width:160px;scroll-snap-align:start;
+  border:0;padding:0;background:transparent;cursor:pointer;
+  font-family:inherit;text-align:left;color:var(--navy);
+}
+.top-place-card:active{transform:scale(.98)}
+.top-place-img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;display:block;
+  border-radius:16px;background:#EDE8E0;
+  box-shadow:0 1px 0 #1B27470a,0 8px 20px -14px #1B274755;
+}
+.top-place-name{
+  margin:8px 2px 0;font-size:13px;font-weight:800;letter-spacing:-.01em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.top-place-sub{
+  margin:2px 2px 0;font-size:11.5px;font-weight:600;color:var(--muted);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
 .btn-primary{
   appearance:none;border:0;cursor:pointer;
   background:var(--coral-600);color:#fff;
@@ -274,30 +303,19 @@ body{
 .country-card .info .hx{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:4px}
 .country-card .info .stat{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:3px}
 .stamp-thumbs{
-  display:flex;align-items:center;gap:6px;margin-top:8px;pointer-events:none;
+  display:flex;align-items:flex-end;gap:5px;margin-top:8px;pointer-events:none;
 }
 .stamp-thumb{
-  width:28px;height:34px;border-radius:6px;flex:none;
+  width:36px;height:44px;border-radius:0;flex:none;
   display:inline-flex;align-items:center;justify-content:center;
-  overflow:visible;position:relative;
+  overflow:visible;position:relative;background:transparent;border:0;
 }
-.stamp-thumb svg{display:block}
-.stamp-thumb.is-collected{
-  background:#FFFFFF;border:1px solid #E3E1DA;
-}
-.stamp-thumb.is-open{
-  background:#F7F8FA;border:1px solid #E3E6EC;
-}
-.stamp-thumb.is-unavailable{
-  background:#EEEAE3;border:1px dashed #C8C4BC;
-  filter:grayscale(0.35);
-}
-.stamp-thumb.is-unavailable svg{opacity:0.55}
-.stamp-thumb.is-unavailable svg path{stroke:#C8C4BC}
+.stamp-thumb > svg{display:block;width:36px;height:44px}
+.stamp-thumb.is-unavailable{opacity:0.55;filter:grayscale(0.25)}
 .stamp-thumb-check{
-  position:absolute;right:-3px;bottom:-3px;
-  width:10px;height:10px;border-radius:50%;
-  background:#C8372A;
+  position:absolute;right:-2px;bottom:-2px;z-index:2;
+  width:11px;height:11px;border-radius:50%;
+  background:#0F7F5F;
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 0 0 1.5px #fff;
 }

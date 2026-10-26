@@ -349,33 +349,42 @@
     return out;
   }
 
-  function thumbHtml(entry) {
+  function thumbHtml(entry, index) {
     const place = entry.place;
     const kind = entry.kind;
     const cls =
       kind === "collected" ? "is-collected" : kind === "unavailable" ? "is-unavailable" : "is-open";
-    const stroke =
-      kind === "collected" ? "#1B2747" : kind === "unavailable" ? "#C8C4BC" : "#A3AABA";
-    /* Always draw place line-art (or chapter graphic mark) — never a photo face */
-    let icon = "";
-    if (typeof wiIcon === "function") {
-      icon = wiIcon(place.id, { size: 18, stroke, sw: 2.2 });
-    } else if (typeof wiIconDef === "function") {
-      const d = wiIconDef(place.id);
-      icon = `<svg width="18" height="18" viewBox="0 0 64 64" fill="none" stroke="${stroke}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="${d.line}"/></svg>`;
+    const color = stampColorForId(place.id, index || 0);
+    const state = kind === "collected" ? "earned" : kind === "unavailable" && place.chapter === "Seasonal" ? "seasonal" : "locked";
+    let svg = "";
+    if (typeof digitalStamp === "function") {
+      svg = digitalStamp({
+        ...STAMP_OPTS,
+        icon: place.id,
+        color: state === "seasonal" ? "twilight" : color,
+        state,
+        name: place.name || place.id,
+        note: "",
+        w: 36,
+        h: 44,
+        P: 2,
+        labelSize: 6,
+        hideLabel: true,
+        photo: "",
+      });
     }
     const check =
       kind === "collected"
         ? `<span class="stamp-thumb-check" aria-hidden="true"><svg width="7" height="7" viewBox="0 0 12 12"><path d="M2.5 6.2l2.4 2.4 4.6-5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`
         : "";
     const title = String(place.name || place.id).replace(/"/g, "&quot;");
-    return `<span class="stamp-thumb ${cls}" title="${title}" aria-hidden="true">${icon}${check}</span>`;
+    return `<span class="stamp-thumb ${cls}" title="${title}" aria-hidden="true">${svg}${check}</span>`;
   }
 
   function thumbsRowHtml(c) {
     const entries = pickThumbPlaces(c);
     if (!entries.length) return "";
-    return `<div class="stamp-thumbs">${entries.map(thumbHtml).join("")}</div>`;
+    return `<div class="stamp-thumbs">${entries.map((e, i) => thumbHtml(e, i)).join("")}</div>`;
   }
 
   /* ── Screens ── */
@@ -415,9 +424,53 @@
     if (name === "home" || name === "trade" || name === "me") renderBalanceChrome();
   }
 
+
+  function topPlacesForCarousel(limit) {
+    const places = (state.placesData && state.placesData.places) || [];
+    const withPhoto = places.filter((p) => p && (p.photo || p.image || p.photo_url));
+    const sorted = sortPlaces(withPhoto.length ? withPhoto : places.slice());
+    const n = typeof limit === "number" ? limit : 12;
+    return sorted.slice(0, n);
+  }
+
+  function renderTopPlaces() {
+    const track = document.getElementById("top-places-track");
+    if (!track) return;
+    const list = topPlacesForCarousel(12);
+    if (!list.length) {
+      track.innerHTML = "";
+      return;
+    }
+    track.innerHTML = list
+      .map((p) => {
+        const src = p.photo || p.image || p.photo_url || "";
+        const name = String(p.name || p.id).replace(/</g, "&lt;");
+        const safeName = String(p.name || p.id).replace(/"/g, "&quot;");
+        const dist = distanceLabelFor({ icon: p.id, lat: p.lat, lng: p.lng }) || "";
+        const country = countryNameForPlace(p) || "";
+        const sub = [country, dist].filter(Boolean).join(" · ");
+        return `<button type="button" class="top-place-card" role="listitem" data-top-place="${p.id}" aria-label="${safeName}">
+          <img class="top-place-img" src="${src}" alt="" loading="lazy" width="160" height="213"/>
+          <div class="top-place-name">${name}</div>
+          <div class="top-place-sub">${sub.replace(/</g, "&lt;")}</div>
+        </button>`;
+      })
+      .join("");
+    track.querySelectorAll("[data-top-place]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const place = placeById(btn.dataset.topPlace);
+        if (!place) return;
+        const code = String(place.country || "").toLowerCase();
+        if (code) openCountryGallery(code);
+        openDetail(place.id);
+      });
+    });
+  }
+
   function renderHome() {
     const c = country();
     state.countryId = c.id;
+    renderTopPlaces();
     renderCountriesLists();
     renderBalanceChrome();
   }
