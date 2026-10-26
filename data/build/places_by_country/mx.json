@@ -1,0 +1,180 @@
+[
+  {
+    "id": "chichen-itza",
+    "name": "Chichen Itza",
+    "city": "Yucatán",
+    "chapter": "Monuments",
+    "lat": 20.6843,
+    "lng": -88.5678,
+    "precision": "venue",
+    "description": "The Kukulkan pyramid anchors a major Maya archaeological site on the Yucatán Peninsula.",
+    "source": "https://en.wikipedia.org/wiki/Chichen_Itza"
+  },
+  {
+    "id": "teotihuacan",
+    "name": "Teotihuacan",
+    "city": "near Mexico City",
+    "chapter": "Monuments",
+    "lat": 19.6925,
+    "lng": -98.8438,
+    "precision": "venue",
+    "description": "Avenue of the Dead links the Pyramids of the Sun and Moon northeast of Mexico City.",
+    "source": "https://en.wikipedia.org/wiki/Teotihuacan"
+  },
+  {
+    "id": "zocalo-cathedral",
+    "name": "Mexico City Metropolitan Cathedral",
+    "city": "Mexico City",
+    "chapter": "Monuments",
+    "lat": 19.4342,
+    "lng": -99.1332,
+    "precision": "venue",
+    "description": "A vast cathedral faces the Zócalo on the site of the former Aztec sacred precinct.",
+    "source": "https://en.wikipedia.org/wiki/Mexico_City_Metropolitan_Cathedral"
+  },
+  {
+    "id": "palacio-bellas",
+    "name": "Palacio de Bellas Artes",
+    "city": "Mexico City",
+    "chapter": "Monuments",
+    "lat": 19.4352,
+    "lng": -99.1412,
+    "precision": "venue",
+    "description": "An Art Nouveau and Art Deco palace of murals and performances beside Alameda Central.",
+    "source": "https://en.wikipedia.org/wiki/Palacio_de_Bellas_Artes"
+  },
+  {
+    "id": "monte-alban",
+    "name": "Monte Albán",
+    "city": "Oaxaca area",
+    "chapter": "Monuments",
+    "lat": 17.0439,
+    "lng": -96.767,
+    "precision": "venue",
+    "description": "Zapotec ruins crown a flattened hilltop overlooking the Oaxaca valleys.",
+    "source": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n"
+  },
+  {
+    "id": "frida-casa",
+    "name": "Casa Azul (Frida Kahlo Museum)",
+    "city": "Mexico City",
+    "chapter": "Visit",
+    "lat": 19.355,
+    "lng": -99.1625,
+    "precision": "venue",
+    "description": "Frida Kahlo’s blue courtyard house in Coyoacán is now a museum of her life and work.",
+    "source": "https://en.wikipedia.org/wiki/Frida_Kahlo_Museum"
+  },
+  {
+    "id": "cancun-zona",
+    "name": "Zona Hotelera beaches",
+    "city": "Cancún",
+    "chapter": "Visit",
+    "lat": 21.121,
+    "lng": -86.749,
+    "precision": "city",
+    "description": "Caribbean beachfront hotels and public access points line Cancún’s barrier island.",
+    "source": "https://en.wikipedia.org/wiki/Canc%C3%BAn"
+  },
+  {
+    "id": "guanajuato",
+    "name": "Guanajuato historic centre",
+    "city": "Guanajuato",
+    "chapter": "Visit",
+    "lat": 21.019,
+    "lng": -101.257,
+    "precision": "city",
+    "description": "Colourful houses and tunnels fill a UNESCO mining-city core in the highlands.",
+    "source": "https://en.wikipedia.org/wiki/Guanajuato_City"
+  },
+  {
+    "id": "copper-canyon",
+    "name": "Copper Canyon viewpoints",
+    "city": "Chihuahua",
+    "chapter": "Visit",
+    "lat": 27.5,
+    "lng": -107.75,
+    "precision": "city",
+    "description": "A vast canyon system with rail viewpoints on the Chepe route.",
+    "source": "https://en.wikipedia.org/wiki/Copper_Canyon"
+  },
+  {
+    "id": "isla-mujeres",
+    "name": "Isla Mujeres",
+    "city": "Isla Mujeres",
+    "chapter": "Visit",
+    "lat": 21.231,
+    "lng": -86.731,
+    "precision": "city",
+    "description": "A small Caribbean island near Cancún with beaches and a ferry link.",
+    "source": "https://en.wikipedia.org/wiki/Isla_Mujeres"
+  },
+  {
+    "id": "mercado-roma",
+    "name": "Mercado Roma",
+    "city": "Mexico City",
+    "chapter": "Foods",
+    "lat": 19.419,
+    "lng": -99.166,
+    "precision": "venue",
+    "description": "A gourmet food hall in Roma Norte with Mexican and fusion counters.",
+    "source": "https://en.wikipedia.org/wiki/Colonia_Roma"
+  },
+  {
+    "id": "mercado-medellin",
+    "name": "Mercado Medellín",
+    "city": "Mexico City",
+    "chapter": "Foods",
+    "lat": 19.405,
+    "lng": -99.168,
+    "precision": "venue",
+    "description": "A neighbourhood market in Roma Sur known for produce and casual eats.",
+    "source": "https://en.wikipedia.org/wiki/Colonia_Roma"
+  },
+  {
+    "id": "mercado-20-nov",
+    "name": "Mercado 20 de Noviembre",
+    "city": "Oaxaca",
+    "chapter": "Foods",
+    "lat": 17.06,
+    "lng": -96.725,
+    "precision": "venue",
+    "description": "Oaxaca City’s market is famous for moles, cheeses and chocolate.",
+    "source": "https://en.wikipedia.org/wiki/Oaxaca_City"
+  },
+  {
+    "id": "guadalajara-market",
+    "name": "Mercado San Juan de Dios",
+    "city": "Guadalajara",
+    "chapter": "Foods",
+    "lat": 20.675,
+    "lng": -103.34,
+    "precision": "venue",
+    "description": "A vast indoor market in Guadalajara selling crafts, produce and street food.",
+    "source": "https://en.wikipedia.org/wiki/Mercado_Libertad"
+  },
+  {
+    "id": "puebla-food",
+    "name": "Puebla historic centre kitchens",
+    "city": "Puebla",
+    "chapter": "Foods",
+    "lat": 19.043,
+    "lng": -98.198,
+    "precision": "city",
+    "description": "Birthplace flavours of mole poblano and cemitas fill central Puebla eateries.",
+    "source": "https://en.wikipedia.org/wiki/Puebla"
+  },
+  {
+    "id": "dia-de-muertos",
+    "name": "Día de Muertos",
+    "city": "Mexico City",
+    "chapter": "Seasonal",
+    "lat": 19.43,
+    "lng": -99.13,
+    "precision": "city",
+    "description": "Altars, marigold-lined cemeteries and processions mark early November commemorations.",
+    "source": "https://en.wikipedia.org/wiki/Day_of_the_Dead",
+    "seasonal": true,
+    "seasonal_label": "Día de Muertos"
+  }
+]

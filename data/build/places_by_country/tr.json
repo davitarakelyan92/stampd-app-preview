@@ -1,0 +1,180 @@
+[
+  {
+    "id": "hagia-sophia",
+    "name": "Hagia Sophia",
+    "city": "Istanbul",
+    "chapter": "Monuments",
+    "lat": 41.0086,
+    "lng": 28.9802,
+    "precision": "venue",
+    "description": "A sixth-century dome still dominates Sultanahmet. The vast interior shifts between museum and mosque eras of use.",
+    "source": "https://en.wikipedia.org/wiki/Hagia_Sophia"
+  },
+  {
+    "id": "blue-mosque",
+    "name": "Blue Mosque",
+    "city": "Istanbul",
+    "chapter": "Monuments",
+    "lat": 41.0054,
+    "lng": 28.9768,
+    "precision": "venue",
+    "description": "Sultan Ahmed’s mosque faces Hagia Sophia with cascading domes and six minarets. The prayer hall is tiled in blue Iznik work.",
+    "source": "https://en.wikipedia.org/wiki/Blue_Mosque,_Istanbul"
+  },
+  {
+    "id": "topkapi",
+    "name": "Topkapı Palace",
+    "city": "Istanbul",
+    "chapter": "Monuments",
+    "lat": 41.0115,
+    "lng": 28.9833,
+    "precision": "venue",
+    "description": "Ottoman sultans’ palace overlooks the Golden Horn. Courtyards lead to the treasury and tiled privy chambers.",
+    "source": "https://en.wikipedia.org/wiki/Topkap%C4%B1_Palace"
+  },
+  {
+    "id": "cappadocia-goreme",
+    "name": "Göreme Open-Air Museum",
+    "city": "Göreme",
+    "chapter": "Monuments",
+    "lat": 38.642,
+    "lng": 34.846,
+    "precision": "venue",
+    "description": "Rock-cut churches and frescoes fill a valley of fairy chimneys. Paths link chapels carved into soft tuff.",
+    "source": "https://en.wikipedia.org/wiki/G%C3%B6reme_Historical_National_Park"
+  },
+  {
+    "id": "ephesus-library",
+    "name": "Library of Celsus",
+    "city": "Selçuk area",
+    "chapter": "Monuments",
+    "lat": 37.9394,
+    "lng": 27.3408,
+    "precision": "venue",
+    "description": "The reconstructed façade of a Roman library anchors Ephesus’s Curetes Street. Columns and niches face the crowd of visitors.",
+    "source": "https://en.wikipedia.org/wiki/Library_of_Celsus"
+  },
+  {
+    "id": "grand-bazaar",
+    "name": "Grand Bazaar",
+    "city": "Istanbul",
+    "chapter": "Visit",
+    "lat": 41.0108,
+    "lng": 28.968,
+    "precision": "venue",
+    "description": "Covered streets of shops sell carpets, lamps and jewellery in one of the world’s oldest markets.",
+    "source": "https://en.wikipedia.org/wiki/Grand_Bazaar,_Istanbul"
+  },
+  {
+    "id": "bosphorus",
+    "name": "Bosphorus cruise shore",
+    "city": "Istanbul",
+    "chapter": "Visit",
+    "lat": 41.037,
+    "lng": 29.0,
+    "precision": "approximate",
+    "description": "Ferries and boats stitch Europe and Asia across the strait. Waterfront palaces and tea gardens line both banks.",
+    "source": "https://en.wikipedia.org/wiki/Bosphorus"
+  },
+  {
+    "id": "pamukkale",
+    "name": "Pamukkale",
+    "city": "Denizli area",
+    "chapter": "Visit",
+    "lat": 37.92,
+    "lng": 29.12,
+    "precision": "venue",
+    "description": "White travertine terraces step down a hillside above Hierapolis. Thermal water pools collect on the calcium shelves.",
+    "source": "https://en.wikipedia.org/wiki/Pamukkale"
+  },
+  {
+    "id": "antalya-kaleici",
+    "name": "Kaleiçi",
+    "city": "Antalya",
+    "chapter": "Visit",
+    "lat": 36.885,
+    "lng": 30.706,
+    "precision": "city",
+    "description": "Antalya’s old harbour quarter mixes Ottoman houses, cafés and a Roman gate by the marina.",
+    "source": "https://en.wikipedia.org/wiki/Kalei%C3%A7i"
+  },
+  {
+    "id": "mount-nemrut",
+    "name": "Mount Nemrut",
+    "city": "Adıyaman area",
+    "chapter": "Visit",
+    "lat": 37.98,
+    "lng": 38.74,
+    "precision": "venue",
+    "description": "Colossal stone heads sit on a funerary mound at dawn and dusk. The summit is reached by mountain roads.",
+    "source": "https://en.wikipedia.org/wiki/Mount_Nemrut"
+  },
+  {
+    "id": "spice-bazaar",
+    "name": "Spice Bazaar",
+    "city": "Istanbul",
+    "chapter": "Foods",
+    "lat": 41.0166,
+    "lng": 28.9706,
+    "precision": "venue",
+    "description": "Egyptian Bazaar stalls sell spices, lokum and dried fruit beside the Golden Horn.",
+    "source": "https://en.wikipedia.org/wiki/Spice_Bazaar"
+  },
+  {
+    "id": "kadikoy-market",
+    "name": "Kadıköy market streets",
+    "city": "Istanbul",
+    "chapter": "Foods",
+    "lat": 40.99,
+    "lng": 29.025,
+    "precision": "city",
+    "description": "Asian-side produce streets and meze counters make Kadıköy a favourite for casual eating.",
+    "source": "https://en.wikipedia.org/wiki/Kad%C4%B1k%C3%B6y"
+  },
+  {
+    "id": "ciya-sofrasi",
+    "name": "Ciya Sofrası",
+    "city": "Istanbul",
+    "chapter": "Foods",
+    "lat": 40.9905,
+    "lng": 29.0265,
+    "precision": "venue",
+    "description": "A Kadıköy restaurant known for regional Anatolian dishes beyond standard tourist menus.",
+    "source": "https://en.wikipedia.org/wiki/Ciya_Sofra"
+  },
+  {
+    "id": "gaziantep-baklava",
+    "name": "Baklava stalls of Gaziantep",
+    "city": "Gaziantep",
+    "chapter": "Foods",
+    "lat": 37.0662,
+    "lng": 37.3833,
+    "precision": "city",
+    "description": "Gaziantep is renowned for pistachio baklava; pastry shops cluster around the old centre.",
+    "source": "https://en.wikipedia.org/wiki/Gaziantep"
+  },
+  {
+    "id": "balik-ekmek-eminonu",
+    "name": "Balık-ekmek Eminönü",
+    "city": "Istanbul",
+    "chapter": "Foods",
+    "lat": 41.0172,
+    "lng": 28.97,
+    "precision": "venue",
+    "description": "Grilled fish sandwiches are sold from boats and stalls by the Galata Bridge ferry docks.",
+    "source": "https://en.wikipedia.org/wiki/Bal%C4%B1k_ekmek"
+  },
+  {
+    "id": "istanbul-tulip",
+    "name": "Istanbul Tulip Festival",
+    "city": "Istanbul",
+    "chapter": "Seasonal",
+    "lat": 41.04,
+    "lng": 28.98,
+    "precision": "approximate",
+    "description": "Each spring, parks across Istanbul are planted with tulip beds celebrating the flower’s Ottoman link.",
+    "source": "https://en.wikipedia.org/wiki/Tulip_Festival",
+    "seasonal": true,
+    "seasonal_label": "Istanbul Tulip Festival"
+  }
+]

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "eiffel",
+    "name": "Eiffel Tower",
+    "city": "Paris",
+    "chapter": "Monuments",
+    "lat": 48.8583,
+    "lng": 2.2945,
+    "precision": "venue",
+    "description": "Paris’s iron lattice tower rises over the Champ de Mars. Evening lights sparkle on the hour after dusk.",
+    "source": "https://en.wikipedia.org/wiki/Eiffel_Tower"
+  },
+  {
+    "id": "louvre",
+    "name": "Louvre Museum",
+    "city": "Paris",
+    "chapter": "Monuments",
+    "lat": 48.8606,
+    "lng": 2.3376,
+    "precision": "venue",
+    "description": "A former palace turned vast museum around I. M. Pei’s glass pyramid. Reserve timed entry for popular wings.",
+    "source": "https://en.wikipedia.org/wiki/Louvre"
+  },
+  {
+    "id": "mont-saint-michel",
+    "name": "Mont-Saint-Michel",
+    "city": "Normandy",
+    "chapter": "Monuments",
+    "lat": 48.6361,
+    "lng": -1.5115,
+    "precision": "venue",
+    "description": "An abbey-crowned island rises from tidal flats. Causeway access depends on the tide schedule.",
+    "source": "https://en.wikipedia.org/wiki/Mont-Saint-Michel"
+  },
+  {
+    "id": "notre-dame",
+    "name": "Notre-Dame de Paris",
+    "city": "Paris",
+    "chapter": "Monuments",
+    "lat": 48.853,
+    "lng": 2.3499,
+    "precision": "venue",
+    "description": "The Gothic cathedral on the Île de la Cité is undergoing restoration after the 2019 fire; façades remain a landmark.",
+    "source": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris"
+  },
+  {
+    "id": "palace-versailles",
+    "name": "Palace of Versailles",
+    "city": "Versailles",
+    "chapter": "Monuments",
+    "lat": 48.8049,
+    "lng": 2.1204,
+    "precision": "venue",
+    "description": "Louis XIV’s château opens onto formal gardens and the Hall of Mirrors. Arrive early for shorter queues.",
+    "source": "https://en.wikipedia.org/wiki/Palace_of_Versailles"
+  },
+  {
+    "id": "seine-banks",
+    "name": "Banks of the Seine",
+    "city": "Paris",
+    "chapter": "Visit",
+    "lat": 48.855,
+    "lng": 2.35,
+    "precision": "approximate",
+    "description": "UNESCO-listed riverbanks link bridges, bookstalls and evening walks through central Paris.",
+    "source": "https://en.wikipedia.org/wiki/Banks_of_the_Seine"
+  },
+  {
+    "id": "provence-lavender",
+    "name": "Valensole plateau",
+    "city": "Valensole",
+    "chapter": "Visit",
+    "lat": 43.838,
+    "lng": 5.984,
+    "precision": "city",
+    "description": "Lavender fields colour Provençal plateaus in summer. Cycle tracks and farm stands line the back roads.",
+    "source": "https://en.wikipedia.org/wiki/Valensole"
+  },
+  {
+    "id": "annecy",
+    "name": "Annecy old town",
+    "city": "Annecy",
+    "chapter": "Visit",
+    "lat": 45.8992,
+    "lng": 6.1294,
+    "precision": "city",
+    "description": "Canals and pastel houses sit beside an Alpine lake. The waterfront path is busy in warm months.",
+    "source": "https://en.wikipedia.org/wiki/Annecy"
+  },
+  {
+    "id": "calanques",
+    "name": "Calanques National Park",
+    "city": "Marseille area",
+    "chapter": "Visit",
+    "lat": 43.21,
+    "lng": 5.45,
+    "precision": "city",
+    "description": "Limestone inlets drop into clear water east of Marseille. Trailheads fill early on sunny weekends.",
+    "source": "https://en.wikipedia.org/wiki/Calanques_National_Park"
+  },
+  {
+    "id": "pont-du-gard",
+    "name": "Pont du Gard",
+    "city": "Vers-Pont-du-Gard",
+    "chapter": "Visit",
+    "lat": 43.9475,
+    "lng": 4.535,
+    "precision": "venue",
+    "description": "A three-tier Roman aqueduct spans the Gardon. Walkways and a museum explain the water system.",
+    "source": "https://en.wikipedia.org/wiki/Pont_du_Gard"
+  },
+  {
+    "id": "marche-bastille",
+    "name": "Marché Bastille",
+    "city": "Paris",
+    "chapter": "Foods",
+    "lat": 48.853,
+    "lng": 2.369,
+    "precision": "venue",
+    "description": "A large open-air market along Boulevard Richard-Lenoir sells produce, cheese and rotisserie.",
+    "source": "https://en.wikipedia.org/wiki/Bastille_Market"
+  },
+  {
+    "id": "les-halles-lyon",
+    "name": "Les Halles de Lyon Paul Bocuse",
+    "city": "Lyon",
+    "chapter": "Foods",
+    "lat": 45.762,
+    "lng": 4.851,
+    "precision": "venue",
+    "description": "Lyon’s celebrated covered food hall gathers cheese, oysters and bouchon-style counters.",
+    "source": "https://en.wikipedia.org/wiki/Halles_de_Lyon-Paul_Bocuse"
+  },
+  {
+    "id": "marche-aux-puces",
+    "name": "Marché aux Puces de Saint-Ouen",
+    "city": "Saint-Ouen",
+    "chapter": "Foods",
+    "lat": 48.904,
+    "lng": 2.34,
+    "precision": "venue",
+    "description": "Paris’s vast flea-market district includes cafés and snack stands among antique alleys.",
+    "source": "https://en.wikipedia.org/wiki/March%C3%A9_aux_Puces_de_Saint-Ouen"
+  },
+  {
+    "id": "cannes-marche-forville",
+    "name": "Marché Forville",
+    "city": "Cannes",
+    "chapter": "Foods",
+    "lat": 43.553,
+    "lng": 7.015,
+    "precision": "venue",
+    "description": "A Provençal market in Cannes sells flowers, olives and ready-to-eat Provençal dishes.",
+    "source": "https://en.wikipedia.org/wiki/Cannes"
+  },
+  {
+    "id": "bordeaux-marches",
+    "name": "Marché des Capucins",
+    "city": "Bordeaux",
+    "chapter": "Foods",
+    "lat": 44.832,
+    "lng": -0.567,
+    "precision": "venue",
+    "description": "Bordeaux’s lively market hall is known for oysters, canelés and south-west produce.",
+    "source": "https://en.wikipedia.org/wiki/March%C3%A9_des_Capucins"
+  },
+  {
+    "id": "fete-des-lumieres",
+    "name": "Fête des Lumières",
+    "city": "Lyon",
+    "chapter": "Seasonal",
+    "lat": 45.764,
+    "lng": 4.8357,
+    "precision": "city",
+    "description": "Lyon’s December light festival projects art onto façades across the Presqu’île and hills.",
+    "source": "https://en.wikipedia.org/wiki/Festival_of_Lights_(Lyon)",
+    "seasonal": true,
+    "seasonal_label": "Fête des Lumières"
+  }
+]

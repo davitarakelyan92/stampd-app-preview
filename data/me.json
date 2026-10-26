@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "updated": "2026-10-26",
-  "note": "Sample Me profile for Stampd app-preview. Fictional traveller; not a real person. Counts derived from places.json collected_ids for Mos to develop against.",
+  "note": "Sample Me profile for Stampd app-preview (v2 Trade/coins). Fictional traveller; not a real person. Coherent with collected_place_ids for AM/IT.",
   "profile": {
     "display_name": "Ani Sargsyan",
     "home_city": "Yerevan",
@@ -11,7 +11,8 @@
     "stamps_collected": 26,
     "countries_visited": 2,
     "favorite_country_id": "am",
-    "active_passport_country_id": "am"
+    "active_passport_country_id": "am",
+    "coins": 260
   },
   "collected_place_ids": [
     "amberd",
@@ -259,6 +260,142 @@
       "description": "Visit ten countries and fill ten passport covers.",
       "earned_at": null,
       "theme": "travel"
+    }
+  ],
+  "coins": 260,
+  "stamps_collected": 26,
+  "duplicate_place_ids": [
+    "colosseum",
+    "trevi",
+    "gelato",
+    "garni",
+    "republic-square",
+    "pizza"
+  ],
+  "trade": {
+    "duplicate_place_ids": [
+      "colosseum",
+      "trevi",
+      "gelato",
+      "garni",
+      "republic-square",
+      "pizza"
+    ],
+    "exchange_offers": [
+      {
+        "id": "offer-ani-001",
+        "status": "open",
+        "give_place_id": "colosseum",
+        "want_place_id": "pompeii",
+        "want_country_id": "it",
+        "note": "Duplicate Colosseum for Pompeii"
+      },
+      {
+        "id": "offer-ani-002",
+        "status": "open",
+        "give_place_id": "gelato",
+        "want_place_id": "tower-of-pisa",
+        "want_country_id": "it",
+        "note": "Spare gelato stamp for Pisa"
+      },
+      {
+        "id": "offer-ani-003",
+        "status": "pending",
+        "give_place_id": "garni",
+        "want_place_id": "positano",
+        "want_country_id": "it",
+        "note": "Waiting on the other traveller"
+      }
+    ]
+  },
+  "coin_ledger_sample": [
+    {
+      "type": "welcome_grant",
+      "coins": 100,
+      "note": "Preview-only starting coins"
+    },
+    {
+      "type": "chapter_complete",
+      "country": "am",
+      "chapter": "Monuments",
+      "coins": 50
+    },
+    {
+      "type": "chapter_complete",
+      "country": "am",
+      "chapter": "Visit",
+      "coins": 50
+    },
+    {
+      "type": "chapter_complete",
+      "country": "am",
+      "chapter": "Seasonal",
+      "coins": 50
+    },
+    {
+      "type": "seasonal_collect",
+      "place_id": "wine-days",
+      "coins": 10
+    }
+  ],
+  "coin_rules": {
+    "chapter_complete_coins": 50,
+    "country_complete_coins": 200,
+    "seasonal_collect_coins": 10,
+    "welcome_grant_coins": 100,
+    "ordinary_first_collect_coins": 0,
+    "summary": "Completing every place in a chapter (Monuments, Foods, Visit, or Seasonal) for a country earns 50 coins. Completing the full country catalog earns 200 more. Collecting a seasonal stamp earns 10 once. Ordinary first collects earn 0 in this preview. Duplicates from re-visits are listed in duplicate_place_ids for Trade; they do not mint coins."
+  },
+  "duplicates": [
+    {
+      "id": "colosseum",
+      "count": 1
+    },
+    {
+      "id": "trevi",
+      "count": 1
+    },
+    {
+      "id": "gelato",
+      "count": 1
+    },
+    {
+      "id": "garni",
+      "count": 1
+    },
+    {
+      "id": "republic-square",
+      "count": 1
+    },
+    {
+      "id": "pizza",
+      "count": 1
+    }
+  ],
+  "trade_offers": [
+    {
+      "id": "offer-ani-001",
+      "status": "open",
+      "give_place_id": "colosseum",
+      "want_place_id": "pompeii",
+      "want_country_id": "it",
+      "note": "Duplicate Colosseum for Pompeii"
+    },
+    {
+      "id": "offer-ani-002",
+      "status": "open",
+      "give_place_id": "gelato",
+      "want_place_id": "tower-of-pisa",
+      "want_country_id": "it",
+      "note": "Spare gelato stamp for Pisa"
+    },
+    {
+      "id": "offer-ani-003",
+      "status": "pending",
+      "give_place_id": "garni",
+      "want_place_id": "positano",
+      "want_country_id": "it",
+      "note": "Waiting on the other traveller"
     }
   ]
 }

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "vasa-museum",
+    "name": "Vasa Museum",
+    "city": "Stockholm",
+    "chapter": "Monuments",
+    "lat": 59.328,
+    "lng": 18.0914,
+    "precision": "venue",
+    "description": "A 17th-century warship raised from the harbour is displayed in a purpose-built museum.",
+    "source": "https://en.wikipedia.org/wiki/Vasa_Museum"
+  },
+  {
+    "id": "stockholm-palace",
+    "name": "Stockholm Palace",
+    "city": "Stockholm",
+    "chapter": "Monuments",
+    "lat": 59.3268,
+    "lng": 18.0717,
+    "precision": "venue",
+    "description": "The royal palace faces the water in Gamla stan with museums and changing of the guard.",
+    "source": "https://en.wikipedia.org/wiki/Stockholm_Palace"
+  },
+  {
+    "id": "uppsala-cathedral",
+    "name": "Uppsala Cathedral",
+    "city": "Uppsala",
+    "chapter": "Monuments",
+    "lat": 59.858,
+    "lng": 17.634,
+    "precision": "venue",
+    "description": "Sweden’s tallest church dominates Uppsala’s skyline with brick Gothic towers.",
+    "source": "https://en.wikipedia.org/wiki/Uppsala_Cathedral"
+  },
+  {
+    "id": "kalmar-castle",
+    "name": "Kalmar Castle",
+    "city": "Kalmar",
+    "chapter": "Monuments",
+    "lat": 56.663,
+    "lng": 16.357,
+    "precision": "venue",
+    "description": "A Renaissance fortress by the Kalmar Strait with moats and museum interiors.",
+    "source": "https://en.wikipedia.org/wiki/Kalmar_Castle"
+  },
+  {
+    "id": "gripsholm",
+    "name": "Gripsholm Castle",
+    "city": "Mariefred",
+    "chapter": "Monuments",
+    "lat": 59.255,
+    "lng": 17.221,
+    "precision": "venue",
+    "description": "A lakeside royal castle on Mälaren known for its portrait collection.",
+    "source": "https://en.wikipedia.org/wiki/Gripsholm_Castle"
+  },
+  {
+    "id": "gamla-stan",
+    "name": "Gamla stan",
+    "city": "Stockholm",
+    "chapter": "Visit",
+    "lat": 59.325,
+    "lng": 18.071,
+    "precision": "city",
+    "description": "Stockholm’s old town of narrow lanes, squares and waterfront views.",
+    "source": "https://en.wikipedia.org/wiki/Gamla_stan"
+  },
+  {
+    "id": "abisko",
+    "name": "Abisko National Park",
+    "city": "Abisko",
+    "chapter": "Visit",
+    "lat": 68.36,
+    "lng": 18.78,
+    "precision": "city",
+    "description": "Arctic trails and aurora viewing north of the Arctic Circle.",
+    "source": "https://en.wikipedia.org/wiki/Abisko_National_Park"
+  },
+  {
+    "id": "gotland-visby",
+    "name": "Visby",
+    "city": "Visby",
+    "chapter": "Visit",
+    "lat": 57.638,
+    "lng": 18.295,
+    "precision": "city",
+    "description": "A walled Hanseatic town on Gotland with rose-covered ruins.",
+    "source": "https://en.wikipedia.org/wiki/Visby"
+  },
+  {
+    "id": "orebro-castle",
+    "name": "Örebro Castle surroundings",
+    "city": "Örebro",
+    "chapter": "Visit",
+    "lat": 59.274,
+    "lng": 15.214,
+    "precision": "venue",
+    "description": "A moated castle sits in Örebro’s centre with parks along the Svartån.",
+    "source": "https://en.wikipedia.org/wiki/%C3%96rebro_Castle"
+  },
+  {
+    "id": "kungsleden",
+    "name": "Kungsleden trailheads",
+    "city": "Hemavan/Abisko corridor",
+    "chapter": "Visit",
+    "lat": 66.0,
+    "lng": 16.0,
+    "precision": "approximate",
+    "description": "Sweden’s famous long-distance hiking trail through Lapland mountains.",
+    "source": "https://en.wikipedia.org/wiki/Kungsleden"
+  },
+  {
+    "id": "ostermalms-saluhall",
+    "name": "Östermalms Saluhall",
+    "city": "Stockholm",
+    "chapter": "Foods",
+    "lat": 59.336,
+    "lng": 18.078,
+    "precision": "venue",
+    "description": "A historic food hall with seafood, meat and café counters in Östermalm.",
+    "source": "https://en.wikipedia.org/wiki/%C3%96stermalm_Saluhall"
+  },
+  {
+    "id": "goteborg-market",
+    "name": "Saluhallen Stora Nygatan",
+    "city": "Gothenburg",
+    "chapter": "Foods",
+    "lat": 57.703,
+    "lng": 11.966,
+    "precision": "venue",
+    "description": "Gothenburg’s indoor market sells Nordic produce and casual lunches.",
+    "source": "https://en.wikipedia.org/wiki/Gothenburg"
+  },
+  {
+    "id": "malmo-market",
+    "name": "Malmö Saluhall",
+    "city": "Malmö",
+    "chapter": "Foods",
+    "lat": 55.606,
+    "lng": 13.001,
+    "precision": "venue",
+    "description": "A food hall near Malmö central with Nordic and international stalls.",
+    "source": "https://en.wikipedia.org/wiki/Malm%C3%B6"
+  },
+  {
+    "id": "fika-gamla",
+    "name": "Fika cafés in Gamla stan",
+    "city": "Stockholm",
+    "chapter": "Foods",
+    "lat": 59.3255,
+    "lng": 18.0705,
+    "precision": "city",
+    "description": "Cafés serve coffee and kanelbullar throughout the old town lanes.",
+    "source": "https://en.wikipedia.org/wiki/Fika_(Sweden)"
+  },
+  {
+    "id": "uppsala-market",
+    "name": "Uppsala market square",
+    "city": "Uppsala",
+    "chapter": "Foods",
+    "lat": 59.8585,
+    "lng": 17.638,
+    "precision": "venue",
+    "description": "Outdoor market days fill central Uppsala with regional producers.",
+    "source": "https://en.wikipedia.org/wiki/Uppsala"
+  },
+  {
+    "id": "midsummer",
+    "name": "Swedish Midsummer",
+    "city": "Stockholm area",
+    "chapter": "Seasonal",
+    "lat": 59.33,
+    "lng": 18.06,
+    "precision": "approximate",
+    "description": "Maypoles, singing and outdoor gatherings mark Midsummer weekend across Sweden.",
+    "source": "https://en.wikipedia.org/wiki/Midsummer",
+    "seasonal": true,
+    "seasonal_label": "Midsummer"
+  }
+]

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "trinity-college",
+    "name": "Trinity College Dublin",
+    "city": "Dublin",
+    "chapter": "Monuments",
+    "lat": 53.3438,
+    "lng": -6.2546,
+    "precision": "venue",
+    "description": "Ireland’s oldest university holds the Book of Kells exhibition in its Old Library.",
+    "source": "https://en.wikipedia.org/wiki/Trinity_College_Dublin"
+  },
+  {
+    "id": "rock-of-cashel",
+    "name": "Rock of Cashel",
+    "city": "Cashel",
+    "chapter": "Monuments",
+    "lat": 52.5201,
+    "lng": -7.8905,
+    "precision": "venue",
+    "description": "Medieval church ruins crown a limestone outcrop above Tipperary farmland.",
+    "source": "https://en.wikipedia.org/wiki/Rock_of_Cashel"
+  },
+  {
+    "id": "kilmainham",
+    "name": "Kilmainham Gaol",
+    "city": "Dublin",
+    "chapter": "Monuments",
+    "lat": 53.3419,
+    "lng": -6.3096,
+    "precision": "venue",
+    "description": "A former prison museum covering Irish independence history on Dublin’s west side.",
+    "source": "https://en.wikipedia.org/wiki/Kilmainham_Gaol"
+  },
+  {
+    "id": "newgrange",
+    "name": "Newgrange",
+    "city": "Donore area",
+    "chapter": "Monuments",
+    "lat": 53.6947,
+    "lng": -6.4756,
+    "precision": "venue",
+    "description": "A prehistoric passage tomb aligned to the winter solstice sunrise in the Boyne Valley.",
+    "source": "https://en.wikipedia.org/wiki/Newgrange"
+  },
+  {
+    "id": "obriens-tower",
+    "name": "O’Brien’s Tower",
+    "city": "Liscannor area",
+    "chapter": "Monuments",
+    "lat": 52.9715,
+    "lng": -9.4309,
+    "precision": "venue",
+    "description": "A 19th-century tower stands on the cliff edge at the Cliffs of Moher walkways.",
+    "source": "https://en.wikipedia.org/wiki/Cliffs_of_Moher"
+  },
+  {
+    "id": "cliffs-of-moher",
+    "name": "Cliffs of Moher",
+    "city": "Liscannor area",
+    "chapter": "Visit",
+    "lat": 52.9719,
+    "lng": -9.4265,
+    "precision": "venue",
+    "description": "Sheer Atlantic cliffs run for kilometres with marked coastal paths.",
+    "source": "https://en.wikipedia.org/wiki/Cliffs_of_Moher"
+  },
+  {
+    "id": "ring-of-kerry",
+    "name": "Ring of Kerry",
+    "city": "Killarney area",
+    "chapter": "Visit",
+    "lat": 51.95,
+    "lng": -9.9,
+    "precision": "city",
+    "description": "A scenic driving loop around the Iveragh Peninsula with mountain and coastal views.",
+    "source": "https://en.wikipedia.org/wiki/Ring_of_Kerry"
+  },
+  {
+    "id": "skellig-michael",
+    "name": "Skellig Michael",
+    "city": "Portmagee area",
+    "chapter": "Visit",
+    "lat": 51.77,
+    "lng": -10.54,
+    "precision": "venue",
+    "description": "A remote monastic island of steep steps and beehive huts off the Kerry coast (boat access weather-dependent).",
+    "source": "https://en.wikipedia.org/wiki/Skellig_Michael"
+  },
+  {
+    "id": "dingle-peninsula",
+    "name": "Dingle Peninsula",
+    "city": "Dingle",
+    "chapter": "Visit",
+    "lat": 52.14,
+    "lng": -10.27,
+    "precision": "city",
+    "description": "Coastal roads, early Christian sites and harbour towns on County Kerry’s peninsula.",
+    "source": "https://en.wikipedia.org/wiki/Dingle_Peninsula"
+  },
+  {
+    "id": "connemara",
+    "name": "Connemara National Park",
+    "city": "Letterfrack",
+    "chapter": "Visit",
+    "lat": 53.55,
+    "lng": -9.95,
+    "precision": "city",
+    "description": "Bog, mountain and coast landscapes in County Galway with waymarked trails.",
+    "source": "https://en.wikipedia.org/wiki/Connemara_National_Park"
+  },
+  {
+    "id": "temple-bar-food",
+    "name": "Temple Bar food streets",
+    "city": "Dublin",
+    "chapter": "Foods",
+    "lat": 53.3453,
+    "lng": -6.2641,
+    "precision": "city",
+    "description": "Restaurants and pubs pack Dublin’s cultural quarter — lively and tourist-heavy.",
+    "source": "https://en.wikipedia.org/wiki/Temple_Bar,_Dublin"
+  },
+  {
+    "id": "english-market",
+    "name": "English Market",
+    "city": "Cork",
+    "chapter": "Foods",
+    "lat": 51.898,
+    "lng": -8.474,
+    "precision": "venue",
+    "description": "A covered Victorian market in Cork sells produce, seafood and prepared foods.",
+    "source": "https://en.wikipedia.org/wiki/English_Market"
+  },
+  {
+    "id": "galway-market",
+    "name": "Galway Market",
+    "city": "Galway",
+    "chapter": "Foods",
+    "lat": 53.272,
+    "lng": -9.053,
+    "precision": "venue",
+    "description": "Weekend stalls by St. Nicholas’ Collegiate Church sell crafts and street food.",
+    "source": "https://en.wikipedia.org/wiki/Galway"
+  },
+  {
+    "id": "moore-street",
+    "name": "Moore Street Market",
+    "city": "Dublin",
+    "chapter": "Foods",
+    "lat": 53.351,
+    "lng": -6.261,
+    "precision": "venue",
+    "description": "A historic street market north of the Liffey selling fruit, vegetables and flowers.",
+    "source": "https://en.wikipedia.org/wiki/Moore_Street"
+  },
+  {
+    "id": "killarney-food",
+    "name": "Killarney town eateries",
+    "city": "Killarney",
+    "chapter": "Foods",
+    "lat": 52.06,
+    "lng": -9.507,
+    "precision": "city",
+    "description": "Gateway town to Killarney National Park with pubs serving Irish classics.",
+    "source": "https://en.wikipedia.org/wiki/Killarney"
+  },
+  {
+    "id": "st-patricks-day",
+    "name": "St Patrick’s Day Festival",
+    "city": "Dublin",
+    "chapter": "Seasonal",
+    "lat": 53.35,
+    "lng": -6.26,
+    "precision": "city",
+    "description": "Parades and city-wide celebrations mark Ireland’s national day each 17 March.",
+    "source": "https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day",
+    "seasonal": true,
+    "seasonal_label": "St Patrick’s Day"
+  }
+]

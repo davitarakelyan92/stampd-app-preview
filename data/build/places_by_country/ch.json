@@ -1,0 +1,180 @@
+[
+  {
+    "id": "matterhorn",
+    "name": "Matterhorn",
+    "city": "Zermatt area",
+    "chapter": "Monuments",
+    "lat": 45.9763,
+    "lng": 7.6586,
+    "precision": "venue",
+    "description": "The pyramid peak above Zermatt is Switzerland’s most recognisable mountain. Trails and lifts ring its base.",
+    "source": "https://en.wikipedia.org/wiki/Matterhorn"
+  },
+  {
+    "id": "chillon",
+    "name": "Chillon Castle",
+    "city": "Veytaux",
+    "chapter": "Monuments",
+    "lat": 46.414,
+    "lng": 6.927,
+    "precision": "venue",
+    "description": "A lakeside fortress on Lake Geneva shores near Montreux, with courtyards open to visitors.",
+    "source": "https://en.wikipedia.org/wiki/Chillon_Castle"
+  },
+  {
+    "id": "grossmunster",
+    "name": "Grossmünster",
+    "city": "Zurich",
+    "chapter": "Monuments",
+    "lat": 47.37,
+    "lng": 8.544,
+    "precision": "venue",
+    "description": "Twin towers of Zurich’s Romanesque church mark the old town above the Limmat.",
+    "source": "https://en.wikipedia.org/wiki/Grossm%C3%BCnster"
+  },
+  {
+    "id": "bundeshaus",
+    "name": "Federal Palace",
+    "city": "Bern",
+    "chapter": "Monuments",
+    "lat": 46.9465,
+    "lng": 7.4442,
+    "precision": "venue",
+    "description": "Switzerland’s parliament building faces the Bundesplatz with a green dome.",
+    "source": "https://en.wikipedia.org/wiki/Federal_Palace_of_Switzerland"
+  },
+  {
+    "id": "lucerne-chapel-bridge",
+    "name": "Kapellbrücke",
+    "city": "Lucerne",
+    "chapter": "Monuments",
+    "lat": 47.051,
+    "lng": 8.307,
+    "precision": "venue",
+    "description": "A covered wooden bridge with a water tower spans the Reuss in Lucerne’s centre.",
+    "source": "https://en.wikipedia.org/wiki/Kapellbr%C3%BCcke"
+  },
+  {
+    "id": "jungfraujoch",
+    "name": "Jungfraujoch",
+    "city": "Grindelwald area",
+    "chapter": "Visit",
+    "lat": 46.5475,
+    "lng": 7.98,
+    "precision": "venue",
+    "description": "A railway climbs to a high Alpine saddle with ice viewpoints between Jungfrau and Mönch.",
+    "source": "https://en.wikipedia.org/wiki/Jungfraujoch"
+  },
+  {
+    "id": "rhine-falls",
+    "name": "Rhine Falls",
+    "city": "Schaffhausen area",
+    "chapter": "Visit",
+    "lat": 47.678,
+    "lng": 8.615,
+    "precision": "venue",
+    "description": "Europe’s most powerful waterfall by volume thunders beside boat landings and cliff paths.",
+    "source": "https://en.wikipedia.org/wiki/Rhine_Falls"
+  },
+  {
+    "id": "lake-geneva",
+    "name": "Lake Geneva promenade",
+    "city": "Geneva",
+    "chapter": "Visit",
+    "lat": 46.207,
+    "lng": 6.15,
+    "precision": "venue",
+    "description": "The Jet d’Eau and lakeside parks define Geneva’s waterfront walks.",
+    "source": "https://en.wikipedia.org/wiki/Jet_d%27Eau"
+  },
+  {
+    "id": "interlaken",
+    "name": "Interlaken",
+    "city": "Interlaken",
+    "chapter": "Visit",
+    "lat": 46.6863,
+    "lng": 7.8632,
+    "precision": "city",
+    "description": "A resort town between lakes Thun and Brienz, gateway to Jungfrau region trails.",
+    "source": "https://en.wikipedia.org/wiki/Interlaken"
+  },
+  {
+    "id": "swiss-national-park",
+    "name": "Swiss National Park",
+    "city": "Zernez area",
+    "chapter": "Visit",
+    "lat": 46.675,
+    "lng": 10.15,
+    "precision": "city",
+    "description": "Alpine valleys with marked trails and wildlife viewing in Graubünden.",
+    "source": "https://en.wikipedia.org/wiki/Swiss_National_Park"
+  },
+  {
+    "id": "zurich-market",
+    "name": "Markthalle Im Viadukt",
+    "city": "Zurich",
+    "chapter": "Foods",
+    "lat": 47.386,
+    "lng": 8.52,
+    "precision": "venue",
+    "description": "Food vendors fill arches under a stone railway viaduct west of Zurich’s centre.",
+    "source": "https://en.wikipedia.org/wiki/Im_Viadukt"
+  },
+  {
+    "id": "bern-market",
+    "name": "Bern farmers’ market",
+    "city": "Bern",
+    "chapter": "Foods",
+    "lat": 46.948,
+    "lng": 7.447,
+    "precision": "venue",
+    "description": "Outdoor market stalls fill Waisenhausplatz and nearby streets on market mornings.",
+    "source": "https://en.wikipedia.org/wiki/Bern"
+  },
+  {
+    "id": "lausanne-market",
+    "name": "Lausanne market days",
+    "city": "Lausanne",
+    "chapter": "Foods",
+    "lat": 46.52,
+    "lng": 6.632,
+    "precision": "city",
+    "description": "Riponne and surrounding squares host produce and regional products.",
+    "source": "https://en.wikipedia.org/wiki/Lausanne"
+  },
+  {
+    "id": "basel-markt",
+    "name": "Marktplatz Basel",
+    "city": "Basel",
+    "chapter": "Foods",
+    "lat": 47.558,
+    "lng": 7.588,
+    "precision": "venue",
+    "description": "Basel’s central market square holds produce stalls beneath the Rathaus façade.",
+    "source": "https://en.wikipedia.org/wiki/Basel"
+  },
+  {
+    "id": "geneva-halles",
+    "name": "Halles de Rive",
+    "city": "Geneva",
+    "chapter": "Foods",
+    "lat": 46.201,
+    "lng": 6.153,
+    "precision": "venue",
+    "description": "A covered market and food shops near Lake Geneva’s left bank.",
+    "source": "https://en.wikipedia.org/wiki/Geneva"
+  },
+  {
+    "id": "montreux-jazz",
+    "name": "Montreux Jazz Festival",
+    "city": "Montreux",
+    "chapter": "Seasonal",
+    "lat": 46.4312,
+    "lng": 6.9106,
+    "precision": "venue",
+    "description": "A lakeside summer music festival with stages along Lake Geneva since 1967.",
+    "source": "https://en.wikipedia.org/wiki/Montreux_Jazz_Festival",
+    "seasonal": true,
+    "seasonal_label": "Montreux Jazz Festival"
+  }
+]

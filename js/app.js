@@ -27,6 +27,9 @@
     userPos: null,
     geoMode: "yerevan",
     detailIcon: null,
+    galleryFromCountries: false,
+    coinsPreview: null, // local override for demo bumps; null = use me.json
+    tradeOfferPlaceId: null,
   };
 
   function clothHex(c) {
@@ -361,7 +364,6 @@
       const tab = btn.dataset.tab;
       const on =
         (tab === "countries" && (name === "home" || (state.galleryFromCountries && (name === "album" || name === "detail")))) ||
-        (tab === "album" && name === "album" && !state.galleryFromCountries) ||
         (tab === "support" && name === "support") ||
         (tab === "map" && name === "map") ||
         (tab === "trade" && name === "trade") ||
@@ -371,14 +373,17 @@
     if (name === "home") renderHome();
     if (name === "album") renderAlbum();
     if (name === "support") renderSupport();
+    if (name === "trade") renderTrade();
     if (name === "me") renderMe();
     if (name === "detail") renderDetail();
+    if (name === "home" || name === "trade" || name === "me") renderBalanceChrome();
   }
 
   function renderHome() {
     const c = country();
     state.countryId = c.id;
     renderCountriesLists();
+    renderBalanceChrome();
   }
 
   function liveCardHtml(c) {
@@ -426,6 +431,214 @@
     clearTimeout(softToast._t);
     softToast._t = setTimeout(() => el.classList.remove("on"), 1600);
   }
+
+
+  /* ── Coins / Trade helpers (Kar me.json v2 aliases) ── */
+  function stampsCollectedCount() {
+    const d = state.meData;
+    if (!d) return 0;
+    if (typeof d.stamps_collected === "number") return d.stamps_collected;
+    if (d.profile && typeof d.profile.stamps_collected === "number") return d.profile.stamps_collected;
+    const ids = d.collected_place_ids;
+    return Array.isArray(ids) ? ids.length : 0;
+  }
+
+  function coinsBalance() {
+    if (typeof state.coinsPreview === "number") return state.coinsPreview;
+    const d = state.meData;
+    if (!d) return 0;
+    if (typeof d.coins === "number") return d.coins;
+    if (d.profile && typeof d.profile.coins === "number") return d.profile.coins;
+    return 0;
+  }
+
+  function syncCoinsFromMe() {
+    if (state.meData && typeof state.coinsPreview !== "number") {
+      state.coinsPreview = coinsBalance();
+    }
+  }
+
+  function bumpCoins(amount, toastMsg) {
+    const base = coinsBalance();
+    state.coinsPreview = base + amount;
+    renderBalanceChrome();
+    if (state.screen === "me") renderMe();
+    if (state.screen === "trade") renderTrade();
+    if (toastMsg) softToast(toastMsg);
+  }
+
+  /** Prefer duplicates[{id,count}] (count = extras/spares). Fall back to duplicate_place_ids. */
+  function duplicateEntries() {
+    const d = state.meData || {};
+    const out = [];
+    const seen = new Set();
+    if (Array.isArray(d.duplicates)) {
+      d.duplicates.forEach((row) => {
+        if (!row || !row.id) return;
+        const extras = typeof row.count === "number" ? row.count : typeof row.extras === "number" ? row.extras : 1;
+        if (extras < 1) return;
+        out.push({ id: row.id, extras });
+        seen.add(row.id);
+      });
+    }
+    const ids =
+      (Array.isArray(d.duplicate_place_ids) && d.duplicate_place_ids) ||
+      (d.trade && Array.isArray(d.trade.duplicate_place_ids) && d.trade.duplicate_place_ids) ||
+      [];
+    ids.forEach((id) => {
+      if (!id || seen.has(id)) return;
+      out.push({ id, extras: 1 });
+      seen.add(id);
+    });
+    return out;
+  }
+
+  function tradeOffers() {
+    const d = state.meData || {};
+    if (Array.isArray(d.trade_offers) && d.trade_offers.length) return d.trade_offers;
+    if (d.trade && Array.isArray(d.trade.exchange_offers)) return d.trade.exchange_offers;
+    return [];
+  }
+
+  function countryNameForPlace(place) {
+    if (!place) return "";
+    const code = String(place.country || "").toUpperCase();
+    const row = countriesAll().find((c) => String(c.id || "").toUpperCase() === code || String(c.code || "").toUpperCase() === code);
+    return (row && row.name) || code || "";
+  }
+
+  function balanceChromeHtml() {
+    const stamps = stampsCollectedCount();
+    const coins = coinsBalance();
+    const stampSvg =
+      '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 10h6M9 14h4"/></svg>';
+    const coinSvg =
+      '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 10.5c.6-1 1.5-1.5 2.5-1.5s2 .6 2.5 1.5M9.5 13.5c.6 1 1.5 1.5 2.5 1.5s2-.6 2.5-1.5"/></svg>';
+    return `<span class="balance-pill stamps" title="Stamps collected">${stampSvg}<span>${stamps}</span></span><span class="balance-pill coins" title="Coins">${coinSvg}<span>${coins}</span></span>`;
+  }
+
+  function renderBalanceChrome() {
+    document.querySelectorAll("[data-balance-chrome]").forEach((el) => {
+      el.innerHTML = balanceChromeHtml();
+    });
+  }
+
+  function openTradeOfferSheet(placeId) {
+    state.tradeOfferPlaceId = placeId;
+    const place = placeById(placeId);
+    const name = (place && place.name) || placeId;
+    const title = document.getElementById("trade-offer-title");
+    const lede = document.getElementById("trade-offer-lede");
+    if (title) title.textContent = `Offer ${name}`;
+    if (lede) lede.textContent = "List this duplicate for another stamp or for coins. Sample preview only.";
+    const bd = document.getElementById("trade-offer-sheet");
+    if (bd) bd.classList.add("on");
+  }
+
+  function closeTradeOfferSheet() {
+    state.tradeOfferPlaceId = null;
+    const bd = document.getElementById("trade-offer-sheet");
+    if (bd) bd.classList.remove("on");
+  }
+
+  function renderTrade() {
+    const root = document.getElementById("trade-root");
+    if (!root) return;
+    renderBalanceChrome();
+    if (state.meStatus === "loading" || state.meStatus === "idle") {
+      root.innerHTML = `<div class="trade-empty"><p class="trade-empty-title">Loading trades…</p><p class="trade-empty-sub">Fetching your duplicates.</p></div>`;
+      if (state.meStatus === "idle") loadMe().then(renderTrade);
+      return;
+    }
+
+    const dups = duplicateEntries();
+    const offers = tradeOffers();
+    const rules = (state.meData && state.meData.coin_rules) || {};
+    const chapterBonus = rules.chapter_complete_coins || 50;
+    const countryBonus = rules.country_complete_coins || 200;
+
+    const callout = `<div class="trade-callout">
+      <p>Complete a country set to earn coins. Chapter +${chapterBonus} · full country +${countryBonus}. Duplicates don’t mint coins — they power Trade.</p>
+      <button type="button" class="btn-primary" id="demo-complete-set">Demo: complete a set (+${chapterBonus})</button>
+    </div>`;
+
+    let listHtml;
+    if (!dups.length) {
+      listHtml = `<div class="trade-empty"><p class="trade-empty-title">No duplicates yet</p><p class="trade-empty-sub">Revisit a place you’ve already stamped to earn a spare for exchange.</p></div>`;
+    } else {
+      listHtml =
+        `<div class="trade-section-k">Your duplicates</div><div class="trade-list">` +
+        dups
+          .map((dup) => {
+            const place = placeById(dup.id);
+            const name = (place && place.name) || dup.id;
+            const country = countryNameForPlace(place);
+            const stroke = "#1B2747";
+            let icon = "";
+            if (typeof wiIcon === "function") icon = wiIcon(dup.id, { size: 26, stroke, sw: 2.2 });
+            const qty = dup.extras > 1 ? ` · ×${dup.extras}` : "";
+            return `<div class="trade-card" data-dup="${dup.id}">
+              <div class="trade-card-main">
+                <div class="trade-thumb">${icon}</div>
+                <div class="trade-info">
+                  <p class="trade-name">${name}</p>
+                  <p class="trade-meta">${country || "Stamp"}${qty}</p>
+                </div>
+                <span class="trade-badge">Duplicate</span>
+              </div>
+              <div class="trade-actions">
+                <button type="button" class="btn-primary" data-offer="${dup.id}">Offer</button>
+                <button type="button" class="btn-secondary" data-offer-coins="${dup.id}">For coins</button>
+              </div>
+            </div>`;
+          })
+          .join("") +
+        `</div>`;
+    }
+
+    let offersHtml = "";
+    if (offers.length) {
+      offersHtml =
+        `<div><div class="trade-section-k">Open offers</div><div class="trade-offers">` +
+        offers
+          .map((o) => {
+            const give = placeById(o.give_place_id);
+            const want = placeById(o.want_place_id);
+            const giveName = (give && give.name) || o.give_place_id;
+            const wantName = (want && want.name) || o.want_place_id || "a stamp";
+            const st = String(o.status || "open").toLowerCase();
+            return `<div class="trade-offer">
+              <div class="trade-offer-row">
+                <p class="trade-offer-note">${o.note || `${giveName} → ${wantName}`}</p>
+                <span class="trade-status ${st}">${st}</span>
+              </div>
+              <p class="trade-offer-sub">Give ${giveName} · want ${wantName}</p>
+            </div>`;
+          })
+          .join("") +
+        `</div></div>`;
+    }
+
+    root.innerHTML = callout + listHtml + offersHtml;
+
+    const demo = document.getElementById("demo-complete-set");
+    if (demo) {
+      demo.addEventListener("click", () => {
+        bumpCoins(chapterBonus, `+${chapterBonus} coins · chapter complete (demo)`);
+      });
+    }
+    root.querySelectorAll("[data-offer]").forEach((btn) => {
+      btn.addEventListener("click", () => openTradeOfferSheet(btn.dataset.offer));
+    });
+    root.querySelectorAll("[data-offer-coins]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const place = placeById(btn.dataset.offerCoins);
+        const name = (place && place.name) || btn.dataset.offerCoins;
+        softToast(`Listed ${name} for 40 coins`);
+      });
+    });
+  }
+
 
   function renderSupport() {
     /* Static HTML — nothing dynamic required */
@@ -532,7 +745,8 @@
         <div class="me-section-k">Profile details</div>
         <div class="me-card me-details">
           <div class="meta-row"><span class="meta-k">Country home</span><span class="meta-v">${home || "—"}</span></div>
-          <div class="meta-row"><span class="meta-k">Stamps collected</span><span class="meta-v">${profile.stamps_collected ?? "—"}</span></div>
+          <div class="meta-row"><span class="meta-k">Stamps collected</span><span class="meta-v">${profile.stamps_collected ?? stampsCollectedCount()}</span></div>
+          <div class="meta-row"><span class="meta-k">Coins</span><span class="meta-v">${coinsBalance()}</span></div>
           <div class="meta-row"><span class="meta-k">Member since</span><span class="meta-v">${memberLabel}</span></div>
         </div>
       </div>
@@ -548,6 +762,7 @@
         showScreen("home");
       });
     });
+    renderBalanceChrome();
   }
 
   function loadMe(force) {
@@ -563,7 +778,16 @@
       .then((data) => {
         state.meData = data;
         state.meStatus = "ready";
+        if (typeof state.coinsPreview !== "number") {
+          state.coinsPreview =
+            typeof data.coins === "number"
+              ? data.coins
+              : data.profile && typeof data.profile.coins === "number"
+                ? data.profile.coins
+                : 0;
+        }
         rebuildStampsFromPlaces();
+        renderBalanceChrome();
         return data;
       })
       .catch(() => {
@@ -625,15 +849,13 @@
     const k = document.querySelector('[data-screen="album"] .ttl .k');
     const h1 = document.querySelector('[data-screen="album"] .ttl h1');
     if (k && h1) {
-      /* Davit: no brand slogan on gallery / inner pages */
+      /* Davit: lede is STAMPD only — country name lives in the big title */
+      k.textContent = "STAMPD";
       if (c.id === "am") {
-        k.textContent = "STAMPD · ARMENIA";
         h1.textContent = "Armenia";
       } else if (c.id === "it") {
-        k.textContent = "STAMPD · ITALY";
         h1.textContent = "Italy";
       } else {
-        k.textContent = "STAMPD";
         h1.textContent = c.name || "Gallery";
       }
     }
@@ -641,11 +863,7 @@
     const sub = document.getElementById("album-sub");
     if (sub) {
       const chapters = Object.keys(chapterCounts()).filter((key) => key !== "All").length;
-      if (c.id === "am" || c.id === "it") {
-        sub.textContent = `${total} icons in ${chapters} chapters · ${c.name}`;
-      } else {
-        sub.textContent = `${total} icons in ${chapters} chapters · sample`;
-      }
+      sub.textContent = `${total} icons in ${chapters} chapters`;
     }
 
     const trevi = stamps.find((s) => s.icon === "trevi");
@@ -837,21 +1055,59 @@
     document.querySelectorAll(".tab [data-tab]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const t = btn.dataset.tab;
-        state.galleryFromCountries = false;
+        if (t !== "stamp") state.galleryFromCountries = false;
         if (t === "countries") showScreen("home");
-        else if (t === "album") showScreen("album");
         else if (t === "support") showScreen("support");
         else if (t === "map") showScreen("map");
         else if (t === "trade") showScreen("trade");
         else if (t === "me") showScreen("me");
         else if (t === "stamp") {
-          showScreen("album");
+          /* FAB: open check-in when Trevi available; else current-country gallery (Countries tab stays on) */
+          const needIt = state.countryId !== "it";
+          if (needIt) {
+            state.countryId = "it";
+            localStorage.setItem("stampd-preview-country", "it");
+            rebuildStampsFromPlaces();
+          }
           const trevi = stamps.find((s) => s.icon === "trevi");
-          if (trevi && trevi.state !== "earned") openCheckin();
-          else softToast("Pick Italy to try Trevi check-in");
+          if (trevi && trevi.state !== "earned" && !state.treviEarned) {
+            state.galleryFromCountries = true;
+            showScreen("album");
+            openCheckin();
+          } else {
+            openCountryGallery(state.countryId || firstLiveCountryId());
+            softToast("Gallery · Stamp FAB");
+          }
         }
       });
     });
+
+    const offerStamp = document.getElementById("offer-for-stamp");
+    const offerCoins = document.getElementById("offer-for-coins");
+    const offerCancel = document.getElementById("offer-cancel");
+    const offerSheet = document.getElementById("trade-offer-sheet");
+    if (offerStamp) {
+      offerStamp.addEventListener("click", () => {
+        const place = placeById(state.tradeOfferPlaceId);
+        const name = (place && place.name) || state.tradeOfferPlaceId || "stamp";
+        closeTradeOfferSheet();
+        softToast(`Listed ${name} for exchange`);
+      });
+    }
+    if (offerCoins) {
+      offerCoins.addEventListener("click", () => {
+        const place = placeById(state.tradeOfferPlaceId);
+        const name = (place && place.name) || state.tradeOfferPlaceId || "stamp";
+        closeTradeOfferSheet();
+        softToast(`Listed ${name} for 40 coins`);
+      });
+    }
+    if (offerCancel) offerCancel.addEventListener("click", closeTradeOfferSheet);
+    if (offerSheet) {
+      offerSheet.addEventListener("click", (e) => {
+        if (e.target.id === "trade-offer-sheet") closeTradeOfferSheet();
+      });
+    }
 
 
     document.getElementById("album-back").addEventListener("click", () => showScreen("home"));

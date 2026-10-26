@@ -1,0 +1,180 @@
+[
+  {
+    "id": "grand-place-brussels",
+    "name": "Grand-Place",
+    "city": "Brussels",
+    "chapter": "Monuments",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "precision": "venue",
+    "description": "Guildhall façades surround Brussels’ central square, a UNESCO site of ornate gables.",
+    "source": "https://en.wikipedia.org/wiki/Grand-Place"
+  },
+  {
+    "id": "atomium",
+    "name": "Atomium",
+    "city": "Brussels",
+    "chapter": "Monuments",
+    "lat": 50.8949,
+    "lng": 4.3415,
+    "precision": "venue",
+    "description": "A 1958 World’s Fair pavilion shaped as an iron crystal still opens viewing spheres and exhibitions.",
+    "source": "https://en.wikipedia.org/wiki/Atomium"
+  },
+  {
+    "id": "belfry-bruges",
+    "name": "Belfry of Bruges",
+    "city": "Bruges",
+    "chapter": "Monuments",
+    "lat": 51.2085,
+    "lng": 3.2247,
+    "precision": "venue",
+    "description": "A medieval bell tower rises over Bruges’ Markt. Climbers pass the carillon on the way up.",
+    "source": "https://en.wikipedia.org/wiki/Belfry_of_Bruges"
+  },
+  {
+    "id": "cathedral-antwerp",
+    "name": "Cathedral of Our Lady",
+    "city": "Antwerp",
+    "chapter": "Monuments",
+    "lat": 51.2204,
+    "lng": 4.4014,
+    "precision": "venue",
+    "description": "A Gothic cathedral with a soaring spire holds works by Rubens in Antwerp’s centre.",
+    "source": "https://en.wikipedia.org/wiki/Cathedral_of_Our_Lady_(Antwerp)"
+  },
+  {
+    "id": "citadel-namur",
+    "name": "Citadel of Namur",
+    "city": "Namur",
+    "chapter": "Monuments",
+    "lat": 50.46,
+    "lng": 4.86,
+    "precision": "venue",
+    "description": "Fortifications overlook the Meuse–Sambre confluence with tunnels and panoramic walks.",
+    "source": "https://en.wikipedia.org/wiki/Citadel_of_Namur"
+  },
+  {
+    "id": "bruges-canals",
+    "name": "Bruges canals",
+    "city": "Bruges",
+    "chapter": "Visit",
+    "lat": 51.2093,
+    "lng": 3.2247,
+    "precision": "city",
+    "description": "Boat tours and footbridges weave through Bruges’ medieval waterways.",
+    "source": "https://en.wikipedia.org/wiki/Bruges"
+  },
+  {
+    "id": "ghent-graslei",
+    "name": "Graslei and Korenlei",
+    "city": "Ghent",
+    "chapter": "Visit",
+    "lat": 51.0546,
+    "lng": 3.722,
+    "precision": "venue",
+    "description": "Historic guildhouses line the river Leie in Ghent’s postcard harbour stretch.",
+    "source": "https://en.wikipedia.org/wiki/Graslei"
+  },
+  {
+    "id": "ardennes",
+    "name": "Ardennes forests",
+    "city": "La Roche-en-Ardenne area",
+    "chapter": "Visit",
+    "lat": 50.18,
+    "lng": 5.575,
+    "precision": "city",
+    "description": "Wooded hills, rivers and castles fill southern Belgium’s outdoor region.",
+    "source": "https://en.wikipedia.org/wiki/Ardennes"
+  },
+  {
+    "id": "antwerp-zoo",
+    "name": "Antwerp Zoo",
+    "city": "Antwerp",
+    "chapter": "Visit",
+    "lat": 51.2162,
+    "lng": 4.423,
+    "precision": "venue",
+    "description": "One of the world’s older zoos sits beside Antwerp Central Station.",
+    "source": "https://en.wikipedia.org/wiki/Antwerp_Zoo"
+  },
+  {
+    "id": "hautes-fagnes",
+    "name": "High Fens",
+    "city": "Waimes area",
+    "chapter": "Visit",
+    "lat": 50.52,
+    "lng": 6.08,
+    "precision": "city",
+    "description": "Boardwalks cross peat bog plateaus in eastern Belgium’s nature park.",
+    "source": "https://en.wikipedia.org/wiki/High_Fens"
+  },
+  {
+    "id": "chocolate-sablon",
+    "name": "Sablon chocolate shops",
+    "city": "Brussels",
+    "chapter": "Foods",
+    "lat": 50.838,
+    "lng": 4.357,
+    "precision": "city",
+    "description": "Praline boutiques cluster around Place du Grand Sablon.",
+    "source": "https://en.wikipedia.org/wiki/Sablon,_Brussels"
+  },
+  {
+    "id": "waffles-brussels",
+    "name": "Brussels waffle stands",
+    "city": "Brussels",
+    "chapter": "Foods",
+    "lat": 50.846,
+    "lng": 4.352,
+    "precision": "city",
+    "description": "Street stands serve Brussels-style waffles with toppings near the Grand-Place.",
+    "source": "https://en.wikipedia.org/wiki/Brussels_waffle"
+  },
+  {
+    "id": "antwerp-eat-street",
+    "name": "Vlaeykensgang & nearby cafés",
+    "city": "Antwerp",
+    "chapter": "Foods",
+    "lat": 51.219,
+    "lng": 4.402,
+    "precision": "city",
+    "description": "Alleys and squares near the cathedral hold cafés and Belgian fries stands.",
+    "source": "https://en.wikipedia.org/wiki/Vlaeykensgang"
+  },
+  {
+    "id": "ghent-food",
+    "name": "Ghent Vrijdagmarkt eateries",
+    "city": "Ghent",
+    "chapter": "Foods",
+    "lat": 51.057,
+    "lng": 3.726,
+    "precision": "city",
+    "description": "Squares around Vrijdagmarkt fill with terraces serving Flemish classics.",
+    "source": "https://en.wikipedia.org/wiki/Vrijdagmarkt_(Ghent)"
+  },
+  {
+    "id": "liege-waffles",
+    "name": "Liège market snacks",
+    "city": "Liège",
+    "chapter": "Foods",
+    "lat": 50.642,
+    "lng": 5.572,
+    "precision": "city",
+    "description": "Liège-style waffles and market stalls cluster around the historic centre.",
+    "source": "https://en.wikipedia.org/wiki/Li%C3%A8ge_waffle"
+  },
+  {
+    "id": "tomorrowland",
+    "name": "Tomorrowland",
+    "city": "Boom",
+    "chapter": "Seasonal",
+    "lat": 51.088,
+    "lng": 4.38,
+    "precision": "venue",
+    "description": "A large electronic-music festival held at De Schorre park, usually across July weekends.",
+    "source": "https://en.wikipedia.org/wiki/Tomorrowland_(festival)",
+    "seasonal": true,
+    "seasonal_label": "Tomorrowland"
+  }
+]

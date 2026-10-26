@@ -1,0 +1,180 @@
+[
+  {
+    "id": "statue-of-liberty",
+    "name": "Statue of Liberty",
+    "city": "New York",
+    "chapter": "Monuments",
+    "lat": 40.6892,
+    "lng": -74.0445,
+    "precision": "venue",
+    "description": "A copper colossus on Liberty Island greets New York Harbour. Ferry tickets include pedestal or crown options when available.",
+    "source": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+  },
+  {
+    "id": "lincoln-memorial",
+    "name": "Lincoln Memorial",
+    "city": "Washington, D.C.",
+    "chapter": "Monuments",
+    "lat": 38.8893,
+    "lng": -77.0502,
+    "precision": "venue",
+    "description": "A marble temple on the National Mall holds a seated Lincoln facing the Reflecting Pool.",
+    "source": "https://en.wikipedia.org/wiki/Lincoln_Memorial"
+  },
+  {
+    "id": "golden-gate",
+    "name": "Golden Gate Bridge",
+    "city": "San Francisco",
+    "chapter": "Monuments",
+    "lat": 37.8199,
+    "lng": -122.4783,
+    "precision": "venue",
+    "description": "An Art Deco suspension bridge spans the Golden Gate strait in international orange.",
+    "source": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+  },
+  {
+    "id": "independence-hall",
+    "name": "Independence Hall",
+    "city": "Philadelphia",
+    "chapter": "Monuments",
+    "lat": 39.9489,
+    "lng": -75.15,
+    "precision": "venue",
+    "description": "The Georgian hall where the Declaration and Constitution were debated stands in Independence National Historical Park.",
+    "source": "https://en.wikipedia.org/wiki/Independence_Hall"
+  },
+  {
+    "id": "gateway-arch",
+    "name": "Gateway Arch",
+    "city": "St. Louis",
+    "chapter": "Monuments",
+    "lat": 38.6247,
+    "lng": -90.1848,
+    "precision": "venue",
+    "description": "A stainless-steel arch rises on the Mississippi riverfront as a westward-expansion memorial.",
+    "source": "https://en.wikipedia.org/wiki/Gateway_Arch"
+  },
+  {
+    "id": "grand-canyon",
+    "name": "Grand Canyon South Rim",
+    "city": "Grand Canyon Village",
+    "chapter": "Visit",
+    "lat": 36.0544,
+    "lng": -112.1401,
+    "precision": "venue",
+    "description": "Layered cliffs drop to the Colorado River. South Rim viewpoints are open year-round with shuttle links.",
+    "source": "https://en.wikipedia.org/wiki/Grand_Canyon"
+  },
+  {
+    "id": "yellowstone",
+    "name": "Yellowstone National Park",
+    "city": "Wyoming",
+    "chapter": "Visit",
+    "lat": 44.428,
+    "lng": -110.5885,
+    "precision": "city",
+    "description": "Geysers, hot springs and wildlife fill the world’s first national park across three states.",
+    "source": "https://en.wikipedia.org/wiki/Yellowstone_National_Park"
+  },
+  {
+    "id": "central-park",
+    "name": "Central Park",
+    "city": "New York",
+    "chapter": "Visit",
+    "lat": 40.7829,
+    "lng": -73.9654,
+    "precision": "venue",
+    "description": "A vast designed park of lakes, meadows and paths runs through Manhattan.",
+    "source": "https://en.wikipedia.org/wiki/Central_Park"
+  },
+  {
+    "id": "yosemite",
+    "name": "Yosemite Valley",
+    "city": "Yosemite",
+    "chapter": "Visit",
+    "lat": 37.7459,
+    "lng": -119.5936,
+    "precision": "venue",
+    "description": "Granite walls, waterfalls and meadows fill Yosemite Valley’s classic viewpoints.",
+    "source": "https://en.wikipedia.org/wiki/Yosemite_Valley"
+  },
+  {
+    "id": "french-quarter",
+    "name": "French Quarter",
+    "city": "New Orleans",
+    "chapter": "Visit",
+    "lat": 29.9584,
+    "lng": -90.0644,
+    "precision": "city",
+    "description": "Colourful galleries and iron balconies line streets around Jackson Square.",
+    "source": "https://en.wikipedia.org/wiki/French_Quarter"
+  },
+  {
+    "id": "chelsea-market",
+    "name": "Chelsea Market",
+    "city": "New York",
+    "chapter": "Foods",
+    "lat": 40.7424,
+    "lng": -74.0061,
+    "precision": "venue",
+    "description": "A food hall in a former biscuit factory sells global counters and grocery stalls.",
+    "source": "https://en.wikipedia.org/wiki/Chelsea_Market"
+  },
+  {
+    "id": "pike-place",
+    "name": "Pike Place Market",
+    "city": "Seattle",
+    "chapter": "Foods",
+    "lat": 47.6097,
+    "lng": -122.3425,
+    "precision": "venue",
+    "description": "A historic hillside market famous for fish tosses, flowers and local produce.",
+    "source": "https://en.wikipedia.org/wiki/Pike_Place_Market"
+  },
+  {
+    "id": "reading-terminal",
+    "name": "Reading Terminal Market",
+    "city": "Philadelphia",
+    "chapter": "Foods",
+    "lat": 39.953,
+    "lng": -75.159,
+    "precision": "venue",
+    "description": "An indoor market under the former train shed with Amish bakeries and cheesesteaks.",
+    "source": "https://en.wikipedia.org/wiki/Reading_Terminal_Market"
+  },
+  {
+    "id": "ferry-building",
+    "name": "Ferry Building Marketplace",
+    "city": "San Francisco",
+    "chapter": "Foods",
+    "lat": 37.7955,
+    "lng": -122.3937,
+    "precision": "venue",
+    "description": "Bayfront stalls and restaurants fill the restored ferry terminal.",
+    "source": "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building"
+  },
+  {
+    "id": "french-market-nola",
+    "name": "French Market",
+    "city": "New Orleans",
+    "chapter": "Foods",
+    "lat": 29.96,
+    "lng": -90.06,
+    "precision": "venue",
+    "description": "Open-air stalls and cafés stretch along the Mississippi edge of the French Quarter.",
+    "source": "https://en.wikipedia.org/wiki/French_Market"
+  },
+  {
+    "id": "mardi-gras",
+    "name": "Mardi Gras",
+    "city": "New Orleans",
+    "chapter": "Seasonal",
+    "lat": 29.95,
+    "lng": -90.07,
+    "precision": "city",
+    "description": "Parades, throws and balls fill New Orleans in the carnival season ending on Fat Tuesday.",
+    "source": "https://en.wikipedia.org/wiki/Mardi_Gras_in_New_Orleans",
+    "seasonal": true,
+    "seasonal_label": "Mardi Gras"
+  }
+]

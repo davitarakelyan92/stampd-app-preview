@@ -1,0 +1,180 @@
+[
+  {
+    "id": "wawel",
+    "name": "Wawel Castle",
+    "city": "Kraków",
+    "chapter": "Monuments",
+    "lat": 50.054,
+    "lng": 19.935,
+    "precision": "venue",
+    "description": "A royal castle and cathedral crown a hill above the Vistula in Kraków.",
+    "source": "https://en.wikipedia.org/wiki/Wawel_Castle"
+  },
+  {
+    "id": "warsaw-old-town",
+    "name": "Warsaw Old Town",
+    "city": "Warsaw",
+    "chapter": "Monuments",
+    "lat": 52.249,
+    "lng": 21.012,
+    "precision": "city",
+    "description": "Rebuilt historic façades surround the Castle Square and Market Square after wartime destruction.",
+    "source": "https://en.wikipedia.org/wiki/Warsaw_Old_Town"
+  },
+  {
+    "id": "malbork",
+    "name": "Malbork Castle",
+    "city": "Malbork",
+    "chapter": "Monuments",
+    "lat": 54.039,
+    "lng": 19.028,
+    "precision": "venue",
+    "description": "A vast brick Teutonic fortress on the Nogat river, among the largest castles by area.",
+    "source": "https://en.wikipedia.org/wiki/Malbork_Castle"
+  },
+  {
+    "id": "gdansk-neptune",
+    "name": "Neptune’s Fountain",
+    "city": "Gdańsk",
+    "chapter": "Monuments",
+    "lat": 54.348,
+    "lng": 18.653,
+    "precision": "venue",
+    "description": "A landmark fountain stands on Długi Targ in Gdańsk’s reconstructed main street.",
+    "source": "https://en.wikipedia.org/wiki/Neptune%27s_Fountain,_Gda%C5%84sk"
+  },
+  {
+    "id": "wieliczka",
+    "name": "Wieliczka Salt Mine",
+    "city": "Wieliczka",
+    "chapter": "Monuments",
+    "lat": 49.983,
+    "lng": 20.056,
+    "precision": "venue",
+    "description": "Underground chapels and chambers carved in salt south of Kraków.",
+    "source": "https://en.wikipedia.org/wiki/Wieliczka_Salt_Mine"
+  },
+  {
+    "id": "tatra",
+    "name": "Tatra National Park",
+    "city": "Zakopane area",
+    "chapter": "Visit",
+    "lat": 49.25,
+    "lng": 19.95,
+    "precision": "city",
+    "description": "Alpine peaks and valleys on the Polish–Slovak border with busy trailheads from Zakopane.",
+    "source": "https://en.wikipedia.org/wiki/Tatra_National_Park_(Poland)"
+  },
+  {
+    "id": "bialowieza",
+    "name": "Białowieża Forest",
+    "city": "Białowieża",
+    "chapter": "Visit",
+    "lat": 52.72,
+    "lng": 23.87,
+    "precision": "city",
+    "description": "Ancient woodland shared with Belarus, known for European bison.",
+    "source": "https://en.wikipedia.org/wiki/Bia%C5%82owie%C5%BCa_Forest"
+  },
+  {
+    "id": "sopot-pier",
+    "name": "Sopot Pier",
+    "city": "Sopot",
+    "chapter": "Visit",
+    "lat": 54.445,
+    "lng": 18.57,
+    "precision": "venue",
+    "description": "A long wooden pier stretches into the Baltic from the resort town of Sopot.",
+    "source": "https://en.wikipedia.org/wiki/Sopot_Pier"
+  },
+  {
+    "id": "wroclaw-dwarfs",
+    "name": "Wrocław market square",
+    "city": "Wrocław",
+    "chapter": "Visit",
+    "lat": 51.11,
+    "lng": 17.032,
+    "precision": "venue",
+    "description": "Colourful townhouses ring a large Rynek dotted with bronze dwarf statues.",
+    "source": "https://en.wikipedia.org/wiki/Market_Square,_Wroc%C5%82aw"
+  },
+  {
+    "id": "zakopane-krupowki",
+    "name": "Krupówki Street",
+    "city": "Zakopane",
+    "chapter": "Visit",
+    "lat": 49.299,
+    "lng": 19.949,
+    "precision": "venue",
+    "description": "Zakopane’s main pedestrian street fills with cafés and mountain-gear shops.",
+    "source": "https://en.wikipedia.org/wiki/Zakopane"
+  },
+  {
+    "id": "krakow-cloth-hall",
+    "name": "Sukiennice food & stalls",
+    "city": "Kraków",
+    "chapter": "Foods",
+    "lat": 50.0617,
+    "lng": 19.9373,
+    "precision": "venue",
+    "description": "The Cloth Hall’s arcades and nearby stalls sell obwarzanek and regional snacks on the Main Square.",
+    "source": "https://en.wikipedia.org/wiki/Krak%C3%B3w_Cloth_Hall"
+  },
+  {
+    "id": "warsaw-halahala",
+    "name": "Hala Koszyki",
+    "city": "Warsaw",
+    "chapter": "Foods",
+    "lat": 52.223,
+    "lng": 21.01,
+    "precision": "venue",
+    "description": "A restored market hall in Warsaw hosts restaurants and food counters.",
+    "source": "https://en.wikipedia.org/wiki/Koszyki_Hall"
+  },
+  {
+    "id": "gdansk-olong",
+    "name": "Oliwa & seaside smoked fish",
+    "city": "Gdańsk area",
+    "chapter": "Foods",
+    "lat": 54.41,
+    "lng": 18.57,
+    "precision": "city",
+    "description": "Baltic smoked-fish stands and pier snacks are common along the Tri-City coast.",
+    "source": "https://en.wikipedia.org/wiki/Gda%C5%84sk"
+  },
+  {
+    "id": "poznan-stary",
+    "name": "Stary Browar & Old Market eateries",
+    "city": "Poznań",
+    "chapter": "Foods",
+    "lat": 52.408,
+    "lng": 16.934,
+    "precision": "city",
+    "description": "Poznań’s old market square and nearby halls offer pierogi and St. Martin’s croissants in season.",
+    "source": "https://en.wikipedia.org/wiki/Pozna%C5%84"
+  },
+  {
+    "id": "lublin-market",
+    "name": "Lublin Old Town cafés",
+    "city": "Lublin",
+    "chapter": "Foods",
+    "lat": 51.248,
+    "lng": 22.57,
+    "precision": "city",
+    "description": "Cafés and regional kitchens cluster in Lublin’s compact historic core.",
+    "source": "https://en.wikipedia.org/wiki/Lublin"
+  },
+  {
+    "id": "wianki",
+    "name": "Wianki Festival",
+    "city": "Kraków",
+    "chapter": "Seasonal",
+    "lat": 50.054,
+    "lng": 19.93,
+    "precision": "approximate",
+    "description": "Midsummer wreath celebrations and concerts by the Vistula, usually around late June.",
+    "source": "https://en.wikipedia.org/wiki/Wianki",
+    "seasonal": true,
+    "seasonal_label": "Wianki"
+  }
+]

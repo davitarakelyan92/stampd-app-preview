@@ -1,0 +1,180 @@
+[
+  {
+    "id": "charles-bridge",
+    "name": "Charles Bridge",
+    "city": "Prague",
+    "chapter": "Monuments",
+    "lat": 50.0865,
+    "lng": 14.4114,
+    "precision": "venue",
+    "description": "A historic stone bridge lined with statues links Prague’s Old Town and Lesser Town over the Vltava.",
+    "source": "https://en.wikipedia.org/wiki/Charles_Bridge"
+  },
+  {
+    "id": "prague-castle",
+    "name": "Prague Castle",
+    "city": "Prague",
+    "chapter": "Monuments",
+    "lat": 50.0911,
+    "lng": 14.4016,
+    "precision": "venue",
+    "description": "A vast castle complex crowns the hill with St. Vitus Cathedral and palace courtyards.",
+    "source": "https://en.wikipedia.org/wiki/Prague_Castle"
+  },
+  {
+    "id": "old-town-hall-prague",
+    "name": "Old Town Hall Astronomical Clock",
+    "city": "Prague",
+    "chapter": "Monuments",
+    "lat": 50.087,
+    "lng": 14.4208,
+    "precision": "venue",
+    "description": "The medieval astronomical clock draws hourly crowds on Old Town Square.",
+    "source": "https://en.wikipedia.org/wiki/Prague_astronomical_clock"
+  },
+  {
+    "id": "cesky-krumlov-castle",
+    "name": "Český Krumlov Castle",
+    "city": "Český Krumlov",
+    "chapter": "Monuments",
+    "lat": 48.8127,
+    "lng": 14.3175,
+    "precision": "venue",
+    "description": "A riverside castle and baroque theatre overlook the winding Vltava in South Bohemia.",
+    "source": "https://en.wikipedia.org/wiki/%C4%8Cesk%C3%BD_Krumlov_Castle"
+  },
+  {
+    "id": "kutna-hora-bone",
+    "name": "Sedlec Ossuary",
+    "city": "Kutná Hora",
+    "chapter": "Monuments",
+    "lat": 49.961,
+    "lng": 15.288,
+    "precision": "venue",
+    "description": "A chapel decorated with human bones sits beneath Sedlec’s cemetery church.",
+    "source": "https://en.wikipedia.org/wiki/Sedlec_Ossuary"
+  },
+  {
+    "id": "bohemian-switzerland",
+    "name": "Bohemian Switzerland",
+    "city": "Hřensko area",
+    "chapter": "Visit",
+    "lat": 50.875,
+    "lng": 14.35,
+    "precision": "city",
+    "description": "Sandstone towers and gorges fill a national park shared with Germany’s Saxon Switzerland.",
+    "source": "https://en.wikipedia.org/wiki/Bohemian_Switzerland"
+  },
+  {
+    "id": "karlstejn",
+    "name": "Karlštejn Castle surroundings",
+    "city": "Karlštejn",
+    "chapter": "Visit",
+    "lat": 49.939,
+    "lng": 14.188,
+    "precision": "venue",
+    "description": "A Gothic castle above a village west of Prague, popular for day hikes and tours.",
+    "source": "https://en.wikipedia.org/wiki/Karl%C5%A1tejn"
+  },
+  {
+    "id": "moravian-karst",
+    "name": "Moravian Karst",
+    "city": "Blansko area",
+    "chapter": "Visit",
+    "lat": 49.37,
+    "lng": 16.72,
+    "precision": "city",
+    "description": "Caves and the Macocha gorge draw visitors north of Brno.",
+    "source": "https://en.wikipedia.org/wiki/Moravian_Karst"
+  },
+  {
+    "id": "lednice",
+    "name": "Lednice–Valtice Cultural Landscape",
+    "city": "Lednice",
+    "chapter": "Visit",
+    "lat": 48.8,
+    "lng": 16.8,
+    "precision": "city",
+    "description": "Palaces, parks and follies form a designed landscape in South Moravia.",
+    "source": "https://en.wikipedia.org/wiki/Lednice%E2%80%93Valtice_Cultural_Landscape"
+  },
+  {
+    "id": "petrin",
+    "name": "Petřín Hill",
+    "city": "Prague",
+    "chapter": "Visit",
+    "lat": 50.083,
+    "lng": 14.395,
+    "precision": "venue",
+    "description": "Gardens, a lookout tower and funicular sit above Malá Strana.",
+    "source": "https://en.wikipedia.org/wiki/Pet%C5%99%C3%ADn"
+  },
+  {
+    "id": "havelske",
+    "name": "Havel’s Market",
+    "city": "Prague",
+    "chapter": "Foods",
+    "lat": 50.086,
+    "lng": 14.421,
+    "precision": "venue",
+    "description": "A central open market sells produce, flowers and snacks near Old Town.",
+    "source": "https://en.wikipedia.org/wiki/Prague"
+  },
+  {
+    "id": "naplavka",
+    "name": "Náplavka farmers’ market",
+    "city": "Prague",
+    "chapter": "Foods",
+    "lat": 50.068,
+    "lng": 14.414,
+    "precision": "venue",
+    "description": "Weekend stalls line the Vltava embankment with local producers and street food.",
+    "source": "https://en.wikipedia.org/wiki/Ra%C5%A1%C3%ADn_Embankment"
+  },
+  {
+    "id": "brno-market",
+    "name": "Zelný trh",
+    "city": "Brno",
+    "chapter": "Foods",
+    "lat": 49.192,
+    "lng": 16.609,
+    "precision": "venue",
+    "description": "Brno’s cabbage market square has hosted produce sellers for centuries.",
+    "source": "https://en.wikipedia.org/wiki/Zeln%C3%BD_trh"
+  },
+  {
+    "id": "plzen-brewery",
+    "name": "Pilsner Urquell Brewery",
+    "city": "Plzeň",
+    "chapter": "Foods",
+    "lat": 49.747,
+    "lng": 13.386,
+    "precision": "venue",
+    "description": "The birthplace brewery of pale lager offers tours and tastings in Plzeň.",
+    "source": "https://en.wikipedia.org/wiki/Pilsner_Urquell_Brewery"
+  },
+  {
+    "id": "ostrava-food",
+    "name": "Ostrava city market halls",
+    "city": "Ostrava",
+    "chapter": "Foods",
+    "lat": 49.835,
+    "lng": 18.292,
+    "precision": "city",
+    "description": "Market halls and pubs serve Silesian and Czech classics in Ostrava’s centre.",
+    "source": "https://en.wikipedia.org/wiki/Ostrava"
+  },
+  {
+    "id": "prague-signal",
+    "name": "Signal Festival",
+    "city": "Prague",
+    "chapter": "Seasonal",
+    "lat": 50.087,
+    "lng": 14.42,
+    "precision": "city",
+    "description": "An autumn festival of light art installations across Prague streets and façades.",
+    "source": "https://en.wikipedia.org/wiki/Signal_Festival",
+    "seasonal": true,
+    "seasonal_label": "Signal Festival"
+  }
+]

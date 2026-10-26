@@ -1,0 +1,180 @@
+[
+  {
+    "id": "rijksmuseum",
+    "name": "Rijksmuseum",
+    "city": "Amsterdam",
+    "chapter": "Monuments",
+    "lat": 52.36,
+    "lng": 4.8852,
+    "precision": "venue",
+    "description": "The Netherlands’ national museum sits on Museumplein with masters from Rembrandt to Vermeer.",
+    "source": "https://en.wikipedia.org/wiki/Rijksmuseum"
+  },
+  {
+    "id": "anne-frank-house",
+    "name": "Anne Frank House",
+    "city": "Amsterdam",
+    "chapter": "Monuments",
+    "lat": 52.3752,
+    "lng": 4.884,
+    "precision": "venue",
+    "description": "The canal-side hiding place where Anne Frank wrote her diary is now a museum with timed tickets.",
+    "source": "https://en.wikipedia.org/wiki/Anne_Frank_House"
+  },
+  {
+    "id": "dom-utrecht",
+    "name": "Dom Tower",
+    "city": "Utrecht",
+    "chapter": "Monuments",
+    "lat": 52.0907,
+    "lng": 5.1214,
+    "precision": "venue",
+    "description": "The Netherlands’ tallest church tower rises above Utrecht’s canals. Climbs give a view over the Dom square.",
+    "source": "https://en.wikipedia.org/wiki/Dom_Tower_of_Utrecht"
+  },
+  {
+    "id": "kinderdijk",
+    "name": "Kinderdijk windmills",
+    "city": "Kinderdijk",
+    "chapter": "Monuments",
+    "lat": 51.882,
+    "lng": 4.633,
+    "precision": "venue",
+    "description": "A row of historic windmills stands on polder canals southeast of Rotterdam. Paths link visitor mills.",
+    "source": "https://en.wikipedia.org/wiki/Kinderdijk"
+  },
+  {
+    "id": "palace-het-loo",
+    "name": "Het Loo Palace",
+    "city": "Apeldoorn",
+    "chapter": "Monuments",
+    "lat": 52.234,
+    "lng": 5.946,
+    "precision": "venue",
+    "description": "A Dutch royal palace with formal gardens and museum interiors in Gelderland.",
+    "source": "https://en.wikipedia.org/wiki/Het_Loo_Palace"
+  },
+  {
+    "id": "jordaan",
+    "name": "Jordaan canals",
+    "city": "Amsterdam",
+    "chapter": "Visit",
+    "lat": 52.375,
+    "lng": 4.88,
+    "precision": "city",
+    "description": "Narrow canals, cafés and courtyards make the Jordaan a favourite walking neighbourhood.",
+    "source": "https://en.wikipedia.org/wiki/Jordaan"
+  },
+  {
+    "id": "keukenhof",
+    "name": "Keukenhof",
+    "city": "Lisse",
+    "chapter": "Visit",
+    "lat": 52.271,
+    "lng": 4.546,
+    "precision": "venue",
+    "description": "Seasonal tulip gardens open each spring with vast flower displays near Schiphol.",
+    "source": "https://en.wikipedia.org/wiki/Keukenhof"
+  },
+  {
+    "id": "giethoorn",
+    "name": "Giethoorn",
+    "city": "Giethoorn",
+    "chapter": "Visit",
+    "lat": 52.74,
+    "lng": 6.078,
+    "precision": "city",
+    "description": "A village of canals and footbridges where boats replace most cars.",
+    "source": "https://en.wikipedia.org/wiki/Giethoorn"
+  },
+  {
+    "id": "rotterdam-markthal",
+    "name": "Markthal exterior",
+    "city": "Rotterdam",
+    "chapter": "Visit",
+    "lat": 51.92,
+    "lng": 4.487,
+    "precision": "venue",
+    "description": "A horseshoe market hall with a mural ceiling anchors Rotterdam’s Laurenskwartier.",
+    "source": "https://en.wikipedia.org/wiki/Markthal"
+  },
+  {
+    "id": "zaanse-schans",
+    "name": "Zaanse Schans",
+    "city": "Zaandam",
+    "chapter": "Visit",
+    "lat": 52.473,
+    "lng": 4.818,
+    "precision": "venue",
+    "description": "A riverside open-air ensemble of windmills and wooden houses north of Amsterdam.",
+    "source": "https://en.wikipedia.org/wiki/Zaanse_Schans"
+  },
+  {
+    "id": "albert-cuyp",
+    "name": "Albert Cuyp Market",
+    "city": "Amsterdam",
+    "chapter": "Foods",
+    "lat": 52.356,
+    "lng": 4.895,
+    "precision": "venue",
+    "description": "Amsterdam’s busy street market sells stroopwafels, cheese and international snacks.",
+    "source": "https://en.wikipedia.org/wiki/Albert_Cuyp_Market"
+  },
+  {
+    "id": "markthal-food",
+    "name": "Markthal food stalls",
+    "city": "Rotterdam",
+    "chapter": "Foods",
+    "lat": 51.92,
+    "lng": 4.487,
+    "precision": "venue",
+    "description": "Inside Rotterdam’s Markthal, stalls and restaurants serve under the arched apartments.",
+    "source": "https://en.wikipedia.org/wiki/Markthal"
+  },
+  {
+    "id": "hague-market",
+    "name": "De Haagse Markt",
+    "city": "The Hague",
+    "chapter": "Foods",
+    "lat": 52.068,
+    "lng": 4.31,
+    "precision": "venue",
+    "description": "One of the largest street markets in Europe sells produce and street food in The Hague.",
+    "source": "https://en.wikipedia.org/wiki/Haagse_Markt"
+  },
+  {
+    "id": "utrecht-foodhall",
+    "name": "Foodhallen Utrecht",
+    "city": "Utrecht",
+    "chapter": "Foods",
+    "lat": 52.086,
+    "lng": 5.113,
+    "precision": "venue",
+    "description": "A food-hall concept in Utrecht gathers casual kitchens under one roof.",
+    "source": "https://en.wikipedia.org/wiki/Utrecht"
+  },
+  {
+    "id": "leiden-market",
+    "name": "Leiden market on the Rhine",
+    "city": "Leiden",
+    "chapter": "Foods",
+    "lat": 52.158,
+    "lng": 4.493,
+    "precision": "venue",
+    "description": "Canal-side market stalls fill Leiden’s historic centre on market days.",
+    "source": "https://en.wikipedia.org/wiki/Leiden"
+  },
+  {
+    "id": "kings-day",
+    "name": "King’s Day",
+    "city": "Amsterdam",
+    "chapter": "Seasonal",
+    "lat": 52.37,
+    "lng": 4.89,
+    "precision": "city",
+    "description": "Orange-clad flea markets and street parties fill Dutch cities each 27 April for Koningsdag.",
+    "source": "https://en.wikipedia.org/wiki/Koningsdag",
+    "seasonal": true,
+    "seasonal_label": "King’s Day"
+  }
+]

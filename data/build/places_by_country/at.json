@@ -1,0 +1,180 @@
+[
+  {
+    "id": "schonbrunn",
+    "name": "Schönbrunn Palace",
+    "city": "Vienna",
+    "chapter": "Monuments",
+    "lat": 48.1845,
+    "lng": 16.3122,
+    "precision": "venue",
+    "description": "Habsburg summer palace with formal gardens and a hilltop Gloriette overlooking Vienna.",
+    "source": "https://en.wikipedia.org/wiki/Sch%C3%B6nbrunn_Palace"
+  },
+  {
+    "id": "st-stephens-vienna",
+    "name": "St. Stephen’s Cathedral",
+    "city": "Vienna",
+    "chapter": "Monuments",
+    "lat": 48.2085,
+    "lng": 16.3731,
+    "precision": "venue",
+    "description": "Vienna’s Gothic cathedral with a patterned roof and south tower climb over Stephansplatz.",
+    "source": "https://en.wikipedia.org/wiki/St._Stephen%27s_Cathedral,_Vienna"
+  },
+  {
+    "id": "hofburg",
+    "name": "Hofburg",
+    "city": "Vienna",
+    "chapter": "Monuments",
+    "lat": 48.2058,
+    "lng": 16.3636,
+    "precision": "venue",
+    "description": "The imperial palace complex holds museums, the Spanish Riding School and presidential offices.",
+    "source": "https://en.wikipedia.org/wiki/Hofburg"
+  },
+  {
+    "id": "hohenwerfen",
+    "name": "Hohenwerfen Castle",
+    "city": "Werfen",
+    "chapter": "Monuments",
+    "lat": 47.482,
+    "lng": 13.188,
+    "precision": "venue",
+    "description": "A hilltop fortress above the Salzach valley, often paired with nearby ice-cave visits.",
+    "source": "https://en.wikipedia.org/wiki/Hohenwerfen_Castle"
+  },
+  {
+    "id": "melk-abbey",
+    "name": "Melk Abbey",
+    "city": "Melk",
+    "chapter": "Monuments",
+    "lat": 48.228,
+    "lng": 15.333,
+    "precision": "venue",
+    "description": "A baroque Benedictine abbey overlooks the Danube on the Wachau stretch.",
+    "source": "https://en.wikipedia.org/wiki/Melk_Abbey"
+  },
+  {
+    "id": "hallstatt",
+    "name": "Hallstatt",
+    "city": "Hallstatt",
+    "chapter": "Visit",
+    "lat": 47.5622,
+    "lng": 13.6493,
+    "precision": "city",
+    "description": "A lakeside village of Alpine houses mirrored in Hallstätter See. Paths climb to salt-mine views.",
+    "source": "https://en.wikipedia.org/wiki/Hallstatt"
+  },
+  {
+    "id": "salzburg-old-town",
+    "name": "Salzburg Old Town",
+    "city": "Salzburg",
+    "chapter": "Visit",
+    "lat": 47.8,
+    "lng": 13.045,
+    "precision": "city",
+    "description": "Baroque squares and fortress views fill Mozart’s birthplace city.",
+    "source": "https://en.wikipedia.org/wiki/Historic_Centre_of_the_City_of_Salzburg"
+  },
+  {
+    "id": "innsbruck-nordkette",
+    "name": "Nordkette",
+    "city": "Innsbruck",
+    "chapter": "Visit",
+    "lat": 47.286,
+    "lng": 11.38,
+    "precision": "venue",
+    "description": "Cable cars rise from Innsbruck to Alpine ridges overlooking the Inn valley.",
+    "source": "https://en.wikipedia.org/wiki/Nordkette"
+  },
+  {
+    "id": "wachau",
+    "name": "Wachau Valley",
+    "city": "Dürnstein area",
+    "chapter": "Visit",
+    "lat": 48.395,
+    "lng": 15.52,
+    "precision": "city",
+    "description": "Vineyard terraces and Danube villages between Melk and Krems.",
+    "source": "https://en.wikipedia.org/wiki/Wachau"
+  },
+  {
+    "id": "krimmler-waterfalls",
+    "name": "Krimml Waterfalls",
+    "city": "Krimml",
+    "chapter": "Visit",
+    "lat": 47.198,
+    "lng": 12.172,
+    "precision": "venue",
+    "description": "A high cascade series in Hohe Tauern National Park with stepped viewing paths.",
+    "source": "https://en.wikipedia.org/wiki/Krimml_Waterfalls"
+  },
+  {
+    "id": "naschmarkt",
+    "name": "Naschmarkt",
+    "city": "Vienna",
+    "chapter": "Foods",
+    "lat": 48.1985,
+    "lng": 16.3635,
+    "precision": "venue",
+    "description": "Vienna’s large outdoor market sells produce, spices and international street food.",
+    "source": "https://en.wikipedia.org/wiki/Naschmarkt"
+  },
+  {
+    "id": "cafe-central",
+    "name": "Café Central",
+    "city": "Vienna",
+    "chapter": "Foods",
+    "lat": 48.2103,
+    "lng": 16.3655,
+    "precision": "venue",
+    "description": "A grand café under vaulted ceilings in the Innere Stadt, known for cakes and coffeehouse culture.",
+    "source": "https://en.wikipedia.org/wiki/Caf%C3%A9_Central"
+  },
+  {
+    "id": "salzburg-market",
+    "name": "Grünmarkt Salzburg",
+    "city": "Salzburg",
+    "chapter": "Foods",
+    "lat": 47.799,
+    "lng": 13.0455,
+    "precision": "venue",
+    "description": "An open market by Universitätsplatz sells cheese, bread and mountain produce.",
+    "source": "https://en.wikipedia.org/wiki/Salzburg"
+  },
+  {
+    "id": "linz-market",
+    "name": "Linzer Bauernmarkt",
+    "city": "Linz",
+    "chapter": "Foods",
+    "lat": 48.306,
+    "lng": 14.286,
+    "precision": "venue",
+    "description": "Regional farmers’ stalls gather in Linz for produce and Linzer Torte cafés nearby.",
+    "source": "https://en.wikipedia.org/wiki/Linz"
+  },
+  {
+    "id": "graz-farmers",
+    "name": "Kaiser-Josef-Platz market",
+    "city": "Graz",
+    "chapter": "Foods",
+    "lat": 47.07,
+    "lng": 15.44,
+    "precision": "venue",
+    "description": "Graz’s long-running farmers’ market fills a central square with Styrian products.",
+    "source": "https://en.wikipedia.org/wiki/Graz"
+  },
+  {
+    "id": "salzburg-festival",
+    "name": "Salzburg Festival",
+    "city": "Salzburg",
+    "chapter": "Seasonal",
+    "lat": 47.798,
+    "lng": 13.042,
+    "precision": "city",
+    "description": "A summer festival of opera, drama and concerts across historic venues in Salzburg.",
+    "source": "https://en.wikipedia.org/wiki/Salzburg_Festival",
+    "seasonal": true,
+    "seasonal_label": "Salzburg Festival"
+  }
+]

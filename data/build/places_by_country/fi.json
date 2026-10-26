@@ -1,0 +1,180 @@
+[
+  {
+    "id": "helsinki-cathedral",
+    "name": "Helsinki Cathedral",
+    "city": "Helsinki",
+    "chapter": "Monuments",
+    "lat": 60.1704,
+    "lng": 24.9521,
+    "precision": "venue",
+    "description": "A white Lutheran cathedral with green domes crowns Senate Square.",
+    "source": "https://en.wikipedia.org/wiki/Helsinki_Cathedral"
+  },
+  {
+    "id": "suomenlinna",
+    "name": "Suomenlinna",
+    "city": "Helsinki",
+    "chapter": "Monuments",
+    "lat": 60.145,
+    "lng": 24.988,
+    "precision": "venue",
+    "description": "A sea fortress on islands off Helsinki, reached by short ferry.",
+    "source": "https://en.wikipedia.org/wiki/Suomenlinna"
+  },
+  {
+    "id": "turku-castle",
+    "name": "Turku Castle",
+    "city": "Turku",
+    "chapter": "Monuments",
+    "lat": 60.435,
+    "lng": 22.228,
+    "precision": "venue",
+    "description": "A medieval castle at the Aura river mouth with museum interiors.",
+    "source": "https://en.wikipedia.org/wiki/Turku_Castle"
+  },
+  {
+    "id": "tempelauki",
+    "name": "Temppeliaukio Church",
+    "city": "Helsinki",
+    "chapter": "Monuments",
+    "lat": 60.173,
+    "lng": 24.925,
+    "precision": "venue",
+    "description": "A modern church carved into bedrock with a copper dome roof.",
+    "source": "https://en.wikipedia.org/wiki/Temppeliaukio_Church"
+  },
+  {
+    "id": "oulanka-note",
+    "name": "Olavinlinna Castle",
+    "city": "Savonlinna",
+    "chapter": "Monuments",
+    "lat": 61.864,
+    "lng": 28.885,
+    "precision": "venue",
+    "description": "A lakeside medieval castle hosting an opera festival each summer.",
+    "source": "https://en.wikipedia.org/wiki/Olavinlinna"
+  },
+  {
+    "id": "lapland-rovaniemi",
+    "name": "Santa Claus Village area",
+    "city": "Rovaniemi",
+    "chapter": "Visit",
+    "lat": 66.543,
+    "lng": 25.847,
+    "precision": "city",
+    "description": "Arctic Circle visitor centre and nature gates north of Rovaniemi.",
+    "source": "https://en.wikipedia.org/wiki/Santa_Claus_Village"
+  },
+  {
+    "id": "lake-saimaa",
+    "name": "Lake Saimaa",
+    "city": "Savonlinna area",
+    "chapter": "Visit",
+    "lat": 61.7,
+    "lng": 28.5,
+    "precision": "city",
+    "description": "Finland’s large lake system with islands, ferries and summer cabins.",
+    "source": "https://en.wikipedia.org/wiki/Saimaa"
+  },
+  {
+    "id": "nuuksio",
+    "name": "Nuuksio National Park",
+    "city": "Espoo area",
+    "chapter": "Visit",
+    "lat": 60.31,
+    "lng": 24.5,
+    "precision": "city",
+    "description": "Lakes and trails within easy reach of Helsinki.",
+    "source": "https://en.wikipedia.org/wiki/Nuuksio_National_Park"
+  },
+  {
+    "id": "porvoo",
+    "name": "Porvoo old town",
+    "city": "Porvoo",
+    "chapter": "Visit",
+    "lat": 60.393,
+    "lng": 25.665,
+    "precision": "city",
+    "description": "Red riverside warehouses and wooden lanes east of Helsinki.",
+    "source": "https://en.wikipedia.org/wiki/Porvoo"
+  },
+  {
+    "id": "koli",
+    "name": "Koli National Park",
+    "city": "Lieksa area",
+    "chapter": "Visit",
+    "lat": 63.095,
+    "lng": 29.8,
+    "precision": "city",
+    "description": "Hilltop views over Lake Pielinen in North Karelia.",
+    "source": "https://en.wikipedia.org/wiki/Koli_National_Park"
+  },
+  {
+    "id": "vanha-kauppahalli",
+    "name": "Old Market Hall",
+    "city": "Helsinki",
+    "chapter": "Foods",
+    "lat": 60.166,
+    "lng": 24.953,
+    "precision": "venue",
+    "description": "Helsinki’s historic market hall by the South Harbour sells fish, cheese and lunch.",
+    "source": "https://en.wikipedia.org/wiki/Old_Market_Hall,_Helsinki"
+  },
+  {
+    "id": "kauppatori",
+    "name": "Helsinki Market Square",
+    "city": "Helsinki",
+    "chapter": "Foods",
+    "lat": 60.167,
+    "lng": 24.954,
+    "precision": "venue",
+    "description": "Outdoor harbour stalls sell berries, salmon soup and souvenirs in season.",
+    "source": "https://en.wikipedia.org/wiki/Market_Square,_Helsinki"
+  },
+  {
+    "id": "tampere-market",
+    "name": "Tampere Market Hall",
+    "city": "Tampere",
+    "chapter": "Foods",
+    "lat": 61.498,
+    "lng": 23.761,
+    "precision": "venue",
+    "description": "One of the Nordic region’s large indoor markets in Tampere’s centre.",
+    "source": "https://en.wikipedia.org/wiki/Tampere_Market_Hall"
+  },
+  {
+    "id": "turku-market",
+    "name": "Turku Market Hall",
+    "city": "Turku",
+    "chapter": "Foods",
+    "lat": 60.451,
+    "lng": 22.267,
+    "precision": "venue",
+    "description": "A classic market hall near Turku’s market square.",
+    "source": "https://en.wikipedia.org/wiki/Turku"
+  },
+  {
+    "id": "oulufood",
+    "name": "Oulu market square",
+    "city": "Oulu",
+    "chapter": "Foods",
+    "lat": 65.012,
+    "lng": 25.465,
+    "precision": "venue",
+    "description": "Northern city’s market square with seasonal stalls by the harbour.",
+    "source": "https://en.wikipedia.org/wiki/Oulu"
+  },
+  {
+    "id": "flow-festival",
+    "name": "Flow Festival",
+    "city": "Helsinki",
+    "chapter": "Seasonal",
+    "lat": 60.19,
+    "lng": 24.97,
+    "precision": "venue",
+    "description": "An August music and arts festival in Helsinki’s former power-plant grounds.",
+    "source": "https://en.wikipedia.org/wiki/Flow_Festival",
+    "seasonal": true,
+    "seasonal_label": "Flow Festival"
+  }
+]

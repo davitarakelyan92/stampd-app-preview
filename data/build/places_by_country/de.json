@@ -1,0 +1,180 @@
+[
+  {
+    "id": "brandenburg-gate",
+    "name": "Brandenburg Gate",
+    "city": "Berlin",
+    "chapter": "Monuments",
+    "lat": 52.5163,
+    "lng": 13.3777,
+    "precision": "venue",
+    "description": "Berlin’s neoclassical gate crowns Pariser Platz. The quadriga faces east along Unter den Linden.",
+    "source": "https://en.wikipedia.org/wiki/Brandenburg_Gate"
+  },
+  {
+    "id": "cologne-cathedral",
+    "name": "Cologne Cathedral",
+    "city": "Cologne",
+    "chapter": "Monuments",
+    "lat": 50.9413,
+    "lng": 6.9583,
+    "precision": "venue",
+    "description": "Twin Gothic spires dominate the Rhine skyline beside the main station. Climb for a view over the river.",
+    "source": "https://en.wikipedia.org/wiki/Cologne_Cathedral"
+  },
+  {
+    "id": "neuschwanstein",
+    "name": "Neuschwanstein Castle",
+    "city": "Hohenschwangau",
+    "chapter": "Monuments",
+    "lat": 47.5576,
+    "lng": 10.7498,
+    "precision": "venue",
+    "description": "Ludwig II’s fairy-tale castle rises above Alpine foothills. Tickets are timed; the gorge bridge gives the classic view.",
+    "source": "https://en.wikipedia.org/wiki/Neuschwanstein_Castle"
+  },
+  {
+    "id": "reichstag",
+    "name": "Reichstag Building",
+    "city": "Berlin",
+    "chapter": "Monuments",
+    "lat": 52.5186,
+    "lng": 13.3761,
+    "precision": "venue",
+    "description": "Germany’s parliament building is topped by a glass dome open to visitors with registration.",
+    "source": "https://en.wikipedia.org/wiki/Reichstag_building"
+  },
+  {
+    "id": "zwinger",
+    "name": "Zwinger",
+    "city": "Dresden",
+    "chapter": "Monuments",
+    "lat": 51.0531,
+    "lng": 13.734,
+    "precision": "venue",
+    "description": "Baroque courtyards and galleries form Dresden’s famous palace complex beside the Elbe.",
+    "source": "https://en.wikipedia.org/wiki/Zwinger"
+  },
+  {
+    "id": "museum-island",
+    "name": "Museum Island",
+    "city": "Berlin",
+    "chapter": "Visit",
+    "lat": 52.5169,
+    "lng": 13.3989,
+    "precision": "venue",
+    "description": "A cluster of museums fills an island in the Spree, including the Pergamon (with ongoing renovations).",
+    "source": "https://en.wikipedia.org/wiki/Museum_Island"
+  },
+  {
+    "id": "englischer-garten",
+    "name": "Englischer Garten",
+    "city": "Munich",
+    "chapter": "Visit",
+    "lat": 48.1642,
+    "lng": 11.6056,
+    "precision": "venue",
+    "description": "A vast city park with beer gardens, a Chinese tower and a riverside surfing wave.",
+    "source": "https://en.wikipedia.org/wiki/Englischer_Garten"
+  },
+  {
+    "id": "heidelberg-castle",
+    "name": "Heidelberg Castle",
+    "city": "Heidelberg",
+    "chapter": "Visit",
+    "lat": 49.4106,
+    "lng": 8.7153,
+    "precision": "venue",
+    "description": "Ruined red-sandstone terraces overlook the Neckar old town. Gardens and viewpoints surround the courtyards.",
+    "source": "https://en.wikipedia.org/wiki/Heidelberg_Castle"
+  },
+  {
+    "id": "romantic-rhine",
+    "name": "Rhine Gorge viewpoints",
+    "city": "St. Goar area",
+    "chapter": "Visit",
+    "lat": 50.15,
+    "lng": 7.7167,
+    "precision": "city",
+    "description": "Castles and vineyards line the Middle Rhine. Boat decks and hillside trails share the valley views.",
+    "source": "https://en.wikipedia.org/wiki/Rhine_Gorge"
+  },
+  {
+    "id": "hamburg-harbour",
+    "name": "Speicherstadt",
+    "city": "Hamburg",
+    "chapter": "Visit",
+    "lat": 53.5436,
+    "lng": 9.999,
+    "precision": "venue",
+    "description": "Red-brick warehouse canals form a UNESCO harbour district with museums and footbridges.",
+    "source": "https://en.wikipedia.org/wiki/Speicherstadt"
+  },
+  {
+    "id": "viktorialuise-market",
+    "name": "Markthalle Neun",
+    "city": "Berlin",
+    "chapter": "Foods",
+    "lat": 52.499,
+    "lng": 13.425,
+    "precision": "venue",
+    "description": "A Kreuzberg market hall hosts street-food Thursday and weekday produce stalls.",
+    "source": "https://en.wikipedia.org/wiki/Markthalle_Neun"
+  },
+  {
+    "id": "viktualienmarkt",
+    "name": "Viktualienmarkt",
+    "city": "Munich",
+    "chapter": "Foods",
+    "lat": 48.1351,
+    "lng": 11.5762,
+    "precision": "venue",
+    "description": "Munich’s open-air food market surrounds a beer garden with cheese, sausage and flower stalls.",
+    "source": "https://en.wikipedia.org/wiki/Viktualienmarkt"
+  },
+  {
+    "id": "kleinmarkthalle",
+    "name": "Kleinmarkthalle",
+    "city": "Frankfurt",
+    "chapter": "Foods",
+    "lat": 50.11,
+    "lng": 8.683,
+    "precision": "venue",
+    "description": "Frankfurt’s indoor market sells produce, sausages and seated snacks in the city centre.",
+    "source": "https://en.wikipedia.org/wiki/Kleinmarkthalle_Frankfurt"
+  },
+  {
+    "id": "schifferstadt-bratwurst",
+    "name": "Nuremberg Hauptmarkt",
+    "city": "Nuremberg",
+    "chapter": "Foods",
+    "lat": 49.454,
+    "lng": 11.077,
+    "precision": "venue",
+    "description": "The main market square is known for gingerbread, sausages and seasonal stalls beneath the Frauenkirche.",
+    "source": "https://en.wikipedia.org/wiki/Hauptmarkt"
+  },
+  {
+    "id": "hamburger-fischmarkt",
+    "name": "Hamburg Fish Market",
+    "city": "Hamburg",
+    "chapter": "Foods",
+    "lat": 53.545,
+    "lng": 9.953,
+    "precision": "venue",
+    "description": "Sunday morning fish auctions and stalls draw early crowds by the Elbe.",
+    "source": "https://en.wikipedia.org/wiki/Altona_Fish_Market"
+  },
+  {
+    "id": "oktoberfest",
+    "name": "Oktoberfest",
+    "city": "Munich",
+    "chapter": "Seasonal",
+    "lat": 48.131,
+    "lng": 11.55,
+    "precision": "venue",
+    "description": "Munich’s autumn beer festival fills Theresienwiese with tents, rides and traditional dress.",
+    "source": "https://en.wikipedia.org/wiki/Oktoberfest",
+    "seasonal": true,
+    "seasonal_label": "Oktoberfest"
+  }
+]

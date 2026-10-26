@@ -1,0 +1,180 @@
+[
+  {
+    "id": "parthenon",
+    "name": "Parthenon",
+    "city": "Athens",
+    "chapter": "Monuments",
+    "lat": 37.9715,
+    "lng": 23.7267,
+    "precision": "venue",
+    "description": "The Doric temple on the Acropolis still defines the Athens skyline. Marble columns and scaffolding share the hilltop site.",
+    "source": "https://en.wikipedia.org/wiki/Parthenon"
+  },
+  {
+    "id": "acropolis-museum",
+    "name": "Acropolis Museum",
+    "city": "Athens",
+    "chapter": "Monuments",
+    "lat": 37.9685,
+    "lng": 23.7285,
+    "precision": "venue",
+    "description": "A modern museum at the foot of the Acropolis displays sculptures with the rock visible through glass floors.",
+    "source": "https://en.wikipedia.org/wiki/Acropolis_Museum"
+  },
+  {
+    "id": "white-tower-thessaloniki",
+    "name": "White Tower",
+    "city": "Thessaloniki",
+    "chapter": "Monuments",
+    "lat": 40.6264,
+    "lng": 22.9484,
+    "precision": "venue",
+    "description": "Thessaloniki’s waterfront tower marks the harbour promenade. Inside, exhibits cover the city’s layered past.",
+    "source": "https://en.wikipedia.org/wiki/White_Tower_of_Thessaloniki"
+  },
+  {
+    "id": "palace-knossos",
+    "name": "Palace of Knossos",
+    "city": "Heraklion area",
+    "chapter": "Monuments",
+    "lat": 35.2978,
+    "lng": 25.1631,
+    "precision": "venue",
+    "description": "Reconstructed Minoan ruins sprawl on a hill near Heraklion. Red columns and fresco copies hint at Bronze Age Crete.",
+    "source": "https://en.wikipedia.org/wiki/Knossos"
+  },
+  {
+    "id": "epidaurus-theatre",
+    "name": "Theatre of Epidaurus",
+    "city": "Epidaurus",
+    "chapter": "Monuments",
+    "lat": 37.5961,
+    "lng": 23.0792,
+    "precision": "venue",
+    "description": "A remarkably preserved ancient theatre known for its acoustics. Stone seats climb an open hillside.",
+    "source": "https://en.wikipedia.org/wiki/Theatre_of_Epidaurus"
+  },
+  {
+    "id": "plaka",
+    "name": "Plaka",
+    "city": "Athens",
+    "chapter": "Visit",
+    "lat": 37.9725,
+    "lng": 23.7305,
+    "precision": "city",
+    "description": "Athens’ old neighbourhood climbs toward the Acropolis in neoclassical streets and tavernas.",
+    "source": "https://en.wikipedia.org/wiki/Plaka"
+  },
+  {
+    "id": "santorini-oia",
+    "name": "Oia",
+    "city": "Santorini",
+    "chapter": "Visit",
+    "lat": 36.4618,
+    "lng": 25.3753,
+    "precision": "city",
+    "description": "Whitewashed houses and blue domes cling to the caldera cliff. Sunsets draw crowds to the western terraces.",
+    "source": "https://en.wikipedia.org/wiki/Oia,_Greece"
+  },
+  {
+    "id": "navagio",
+    "name": "Navagio Beach",
+    "city": "Zakynthos",
+    "chapter": "Visit",
+    "lat": 37.8594,
+    "lng": 20.6247,
+    "precision": "venue",
+    "description": "A shipwreck rests on white sand at the foot of limestone cliffs. Most visitors arrive by boat.",
+    "source": "https://en.wikipedia.org/wiki/Navagio"
+  },
+  {
+    "id": "meteora",
+    "name": "Meteora",
+    "city": "Kalambaka area",
+    "chapter": "Visit",
+    "lat": 39.7217,
+    "lng": 21.6306,
+    "precision": "city",
+    "description": "Monasteries perch on sandstone pillars above the plain. Footpaths and roads link several active houses.",
+    "source": "https://en.wikipedia.org/wiki/Meteora"
+  },
+  {
+    "id": "rhodes-old-town",
+    "name": "Medieval City of Rhodes",
+    "city": "Rhodes",
+    "chapter": "Visit",
+    "lat": 36.4457,
+    "lng": 28.2236,
+    "precision": "city",
+    "description": "Fortified streets of the Knights’ town still hold inns, walls and harbourside towers.",
+    "source": "https://en.wikipedia.org/wiki/Medieval_City_of_Rhodes"
+  },
+  {
+    "id": "central-market-athens",
+    "name": "Athens Central Market",
+    "city": "Athens",
+    "chapter": "Foods",
+    "lat": 37.9805,
+    "lng": 23.7275,
+    "precision": "venue",
+    "description": "Varvakios agora sells meat, fish and produce under covered halls. Nearby eateries serve simple market meals.",
+    "source": "https://en.wikipedia.org/wiki/Central_Market_of_Athens"
+  },
+  {
+    "id": "monastiraki",
+    "name": "Monastiraki food streets",
+    "city": "Athens",
+    "chapter": "Foods",
+    "lat": 37.976,
+    "lng": 23.7258,
+    "precision": "city",
+    "description": "Souvlaki, loukoumades and cafés pack the lanes around Monastiraki Square beneath the Acropolis.",
+    "source": "https://en.wikipedia.org/wiki/Monastiraki"
+  },
+  {
+    "id": "modiano-market",
+    "name": "Modiano Market",
+    "city": "Thessaloniki",
+    "chapter": "Foods",
+    "lat": 40.635,
+    "lng": 22.941,
+    "precision": "venue",
+    "description": "A restored covered market in Thessaloniki hosts deli stalls and restaurants under arched roofs.",
+    "source": "https://en.wikipedia.org/wiki/Modiano_Market"
+  },
+  {
+    "id": "ladadika",
+    "name": "Ladadika",
+    "city": "Thessaloniki",
+    "chapter": "Foods",
+    "lat": 40.6355,
+    "lng": 22.9365,
+    "precision": "city",
+    "description": "Former oil warehouses turned into a dining quarter with meze tavernas and evening tables outdoors.",
+    "source": "https://en.wikipedia.org/wiki/Ladadika"
+  },
+  {
+    "id": "crete-chania-market",
+    "name": "Municipal Market of Chania",
+    "city": "Chania",
+    "chapter": "Foods",
+    "lat": 35.513,
+    "lng": 24.018,
+    "precision": "venue",
+    "description": "A cruciform market hall in Chania sells Cretan cheeses, herbs and fresh fish.",
+    "source": "https://en.wikipedia.org/wiki/Chania"
+  },
+  {
+    "id": "easter-corfu",
+    "name": "Corfu Easter",
+    "city": "Corfu",
+    "chapter": "Seasonal",
+    "lat": 39.6243,
+    "lng": 19.9217,
+    "precision": "city",
+    "description": "Corfu’s Orthodox Easter is known for pot-throwing from balconies and processions through the old town.",
+    "source": "https://en.wikipedia.org/wiki/Corfu_Easter",
+    "seasonal": true,
+    "seasonal_label": "Corfu Easter"
+  }
+]

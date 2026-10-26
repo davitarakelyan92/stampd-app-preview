@@ -1,0 +1,180 @@
+[
+  {
+    "id": "cn-tower",
+    "name": "CN Tower",
+    "city": "Toronto",
+    "chapter": "Monuments",
+    "lat": 43.6426,
+    "lng": -79.3871,
+    "precision": "venue",
+    "description": "A concrete communications tower with glass-floor lookouts above downtown Toronto.",
+    "source": "https://en.wikipedia.org/wiki/CN_Tower"
+  },
+  {
+    "id": "chateau-frontenac",
+    "name": "Château Frontenac",
+    "city": "Quebec City",
+    "chapter": "Monuments",
+    "lat": 46.812,
+    "lng": -71.205,
+    "precision": "venue",
+    "description": "A landmark railway hotel crowns the cliff above Old Québec’s terrasses.",
+    "source": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Frontenac"
+  },
+  {
+    "id": "parliament-ottawa",
+    "name": "Parliament Hill",
+    "city": "Ottawa",
+    "chapter": "Monuments",
+    "lat": 45.4236,
+    "lng": -75.7009,
+    "precision": "venue",
+    "description": "Gothic Revival parliament buildings overlook the Ottawa River with a Peace Tower.",
+    "source": "https://en.wikipedia.org/wiki/Parliament_Hill"
+  },
+  {
+    "id": "notre-dame-montreal",
+    "name": "Notre-Dame Basilica",
+    "city": "Montreal",
+    "chapter": "Monuments",
+    "lat": 45.5045,
+    "lng": -73.5563,
+    "precision": "venue",
+    "description": "A Gothic Revival basilica with a vividly coloured interior on Place d’Armes.",
+    "source": "https://en.wikipedia.org/wiki/Notre-Dame_Basilica_(Montreal)"
+  },
+  {
+    "id": "stanley-park-totems",
+    "name": "Stanley Park totem poles",
+    "city": "Vancouver",
+    "chapter": "Monuments",
+    "lat": 49.299,
+    "lng": -123.12,
+    "precision": "venue",
+    "description": "Coast Salish and other First Nations poles stand at Brockton Point in Stanley Park.",
+    "source": "https://en.wikipedia.org/wiki/Stanley_Park"
+  },
+  {
+    "id": "niagara-falls",
+    "name": "Niagara Falls (Horseshoe)",
+    "city": "Niagara Falls",
+    "chapter": "Visit",
+    "lat": 43.0799,
+    "lng": -79.0747,
+    "precision": "venue",
+    "description": "The Canadian Horseshoe Falls thunder into the Niagara River gorge.",
+    "source": "https://en.wikipedia.org/wiki/Niagara_Falls"
+  },
+  {
+    "id": "banff",
+    "name": "Banff National Park",
+    "city": "Banff",
+    "chapter": "Visit",
+    "lat": 51.1784,
+    "lng": -115.5708,
+    "precision": "city",
+    "description": "Rocky Mountain peaks, lakes and hot springs in Canada’s first national park.",
+    "source": "https://en.wikipedia.org/wiki/Banff_National_Park"
+  },
+  {
+    "id": "old-quebec",
+    "name": "Old Québec",
+    "city": "Quebec City",
+    "chapter": "Visit",
+    "lat": 46.813,
+    "lng": -71.207,
+    "precision": "city",
+    "description": "Fortified streets and terraces form a UNESCO historic district above the St. Lawrence.",
+    "source": "https://en.wikipedia.org/wiki/Old_Quebec"
+  },
+  {
+    "id": "capilano",
+    "name": "Capilano Suspension Bridge",
+    "city": "North Vancouver",
+    "chapter": "Visit",
+    "lat": 49.343,
+    "lng": -123.115,
+    "precision": "venue",
+    "description": "A pedestrian suspension bridge spans a rainforest canyon north of Vancouver.",
+    "source": "https://en.wikipedia.org/wiki/Capilano_Suspension_Bridge"
+  },
+  {
+    "id": "peggys-cove",
+    "name": "Peggy’s Cove",
+    "city": "Peggy's Cove",
+    "chapter": "Visit",
+    "lat": 44.493,
+    "lng": -63.918,
+    "precision": "venue",
+    "description": "A lighthouse sits on granite shoreline southwest of Halifax.",
+    "source": "https://en.wikipedia.org/wiki/Peggy%27s_Cove,_Nova_Scotia"
+  },
+  {
+    "id": "st-lawrence-market",
+    "name": "St. Lawrence Market",
+    "city": "Toronto",
+    "chapter": "Foods",
+    "lat": 43.6487,
+    "lng": -79.3715,
+    "precision": "venue",
+    "description": "A historic market south of downtown known for peameal bacon sandwiches and produce.",
+    "source": "https://en.wikipedia.org/wiki/St._Lawrence_Market"
+  },
+  {
+    "id": "granville-island",
+    "name": "Granville Island Public Market",
+    "city": "Vancouver",
+    "chapter": "Foods",
+    "lat": 49.271,
+    "lng": -123.134,
+    "precision": "venue",
+    "description": "An indoor market under the Granville Bridge sells produce and ready-to-eat counters.",
+    "source": "https://en.wikipedia.org/wiki/Granville_Island"
+  },
+  {
+    "id": "jean-talon",
+    "name": "Jean-Talon Market",
+    "city": "Montreal",
+    "chapter": "Foods",
+    "lat": 45.536,
+    "lng": -73.615,
+    "precision": "venue",
+    "description": "One of Canada’s large open-air markets in Montreal’s Little Italy.",
+    "source": "https://en.wikipedia.org/wiki/Jean-Talon_Market"
+  },
+  {
+    "id": "byward",
+    "name": "ByWard Market",
+    "city": "Ottawa",
+    "chapter": "Foods",
+    "lat": 45.429,
+    "lng": -75.692,
+    "precision": "venue",
+    "description": "Outdoor stalls and restaurants surround Ottawa’s historic ByWard Market building.",
+    "source": "https://en.wikipedia.org/wiki/ByWard_Market"
+  },
+  {
+    "id": "kensington-calgary",
+    "name": "Kensington cafés",
+    "city": "Calgary",
+    "chapter": "Foods",
+    "lat": 51.053,
+    "lng": -114.11,
+    "precision": "city",
+    "description": "A riverside neighbourhood of cafés and casual kitchens northwest of downtown Calgary.",
+    "source": "https://en.wikipedia.org/wiki/Kensington,_Calgary"
+  },
+  {
+    "id": "calgary-stampede",
+    "name": "Calgary Stampede",
+    "city": "Calgary",
+    "chapter": "Seasonal",
+    "lat": 51.033,
+    "lng": -114.054,
+    "precision": "venue",
+    "description": "A July rodeo, exhibition and parade billed as the Calgary Stampede.",
+    "source": "https://en.wikipedia.org/wiki/Calgary_Stampede",
+    "seasonal": true,
+    "seasonal_label": "Calgary Stampede"
+  }
+]

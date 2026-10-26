@@ -1,0 +1,180 @@
+[
+  {
+    "id": "christ-redeemer",
+    "name": "Christ the Redeemer",
+    "city": "Rio de Janeiro",
+    "chapter": "Monuments",
+    "lat": -22.9519,
+    "lng": -43.2105,
+    "precision": "venue",
+    "description": "An Art Deco statue of Christ overlooks Rio from Corcovado peak.",
+    "source": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)"
+  },
+  {
+    "id": "sugarloaf",
+    "name": "Sugarloaf Mountain",
+    "city": "Rio de Janeiro",
+    "chapter": "Monuments",
+    "lat": -22.9494,
+    "lng": -43.1546,
+    "precision": "venue",
+    "description": "Cable cars climb granite sugarloaf peaks above Guanabara Bay.",
+    "source": "https://en.wikipedia.org/wiki/Sugarloaf_Mountain"
+  },
+  {
+    "id": "brasilia-cathedral",
+    "name": "Cathedral of Brasília",
+    "city": "Brasília",
+    "chapter": "Monuments",
+    "lat": -15.7983,
+    "lng": -47.8755,
+    "precision": "venue",
+    "description": "Oscar Niemeyer’s crown-shaped cathedral stands on the monumental axis.",
+    "source": "https://en.wikipedia.org/wiki/Cathedral_of_Bras%C3%ADlia"
+  },
+  {
+    "id": "sao-paulo-cathedral",
+    "name": "São Paulo Cathedral",
+    "city": "São Paulo",
+    "chapter": "Monuments",
+    "lat": -23.5512,
+    "lng": -46.6342,
+    "precision": "venue",
+    "description": "A neo-Gothic cathedral anchors Praça da Sé in central São Paulo.",
+    "source": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_Cathedral"
+  },
+  {
+    "id": "pelourinho-church",
+    "name": "Church of São Francisco",
+    "city": "Salvador",
+    "chapter": "Monuments",
+    "lat": -12.973,
+    "lng": -38.51,
+    "precision": "venue",
+    "description": "Ornate gilded interiors fill this baroque church in Salvador’s Pelourinho.",
+    "source": "https://en.wikipedia.org/wiki/Church_of_Saint_Francis_(Salvador)"
+  },
+  {
+    "id": "iguazu",
+    "name": "Iguaçu Falls",
+    "city": "Foz do Iguaçu",
+    "chapter": "Visit",
+    "lat": -25.6953,
+    "lng": -54.4367,
+    "precision": "venue",
+    "description": "A vast waterfall system on the Argentina–Brazil border with walkways on both sides.",
+    "source": "https://en.wikipedia.org/wiki/Iguazu_Falls"
+  },
+  {
+    "id": "amazon-manaus",
+    "name": "Manaus riverfront",
+    "city": "Manaus",
+    "chapter": "Visit",
+    "lat": -3.119,
+    "lng": -60.021,
+    "precision": "city",
+    "description": "Gateway city to the Amazon with a historic opera house and river boats.",
+    "source": "https://en.wikipedia.org/wiki/Manaus"
+  },
+  {
+    "id": "copacabana",
+    "name": "Copacabana Beach",
+    "city": "Rio de Janeiro",
+    "chapter": "Visit",
+    "lat": -22.9711,
+    "lng": -43.1822,
+    "precision": "venue",
+    "description": "A curved beach with wave-pattern promenade tiles along Rio’s south zone.",
+    "source": "https://en.wikipedia.org/wiki/Copacabana,_Rio_de_Janeiro"
+  },
+  {
+    "id": "lençois",
+    "name": "Lençóis Maranhenses",
+    "city": "Barreirinhas area",
+    "chapter": "Visit",
+    "lat": -2.5,
+    "lng": -43.0,
+    "precision": "city",
+    "description": "White dunes and seasonal rainwater lagoons in Maranhão.",
+    "source": "https://en.wikipedia.org/wiki/Len%C3%A7%C3%B3is_Maranhenses_National_Park"
+  },
+  {
+    "id": "pantanal",
+    "name": "Pantanal wetlands",
+    "city": "Corumbá area",
+    "chapter": "Visit",
+    "lat": -19.0,
+    "lng": -57.0,
+    "precision": "city",
+    "description": "One of the world’s large tropical wetlands, known for wildlife viewing.",
+    "source": "https://en.wikipedia.org/wiki/Pantanal"
+  },
+  {
+    "id": "mercado-municipal-sp",
+    "name": "Mercado Municipal",
+    "city": "São Paulo",
+    "chapter": "Foods",
+    "lat": -23.5417,
+    "lng": -46.629,
+    "precision": "venue",
+    "description": "São Paulo’s municipal market is famous for mortadella sandwiches and tropical fruit.",
+    "source": "https://en.wikipedia.org/wiki/Municipal_Market_of_S%C3%A3o_Paulo"
+  },
+  {
+    "id": "feira-sao-cristovao",
+    "name": "Feira de São Cristóvão",
+    "city": "Rio de Janeiro",
+    "chapter": "Foods",
+    "lat": -22.9,
+    "lng": -43.22,
+    "precision": "venue",
+    "description": "A northeastern Brazilian cultural fair with food stalls in Rio.",
+    "source": "https://en.wikipedia.org/wiki/Centro_Luiz_Gonzaga_de_Tradi%C3%A7%C3%B5es_Nordestinas"
+  },
+  {
+    "id": "mercado-modelo",
+    "name": "Mercado Modelo",
+    "city": "Salvador",
+    "chapter": "Foods",
+    "lat": -12.9735,
+    "lng": -38.513,
+    "precision": "venue",
+    "description": "Craft and snack stalls by Salvador’s Elevador Lacerda.",
+    "source": "https://en.wikipedia.org/wiki/Mercado_Modelo"
+  },
+  {
+    "id": "belo-horizonte-market",
+    "name": "Mercado Central",
+    "city": "Belo Horizonte",
+    "chapter": "Foods",
+    "lat": -19.92,
+    "lng": -43.94,
+    "precision": "venue",
+    "description": "A busy indoor market in Belo Horizonte with Minas cheeses and snacks.",
+    "source": "https://en.wikipedia.org/wiki/Belo_Horizonte"
+  },
+  {
+    "id": "curitiba-market",
+    "name": "Mercado Municipal de Curitiba",
+    "city": "Curitiba",
+    "chapter": "Foods",
+    "lat": -25.43,
+    "lng": -49.27,
+    "precision": "venue",
+    "description": "Curitiba’s market hall sells produce and casual Paraná kitchens.",
+    "source": "https://en.wikipedia.org/wiki/Curitiba"
+  },
+  {
+    "id": "carnival-rio",
+    "name": "Rio Carnival",
+    "city": "Rio de Janeiro",
+    "chapter": "Seasonal",
+    "lat": -22.911,
+    "lng": -43.23,
+    "precision": "city",
+    "description": "Samba school parades fill the Sambadrome while street blocos take neighbourhoods.",
+    "source": "https://en.wikipedia.org/wiki/Rio_Carnival",
+    "seasonal": true,
+    "seasonal_label": "Rio Carnival"
+  }
+]

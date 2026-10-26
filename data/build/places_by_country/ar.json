@@ -1,0 +1,180 @@
+[
+  {
+    "id": "obelisco",
+    "name": "Obelisco de Buenos Aires",
+    "city": "Buenos Aires",
+    "chapter": "Monuments",
+    "lat": -34.6037,
+    "lng": -58.3816,
+    "precision": "venue",
+    "description": "A white obelisk marks the intersection of 9 de Julio and Corrientes.",
+    "source": "https://en.wikipedia.org/wiki/Obelisco_de_Buenos_Aires"
+  },
+  {
+    "id": "casa-rosada",
+    "name": "Casa Rosada",
+    "city": "Buenos Aires",
+    "chapter": "Monuments",
+    "lat": -34.6081,
+    "lng": -58.3703,
+    "precision": "venue",
+    "description": "Argentina’s pink presidential palace faces Plaza de Mayo.",
+    "source": "https://en.wikipedia.org/wiki/Casa_Rosada"
+  },
+  {
+    "id": "teatro-colon",
+    "name": "Teatro Colón",
+    "city": "Buenos Aires",
+    "chapter": "Monuments",
+    "lat": -34.6011,
+    "lng": -58.3831,
+    "precision": "venue",
+    "description": "A renowned opera house with guided tours of its gilded halls.",
+    "source": "https://en.wikipedia.org/wiki/Teatro_Col%C3%B3n"
+  },
+  {
+    "id": "iguazu-arg",
+    "name": "Iguazú Falls (Argentina side)",
+    "city": "Puerto Iguazú",
+    "chapter": "Monuments",
+    "lat": -25.695,
+    "lng": -54.44,
+    "precision": "venue",
+    "description": "Walkways lead to the Devil’s Throat on the Argentine side of the falls.",
+    "source": "https://en.wikipedia.org/wiki/Iguazu_Falls"
+  },
+  {
+    "id": "cordoba-cathedral",
+    "name": "Córdoba Cathedral",
+    "city": "Córdoba",
+    "chapter": "Monuments",
+    "lat": -31.4167,
+    "lng": -64.1833,
+    "precision": "venue",
+    "description": "A colonial cathedral anchors Córdoba’s historic centre.",
+    "source": "https://en.wikipedia.org/wiki/C%C3%B3rdoba_Cathedral_(Argentina)"
+  },
+  {
+    "id": "perito-moreno",
+    "name": "Perito Moreno Glacier",
+    "city": "Santa Cruz",
+    "chapter": "Visit",
+    "lat": -50.4967,
+    "lng": -73.034,
+    "precision": "venue",
+    "description": "A advancing glacier calves ice into Lago Argentino with balcony viewpoints.",
+    "source": "https://en.wikipedia.org/wiki/Perito_Moreno_Glacier"
+  },
+  {
+    "id": "ushuaia",
+    "name": "Ushuaia waterfront",
+    "city": "Ushuaia",
+    "chapter": "Visit",
+    "lat": -54.8019,
+    "lng": -68.303,
+    "precision": "city",
+    "description": "A southern city on the Beagle Channel, gateway to Tierra del Fuego.",
+    "source": "https://en.wikipedia.org/wiki/Ushuaia"
+  },
+  {
+    "id": "mendoza-andes",
+    "name": "Mendoza Andean foothills",
+    "city": "Mendoza",
+    "chapter": "Visit",
+    "lat": -32.8908,
+    "lng": -68.8272,
+    "precision": "city",
+    "description": "Wine valleys sit beneath Andean peaks west of Mendoza city.",
+    "source": "https://en.wikipedia.org/wiki/Mendoza,_Argentina"
+  },
+  {
+    "id": "salta-plaza",
+    "name": "Salta historic centre",
+    "city": "Salta",
+    "chapter": "Visit",
+    "lat": -24.7821,
+    "lng": -65.4232,
+    "precision": "city",
+    "description": "Colonial plazas and a cable car to San Bernardo hill.",
+    "source": "https://en.wikipedia.org/wiki/Salta"
+  },
+  {
+    "id": "peninsula-valdes",
+    "name": "Península Valdés",
+    "city": "Puerto Madryn area",
+    "chapter": "Visit",
+    "lat": -42.5,
+    "lng": -63.9,
+    "precision": "city",
+    "description": "A wildlife peninsula known for whales, penguins and sea lions.",
+    "source": "https://en.wikipedia.org/wiki/Valdes_Peninsula"
+  },
+  {
+    "id": "san-telmo-market",
+    "name": "Mercado de San Telmo",
+    "city": "Buenos Aires",
+    "chapter": "Foods",
+    "lat": -34.621,
+    "lng": -58.373,
+    "precision": "venue",
+    "description": "An iron market hall with antiques upstairs and food stalls below.",
+    "source": "https://en.wikipedia.org/wiki/San_Telmo,_Buenos_Aires"
+  },
+  {
+    "id": "recoleta-food",
+    "name": "Recoleta café streets",
+    "city": "Buenos Aires",
+    "chapter": "Foods",
+    "lat": -34.587,
+    "lng": -58.393,
+    "precision": "city",
+    "description": "Cafés and parrillas surround Recoleta’s leafy avenues.",
+    "source": "https://en.wikipedia.org/wiki/Recoleta,_Buenos_Aires"
+  },
+  {
+    "id": "mendoza-bodegas",
+    "name": "Mendoza bodega tastings",
+    "city": "Mendoza",
+    "chapter": "Foods",
+    "lat": -32.9,
+    "lng": -68.85,
+    "precision": "city",
+    "description": "Malbec tastings fill bodegas across Luján de Cuyo and Maipú.",
+    "source": "https://en.wikipedia.org/wiki/Mendoza_wine"
+  },
+  {
+    "id": "rosario-food",
+    "name": "Rosario riverfront kitchens",
+    "city": "Rosario",
+    "chapter": "Foods",
+    "lat": -32.9468,
+    "lng": -60.6393,
+    "precision": "city",
+    "description": "Paraná riverfront restaurants and cafés in Argentina’s third city.",
+    "source": "https://en.wikipedia.org/wiki/Rosario,_Santa_Fe"
+  },
+  {
+    "id": "cordoba-guemes",
+    "name": "Güemes neighbourhood eateries",
+    "city": "Córdoba",
+    "chapter": "Foods",
+    "lat": -31.42,
+    "lng": -64.19,
+    "precision": "city",
+    "description": "Boutique cafés and bars in Córdoba’s Güemes area.",
+    "source": "https://en.wikipedia.org/wiki/C%C3%B3rdoba,_Argentina"
+  },
+  {
+    "id": "tango-ba",
+    "name": "Buenos Aires Tango Festival",
+    "city": "Buenos Aires",
+    "chapter": "Seasonal",
+    "lat": -34.6037,
+    "lng": -58.3816,
+    "precision": "city",
+    "description": "City-backed tango championships, milongas and shows — often in August.",
+    "source": "https://en.wikipedia.org/wiki/World_Tango_Dance_Tournament",
+    "seasonal": true,
+    "seasonal_label": "Buenos Aires Tango Festival"
+  }
+]

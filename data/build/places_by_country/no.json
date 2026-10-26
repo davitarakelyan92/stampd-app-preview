@@ -1,0 +1,180 @@
+[
+  {
+    "id": "brygen",
+    "name": "Bryggen",
+    "city": "Bergen",
+    "chapter": "Monuments",
+    "lat": 60.3973,
+    "lng": 5.3242,
+    "precision": "venue",
+    "description": "Colourful Hanseatic wharf houses line Bergen’s harbour as a UNESCO site.",
+    "source": "https://en.wikipedia.org/wiki/Bryggen"
+  },
+  {
+    "id": "nidaros",
+    "name": "Nidaros Cathedral",
+    "city": "Trondheim",
+    "chapter": "Monuments",
+    "lat": 63.4269,
+    "lng": 10.3969,
+    "precision": "venue",
+    "description": "Norway’s national sanctuary is a Gothic cathedral above Trondheim’s centre.",
+    "source": "https://en.wikipedia.org/wiki/Nidaros_Cathedral"
+  },
+  {
+    "id": "akershus",
+    "name": "Akershus Fortress",
+    "city": "Oslo",
+    "chapter": "Monuments",
+    "lat": 59.907,
+    "lng": 10.736,
+    "precision": "venue",
+    "description": "A waterfront fortress and castle complex guards Oslo’s harbour approaches.",
+    "source": "https://en.wikipedia.org/wiki/Akershus_Fortress"
+  },
+  {
+    "id": "stave-borgund",
+    "name": "Borgund Stave Church",
+    "city": "Lærdal",
+    "chapter": "Monuments",
+    "lat": 61.047,
+    "lng": 7.812,
+    "precision": "venue",
+    "description": "A well-preserved medieval wooden stave church in western Norway.",
+    "source": "https://en.wikipedia.org/wiki/Borgund_Stave_Church"
+  },
+  {
+    "id": "vigeland",
+    "name": "Vigeland Park sculptures",
+    "city": "Oslo",
+    "chapter": "Monuments",
+    "lat": 59.927,
+    "lng": 10.701,
+    "precision": "venue",
+    "description": "Gustav Vigeland’s sculpture park fills Frogner Park with wrought-iron gates and stone figures.",
+    "source": "https://en.wikipedia.org/wiki/Vigeland_installation"
+  },
+  {
+    "id": "geiranger",
+    "name": "Geirangerfjord",
+    "city": "Geiranger",
+    "chapter": "Visit",
+    "lat": 62.1,
+    "lng": 7.2,
+    "precision": "venue",
+    "description": "Sheer cliffs and waterfalls drop into a UNESCO fjord; cruise and road viewpoints abound.",
+    "source": "https://en.wikipedia.org/wiki/Geirangerfjord"
+  },
+  {
+    "id": "preikestolen",
+    "name": "Preikestolen",
+    "city": "Forsand area",
+    "chapter": "Visit",
+    "lat": 58.986,
+    "lng": 6.19,
+    "precision": "venue",
+    "description": "A flat cliff pulpit rises about 600 m above Lysefjord — a popular day hike.",
+    "source": "https://en.wikipedia.org/wiki/Preikestolen"
+  },
+  {
+    "id": "lofoten",
+    "name": "Lofoten islands",
+    "city": "Svolvær area",
+    "chapter": "Visit",
+    "lat": 68.23,
+    "lng": 14.56,
+    "precision": "city",
+    "description": "Arctic islands of peaks, fishing villages and northern lights in season.",
+    "source": "https://en.wikipedia.org/wiki/Lofoten"
+  },
+  {
+    "id": "flam",
+    "name": "Flåm Railway",
+    "city": "Flåm",
+    "chapter": "Visit",
+    "lat": 60.863,
+    "lng": 7.113,
+    "precision": "venue",
+    "description": "A steep scenic railway climbs from fjord shore toward mountain plateaus.",
+    "source": "https://en.wikipedia.org/wiki/Fl%C3%A5m_Line"
+  },
+  {
+    "id": "oslo-opera",
+    "name": "Oslo Opera House",
+    "city": "Oslo",
+    "chapter": "Visit",
+    "lat": 59.9075,
+    "lng": 10.753,
+    "precision": "venue",
+    "description": "A white marble roof slopes into the fjord — walkable as a public plaza.",
+    "source": "https://en.wikipedia.org/wiki/Oslo_Opera_House"
+  },
+  {
+    "id": "mathallen-oslo",
+    "name": "Mathallen Oslo",
+    "city": "Oslo",
+    "chapter": "Foods",
+    "lat": 59.922,
+    "lng": 10.752,
+    "precision": "venue",
+    "description": "A food hall in the Vulkan district with Norwegian producers and casual counters.",
+    "source": "https://en.wikipedia.org/wiki/Mathallen_Oslo"
+  },
+  {
+    "id": "bergen-fish",
+    "name": "Bergen Fish Market",
+    "city": "Bergen",
+    "chapter": "Foods",
+    "lat": 60.394,
+    "lng": 5.325,
+    "precision": "venue",
+    "description": "Seafood stalls on the harbour sell fish cakes, shrimp and sushi-to-go.",
+    "source": "https://en.wikipedia.org/wiki/Bergen_Fish_Market"
+  },
+  {
+    "id": "trondheim-market",
+    "name": "Trondheim Torget market",
+    "city": "Trondheim",
+    "chapter": "Foods",
+    "lat": 63.43,
+    "lng": 10.395,
+    "precision": "venue",
+    "description": "Central market square stalls and nearby cafés serve regional food.",
+    "source": "https://en.wikipedia.org/wiki/Trondheim"
+  },
+  {
+    "id": "stavanger-food",
+    "name": "Øvre Holmegate cafés",
+    "city": "Stavanger",
+    "chapter": "Foods",
+    "lat": 58.97,
+    "lng": 5.733,
+    "precision": "city",
+    "description": "A colourful café street in Stavanger for coffee and light meals.",
+    "source": "https://en.wikipedia.org/wiki/Stavanger"
+  },
+  {
+    "id": "tromso-food",
+    "name": "Tromsø harbour eateries",
+    "city": "Tromsø",
+    "chapter": "Foods",
+    "lat": 69.649,
+    "lng": 18.956,
+    "precision": "city",
+    "description": "Arctic-city restaurants and cafés along the waterfront.",
+    "source": "https://en.wikipedia.org/wiki/Troms%C3%B8"
+  },
+  {
+    "id": "bergen-fest",
+    "name": "Bergen International Festival",
+    "city": "Bergen",
+    "chapter": "Seasonal",
+    "lat": 60.39,
+    "lng": 5.32,
+    "precision": "city",
+    "description": "A spring arts festival of music, dance and theatre across Bergen venues.",
+    "source": "https://en.wikipedia.org/wiki/Bergen_International_Festival",
+    "seasonal": true,
+    "seasonal_label": "Bergen International Festival"
+  }
+]

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "big-ben",
+    "name": "Elizabeth Tower (Big Ben)",
+    "city": "London",
+    "chapter": "Monuments",
+    "lat": 51.5007,
+    "lng": -0.1246,
+    "precision": "venue",
+    "description": "The Gothic clock tower at Westminster is widely known as Big Ben, properly the name of the Great Bell.",
+    "source": "https://en.wikipedia.org/wiki/Big_Ben"
+  },
+  {
+    "id": "tower-of-london",
+    "name": "Tower of London",
+    "city": "London",
+    "chapter": "Monuments",
+    "lat": 51.5081,
+    "lng": -0.0759,
+    "precision": "venue",
+    "description": "A riverside fortress that has served as palace, prison and treasury. The Crown Jewels are displayed inside.",
+    "source": "https://en.wikipedia.org/wiki/Tower_of_London"
+  },
+  {
+    "id": "stonehenge",
+    "name": "Stonehenge",
+    "city": "Wiltshire",
+    "chapter": "Monuments",
+    "lat": 51.1789,
+    "lng": -1.8262,
+    "precision": "venue",
+    "description": "Prehistoric sarsen stones stand on Salisbury Plain. A visitor path circles the circle at a respectful distance.",
+    "source": "https://en.wikipedia.org/wiki/Stonehenge"
+  },
+  {
+    "id": "edinburgh-castle",
+    "name": "Edinburgh Castle",
+    "city": "Edinburgh",
+    "chapter": "Monuments",
+    "lat": 55.9486,
+    "lng": -3.2008,
+    "precision": "venue",
+    "description": "A volcanic-rock fortress dominates Edinburgh’s Old Town. The One o’Clock Gun and crown jewels draw daily crowds.",
+    "source": "https://en.wikipedia.org/wiki/Edinburgh_Castle"
+  },
+  {
+    "id": "roman-baths",
+    "name": "Roman Baths",
+    "city": "Bath",
+    "chapter": "Monuments",
+    "lat": 51.3809,
+    "lng": -2.3595,
+    "precision": "venue",
+    "description": "Ancient bathing rooms surround a green hot spring in the city centre. Georgian baths sit above the Roman levels.",
+    "source": "https://en.wikipedia.org/wiki/Roman_Baths_(Bath)"
+  },
+  {
+    "id": "british-museum",
+    "name": "British Museum",
+    "city": "London",
+    "chapter": "Visit",
+    "lat": 51.5194,
+    "lng": -0.127,
+    "precision": "venue",
+    "description": "A vast free museum around a glass-covered Great Court. Galleries span Egypt, Greece and far beyond.",
+    "source": "https://en.wikipedia.org/wiki/British_Museum"
+  },
+  {
+    "id": "lake-district",
+    "name": "Lake District National Park",
+    "city": "Cumbria",
+    "chapter": "Visit",
+    "lat": 54.4609,
+    "lng": -3.0886,
+    "precision": "city",
+    "description": "Glacial lakes and fells fill England’s best-known national park. Ambleside and Keswick are common bases.",
+    "source": "https://en.wikipedia.org/wiki/Lake_District"
+  },
+  {
+    "id": "giants-causeway",
+    "name": "Giant’s Causeway",
+    "city": "County Antrim",
+    "chapter": "Visit",
+    "lat": 55.2408,
+    "lng": -6.5116,
+    "precision": "venue",
+    "description": "Basalt columns step into the Atlantic on Northern Ireland’s coast. Boardwalks lead across the hexagonal stones.",
+    "source": "https://en.wikipedia.org/wiki/Giant%27s_Causeway"
+  },
+  {
+    "id": "tower-bridge",
+    "name": "Tower Bridge",
+    "city": "London",
+    "chapter": "Visit",
+    "lat": 51.5055,
+    "lng": -0.0754,
+    "precision": "venue",
+    "description": "A bascule bridge with twin towers frames the Pool of London. Glass walkways sit high above the Thames.",
+    "source": "https://en.wikipedia.org/wiki/Tower_Bridge"
+  },
+  {
+    "id": "cotswolds",
+    "name": "Cotswolds villages",
+    "city": "Chipping Campden area",
+    "chapter": "Visit",
+    "lat": 52.05,
+    "lng": -1.78,
+    "precision": "city",
+    "description": "Honey-stone villages and walking trails spread across rolling hills in south-central England.",
+    "source": "https://en.wikipedia.org/wiki/Cotswolds"
+  },
+  {
+    "id": "borough-market",
+    "name": "Borough Market",
+    "city": "London",
+    "chapter": "Foods",
+    "lat": 51.5055,
+    "lng": -0.091,
+    "precision": "venue",
+    "description": "A historic food market by London Bridge sells produce, cheese and hot street food under iron-and-glass roofs.",
+    "source": "https://en.wikipedia.org/wiki/Borough_Market"
+  },
+  {
+    "id": "edinburgh-stockbridge",
+    "name": "Stockbridge market",
+    "city": "Edinburgh",
+    "chapter": "Foods",
+    "lat": 55.959,
+    "lng": -3.21,
+    "precision": "city",
+    "description": "A neighbourhood known for cafés, delis and a Sunday market beside the Water of Leith.",
+    "source": "https://en.wikipedia.org/wiki/Stockbridge,_Edinburgh"
+  },
+  {
+    "id": "cardiff-market",
+    "name": "Cardiff Market",
+    "city": "Cardiff",
+    "chapter": "Foods",
+    "lat": 51.48,
+    "lng": -3.178,
+    "precision": "venue",
+    "description": "A Victorian indoor market in Cardiff sells Welsh cakes, produce and casual bites.",
+    "source": "https://en.wikipedia.org/wiki/Cardiff_Central_Market"
+  },
+  {
+    "id": "st-georges-market",
+    "name": "St George’s Market",
+    "city": "Belfast",
+    "chapter": "Foods",
+    "lat": 54.595,
+    "lng": -5.922,
+    "precision": "venue",
+    "description": "Belfast’s covered Victorian market fills with local producers and lunch stalls at weekends.",
+    "source": "https://en.wikipedia.org/wiki/St_George%27s_Market"
+  },
+  {
+    "id": "glasgow-barras",
+    "name": "The Barras",
+    "city": "Glasgow",
+    "chapter": "Foods",
+    "lat": 55.855,
+    "lng": -4.23,
+    "precision": "venue",
+    "description": "A weekend market district in Glasgow’s East End with street food, vintage stalls and music venues nearby.",
+    "source": "https://en.wikipedia.org/wiki/The_Barras"
+  },
+  {
+    "id": "edinburgh-hogmanay",
+    "name": "Edinburgh Hogmanay",
+    "city": "Edinburgh",
+    "chapter": "Seasonal",
+    "lat": 55.95,
+    "lng": -3.19,
+    "precision": "city",
+    "description": "Scotland’s capital hosts one of the world’s large New Year street parties with concerts and a fireworks finale.",
+    "source": "https://en.wikipedia.org/wiki/Hogmanay",
+    "seasonal": true,
+    "seasonal_label": "Edinburgh Hogmanay"
+  }
+]

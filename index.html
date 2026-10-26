@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Stampd — app preview (sample)</title>
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/app.css">
 <script src="js/icons.js"></script>
@@ -24,6 +25,7 @@
         <div class="scroll countries-scroll">
           <div class="countries-topbar">
             <h1 class="countries-title">Countries</h1>
+            <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
           </div>
           <div class="section-k available">Available now</div>
           <div class="country-list live" id="countries-live"></div>
@@ -39,12 +41,11 @@
           <div class="topbar">
             <button type="button" class="icon-btn album-back-btn" id="album-back" aria-label="Back to Countries">
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="album-back-label">Back</span>
             </button>
             <span class="sample-tag">Sample</span>
           </div>
           <div class="ttl">
-            <div class="k">STAMPD · ITALY</div>
+            <div class="k">STAMPD</div>
             <h1>Rome</h1>
             <p class="sub" id="album-sub">Sample</p>
           </div>
@@ -112,14 +113,17 @@
         <div class="sb"><span>9:41</span><span class="sig">●●● ▮</span></div>
         <div class="stub">
           <h2>Map</h2>
-          <p>Sample stub — map screen not in this preview. Use Countries, Album, Stamp, or Contact support.</p>
+          <p>Sample stub — map screen not in this preview. Use Countries, Trade, Stamp, or Support.</p>
         </div>
       </section>
-      <section class="screen" data-screen="trade" aria-label="Trade stub">
+      <section class="screen" data-screen="trade" aria-label="Trade">
         <div class="sb"><span>9:41</span><span class="sig">●●● ▮</span></div>
-        <div class="stub">
-          <h2>Trade</h2>
-          <p>Sample stub — trade / gift flow not in this preview.</p>
+        <div class="scroll trade-scroll">
+          <div class="trade-topbar">
+            <h1 class="trade-title">Trade</h1>
+            <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
+          </div>
+          <div id="trade-root" class="trade-root"></div>
         </div>
       </section>
       <section class="screen" data-screen="me" aria-label="Me">
@@ -127,6 +131,7 @@
         <div class="scroll me-scroll">
           <div class="me-topbar">
             <h1 class="me-title">Me</h1>
+            <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
           </div>
           <div id="me-root" class="me-root">
             <div class="me-empty" id="me-empty">
@@ -154,18 +159,32 @@
         </div>
       </div>
 
+
+      <!-- Trade offer sheet -->
+      <div class="modal-backdrop" id="trade-offer-sheet" role="dialog" aria-modal="true" aria-labelledby="trade-offer-title">
+        <div class="sheet">
+          <div class="handle"></div>
+          <h2 id="trade-offer-title">Offer duplicate</h2>
+          <p class="lede" id="trade-offer-lede">Choose how to list this spare stamp.</p>
+          <div class="row-btns trade-offer-btns">
+            <button type="button" class="btn-primary" id="offer-for-stamp">Offer for stamp</button>
+            <button type="button" class="btn-secondary" id="offer-for-coins">Offer for coins</button>
+            <button type="button" class="btn-ghost" id="offer-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
       <!-- Soft toast for Coming Soon taps -->
       <div class="soft-toast" id="soft-toast" aria-live="polite"></div>
 
-      <!-- Tab bar — Countries | Album | Stamp FAB | Contact support | Me -->
+      <!-- Tab bar — Countries | Trade | Stamp FAB | Support | Me -->
       <nav class="tab" aria-label="Main">
         <button type="button" class="on" data-tab="countries">
           <span class="ic"><svg width="22" height="22" viewBox="0 0 26 26"><rect x="5" y="3" width="16" height="20" rx="3" fill="#FFDCD5" stroke="#C8372A" stroke-width="2"/></svg></span>
           Countries
         </button>
-        <button type="button" data-tab="album">
-          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 15l4-4 3 3 4-5 5 6"/></svg></span>
-          Album
+        <button type="button" data-tab="trade">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h11l-3-3"/><path d="M17 16H6l3 3"/><path d="M18 8v3"/><path d="M6 16v-3"/></svg></span>
+          Trade
         </button>
         <button type="button" class="c" data-tab="stamp" aria-label="Stamp">
           <span class="fab" id="fab-pin"></span>

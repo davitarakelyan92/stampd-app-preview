@@ -1,0 +1,180 @@
+[
+  {
+    "id": "little-mermaid",
+    "name": "The Little Mermaid",
+    "city": "Copenhagen",
+    "chapter": "Monuments",
+    "lat": 55.6929,
+    "lng": 12.5993,
+    "precision": "venue",
+    "description": "Edvard Eriksen’s bronze statue sits on a harbour rock north of the centre.",
+    "source": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(statue)"
+  },
+  {
+    "id": "rosenborg",
+    "name": "Rosenborg Castle",
+    "city": "Copenhagen",
+    "chapter": "Monuments",
+    "lat": 55.6858,
+    "lng": 12.5773,
+    "precision": "venue",
+    "description": "A Renaissance castle in King’s Garden holding the Danish crown jewels.",
+    "source": "https://en.wikipedia.org/wiki/Rosenborg_Castle"
+  },
+  {
+    "id": "christiansborg",
+    "name": "Christiansborg Palace",
+    "city": "Copenhagen",
+    "chapter": "Monuments",
+    "lat": 55.6765,
+    "lng": 12.5806,
+    "precision": "venue",
+    "description": "Parliament, offices and royal reception rooms share an island palace complex.",
+    "source": "https://en.wikipedia.org/wiki/Christiansborg_Palace"
+  },
+  {
+    "id": "kronborg",
+    "name": "Kronborg Castle",
+    "city": "Helsingør",
+    "chapter": "Monuments",
+    "lat": 56.039,
+    "lng": 12.621,
+    "precision": "venue",
+    "description": "Shakespeare’s Elsinore — a coastal fortress controlling the Øresund.",
+    "source": "https://en.wikipedia.org/wiki/Kronborg"
+  },
+  {
+    "id": "legoland-billund-note",
+    "name": "LEGOLAND Billund (entrance area)",
+    "city": "Billund",
+    "chapter": "Monuments",
+    "lat": 55.736,
+    "lng": 9.126,
+    "precision": "venue",
+    "description": "The original LEGOLAND park beside the Lego Group’s hometown — timed tickets advised.",
+    "source": "https://en.wikipedia.org/wiki/Legoland_Billund_Resort"
+  },
+  {
+    "id": "nyhavn",
+    "name": "Nyhavn",
+    "city": "Copenhagen",
+    "chapter": "Visit",
+    "lat": 55.6798,
+    "lng": 12.5907,
+    "precision": "venue",
+    "description": "Colourful townhouses line a historic canal filled with boats and café terraces.",
+    "source": "https://en.wikipedia.org/wiki/Nyhavn"
+  },
+  {
+    "id": "tivoli",
+    "name": "Tivoli Gardens",
+    "city": "Copenhagen",
+    "chapter": "Visit",
+    "lat": 55.6736,
+    "lng": 12.5681,
+    "precision": "venue",
+    "description": "A historic city-centre amusement park with gardens, rides and seasonal lights.",
+    "source": "https://en.wikipedia.org/wiki/Tivoli_Gardens"
+  },
+  {
+    "id": "skagen",
+    "name": "Skagen",
+    "city": "Skagen",
+    "chapter": "Visit",
+    "lat": 57.72,
+    "lng": 10.58,
+    "precision": "city",
+    "description": "Denmark’s northern tip where two seas meet on pale beaches.",
+    "source": "https://en.wikipedia.org/wiki/Skagen"
+  },
+  {
+    "id": "aarhus-den-gamle",
+    "name": "Den Gamle By",
+    "city": "Aarhus",
+    "chapter": "Visit",
+    "lat": 56.158,
+    "lng": 10.191,
+    "precision": "venue",
+    "description": "An open-air museum of historic Danish townscapes in Aarhus.",
+    "source": "https://en.wikipedia.org/wiki/Den_Gamle_By"
+  },
+  {
+    "id": "mogeltonder",
+    "name": "Wadden Sea dikes",
+    "city": "Ribe area",
+    "chapter": "Visit",
+    "lat": 55.33,
+    "lng": 8.77,
+    "precision": "city",
+    "description": "Flat marsh coasts and tidal flats on Denmark’s UNESCO Wadden Sea shore.",
+    "source": "https://en.wikipedia.org/wiki/Wadden_Sea"
+  },
+  {
+    "id": "torvehallerne",
+    "name": "Torvehallerne",
+    "city": "Copenhagen",
+    "chapter": "Foods",
+    "lat": 55.683,
+    "lng": 12.57,
+    "precision": "venue",
+    "description": "Twin glass market halls at Israels Plads sell produce, smørrebrød and coffee.",
+    "source": "https://en.wikipedia.org/wiki/Torvehallerne"
+  },
+  {
+    "id": "rebnehallen",
+    "name": "Reffen street food",
+    "city": "Copenhagen",
+    "chapter": "Foods",
+    "lat": 55.693,
+    "lng": 12.61,
+    "precision": "venue",
+    "description": "A container street-food park on Refshaleøen with rotating kitchens.",
+    "source": "https://en.wikipedia.org/wiki/Reffen"
+  },
+  {
+    "id": "aarhus-market",
+    "name": "Aarhus street food & markets",
+    "city": "Aarhus",
+    "chapter": "Foods",
+    "lat": 56.157,
+    "lng": 10.21,
+    "precision": "city",
+    "description": "Central Aarhus offers markets and a waterfront street-food hall.",
+    "source": "https://en.wikipedia.org/wiki/Aarhus"
+  },
+  {
+    "id": "odense-food",
+    "name": "Odense city cafés",
+    "city": "Odense",
+    "chapter": "Foods",
+    "lat": 55.403,
+    "lng": 10.402,
+    "precision": "city",
+    "description": "Hans Christian Andersen’s city centre mixes cafés and casual Danish kitchens.",
+    "source": "https://en.wikipedia.org/wiki/Odense"
+  },
+  {
+    "id": "aalborg-food",
+    "name": "Aalborg waterfront eateries",
+    "city": "Aalborg",
+    "chapter": "Foods",
+    "lat": 57.05,
+    "lng": 9.92,
+    "precision": "city",
+    "description": "Limfjord-side restaurants and cafés in northern Jutland’s largest city.",
+    "source": "https://en.wikipedia.org/wiki/Aalborg"
+  },
+  {
+    "id": "aarhus-festuge",
+    "name": "Aarhus Festuge",
+    "city": "Aarhus",
+    "chapter": "Seasonal",
+    "lat": 56.16,
+    "lng": 10.2,
+    "precision": "city",
+    "description": "A late-summer city festival of arts, music and street events across Aarhus.",
+    "source": "https://en.wikipedia.org/wiki/Aarhus_Festuge",
+    "seasonal": true,
+    "seasonal_label": "Aarhus Festuge"
+  }
+]

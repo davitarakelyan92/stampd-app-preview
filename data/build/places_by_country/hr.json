@@ -1,0 +1,180 @@
+[
+  {
+    "id": "diocletians-palace",
+    "name": "Diocletian’s Palace",
+    "city": "Split",
+    "chapter": "Monuments",
+    "lat": 43.5083,
+    "lng": 16.4402,
+    "precision": "venue",
+    "description": "Roman palace walls still form Split’s old-town streets and courtyards.",
+    "source": "https://en.wikipedia.org/wiki/Diocletian%27s_Palace"
+  },
+  {
+    "id": "dubrovnik-walls",
+    "name": "Dubrovnik City Walls",
+    "city": "Dubrovnik",
+    "chapter": "Monuments",
+    "lat": 42.6407,
+    "lng": 18.11,
+    "precision": "venue",
+    "description": "Stone ramparts circle Dubrovnik’s Old Town above the Adriatic.",
+    "source": "https://en.wikipedia.org/wiki/Walls_of_Dubrovnik"
+  },
+  {
+    "id": "euphrasian-basilica",
+    "name": "Euphrasian Basilica",
+    "city": "Poreč",
+    "chapter": "Monuments",
+    "lat": 45.228,
+    "lng": 13.593,
+    "precision": "venue",
+    "description": "Byzantine mosaics decorate this Istrian UNESCO church complex.",
+    "source": "https://en.wikipedia.org/wiki/Euphrasian_Basilica"
+  },
+  {
+    "id": "pula-arena",
+    "name": "Pula Arena",
+    "city": "Pula",
+    "chapter": "Monuments",
+    "lat": 44.8733,
+    "lng": 13.8501,
+    "precision": "venue",
+    "description": "A well-preserved Roman amphitheatre still hosts events by the Istrian coast.",
+    "source": "https://en.wikipedia.org/wiki/Pula_Arena"
+  },
+  {
+    "id": "zagreb-cathedral",
+    "name": "Zagreb Cathedral",
+    "city": "Zagreb",
+    "chapter": "Monuments",
+    "lat": 45.8144,
+    "lng": 15.978,
+    "precision": "venue",
+    "description": "Twin Neo-Gothic spires mark Zagreb’s cathedral on Kaptol.",
+    "source": "https://en.wikipedia.org/wiki/Zagreb_Cathedral"
+  },
+  {
+    "id": "plitvice",
+    "name": "Plitvice Lakes",
+    "city": "Plitvice",
+    "chapter": "Visit",
+    "lat": 44.8654,
+    "lng": 15.582,
+    "precision": "venue",
+    "description": "Turquoise lakes linked by waterfalls and boardwalks in a national park.",
+    "source": "https://en.wikipedia.org/wiki/Plitvice_Lakes_National_Park"
+  },
+  {
+    "id": "hvar",
+    "name": "Hvar town",
+    "city": "Hvar",
+    "chapter": "Visit",
+    "lat": 43.1729,
+    "lng": 16.4411,
+    "precision": "city",
+    "description": "A harbour town with a hilltop fortress and island beaches.",
+    "source": "https://en.wikipedia.org/wiki/Hvar_(town)"
+  },
+  {
+    "id": "krka",
+    "name": "Krka National Park",
+    "city": "Skradin area",
+    "chapter": "Visit",
+    "lat": 43.86,
+    "lng": 15.97,
+    "precision": "venue",
+    "description": "Waterfalls and boardwalks along the Krka river inland from Šibenik.",
+    "source": "https://en.wikipedia.org/wiki/Krka_National_Park"
+  },
+  {
+    "id": "rovinj",
+    "name": "Rovinj old town",
+    "city": "Rovinj",
+    "chapter": "Visit",
+    "lat": 45.081,
+    "lng": 13.6387,
+    "precision": "city",
+    "description": "Pastel houses climb to a hilltop church on Istria’s west coast.",
+    "source": "https://en.wikipedia.org/wiki/Rovinj"
+  },
+  {
+    "id": "mljet",
+    "name": "Mljet National Park",
+    "city": "Mljet",
+    "chapter": "Visit",
+    "lat": 42.78,
+    "lng": 17.38,
+    "precision": "city",
+    "description": "Forest and saltwater lakes cover much of this southern Adriatic island.",
+    "source": "https://en.wikipedia.org/wiki/Mljet_National_Park"
+  },
+  {
+    "id": "zagreb-dolac",
+    "name": "Dolac Market",
+    "city": "Zagreb",
+    "chapter": "Foods",
+    "lat": 45.813,
+    "lng": 15.9775,
+    "precision": "venue",
+    "description": "Zagreb’s main open market sells produce above the old town steps.",
+    "source": "https://en.wikipedia.org/wiki/Dolac_Market"
+  },
+  {
+    "id": "split-market",
+    "name": "Pazar market Split",
+    "city": "Split",
+    "chapter": "Foods",
+    "lat": 43.509,
+    "lng": 16.4415,
+    "precision": "venue",
+    "description": "Outdoor stalls beside Diocletian’s Palace sell fruit, vegetables and snacks.",
+    "source": "https://en.wikipedia.org/wiki/Split,_Croatia"
+  },
+  {
+    "id": "dubrovnik-guillotine",
+    "name": "Gundulićeva poljana market",
+    "city": "Dubrovnik",
+    "chapter": "Foods",
+    "lat": 42.641,
+    "lng": 18.109,
+    "precision": "venue",
+    "description": "A small morning market in Dubrovnik’s Old Town sells local produce.",
+    "source": "https://en.wikipedia.org/wiki/Dubrovnik"
+  },
+  {
+    "id": "rijeka-market",
+    "name": "Rijeka market",
+    "city": "Rijeka",
+    "chapter": "Foods",
+    "lat": 45.327,
+    "lng": 14.442,
+    "precision": "venue",
+    "description": "Covered and open stalls by the harbour sell Adriatic fish and produce.",
+    "source": "https://en.wikipedia.org/wiki/Rijeka"
+  },
+  {
+    "id": "zagreb-tkalca",
+    "name": "Tkalčićeva Street cafés",
+    "city": "Zagreb",
+    "chapter": "Foods",
+    "lat": 45.8155,
+    "lng": 15.976,
+    "precision": "venue",
+    "description": "A café street in Zagreb’s Upper Town area for coffee and light meals.",
+    "source": "https://en.wikipedia.org/wiki/Tkal%C4%8Di%C4%87eva_Street"
+  },
+  {
+    "id": "dubrovnik-summer",
+    "name": "Dubrovnik Summer Festival",
+    "city": "Dubrovnik",
+    "chapter": "Seasonal",
+    "lat": 42.641,
+    "lng": 18.11,
+    "precision": "city",
+    "description": "Open-air theatre, music and dance performances fill Old Town venues each summer.",
+    "source": "https://en.wikipedia.org/wiki/Dubrovnik_Summer_Festival",
+    "seasonal": true,
+    "seasonal_label": "Dubrovnik Summer Festival"
+  }
+]

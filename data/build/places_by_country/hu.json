@@ -1,0 +1,180 @@
+[
+  {
+    "id": "parliament-budapest",
+    "name": "Hungarian Parliament Building",
+    "city": "Budapest",
+    "chapter": "Monuments",
+    "lat": 47.5071,
+    "lng": 19.0457,
+    "precision": "venue",
+    "description": "A neo-Gothic riverside parliament dominates the Danube bank with a central dome.",
+    "source": "https://en.wikipedia.org/wiki/Hungarian_Parliament_Building"
+  },
+  {
+    "id": "buda-castle",
+    "name": "Buda Castle",
+    "city": "Budapest",
+    "chapter": "Monuments",
+    "lat": 47.4961,
+    "lng": 19.0396,
+    "precision": "venue",
+    "description": "Palace wings and museums crown Castle Hill above the Danube.",
+    "source": "https://en.wikipedia.org/wiki/Buda_Castle"
+  },
+  {
+    "id": "fishermans-bastion",
+    "name": "Fisherman’s Bastion",
+    "city": "Budapest",
+    "chapter": "Monuments",
+    "lat": 47.502,
+    "lng": 19.0348,
+    "precision": "venue",
+    "description": "Turreted terraces look across to Pest and Parliament from Castle Hill.",
+    "source": "https://en.wikipedia.org/wiki/Fisherman%27s_Bastion"
+  },
+  {
+    "id": "st-stephens-basilica",
+    "name": "St. Stephen’s Basilica",
+    "city": "Budapest",
+    "chapter": "Monuments",
+    "lat": 47.5009,
+    "lng": 19.0539,
+    "precision": "venue",
+    "description": "Budapest’s largest church offers a dome panorama over the city.",
+    "source": "https://en.wikipedia.org/wiki/St._Stephen%27s_Basilica"
+  },
+  {
+    "id": "esztergom-basilica",
+    "name": "Esztergom Basilica",
+    "city": "Esztergom",
+    "chapter": "Monuments",
+    "lat": 47.798,
+    "lng": 18.736,
+    "precision": "venue",
+    "description": "Hungary’s largest church rises above the Danube bend near the Slovak border.",
+    "source": "https://en.wikipedia.org/wiki/Esztergom_Basilica"
+  },
+  {
+    "id": "danube-bend",
+    "name": "Danube Bend",
+    "city": "Visegrád area",
+    "chapter": "Visit",
+    "lat": 47.785,
+    "lng": 18.97,
+    "precision": "city",
+    "description": "River curves, hills and castle ruins north of Budapest make a classic day trip.",
+    "source": "https://en.wikipedia.org/wiki/Danube_Bend"
+  },
+  {
+    "id": "lake-balaton",
+    "name": "Lake Balaton",
+    "city": "Balatonfüred area",
+    "chapter": "Visit",
+    "lat": 46.92,
+    "lng": 17.89,
+    "precision": "city",
+    "description": "Central Europe’s large lake draws summer beaches, wine hills and ferry hops.",
+    "source": "https://en.wikipedia.org/wiki/Lake_Balaton"
+  },
+  {
+    "id": "szeged-square",
+    "name": "Szeged Dóm Square",
+    "city": "Szeged",
+    "chapter": "Visit",
+    "lat": 46.248,
+    "lng": 20.149,
+    "precision": "venue",
+    "description": "An arcaded square frames the Votive Church in Hungary’s southern university city.",
+    "source": "https://en.wikipedia.org/wiki/Szeged"
+  },
+  {
+    "id": "aggtelek",
+    "name": "Aggtelek Caves",
+    "city": "Aggtelek",
+    "chapter": "Visit",
+    "lat": 48.47,
+    "lng": 20.5,
+    "precision": "city",
+    "description": "Karst caves shared with Slovakia, including the Baradla system.",
+    "source": "https://en.wikipedia.org/wiki/Caves_of_Aggtelek_Karst_and_Slovak_Karst"
+  },
+  {
+    "id": "hortobagy",
+    "name": "Hortobágy National Park",
+    "city": "Hortobágy",
+    "chapter": "Visit",
+    "lat": 47.58,
+    "lng": 21.15,
+    "precision": "city",
+    "description": "Puszta grasslands with traditional herds and a Nine-Arch Bridge landmark.",
+    "source": "https://en.wikipedia.org/wiki/Hortob%C3%A1gy_National_Park"
+  },
+  {
+    "id": "great-market-hall",
+    "name": "Great Market Hall",
+    "city": "Budapest",
+    "chapter": "Foods",
+    "lat": 47.4867,
+    "lng": 19.0586,
+    "precision": "venue",
+    "description": "A vast market by Freedom Bridge sells paprika, produce and upstairs snack counters.",
+    "source": "https://en.wikipedia.org/wiki/Great_Market_Hall_(Budapest)"
+  },
+  {
+    "id": "ruin-bars",
+    "name": "Kazinczy Street ruin bars",
+    "city": "Budapest",
+    "chapter": "Foods",
+    "lat": 47.497,
+    "lng": 19.063,
+    "precision": "city",
+    "description": "Courtyard ruin pubs in District VII serve drinks and street snacks in mismatched décor.",
+    "source": "https://en.wikipedia.org/wiki/Ruin_bar"
+  },
+  {
+    "id": "central-market-debrecen",
+    "name": "Debrecen market",
+    "city": "Debrecen",
+    "chapter": "Foods",
+    "lat": 47.53,
+    "lng": 21.64,
+    "precision": "city",
+    "description": "Eastern Hungary’s hub offers markets and restaurants around the Great Church.",
+    "source": "https://en.wikipedia.org/wiki/Debrecen"
+  },
+  {
+    "id": "pecs-food",
+    "name": "Pécs cafés & markets",
+    "city": "Pécs",
+    "chapter": "Foods",
+    "lat": 46.072,
+    "lng": 18.233,
+    "precision": "city",
+    "description": "A southern city with Mediterranean-leaning cafés near the mosque-church square.",
+    "source": "https://en.wikipedia.org/wiki/P%C3%A9cs"
+  },
+  {
+    "id": "tokaj",
+    "name": "Tokaj wine cellars",
+    "city": "Tokaj",
+    "chapter": "Foods",
+    "lat": 48.121,
+    "lng": 21.413,
+    "precision": "city",
+    "description": "Historic cellars in the Tokaj region pour sweet and dry wines from UNESCO vineyards.",
+    "source": "https://en.wikipedia.org/wiki/Tokaj_wine_region"
+  },
+  {
+    "id": "sziget",
+    "name": "Sziget Festival",
+    "city": "Budapest",
+    "chapter": "Seasonal",
+    "lat": 47.55,
+    "lng": 19.07,
+    "precision": "venue",
+    "description": "A large multi-genre music festival on Óbuda Island each August.",
+    "source": "https://en.wikipedia.org/wiki/Sziget_Festival",
+    "seasonal": true,
+    "seasonal_label": "Sziget Festival"
+  }
+]
