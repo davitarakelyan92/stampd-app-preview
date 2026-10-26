@@ -132,8 +132,8 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
   const iconSize=Math.min(iw,ih)*0.78, ix=pad+(iw-iconSize)/2, iy=pad+(ih-iconSize)/2+4;
   const sunR=iconSize*0.2;
   const hasPhoto = !!(photo && String(photo).trim());
-  /* Prefer place photo for all 812 — Davit: no gray pin placeholders on locked stamps */
-  const usePhoto = hasPhoto;
+  /* Davit: graphic digital stamps only — never place photos on stamp faces (chapter marks cover missing WI_ICONS) */
+  const usePhoto = false; /* graphic stamps only — never place photos on faces */
   const photoFilter = locked ? ` filter="url(#${id}pg)"` : (seasonal ? ` filter="url(#${id}ps)"` : "");
   const art = usePhoto
     ? `<image href="${String(photo).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;")}" x="${pad}" y="${pad}" width="${iw}" height="${ih}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id}clip)"${photoFilter}/>

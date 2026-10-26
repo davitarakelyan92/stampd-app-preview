@@ -356,7 +356,7 @@
       kind === "collected" ? "is-collected" : kind === "unavailable" ? "is-unavailable" : "is-open";
     const stroke =
       kind === "collected" ? "#1B2747" : kind === "unavailable" ? "#C8C4BC" : "#A3AABA";
-    /* Always draw place line-art (or WI_ICON_FALLBACK pin) — never a blank tile */
+    /* Always draw place line-art (or chapter graphic mark) — never a photo face */
     let icon = "";
     if (typeof wiIcon === "function") {
       icon = wiIcon(place.id, { size: 18, stroke, sw: 2.2 });
