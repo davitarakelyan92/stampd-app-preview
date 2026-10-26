@@ -1,0 +1,180 @@
+[
+  {
+    "id": "la-moneda",
+    "name": "Palacio de La Moneda",
+    "city": "Santiago",
+    "chapter": "Monuments",
+    "lat": -33.443,
+    "lng": -70.6539,
+    "precision": "venue",
+    "description": "Chile’s presidential palace faces Plaza de la Constitución in central Santiago.",
+    "source": "https://en.wikipedia.org/wiki/Palacio_de_La_Moneda"
+  },
+  {
+    "id": "santa-lucia",
+    "name": "Cerro Santa Lucía",
+    "city": "Santiago",
+    "chapter": "Monuments",
+    "lat": -33.44,
+    "lng": -70.643,
+    "precision": "venue",
+    "description": "A landscaped hill with viewpoints and historic gates above downtown Santiago.",
+    "source": "https://en.wikipedia.org/wiki/Santa_Luc%C3%ADa_Hill"
+  },
+  {
+    "id": "valparaiso-ascensores",
+    "name": "Valparaíso ascensores",
+    "city": "Valparaíso",
+    "chapter": "Monuments",
+    "lat": -33.0458,
+    "lng": -71.6197,
+    "precision": "venue",
+    "description": "Historic funicular elevators climb the colourful cerros above the port.",
+    "source": "https://en.wikipedia.org/wiki/Valpara%C3%ADso"
+  },
+  {
+    "id": "easter-island-moai",
+    "name": "Rapa Nui moai (Ahu Tongariki)",
+    "city": "Rapa Nui",
+    "chapter": "Monuments",
+    "lat": -27.125,
+    "lng": -109.277,
+    "precision": "venue",
+    "description": "A coastal ahu holds a row of restored moai on Easter Island.",
+    "source": "https://en.wikipedia.org/wiki/Ahu_Tongariki"
+  },
+  {
+    "id": "se-cathedral-santiago",
+    "name": "Santiago Metropolitan Cathedral",
+    "city": "Santiago",
+    "chapter": "Monuments",
+    "lat": -33.4375,
+    "lng": -70.6506,
+    "precision": "venue",
+    "description": "A neoclassical cathedral anchors Plaza de Armas.",
+    "source": "https://en.wikipedia.org/wiki/Santiago_Metropolitan_Cathedral"
+  },
+  {
+    "id": "torres-del-paine",
+    "name": "Torres del Paine",
+    "city": "Magallanes",
+    "chapter": "Visit",
+    "lat": -50.9423,
+    "lng": -73.4068,
+    "precision": "city",
+    "description": "Granite towers and turquoise lakes define Patagonia’s flagship national park.",
+    "source": "https://en.wikipedia.org/wiki/Torres_del_Paine_National_Park"
+  },
+  {
+    "id": "atacama",
+    "name": "Valle de la Luna",
+    "city": "San Pedro de Atacama",
+    "chapter": "Visit",
+    "lat": -22.916,
+    "lng": -68.32,
+    "precision": "venue",
+    "description": "Salt and stone formations colour the Moon Valley near San Pedro.",
+    "source": "https://en.wikipedia.org/wiki/Valle_de_la_Luna_(Chile)"
+  },
+  {
+    "id": "vineyards-maipo",
+    "name": "Maipo Valley vineyards",
+    "city": "near Santiago",
+    "chapter": "Visit",
+    "lat": -33.7,
+    "lng": -70.7,
+    "precision": "city",
+    "description": "Wine estates sit south of Santiago in the Maipo Valley.",
+    "source": "https://en.wikipedia.org/wiki/Maipo_Valley"
+  },
+  {
+    "id": "chiloé",
+    "name": "Chiloé wooden churches",
+    "city": "Castro area",
+    "chapter": "Visit",
+    "lat": -42.48,
+    "lng": -73.76,
+    "precision": "city",
+    "description": "UNESCO wooden churches and palafito houses mark Chiloé Island.",
+    "source": "https://en.wikipedia.org/wiki/Churches_of_Chilo%C3%A9"
+  },
+  {
+    "id": "san-cristobal",
+    "name": "Cerro San Cristóbal",
+    "city": "Santiago",
+    "chapter": "Visit",
+    "lat": -33.425,
+    "lng": -70.632,
+    "precision": "venue",
+    "description": "A city hill with a sanctuary statue and cable-car views over Santiago.",
+    "source": "https://en.wikipedia.org/wiki/San_Crist%C3%B3bal_Hill"
+  },
+  {
+    "id": "mercado-central-scl",
+    "name": "Mercado Central",
+    "city": "Santiago",
+    "chapter": "Foods",
+    "lat": -33.433,
+    "lng": -70.65,
+    "precision": "venue",
+    "description": "A wrought-iron market hall famous for seafood restaurants.",
+    "source": "https://en.wikipedia.org/wiki/Mercado_Central_de_Santiago"
+  },
+  {
+    "id": "la-vega",
+    "name": "La Vega Central",
+    "city": "Santiago",
+    "chapter": "Foods",
+    "lat": -33.428,
+    "lng": -70.6505,
+    "precision": "venue",
+    "description": "A vast produce market north of the Mapocho with casual eateries.",
+    "source": "https://en.wikipedia.org/wiki/La_Vega_Central_Market"
+  },
+  {
+    "id": "valpo-food",
+    "name": "Valparaíso hillside cafés",
+    "city": "Valparaíso",
+    "chapter": "Foods",
+    "lat": -33.047,
+    "lng": -71.612,
+    "precision": "city",
+    "description": "Cafés and seafood kitchens climb the colourful cerros.",
+    "source": "https://en.wikipedia.org/wiki/Valpara%C3%ADso"
+  },
+  {
+    "id": "concepcion-food",
+    "name": "Concepción market & cafés",
+    "city": "Concepción",
+    "chapter": "Foods",
+    "lat": -36.82,
+    "lng": -73.05,
+    "precision": "city",
+    "description": "Biobío’s university city offers markets and riverside dining.",
+    "source": "https://en.wikipedia.org/wiki/Concepci%C3%B3n,_Chile"
+  },
+  {
+    "id": "punta-arenas-food",
+    "name": "Punta Arenas waterfront eateries",
+    "city": "Punta Arenas",
+    "chapter": "Foods",
+    "lat": -53.1638,
+    "lng": -70.9171,
+    "precision": "city",
+    "description": "Magellan Strait city known for king crab and southern kitchens.",
+    "source": "https://en.wikipedia.org/wiki/Punta_Arenas"
+  },
+  {
+    "id": "fiestas-patrias",
+    "name": "Fiestas Patrias",
+    "city": "Santiago",
+    "chapter": "Seasonal",
+    "lat": -33.45,
+    "lng": -70.67,
+    "precision": "city",
+    "description": "Mid-September national holidays fill parks with fondas, cueca and barbecues.",
+    "source": "https://en.wikipedia.org/wiki/Fiestas_Patrias_(Chile)",
+    "seasonal": true,
+    "seasonal_label": "Fiestas Patrias"
+  }
+]

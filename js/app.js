@@ -513,7 +513,7 @@
     const stampSvg =
       '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 10h6M9 14h4"/></svg>';
     const coinSvg =
-      '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 10.5c.6-1 1.5-1.5 2.5-1.5s2 .6 2.5 1.5M9.5 13.5c.6 1 1.5 1.5 2.5 1.5s2-.6 2.5-1.5"/></svg>';
+      '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg>';
     return `<span class="balance-pill stamps" title="Stamps collected">${stampSvg}<span>${stamps}</span></span><span class="balance-pill coins" title="Coins">${coinSvg}<span>${coins}</span></span>`;
   }
 
@@ -952,9 +952,20 @@
       place && typeof place.lat === "number" && typeof place.lng === "number"
         ? formatCoords(place.lat, place.lng)
         : "Coordinates unavailable";
+    const hasCoords =
+      place && typeof place.lat === "number" && typeof place.lng === "number";
+    const mapsUrl = hasCoords
+      ? `https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`
+      : null;
+    const mapCta = mapsUrl
+      ? `<a class="detail-map-cta" href="${mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open in Google Maps" title="Open in Google Maps"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-6.5-5.2-6.5-10.2A6.5 6.5 0 0 1 12 4.3a6.5 6.5 0 0 1 6.5 6.5C18.5 15.8 12 21 12 21z" fill="#fff"/><circle cx="12" cy="10.8" r="2.35" fill="#FF5B4A"/></svg></a>`
+      : "";
     meta.innerHTML = `
-      <div class="meta-row"><span class="meta-k">Distance</span><span class="meta-v">${dist}</span></div>
-      <div class="meta-row"><span class="meta-k">Coordinates</span><span class="meta-v">${coords}</span></div>`;
+      <div class="meta-rows">
+        <div class="meta-row"><span class="meta-k">Distance</span><span class="meta-v">${dist}</span></div>
+        <div class="meta-row"><span class="meta-k">Coordinates</span><span class="meta-v">${coords}</span></div>
+      </div>
+      ${mapCta}`;
 
     const src = (place && (place.photo || place.photo_url)) || null;
     const safeName = String(name)

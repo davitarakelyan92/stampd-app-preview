@@ -1,0 +1,180 @@
+[
+  {
+    "id": "machu-picchu",
+    "name": "Machu Picchu",
+    "city": "Cusco Region",
+    "chapter": "Monuments",
+    "lat": -13.1631,
+    "lng": -72.545,
+    "precision": "venue",
+    "description": "Inca stone citadel set on a mountain ridge above the Urubamba. Timed tickets required.",
+    "source": "https://en.wikipedia.org/wiki/Machu_Picchu"
+  },
+  {
+    "id": "sacsayhuaman",
+    "name": "Sacsayhuamán",
+    "city": "Cusco",
+    "chapter": "Monuments",
+    "lat": -13.508,
+    "lng": -71.982,
+    "precision": "venue",
+    "description": "Massive zigzag stone walls overlook Cusco from the northern hills.",
+    "source": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n"
+  },
+  {
+    "id": "lima-cathedral",
+    "name": "Lima Cathedral",
+    "city": "Lima",
+    "chapter": "Monuments",
+    "lat": -12.0464,
+    "lng": -77.0428,
+    "precision": "venue",
+    "description": "A colonial cathedral faces Plaza Mayor in Lima’s historic centre.",
+    "source": "https://en.wikipedia.org/wiki/Lima_Cathedral"
+  },
+  {
+    "id": "chan-chan",
+    "name": "Chan Chan",
+    "city": "Trujillo area",
+    "chapter": "Monuments",
+    "lat": -8.11,
+    "lng": -79.075,
+    "precision": "venue",
+    "description": "Earthen adobe city of the Chimú near the Pacific coast.",
+    "source": "https://en.wikipedia.org/wiki/Chan_Chan"
+  },
+  {
+    "id": "nazca-lines-tower",
+    "name": "Nazca Lines viewing tower",
+    "city": "Nazca",
+    "chapter": "Monuments",
+    "lat": -14.7,
+    "lng": -75.12,
+    "precision": "venue",
+    "description": "A roadside tower offers elevated views of selected Nazca geoglyphs.",
+    "source": "https://en.wikipedia.org/wiki/Nazca_Lines"
+  },
+  {
+    "id": "sacred-valley",
+    "name": "Sacred Valley",
+    "city": "Urubamba",
+    "chapter": "Visit",
+    "lat": -13.3,
+    "lng": -72.1,
+    "precision": "city",
+    "description": "Inca terraces, markets and villages along the Urubamba toward Machu Picchu.",
+    "source": "https://en.wikipedia.org/wiki/Sacred_Valley"
+  },
+  {
+    "id": "titicaca",
+    "name": "Lake Titicaca",
+    "city": "Puno",
+    "chapter": "Visit",
+    "lat": -15.84,
+    "lng": -69.99,
+    "precision": "city",
+    "description": "High-altitude lake shared with Bolivia; boat trips visit island communities.",
+    "source": "https://en.wikipedia.org/wiki/Lake_Titicaca"
+  },
+  {
+    "id": "colca",
+    "name": "Colca Canyon",
+    "city": "Arequipa Region",
+    "chapter": "Visit",
+    "lat": -15.6,
+    "lng": -71.6,
+    "precision": "city",
+    "description": "A deep canyon known for Andean condor viewpoints and terraced villages.",
+    "source": "https://en.wikipedia.org/wiki/Colca_Canyon"
+  },
+  {
+    "id": "huacachina",
+    "name": "Huacachina",
+    "city": "Ica",
+    "chapter": "Visit",
+    "lat": -14.0875,
+    "lng": -75.762,
+    "precision": "venue",
+    "description": "An oasis lagoon ringed by sand dunes near Ica.",
+    "source": "https://en.wikipedia.org/wiki/Huacachina"
+  },
+  {
+    "id": "miraflores-malecón",
+    "name": "Miraflores Malecón",
+    "city": "Lima",
+    "chapter": "Visit",
+    "lat": -12.125,
+    "lng": -77.035,
+    "precision": "venue",
+    "description": "Cliff-top parks and paths overlook the Pacific in Miraflores.",
+    "source": "https://en.wikipedia.org/wiki/Miraflores_District,_Lima"
+  },
+  {
+    "id": "mercado-san-camilo",
+    "name": "Mercado San Camilo",
+    "city": "Arequipa",
+    "chapter": "Foods",
+    "lat": -16.4,
+    "lng": -71.537,
+    "precision": "venue",
+    "description": "Arequipa’s central market sells produce and Andean ingredients.",
+    "source": "https://en.wikipedia.org/wiki/Arequipa"
+  },
+  {
+    "id": "surquillo-market",
+    "name": "Mercado No. 1 Surquillo",
+    "city": "Lima",
+    "chapter": "Foods",
+    "lat": -12.115,
+    "lng": -77.02,
+    "precision": "venue",
+    "description": "A favourite Lima market for fruit, fish and juice counters.",
+    "source": "https://en.wikipedia.org/wiki/Surquillo"
+  },
+  {
+    "id": "cusco-san-pedro",
+    "name": "Mercado San Pedro",
+    "city": "Cusco",
+    "chapter": "Foods",
+    "lat": -13.522,
+    "lng": -71.978,
+    "precision": "venue",
+    "description": "Cusco’s busy market for juices, cheeses and local lunches.",
+    "source": "https://en.wikipedia.org/wiki/Cusco"
+  },
+  {
+    "id": "barranco-food",
+    "name": "Barranco cafés",
+    "city": "Lima",
+    "chapter": "Foods",
+    "lat": -12.149,
+    "lng": -77.021,
+    "precision": "city",
+    "description": "Bohemian district of cafés, cevicherías and evening terraces.",
+    "source": "https://en.wikipedia.org/wiki/Barranco_District"
+  },
+  {
+    "id": "trujillo-food",
+    "name": "Trujillo city eateries",
+    "city": "Trujillo",
+    "chapter": "Foods",
+    "lat": -8.112,
+    "lng": -79.028,
+    "precision": "city",
+    "description": "Coastal northern kitchens known for ceviche and cabrito.",
+    "source": "https://en.wikipedia.org/wiki/Trujillo,_Peru"
+  },
+  {
+    "id": "intiraymi",
+    "name": "Inti Raymi",
+    "city": "Cusco",
+    "chapter": "Seasonal",
+    "lat": -13.508,
+    "lng": -71.982,
+    "precision": "venue",
+    "description": "A June solstice festival reenacting Inca sun rites at Sacsayhuamán.",
+    "source": "https://en.wikipedia.org/wiki/Inti_Raymi",
+    "seasonal": true,
+    "seasonal_label": "Inti Raymi"
+  }
+]

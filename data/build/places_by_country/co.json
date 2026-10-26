@@ -1,0 +1,180 @@
+[
+  {
+    "id": "monserrate",
+    "name": "Monserrate",
+    "city": "Bogotá",
+    "chapter": "Monuments",
+    "lat": 4.605,
+    "lng": -74.056,
+    "precision": "venue",
+    "description": "A sanctuary and viewpoint crown the mountain above Bogotá, reached by cable car or funicular.",
+    "source": "https://en.wikipedia.org/wiki/Monserrate"
+  },
+  {
+    "id": "walled-cartagena",
+    "name": "Cartagena walled city",
+    "city": "Cartagena",
+    "chapter": "Monuments",
+    "lat": 10.423,
+    "lng": -75.551,
+    "precision": "city",
+    "description": "Colonial walls and colourful streets enclose Cartagena’s historic centre.",
+    "source": "https://en.wikipedia.org/wiki/Cartagena,_Colombia"
+  },
+  {
+    "id": "salt-cathedral",
+    "name": "Salt Cathedral of Zipaquirá",
+    "city": "Zipaquirá",
+    "chapter": "Monuments",
+    "lat": 5.019,
+    "lng": -74.008,
+    "precision": "venue",
+    "description": "An underground church carved in a salt mine north of Bogotá.",
+    "source": "https://en.wikipedia.org/wiki/Salt_Cathedral_of_Zipaquir%C3%A1"
+  },
+  {
+    "id": "plaza-bolivar-bog",
+    "name": "Plaza de Bolívar",
+    "city": "Bogotá",
+    "chapter": "Monuments",
+    "lat": 4.5981,
+    "lng": -74.076,
+    "precision": "venue",
+    "description": "The historic central square of Bogotá surrounded by civic buildings.",
+    "source": "https://en.wikipedia.org/wiki/Bol%C3%ADvar_Square"
+  },
+  {
+    "id": "popayan-cathedral",
+    "name": "Popayán Cathedral",
+    "city": "Popayán",
+    "chapter": "Monuments",
+    "lat": 2.441,
+    "lng": -76.606,
+    "precision": "venue",
+    "description": "A white colonial cathedral in Colombia’s Holy Week city.",
+    "source": "https://en.wikipedia.org/wiki/Popay%C3%A1n"
+  },
+  {
+    "id": "cocora",
+    "name": "Cocora Valley",
+    "city": "Salento area",
+    "chapter": "Visit",
+    "lat": 4.637,
+    "lng": -75.488,
+    "precision": "venue",
+    "description": "Wax palms rise above green hills in the Quindío coffee region.",
+    "source": "https://en.wikipedia.org/wiki/Cocora_Valley"
+  },
+  {
+    "id": "tayrona",
+    "name": "Tayrona National Park",
+    "city": "Santa Marta area",
+    "chapter": "Visit",
+    "lat": 11.31,
+    "lng": -74.03,
+    "precision": "city",
+    "description": "Caribbean beaches and jungle trails east of Santa Marta.",
+    "source": "https://en.wikipedia.org/wiki/Tayrona_National_Natural_Park"
+  },
+  {
+    "id": "medellin-comuna",
+    "name": "Comuna 13 escalators",
+    "city": "Medellín",
+    "chapter": "Visit",
+    "lat": 6.25,
+    "lng": -75.62,
+    "precision": "venue",
+    "description": "Outdoor escalators and street-art tours transform a hillside neighbourhood.",
+    "source": "https://en.wikipedia.org/wiki/Comuna_13"
+  },
+  {
+    "id": "coffee-triangle",
+    "name": "Coffee Cultural Landscape",
+    "city": "Armenia/Pereira area",
+    "chapter": "Visit",
+    "lat": 4.53,
+    "lng": -75.68,
+    "precision": "city",
+    "description": "UNESCO coffee farms and towns across Quindío, Risaralda and Caldas.",
+    "source": "https://en.wikipedia.org/wiki/Coffee_Cultural_Landscape_of_Colombia"
+  },
+  {
+    "id": "san-andres",
+    "name": "San Andrés island",
+    "city": "San Andrés",
+    "chapter": "Visit",
+    "lat": 12.584,
+    "lng": -81.7,
+    "precision": "city",
+    "description": "Caribbean island with reefs and English-Creole heritage.",
+    "source": "https://en.wikipedia.org/wiki/San_Andr%C3%A9s_(island)"
+  },
+  {
+    "id": "paloquemao",
+    "name": "Plaza de Mercado de Paloquemao",
+    "city": "Bogotá",
+    "chapter": "Foods",
+    "lat": 4.615,
+    "lng": -74.09,
+    "precision": "venue",
+    "description": "Bogotá’s large wholesale-style market for flowers, fruit and juices.",
+    "source": "https://en.wikipedia.org/wiki/Bogot%C3%A1"
+  },
+  {
+    "id": "mercado-bazurto",
+    "name": "Bazurto Market",
+    "city": "Cartagena",
+    "chapter": "Foods",
+    "lat": 10.41,
+    "lng": -75.52,
+    "precision": "venue",
+    "description": "A sprawling market for seafood and Caribbean ingredients in Cartagena.",
+    "source": "https://en.wikipedia.org/wiki/Cartagena,_Colombia"
+  },
+  {
+    "id": "medellin-mercado",
+    "name": "Mercado del Río / Provenza eateries",
+    "city": "Medellín",
+    "chapter": "Foods",
+    "lat": 6.21,
+    "lng": -75.57,
+    "precision": "city",
+    "description": "Food halls and Provenza restaurants in El Poblado.",
+    "source": "https://en.wikipedia.org/wiki/El_Poblado"
+  },
+  {
+    "id": "cali-food",
+    "name": "Cali river cafés",
+    "city": "Cali",
+    "chapter": "Foods",
+    "lat": 3.44,
+    "lng": -76.52,
+    "precision": "city",
+    "description": "Salsa city’s riverside and Granada neighbourhood kitchens.",
+    "source": "https://en.wikipedia.org/wiki/Cali"
+  },
+  {
+    "id": "barranquilla-food",
+    "name": "Barranquilla market snacks",
+    "city": "Barranquilla",
+    "chapter": "Foods",
+    "lat": 10.98,
+    "lng": -74.8,
+    "precision": "city",
+    "description": "Caribbean street food and markets in Colombia’s Atlantic port city.",
+    "source": "https://en.wikipedia.org/wiki/Barranquilla"
+  },
+  {
+    "id": "barranquilla-carnival",
+    "name": "Barranquilla Carnival",
+    "city": "Barranquilla",
+    "chapter": "Seasonal",
+    "lat": 10.987,
+    "lng": -74.788,
+    "precision": "city",
+    "description": "One of the world’s large carnivals with parades and cumbia before Lent.",
+    "source": "https://en.wikipedia.org/wiki/Carnival_of_Barranquilla",
+    "seasonal": true,
+    "seasonal_label": "Barranquilla Carnival"
+  }
+]

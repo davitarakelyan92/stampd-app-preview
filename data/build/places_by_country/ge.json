@@ -1,0 +1,180 @@
+[
+  {
+    "id": "svetitskhoveli",
+    "name": "Svetitskhoveli Cathedral",
+    "city": "Mtskheta",
+    "chapter": "Monuments",
+    "lat": 41.842,
+    "lng": 44.721,
+    "precision": "venue",
+    "description": "A Georgian Orthodox cathedral in the old capital of Mtskheta, a UNESCO site.",
+    "source": "https://en.wikipedia.org/wiki/Svetitskhoveli_Cathedral"
+  },
+  {
+    "id": "narikala",
+    "name": "Narikala Fortress",
+    "city": "Tbilisi",
+    "chapter": "Monuments",
+    "lat": 41.687,
+    "lng": 44.805,
+    "precision": "venue",
+    "description": "A fortress ridge above the old town, linked by cable car from Rike Park.",
+    "source": "https://en.wikipedia.org/wiki/Narikala"
+  },
+  {
+    "id": "gergeti",
+    "name": "Gergeti Trinity Church",
+    "city": "Stepantsminda",
+    "chapter": "Monuments",
+    "lat": 42.656,
+    "lng": 44.62,
+    "precision": "venue",
+    "description": "A hilltop church faces Mount Kazbek above the Tergi valley.",
+    "source": "https://en.wikipedia.org/wiki/Gergeti_Trinity_Church"
+  },
+  {
+    "id": "gelati",
+    "name": "Gelati Monastery",
+    "city": "Kutaisi area",
+    "chapter": "Monuments",
+    "lat": 42.295,
+    "lng": 42.768,
+    "precision": "venue",
+    "description": "A medieval monastic complex with mosaics near Kutaisi.",
+    "source": "https://en.wikipedia.org/wiki/Gelati_Monastery"
+  },
+  {
+    "id": "sameba",
+    "name": "Holy Trinity Cathedral",
+    "city": "Tbilisi",
+    "chapter": "Monuments",
+    "lat": 41.698,
+    "lng": 44.816,
+    "precision": "venue",
+    "description": "A large modern cathedral on Elia Hill dominates Tbilisi’s skyline.",
+    "source": "https://en.wikipedia.org/wiki/Sameba"
+  },
+  {
+    "id": "old-tbilisi",
+    "name": "Old Tbilisi sulfur baths",
+    "city": "Tbilisi",
+    "chapter": "Visit",
+    "lat": 41.688,
+    "lng": 44.81,
+    "precision": "city",
+    "description": "Brick domes of Abanotubani mark the historic bath district.",
+    "source": "https://en.wikipedia.org/wiki/Abanotubani"
+  },
+  {
+    "id": "kazbegi",
+    "name": "Kazbegi / Stepantsminda",
+    "city": "Stepantsminda",
+    "chapter": "Visit",
+    "lat": 42.66,
+    "lng": 44.64,
+    "precision": "city",
+    "description": "Mountain town gateway to Gergeti and Caucasus trails.",
+    "source": "https://en.wikipedia.org/wiki/Stepantsminda"
+  },
+  {
+    "id": "svaneti",
+    "name": "Ushguli",
+    "city": "Svaneti",
+    "chapter": "Visit",
+    "lat": 42.92,
+    "lng": 43.01,
+    "precision": "city",
+    "description": "High Svaneti villages with medieval stone towers.",
+    "source": "https://en.wikipedia.org/wiki/Ushguli"
+  },
+  {
+    "id": "prometheus-cave",
+    "name": "Prometheus Cave",
+    "city": "Tskaltubo area",
+    "chapter": "Visit",
+    "lat": 42.37,
+    "lng": 42.6,
+    "precision": "venue",
+    "description": "A show cave with walkways and an underground boat section.",
+    "source": "https://en.wikipedia.org/wiki/Kumistavi_Cave"
+  },
+  {
+    "id": "batumi-boulevard",
+    "name": "Batumi Boulevard",
+    "city": "Batumi",
+    "chapter": "Visit",
+    "lat": 41.65,
+    "lng": 41.64,
+    "precision": "venue",
+    "description": "A Black Sea promenade with cafés, parks and modern towers.",
+    "source": "https://en.wikipedia.org/wiki/Batumi"
+  },
+  {
+    "id": "dry-bridge",
+    "name": "Dry Bridge Market",
+    "city": "Tbilisi",
+    "chapter": "Foods",
+    "lat": 41.7,
+    "lng": 44.8,
+    "precision": "venue",
+    "description": "An open-air flea and souvenir market by the Dry Bridge.",
+    "source": "https://en.wikipedia.org/wiki/Tbilisi"
+  },
+  {
+    "id": "dezertirebi",
+    "name": "Deserter’s Bazaar",
+    "city": "Tbilisi",
+    "chapter": "Foods",
+    "lat": 41.72,
+    "lng": 44.8,
+    "precision": "venue",
+    "description": "Tbilisi’s large produce market near the railway station.",
+    "source": "https://en.wikipedia.org/wiki/Tbilisi"
+  },
+  {
+    "id": "rustaveli-cafes",
+    "name": "Rustaveli Avenue cafés",
+    "city": "Tbilisi",
+    "chapter": "Foods",
+    "lat": 41.697,
+    "lng": 44.799,
+    "precision": "city",
+    "description": "Cafés and bakeries line the main avenue of museums and theatres.",
+    "source": "https://en.wikipedia.org/wiki/Rustaveli_Avenue"
+  },
+  {
+    "id": "kutaisi-market",
+    "name": "Kutaisi central market",
+    "city": "Kutaisi",
+    "chapter": "Foods",
+    "lat": 42.27,
+    "lng": 42.7,
+    "precision": "venue",
+    "description": "Western Georgia’s hub market for cheese, spices and churchkhela.",
+    "source": "https://en.wikipedia.org/wiki/Kutaisi"
+  },
+  {
+    "id": "signagi-wine",
+    "name": "Sighnaghi wine terraces",
+    "city": "Sighnaghi",
+    "chapter": "Foods",
+    "lat": 41.62,
+    "lng": 45.92,
+    "precision": "city",
+    "description": "Hill town in Kakheti with qvevri wine tastings and valley views.",
+    "source": "https://en.wikipedia.org/wiki/Sighnaghi"
+  },
+  {
+    "id": "tbilisoba",
+    "name": "Tbilisoba",
+    "city": "Tbilisi",
+    "chapter": "Seasonal",
+    "lat": 41.693,
+    "lng": 44.801,
+    "precision": "city",
+    "description": "An autumn city festival celebrating Tbilisi with markets and concerts.",
+    "source": "https://en.wikipedia.org/wiki/Tbilisoba",
+    "seasonal": true,
+    "seasonal_label": "Tbilisoba"
+  }
+]

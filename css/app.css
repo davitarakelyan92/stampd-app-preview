@@ -335,9 +335,12 @@ body{
   margin:0 24px 20px;
 }
 .detail-meta{
-  margin:0 24px 0;display:flex;flex-direction:column;gap:12px;
+  margin:0 24px 0;display:flex;flex-direction:row;align-items:center;gap:14px;
   background:#fff;border:1px solid #D5D9E3;border-radius:14px;
   padding:14px 16px;
+}
+.detail-meta .meta-rows{
+  flex:1;min-width:0;display:flex;flex-direction:column;gap:12px;
 }
 .detail-meta .meta-row{
   display:flex;flex-direction:column;gap:2px;
@@ -350,6 +353,17 @@ body{
   font-size:15px;font-weight:700;color:var(--navy);line-height:1.35;
   font-variant-numeric:tabular-nums;
 }
+.detail-map-cta{
+  flex:none;width:48px;height:48px;border-radius:14px;
+  background:var(--coral);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;
+  text-decoration:none;box-shadow:0 1px 0 #1B27470a,0 6px 14px -8px #FF5B4A66;
+  transition:transform .12s ease,filter .12s ease;
+}
+.detail-map-cta:hover{filter:brightness(1.04)}
+.detail-map-cta:active{transform:scale(.96)}
+.detail-map-cta svg{display:block;flex:none}
+.detail-map-cta:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 .detail-topbar-title{
   flex:1;min-width:0;margin:0 8px 0 4px;
   font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-.01em;
@@ -519,15 +533,16 @@ body{
   display:inline-flex;align-items:center;gap:6px;flex:none;
 }
 .balance-pill{
-  display:inline-flex;align-items:center;gap:4px;
-  height:28px;padding:0 9px;border-radius:999px;
+  display:inline-flex;align-items:center;gap:5px;
+  height:28px;padding:0 10px;border-radius:999px;
   background:#fff;border:1px solid #E3E1DA;
   box-shadow:0 1px 0 #1B27470a;
-  font-size:12px;font-weight:800;color:var(--navy);letter-spacing:-.01em;
+  font-size:13px;font-weight:700;color:var(--navy);letter-spacing:-.01em;
 }
-.balance-pill svg{display:block;flex:none}
-.balance-pill.coins{color:#A35A00}
-.balance-pill.coins svg{color:#FFA234}
+.balance-pill svg{display:block;flex:none;color:var(--navy)}
+.balance-pill.coins,
+.balance-pill.stamps{color:var(--navy)}
+.balance-pill.coins svg{color:var(--coral)}
 
 /* ── Trade ── */
 .trade-scroll{padding-bottom:110px}

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "sensoji",
+    "name": "Sensō-ji",
+    "city": "Tokyo",
+    "chapter": "Monuments",
+    "lat": 35.7148,
+    "lng": 139.7967,
+    "precision": "venue",
+    "description": "Tokyo’s oldest temple approach runs through Nakamise-dōri to a red hōzōmon gate.",
+    "source": "https://en.wikipedia.org/wiki/Sens%C5%8D-ji"
+  },
+  {
+    "id": "fushimi-inari",
+    "name": "Fushimi Inari Shrine",
+    "city": "Kyoto",
+    "chapter": "Monuments",
+    "lat": 34.9671,
+    "lng": 135.7727,
+    "precision": "venue",
+    "description": "Thousands of vermilion torii gates climb the trails of Mount Inari.",
+    "source": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha"
+  },
+  {
+    "id": "osaka-castle",
+    "name": "Osaka Castle",
+    "city": "Osaka",
+    "chapter": "Monuments",
+    "lat": 34.6873,
+    "lng": 135.5262,
+    "precision": "venue",
+    "description": "A reconstructed keep rises above stone walls and orchards in central Osaka.",
+    "source": "https://en.wikipedia.org/wiki/Osaka_Castle"
+  },
+  {
+    "id": "himeji",
+    "name": "Himeji Castle",
+    "city": "Himeji",
+    "chapter": "Monuments",
+    "lat": 34.8394,
+    "lng": 134.6939,
+    "precision": "venue",
+    "description": "A white original castle complex often called Japan’s finest surviving keep.",
+    "source": "https://en.wikipedia.org/wiki/Himeji_Castle"
+  },
+  {
+    "id": "todaiji",
+    "name": "Tōdai-ji",
+    "city": "Nara",
+    "chapter": "Monuments",
+    "lat": 34.689,
+    "lng": 135.8398,
+    "precision": "venue",
+    "description": "A vast wooden hall houses a giant Buddha statue in Nara Park.",
+    "source": "https://en.wikipedia.org/wiki/T%C5%8Ddai-ji"
+  },
+  {
+    "id": "arashiyama",
+    "name": "Arashiyama bamboo grove",
+    "city": "Kyoto",
+    "chapter": "Visit",
+    "lat": 35.017,
+    "lng": 135.672,
+    "precision": "venue",
+    "description": "A walking path through towering bamboo west of central Kyoto.",
+    "source": "https://en.wikipedia.org/wiki/Arashiyama"
+  },
+  {
+    "id": "mt-fuji-kawaguchi",
+    "name": "Mount Fuji from Kawaguchiko",
+    "city": "Fujikawaguchiko",
+    "chapter": "Visit",
+    "lat": 35.514,
+    "lng": 138.755,
+    "precision": "venue",
+    "description": "Lakeside viewpoints frame Japan’s iconic peak north of the mountain.",
+    "source": "https://en.wikipedia.org/wiki/Mount_Fuji"
+  },
+  {
+    "id": "shibuya-crossing",
+    "name": "Shibuya Crossing",
+    "city": "Tokyo",
+    "chapter": "Visit",
+    "lat": 35.6595,
+    "lng": 139.7005,
+    "precision": "venue",
+    "description": "A famous scramble intersection outside Shibuya Station.",
+    "source": "https://en.wikipedia.org/wiki/Shibuya_Crossing"
+  },
+  {
+    "id": "miyajima",
+    "name": "Itsukushima Shrine",
+    "city": "Miyajima",
+    "chapter": "Visit",
+    "lat": 34.296,
+    "lng": 132.32,
+    "precision": "venue",
+    "description": "A floating-looking torii stands in the tidal flats of Miyajima.",
+    "source": "https://en.wikipedia.org/wiki/Itsukushima_Shrine"
+  },
+  {
+    "id": "shirakawa",
+    "name": "Shirakawa-go",
+    "city": "Shirakawa",
+    "chapter": "Visit",
+    "lat": 36.257,
+    "lng": 136.906,
+    "precision": "city",
+    "description": "Thatched gasshō-zukuri farmhouses fill a mountain village.",
+    "source": "https://en.wikipedia.org/wiki/Historic_Villages_of_Shirakawa-g%C5%8D_and_Gokayama"
+  },
+  {
+    "id": "kuromon",
+    "name": "Kuromon Market",
+    "city": "Osaka",
+    "chapter": "Foods",
+    "lat": 34.666,
+    "lng": 135.506,
+    "precision": "venue",
+    "description": "A covered market for seafood, produce and ready-to-eat skewers.",
+    "source": "https://en.wikipedia.org/wiki/Kuromon_Market"
+  },
+  {
+    "id": "nishiki",
+    "name": "Nishiki Market",
+    "city": "Kyoto",
+    "chapter": "Foods",
+    "lat": 35.005,
+    "lng": 135.765,
+    "precision": "venue",
+    "description": "Kyoto’s narrow ‘kitchen’ street sells pickles, tofu and snacks.",
+    "source": "https://en.wikipedia.org/wiki/Nishiki_Market"
+  },
+  {
+    "id": "tsukiji-outer",
+    "name": "Toyosu / Tsukiji outer stalls",
+    "city": "Tokyo",
+    "chapter": "Foods",
+    "lat": 35.665,
+    "lng": 139.77,
+    "precision": "city",
+    "description": "Sushi counters and kitchenware shops continue around the former Tsukiji site and new Toyosu market.",
+    "source": "https://en.wikipedia.org/wiki/Tsukiji_fish_market"
+  },
+  {
+    "id": "dotonbori",
+    "name": "Dōtonbori",
+    "city": "Osaka",
+    "chapter": "Foods",
+    "lat": 34.6687,
+    "lng": 135.5013,
+    "precision": "venue",
+    "description": "Neon canal street packed with takoyaki, ramen and photo spots.",
+    "source": "https://en.wikipedia.org/wiki/D%C5%8Dtonbori"
+  },
+  {
+    "id": "omicho",
+    "name": "Ōmichō Market",
+    "city": "Kanazawa",
+    "chapter": "Foods",
+    "lat": 36.57,
+    "lng": 136.65,
+    "precision": "venue",
+    "description": "A seafood-focused market near Kanazawa’s centre.",
+    "source": "https://en.wikipedia.org/wiki/%C5%8Cmich%C5%8D_Market"
+  },
+  {
+    "id": "gion-matsuri",
+    "name": "Gion Matsuri",
+    "city": "Kyoto",
+    "chapter": "Seasonal",
+    "lat": 35.003,
+    "lng": 135.778,
+    "precision": "city",
+    "description": "July floats and processions centred on Yasaka Shrine draw huge crowds.",
+    "source": "https://en.wikipedia.org/wiki/Gion_Matsuri",
+    "seasonal": true,
+    "seasonal_label": "Gion Matsuri"
+  }
+]
