@@ -124,6 +124,12 @@ function badge(kind,x,y){
 }
 window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle="",hideLabel=false,photo="",distance="",countdown=""}={}){
   const id="ds"+(++uid); const [c4,c1,c0,c7]=COL[color]; name=(name||wiIconDef(icon).label).toUpperCase();
+  /* Ellipsize title when it won't fit the stamp width */
+  const _labelMaxW = (w - 22) - 6;
+  const _avgCh = labelSize * 0.56 + 0.6;
+  const _maxChars = Math.max(6, Math.floor(_labelMaxW / _avgCh));
+  const displayName = name.length > _maxChars ? name.slice(0, Math.max(1, _maxChars - 1)) + "…" : name;
+  const nameEsc = displayName.replace(/&/g,"&amp;").replace(/</g,"&lt;");
   const locked=state==="locked", seasonal=state==="seasonal";
   const pad=11;
   const labelBlock = hideLabel ? 0 : (distance ? 54 : 34);
@@ -150,13 +156,14 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
   const noteFill = (state==="earned") ? statusGreen : (locked || state==="resting" ? "#5C6680" : c7);
   const labelY = distance ? (h-pad-36) : (h-pad-15);
   const noteY = distance ? (h-pad-22) : (h-pad-1);
-  const label=hideLabel?"":`<text x="${w/2}" y="${labelY}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${NAVY}" opacity="${locked?0.72:1}">${name}</text>`;
+  const label=hideLabel?"":`<text x="${w/2}" y="${labelY}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${NAVY}" opacity="${locked?0.72:1}">${nameEsc}</text>`;
   const sub = (!hideLabel && note)?`<text x="${w/2}" y="${noteY}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="10" fill="${noteFill}">${note}</text>`:"";
   const distLine = (!hideLabel && distance)?`<text x="${w/2}" y="${h-pad-6}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="600" font-size="9.5" fill="#5C6680">${String(distance).replace(/&/g,"&amp;").replace(/</g,"&lt;")}</text>`:"";
   const cdEsc = String(countdown||"").replace(/&/g,"&amp;").replace(/</g,"&lt;");
-  const cdPill = countdown?`<g transform="translate(${w-pad-4} ${pad+6})" data-stamp-cd-wrap="${icon}">
-    <rect x="-62" y="0" width="62" height="18" rx="9" fill="#1B2747"/>
-    <text x="-31" y="12.5" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="9" fill="#fff" data-stamp-cd="${icon}">${cdEsc}</text>
+  /* Top-right corner of stamp paper — above art tile so it clears SEASONAL */
+  const cdPill = countdown?`<g transform="translate(${w-1} ${0})" data-stamp-cd-wrap="${icon}">
+    <rect x="-54" y="0" width="54" height="16" rx="8" fill="#1B2747"/>
+    <text x="-27" y="11.5" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="8.5" fill="#fff" data-stamp-cd="${icon}">${cdEsc}</text>
   </g>`:"";
   const lvl = level>1?`<g transform="translate(${pad+8} ${pad+8})"><rect width="30" height="19" rx="9.5" fill="${NAVY}"/><text x="15" y="13.6" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="11" fill="#fff">×${level}</text></g>`:"";
   const ribbon = seasonal?`<g transform="translate(${pad+8} ${pad+8})"><rect width="72" height="19" rx="9.5" fill="#6B3FC4"/><text x="36" y="13.4" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="10" letter-spacing=".5" fill="#fff">SEASONAL</text></g>`:"";
