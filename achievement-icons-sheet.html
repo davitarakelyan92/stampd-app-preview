@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stampd — achievement icons contact sheet</title>
+<link rel="stylesheet" href="css/tokens.css">
+<style>
+  body{margin:0;background:#F6F3EC;font-family:Inter,system-ui,sans-serif;color:#1B2747;padding:28px 32px 40px}
+  h1{font:800 22px/1.2 Inter Tight,Inter,sans-serif;margin:0 0 6px}
+  .sub{font-size:13px;font-weight:600;color:#5B616E;margin:0 0 22px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:920px}
+  .card{background:#fff;border-radius:14px;padding:14px;box-shadow:0 1px 0 #1B27470a,0 6px 16px -12px #1B274733;display:flex;flex-direction:column;gap:8px;min-height:110px}
+  .card.locked{opacity:.55}
+  .ico{width:36px;height:36px;border-radius:10px;background:#FFDCD5;color:#C8372A;display:flex;align-items:center;justify-content:center}
+  .card.locked .ico{background:#EEEAE3;color:#5B616E}
+  .ico svg{width:24px;height:24px}
+  .id{font-size:11px;font-weight:700;color:#5B616E;letter-spacing:.02em}
+  .title{font-size:15px;font-weight:800;margin:0;line-height:1.2}
+  .concept{font-size:12px;font-weight:600;color:#5B616E;margin:0;line-height:1.35}
+  .section{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#FF5B4A;margin:28px 0 12px}
+</style>
+<script src="js/achievement-icons.js"></script>
+</head>
+<body>
+<div id="art">
+  <h1>Stampd · Me Achievements icons</h1>
+  <p class="sub">Per-id SVG · currentColor Coral 600 · locked sample uses same marks</p>
+  <div class="section">Earned</div>
+  <div class="grid" id="earned"></div>
+  <div class="section">Locked sample (same SVG, muted)</div>
+  <div class="grid" id="locked"></div>
+</div>
+<script>
+const META = [
+  ["first-stamp","First stamp","Perforated stamp + pin hub"],
+  ["home-passport","Home cloth","Passport cover + home cue"],
+  ["monument-five","Five monuments","Classical column + 5 ticks"],
+  ["foods-starter","Table for stamps","Table + plate + fork"],
+  ["wine-days-2026","Wine days","Wine glass + twilight spark"],
+  ["two-countries","Two cloths","Two mini passport covers"],
+  ["rome-weekend","Rome weekend","Three Colosseum arches"],
+  ["far-from-home","Far from home","Arc path + near/far pins"],
+  ["visit-chapter","Out and about","Path + Visit map pin"],
+  ["italy-half","Italy, halfway","Italy boot + half progress"],
+  ["seasonal-collector","Season hopper","Calendar + three ticks"],
+  ["ten-countries","Ten cloths","Stacked covers + 10"],
+];
+function card([id,title,concept], locked){
+  const svg = WI_ACHIEVEMENT_ICONS[id] || "";
+  return `<div class="card ${locked?"locked":""}"><div class="ico">${svg}</div><div class="id">${id}</div><p class="title">${title}</p><p class="concept">${concept}</p></div>`;
+}
+document.getElementById("earned").innerHTML = META.map(m => card(m,false)).join("");
+document.getElementById("locked").innerHTML = [
+  META.find(m=>m[0]==="italy-half"),
+  META.find(m=>m[0]==="seasonal-collector"),
+  META.find(m=>m[0]==="ten-countries"),
+].map(m => card(m,true)).join("");
+</script>
+</body>
+</html>

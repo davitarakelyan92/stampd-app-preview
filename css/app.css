@@ -501,7 +501,9 @@ body{
 .me-ach-ico{
   width:28px;height:28px;border-radius:8px;background:#FFDCD5;color:#C8372A;
   display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;
+  flex-shrink:0;
 }
+.me-ach-ico svg{display:block;flex-shrink:0}
 .me-ach.locked .me-ach-ico{background:#EEEAE3;color:#5B616E}
 .me-ach-title{font-size:14px;font-weight:800;color:var(--navy);margin:0;line-height:1.25}
 .me-ach-desc{font-size:12px;font-weight:600;color:var(--muted);margin:0;line-height:1.35}

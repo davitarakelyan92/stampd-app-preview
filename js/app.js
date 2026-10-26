@@ -1033,7 +1033,13 @@
     return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   }
 
-  function achievementIcon(theme, earned) {
+  function achievementIcon(id, earned, theme) {
+    if (typeof window.achievementIconSvg === "function") {
+      return window.achievementIconSvg(id, theme);
+    }
+    if (window.WI_ACHIEVEMENT_ICONS && id && window.WI_ACHIEVEMENT_ICONS[id]) {
+      return window.WI_ACHIEVEMENT_ICONS[id];
+    }
     const map = { milestone: "★", country: "▣", chapter: "◆", seasonal: "✧", travel: "➤", distance: "◎" };
     return map[theme] || (earned ? "✓" : "○");
   }
@@ -1079,7 +1085,7 @@
         const title = a.title || a.name || "Achievement";
         const desc = a.description || a.desc || "";
         return `<div class="me-ach ${earned ? "" : "locked"}">
-          <div class="me-ach-ico">${achievementIcon(a.theme, earned)}</div>
+          <div class="me-ach-ico">${achievementIcon(a.id, earned, a.theme)}</div>
           <p class="me-ach-title">${title}</p>
           <p class="me-ach-desc">${desc}</p>
         </div>`;

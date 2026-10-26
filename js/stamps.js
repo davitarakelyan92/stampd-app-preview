@@ -152,7 +152,7 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
    <g filter="url(#${id}sh)"><rect width="${w}" height="${h}" fill="${seasonal?`url(#${id}sg)`:paper}" mask="url(#${id}m)"/></g>
    ${here?`<rect x="-5" y="-5" width="${w+10}" height="${h+10}" rx="10" fill="none" stroke="#FF5B4A" stroke-width="2.5" stroke-dasharray="6 5"/>`:""}
    ${tile}${giftFrame}${label}${sub}${lvl}${ribbon}
-   ${badge(state,w-pad-6,h-pad-46)}
+   ${badge(state,w-16,h-16)}
   </svg>`;
 };
 })();

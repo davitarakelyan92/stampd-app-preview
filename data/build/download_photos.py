@@ -25,21 +25,21 @@ SLEEP = 0.35  # be polite to Commons
 ASSETS.mkdir(parents=True, exist_ok=True)
 
 
-def clean_url(u: str) -> str:
+def clean_image_url(u: str) -> str:
+    """Normalize Commons *image* URLs: drop utm query, rewrite thumb host."""
     if not u:
         return ""
     p = urlparse(u)
-    # drop query (utm etc)
-    path = p.path
-    # rewrite thumb.wikimedia.org -> upload.wikimedia.org
     netloc = p.netloc
     if netloc == "thumb.wikimedia.org":
         netloc = "upload.wikimedia.org"
-    return urlunparse(("https", netloc, path, "", "", ""))
+    # keep path only (strip utm); image thumbs don't need query
+    return urlunparse(("https", netloc, p.path, "", "", ""))
 
 
-def fetch_bytes(url: str, timeout: int = 90) -> bytes:
-    url = clean_url(url)
+def fetch_bytes(url: str, timeout: int = 90, clean_image: bool = False) -> bytes:
+    if clean_image:
+        url = clean_image_url(url)
     req = Request(url, headers={"User-Agent": UA})
     with urlopen(req, timeout=timeout) as r:
         return r.read()
@@ -167,7 +167,7 @@ def download_for_place(pl: dict) -> tuple[bool, str]:
     url = pl.get("photo_url") or ""
     if url:
         try:
-            data = fetch_bytes(url)
+            data = fetch_bytes(url, clean_image=True)
             if len(data) < 2000:
                 raise ValueError("too small")
             save_jpeg(data, dest)
@@ -203,7 +203,7 @@ def download_for_place(pl: dict) -> tuple[bool, str]:
                 thumb = ii.get("thumburl") or ii.get("url")
                 if not thumb:
                     continue
-                blob = fetch_bytes(thumb)
+                blob = fetch_bytes(thumb, clean_image=True)
                 save_jpeg(blob, dest)
                 if dest.stat().st_size >= 5000:
                     pl["photo"] = f"assets/places/{pid}.jpg"
@@ -228,7 +228,7 @@ def download_for_place(pl: dict) -> tuple[bool, str]:
         results = commons_search(q, limit=6)
         for r in results:
             try:
-                blob = fetch_bytes(r["url"] or r["fullurl"])
+                blob = fetch_bytes(r["url"] or r["fullurl"], clean_image=True)
                 save_jpeg(blob, dest)
                 if dest.stat().st_size < 5000:
                     dest.unlink(missing_ok=True)
@@ -238,7 +238,7 @@ def download_for_place(pl: dict) -> tuple[bool, str]:
                 pl["photo_credit"] = f"{r.get('user','Wikimedia')} · {lic}".strip(" ·")
                 pl["photo_source"] = r.get("source")
                 # keep photo_url as fallback mirror
-                pl["photo_url"] = clean_url(r.get("url") or r.get("fullurl") or "")
+                pl["photo_url"] = clean_image_url(r.get("url") or r.get("fullurl") or "")
                 if pl.get("chapter") == "Foods" and "food" not in (pl.get("name") or "").lower():
                     # representative city/neighbourhood images are OK for Foods
                     if not pl.get("photo_note"):
@@ -255,7 +255,7 @@ def download_for_place(pl: dict) -> tuple[bool, str]:
         results = commons_search(q, limit=3)
         if results:
             r = results[0]
-            pl["photo_url"] = clean_url(r.get("url") or r.get("fullurl") or "")
+            pl["photo_url"] = clean_image_url(r.get("url") or r.get("fullurl") or "")
             lic = r.get("license") or ""
             pl["photo_credit"] = f"{r.get('user','Wikimedia')} · {lic}".strip(" ·")
             pl["photo_source"] = r.get("source")
