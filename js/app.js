@@ -531,9 +531,90 @@
 
   function tradeOffers() {
     const d = state.meData || {};
-    if (Array.isArray(d.trade_offers) && d.trade_offers.length) return d.trade_offers;
+    if (Array.isArray(d.trade_offers)) return d.trade_offers;
     if (d.trade && Array.isArray(d.trade.exchange_offers)) return d.trade.exchange_offers;
     return [];
+  }
+
+  /** Preview sell price for a duplicate (coins credited on Sell). */
+  function tradeSellPrice(placeId) {
+    const rules = (state.meData && state.meData.coin_rules) || {};
+    if (typeof rules.duplicate_sell_coins === "number") return rules.duplicate_sell_coins;
+    return 40;
+  }
+
+  function ensureMutableTradeOffers() {
+    if (!state.meData) state.meData = {};
+    if (!Array.isArray(state.meData.trade_offers)) {
+      const existing = tradeOffers().slice();
+      state.meData.trade_offers = existing;
+    }
+    return state.meData.trade_offers;
+  }
+
+  function postTradeOffer(giveId, wantId) {
+    const give = placeById(giveId);
+    const want = placeById(wantId);
+    const giveName = (give && give.name) || giveId;
+    const wantName = (want && want.name) || wantId;
+    const wantCode = want ? String(want.country || "").toLowerCase() : "";
+    const offer = {
+      id: "offer-local-" + Date.now(),
+      status: "open",
+      give_place_id: giveId,
+      want_place_id: wantId,
+      want_country_id: wantCode,
+      note: `Your offer: ${giveName} → ${wantName}`,
+      posted_by: "you",
+    };
+    ensureMutableTradeOffers().unshift(offer);
+    return offer;
+  }
+
+  /** Remove one spare from Trade inventory (duplicates). */
+  function removeDuplicateSpare(placeId) {
+    if (!state.meData) return false;
+    const d = state.meData;
+    let removed = false;
+    if (Array.isArray(d.duplicates)) {
+      const next = [];
+      d.duplicates.forEach((row) => {
+        if (!row || row.id !== placeId) {
+          next.push(row);
+          return;
+        }
+        const extras = typeof row.count === "number" ? row.count : typeof row.extras === "number" ? row.extras : 1;
+        if (extras > 1) next.push({ ...row, count: extras - 1, extras: extras - 1 });
+        removed = true;
+      });
+      d.duplicates = next;
+    }
+    if (Array.isArray(d.duplicate_place_ids)) {
+      const i = d.duplicate_place_ids.indexOf(placeId);
+      if (i >= 0) {
+        d.duplicate_place_ids.splice(i, 1);
+        removed = true;
+      }
+    }
+    if (d.trade && Array.isArray(d.trade.duplicate_place_ids)) {
+      const i = d.trade.duplicate_place_ids.indexOf(placeId);
+      if (i >= 0) {
+        d.trade.duplicate_place_ids.splice(i, 1);
+        removed = true;
+      }
+    }
+    return removed;
+  }
+
+  function sellDuplicateForCoins(placeId) {
+    const price = tradeSellPrice(placeId);
+    const place = placeById(placeId);
+    const name = (place && place.name) || placeId;
+    if (!removeDuplicateSpare(placeId)) {
+      softToast("That stamp is no longer in Trade");
+      return;
+    }
+    bumpCoins(price, `Sold ${name} · +${price} coins`);
   }
 
   function countryNameForPlace(place) {
@@ -848,10 +929,14 @@
       body.innerHTML = html;
       body.querySelectorAll("[data-want]").forEach((btn) => {
         btn.addEventListener("click", () => {
-          const want = placeById(btn.dataset.want);
-          const wantName = (want && want.name) || btn.dataset.want;
+          const wantId = btn.dataset.want;
+          const want = placeById(wantId);
+          const wantName = (want && want.name) || wantId;
+          const giveId = state.tradeOfferPlaceId;
+          postTradeOffer(giveId, wantId);
           closeTradeOfferSheet();
-          softToast(`Offered against ${wantName}`);
+          renderTrade();
+          softToast(`Offer posted · want ${wantName}`);
         });
       });
       return;
@@ -972,7 +1057,7 @@
               </div>
               <div class="trade-actions">
                 <button type="button" class="btn-primary" data-offer="${dup.id}">Make an offer</button>
-                <button type="button" class="btn-secondary" data-offer-coins="${dup.id}">Exchange for Coins</button>
+                <button type="button" class="btn-secondary" data-sell="${dup.id}">Sell for ${tradeSellPrice(dup.id)}</button>
               </div>
             </div>`;
           })
@@ -983,7 +1068,7 @@
     let offersHtml = "";
     if (offers.length) {
       offersHtml =
-        `<div><div class="trade-section-k">Open offers</div><div class="trade-offers">` +
+        `<div><div class="trade-section-k">Your posted offers</div><div class="trade-offers">` +
         offers
           .map((o) => {
             const give = placeById(o.give_place_id);
@@ -1014,11 +1099,9 @@
     root.querySelectorAll("[data-offer]").forEach((btn) => {
       btn.addEventListener("click", () => openTradeOfferSheet(btn.dataset.offer));
     });
-    root.querySelectorAll("[data-offer-coins]").forEach((btn) => {
+    root.querySelectorAll("[data-sell]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const place = placeById(btn.dataset.offerCoins);
-        const name = (place && place.name) || btn.dataset.offerCoins;
-        softToast(`Listed ${name} for 40 coins`);
+        sellDuplicateForCoins(btn.dataset.sell);
       });
     });
   }
