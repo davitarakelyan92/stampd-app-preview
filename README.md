@@ -8,6 +8,14 @@ https://davitarakelyan92.github.io/stampd-app-preview/
 
 Hard-refresh after updates (Cmd/Ctrl+Shift+R).
 
+## Admin
+
+Catalog console (static — edits stay in the browser until you export JSON):
+
+https://davitarakelyan92.github.io/stampd-app-preview/admin/
+
+See [admin/README.md](admin/README.md).
+
 ## Local
 
 ```bash
