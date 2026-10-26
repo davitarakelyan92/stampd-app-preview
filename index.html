@@ -189,17 +189,21 @@
       </div>
 
 
-      <!-- Trade offer sheet -->
+      <!-- Trade offer sheet: pick stamp from a collection -->
       <div class="modal-backdrop" id="trade-offer-sheet" role="dialog" aria-modal="true" aria-labelledby="trade-offer-title">
-        <div class="sheet">
+        <div class="sheet trade-offer-sheet-inner">
           <div class="handle"></div>
-          <h2 id="trade-offer-title">Offer duplicate</h2>
-          <p class="lede" id="trade-offer-lede">Choose how to list this spare stamp.</p>
-          <div class="row-btns trade-offer-btns">
-            <button type="button" class="btn-primary" id="offer-for-stamp">Offer for stamp</button>
-            <button type="button" class="btn-secondary" id="offer-for-coins">Offer for coins</button>
-            <button type="button" class="btn-ghost" id="offer-cancel">Cancel</button>
+          <div class="trade-offer-head">
+            <button type="button" class="icon-btn trade-offer-back" id="offer-back" aria-label="Back" hidden>
+              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="trade-offer-head-text">
+              <h2 id="trade-offer-title">Make an offer</h2>
+              <p class="lede" id="trade-offer-lede">Pick a stamp to exchange with.</p>
+            </div>
           </div>
+          <div id="trade-offer-body" class="trade-offer-body"></div>
+          <button type="button" class="btn-ghost" id="offer-cancel">Cancel</button>
         </div>
       </div>
       <!-- Soft toast for Coming Soon taps -->

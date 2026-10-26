@@ -14,8 +14,7 @@ Hard-refresh after updates (Cmd/Ctrl+Shift+R).
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Then open http://127.0.0.1:8765/  
-Opening `index.html` via `file://` will show empty Countries / Me (browsers block `fetch` of local JSON).
+Then open http://127.0.0.1:8765/
 
 ## Brand (locked)
 

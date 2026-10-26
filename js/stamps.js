@@ -122,10 +122,10 @@ function badge(kind,x,y){
     resting:`<circle r="5.4" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M0-2.8V0.4L2.2 1.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round"/>`}[kind];
   return `<g transform="translate(${x} ${y})"><circle r="13" fill="#fff"/><circle r="11" fill="${bg}"/>${g}</g>`;
 }
-window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle=""}={}){
+window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle="",hideLabel=false}={}){
   const id="ds"+(++uid); const [c4,c1,c0,c7]=COL[color]; name=(name||wiIconDef(icon).label).toUpperCase();
   const locked=state==="locked", seasonal=state==="seasonal";
-  const pad=11, iw=w-pad*2, ih=h-pad*2-34;
+  const pad=11, iw=w-pad*2, ih=hideLabel?(h-pad*2):(h-pad*2-34);
   const paper= locked?"#F7F8FA":"#FFFFFF";
   const tileTop= locked?"#EEF0F4":c0, tileBot= locked?"#E3E6EC":c1;
   const ink= locked?"#A3AABA":NAVY;
@@ -135,8 +135,8 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
     ${locked?"":`<circle cx="${pad+iw*0.76}" cy="${pad+ih*0.27}" r="${sunR}" fill="${seasonal?"#6B3FC4":c4}" opacity="${seasonal?.22:.28}"/>`}
     <rect x="${pad}" y="${pad+ih*0.8}" width="${iw}" height="${ih*0.2}" fill="${locked?"#DADDE4":c4}" opacity="${locked?1:.35}"/>
     ${wiIconG(icon,{x:ix,y:iy,size:iconSize,stroke:ink,sw:2.3,fill:locked?null:(seasonal?"#ffffff":c4),offset:locked?0:iconSize*0.06})}`;
-  const label=`<text x="${w/2}" y="${h-pad-15}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${locked?"#5C6680":NAVY}">${name}</text>`;
-  const sub = note?`<text x="${w/2}" y="${h-pad-1}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="600" font-size="10" fill="${locked?"#5C6680":(state==="resting"?"#5C6680":c7)}">${note}</text>`:"";
+  const label=hideLabel?"":`<text x="${w/2}" y="${h-pad-15}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${locked?"#5C6680":NAVY}">${name}</text>`;
+  const sub = (!hideLabel && note)?`<text x="${w/2}" y="${h-pad-1}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="600" font-size="10" fill="${locked?"#5C6680":(state==="resting"?"#5C6680":c7)}">${note}</text>`:"";
   const lvl = level>1?`<g transform="translate(${pad+8} ${pad+8})"><rect width="30" height="19" rx="9.5" fill="${NAVY}"/><text x="15" y="13.6" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="11" fill="#fff">×${level}</text></g>`:"";
   const ribbon = seasonal?`<g transform="translate(${pad+8} ${pad+8})"><rect width="72" height="19" rx="9.5" fill="#6B3FC4"/><text x="36" y="13.4" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="10" letter-spacing=".5" fill="#fff">SEASONAL</text></g>`:"";
   const giftFrame = state==="gifted"?`<rect x="${pad-4}" y="${pad-4}" width="${iw+8}" height="${h-pad*2+8}" rx="10" fill="none" stroke="${c7}" stroke-width="1.4" stroke-dasharray="4 3"/>`:"";

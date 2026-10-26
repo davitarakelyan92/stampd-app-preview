@@ -185,7 +185,7 @@ body{
   position:absolute;left:50%;bottom:100px;transform:translateX(-50%) translateY(8px);
   background:var(--navy);color:#fff;font-weight:700;font-size:13px;
   padding:10px 16px;border-radius:12px;opacity:0;pointer-events:none;
-  transition:opacity .2s ease, transform .2s ease;z-index:40;white-space:nowrap;
+  transition:opacity .2s ease, transform .2s ease;z-index:40;white-space:normal;max-width:min(320px,86%);text-align:center;
 }
 .soft-toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 
@@ -595,8 +595,75 @@ body{
 .trade-actions{display:flex;gap:8px}
 .trade-actions .btn-primary,
 .trade-actions .btn-secondary{
-  flex:1;min-width:0;height:40px;font-size:13px;padding:0 10px;
+  flex:1;min-width:0;height:42px;font-size:12.5px;padding:0 8px;letter-spacing:-.01em;
+  line-height:1.15;
 }
+.trade-countdown{
+  flex:none;text-align:right;min-width:64px;padding:2px 0 0;
+  display:flex;flex-direction:column;align-items:flex-end;gap:2px;
+}
+.trade-countdown .tc-k{
+  font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);
+}
+.trade-countdown .tc-v{
+  font-size:13px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;
+  letter-spacing:-.02em;
+}
+
+/* Trade offer picker sheet */
+.trade-offer-sheet-inner{max-height:78vh;display:flex;flex-direction:column;padding-bottom:22px}
+.trade-offer-head{display:flex;align-items:flex-start;gap:4px;margin-bottom:4px}
+.trade-offer-head .icon-btn{margin-top:2px;flex:none}
+.trade-offer-head-text{flex:1;min-width:0}
+.trade-offer-head-text h2{margin:0 0 4px}
+.trade-offer-head-text .lede{margin-bottom:10px}
+.trade-offer-body{
+  overflow:auto;max-height:46vh;margin:0 0 12px;
+  display:flex;flex-direction:column;gap:6px;
+  -webkit-overflow-scrolling:touch;
+}
+.trade-offer-empty{margin:12px 0;font-size:13.5px;font-weight:600;color:var(--muted);text-align:center}
+.trade-offer-ch{
+  font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:#C8372A;margin:8px 0 4px;
+}
+.trade-pick-country,.trade-pick-row{
+  appearance:none;border:0;cursor:pointer;text-align:left;
+  width:100%;display:flex;align-items:center;gap:12px;
+  background:#F7F8FA;border-radius:12px;padding:12px 14px;
+  font-family:inherit;color:var(--navy);
+}
+.trade-pick-country:active,.trade-pick-row:active{transform:scale(.99);background:#EEF0F4}
+.trade-pick-country{justify-content:space-between}
+.trade-pick-country .tpc-name{font-size:15px;font-weight:800}
+.trade-pick-country .tpc-sub{font-size:12px;font-weight:600;color:var(--muted)}
+.trade-pick-row .sr-thumb{
+  width:36px;height:36px;border-radius:10px;background:#fff;
+  display:flex;align-items:center;justify-content:center;flex:none;
+  box-shadow:0 1px 0 #1B27470a;
+}
+.trade-pick-row .sr-meta{display:flex;flex-direction:column;gap:2px;min-width:0}
+.trade-pick-row .sr-name{font-size:14px;font-weight:800}
+.trade-pick-row .sr-sub{font-size:12px;font-weight:600;color:var(--muted)}
+#offer-cancel{width:100%;margin-top:2px}
+
+/* Stamps list — Gallery-style grid */
+.stamps-country-block{display:flex;flex-direction:column;gap:6px}
+.stamps-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 10px;
+  margin:0 0 14px;
+}
+.stamps-grid-card{
+  appearance:none;border:0;background:transparent;padding:0;cursor:pointer;
+  font:inherit;text-align:center;
+}
+.stamps-grid-card:active{transform:scale(.98)}
+.stamps-grid-stamp{
+  position:relative;display:inline-block;line-height:0;
+}
+.stamps-grid-stamp > svg{display:block;width:100%;height:auto;max-width:148px;margin:0 auto}
+.stamps-grid-stamp .trade-count{top:-2px;right:2px}
 .btn-secondary{
   appearance:none;border:0;cursor:pointer;
   background:#EEF0F4;color:var(--navy);

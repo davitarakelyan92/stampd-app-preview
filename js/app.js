@@ -32,6 +32,9 @@
     chromeReturn: "home", // screen to return to from stamps-list / balance
     coinsPreview: null, // local override for demo bumps; null = use me.json
     tradeOfferPlaceId: null,
+    tradeOfferStep: "countries", // countries | stamps
+    tradeOfferCountry: null,
+    tradeCountdownTimer: null,
     detailFromStampsList: false,
   };
 
@@ -586,11 +589,46 @@
     return 1 + Math.max(0, extras);
   }
 
+  function stampColorForId(id, index) {
+    const existing = stamps.find((s) => s.icon === id);
+    if (existing && existing.color) return existing.color;
+    let h = 0;
+    const s = String(id || "");
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return STAMP_COLORS[(typeof index === "number" ? index : h) % STAMP_COLORS.length];
+  }
+
+  function copiesForPlaceId(id) {
+    const dups = duplicateEntries();
+    const row = dups.find((d) => d.id === id);
+    if (row) return ownedCopyCount(row);
+    const collected = collectedIdSet();
+    return collected.has(id) ? 1 : 0;
+  }
+
+  /** Sample "available again" countdown — deterministic per place, soft-ticks. */
+  function tradeCountdownMs(placeId) {
+    let h = 0;
+    const s = String(placeId || "x");
+    for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) >>> 0;
+    const total = 4 * 3600e3 + (h % (20 * 3600e3)); /* 4–24h sample window */
+    const elapsed = (Date.now() / 1000 | 0) % Math.floor(total / 1000);
+    return total - elapsed * 1000;
+  }
+
+  function formatCountdown(ms) {
+    const sec = Math.max(0, Math.floor(ms / 1000));
+    const h = Math.floor(sec / 3600);
+    const m = Math.floor((sec % 3600) / 60);
+    const s = sec % 60;
+    if (h > 0) return `${h}h ${String(m).padStart(2, "0")}m`;
+    return `${m}m ${String(s).padStart(2, "0")}s`;
+  }
+
   function tradeStampHtml(dup, index) {
     const place = placeById(dup.id);
     const name = (place && place.name) || dup.id;
-    const existing = stamps.find((s) => s.icon === dup.id);
-    const color = (existing && existing.color) || STAMP_COLORS[index % STAMP_COLORS.length];
+    const color = stampColorForId(dup.id, index);
     const opts = {
       ...STAMP_OPTS,
       icon: dup.id,
@@ -602,11 +640,35 @@
       h: 96,
       P: 6,
       labelSize: 8.5,
+      hideLabel: true,
     };
-    if (existing && existing.level) opts.level = existing.level;
     const svg = typeof digitalStamp === "function" ? digitalStamp(opts) : "";
     const copies = ownedCopyCount(dup);
     return `<div class="trade-stamp-wrap">${svg}<span class="trade-count" aria-label="${copies} copies">×${copies}</span></div>`;
+  }
+
+  function listStampCardHtml(place, index) {
+    const id = place.id;
+    const name = place.name || id;
+    const color = stampColorForId(id, index);
+    const copies = copiesForPlaceId(id);
+    const opts = {
+      ...STAMP_OPTS,
+      icon: id,
+      color,
+      state: "earned",
+      note: "",
+      name,
+      w: 118,
+      h: 146,
+      P: 8,
+      labelSize: 10,
+    };
+    const svg = typeof digitalStamp === "function" ? digitalStamp(opts) : "";
+    const safe = String(name).replace(/"/g, "&quot;");
+    return `<button type="button" class="stamps-grid-card" data-stamp-open="${id}" aria-label="${safe}">
+      <div class="stamps-grid-stamp">${svg}${copies > 1 ? `<span class="trade-count" aria-label="${copies} copies">×${copies}</span>` : `<span class="trade-count" aria-label="1 copy">×1</span>`}</div>
+    </button>`;
   }
 
   function renderStampsList() {
@@ -632,10 +694,11 @@
     }
 
     let html = `<p class="stamps-list-lede">${places.length} collected · grouped by country &amp; chapter</p>`;
+    let stampIdx = 0;
     countryOrder.forEach((code) => {
       const list = sortPlaces(byCountry[code]);
       const cname = countryNameForPlace({ country: code }) || code;
-      html += `<div><div class="stamps-country-k">${cname}</div>`;
+      html += `<div class="stamps-country-block"><div class="stamps-country-k">${cname}</div>`;
       const byCh = {};
       list.forEach((p) => {
         const ch = p.chapter || "Other";
@@ -644,16 +707,11 @@
       });
       const chapters = Object.keys(byCh).sort((a, b) => chapterRank(a) - chapterRank(b));
       chapters.forEach((ch) => {
-        html += `<div class="stamps-chapter-k">${ch}</div>`;
+        html += `<div class="stamps-chapter-k">${ch}</div><div class="stamps-grid">`;
         byCh[ch].forEach((p) => {
-          let icon = "";
-          if (typeof wiIcon === "function") icon = wiIcon(p.id, { size: 22, stroke: "#1B2747", sw: 2.2 });
-          const safe = String(p.name || p.id).replace(/"/g, "&quot;");
-          html += `<button type="button" class="stamps-row" data-stamp-open="${p.id}">
-            <span class="sr-thumb">${icon}</span>
-            <span class="sr-meta"><span class="sr-name">${safe}</span><span class="sr-sub">${ch}</span></span>
-          </button>`;
+          html += listStampCardHtml(p, stampIdx++);
         });
+        html += `</div>`;
       });
       html += `</div>`;
     });
@@ -725,28 +783,132 @@
     if (wit) wit.addEventListener("click", () => softToast("Withdraw — preview stub"));
   }
 
-  function openTradeOfferSheet(placeId) {
-    state.tradeOfferPlaceId = placeId;
-    const place = placeById(placeId);
-    const name = (place && place.name) || placeId;
+  function liveCountriesForOffer() {
+    return sortLiveCountries(liveCountries()).filter((c) => c && c.status !== "coming_soon");
+  }
+
+  function fillTradeOfferBody() {
+    const body = document.getElementById("trade-offer-body");
+    const back = document.getElementById("offer-back");
     const title = document.getElementById("trade-offer-title");
     const lede = document.getElementById("trade-offer-lede");
-    if (title) title.textContent = `Offer ${name}`;
-    if (lede) lede.textContent = "List this duplicate for another stamp or for coins. Sample preview only.";
+    if (!body) return;
+    const give = placeById(state.tradeOfferPlaceId);
+    const giveName = (give && give.name) || state.tradeOfferPlaceId || "stamp";
+
+    if (state.tradeOfferStep === "stamps" && state.tradeOfferCountry) {
+      const code = String(state.tradeOfferCountry.id || state.tradeOfferCountry.code || "").toUpperCase();
+      const cname = state.tradeOfferCountry.name || code;
+      if (title) title.textContent = cname;
+      if (lede) lede.textContent = `Choose a stamp to exchange for your ${giveName}.`;
+      if (back) back.hidden = false;
+      const places = sortPlaces(placesForCountryCode(code));
+      if (!places.length) {
+        body.innerHTML = `<p class="trade-offer-empty">No stamps in this collection yet.</p>`;
+        return;
+      }
+      const byCh = {};
+      places.forEach((p) => {
+        const ch = p.chapter || "Other";
+        if (!byCh[ch]) byCh[ch] = [];
+        byCh[ch].push(p);
+      });
+      const chapters = Object.keys(byCh).sort((a, b) => chapterRank(a) - chapterRank(b));
+      let html = "";
+      chapters.forEach((ch) => {
+        html += `<div class="trade-offer-ch">${ch}</div>`;
+        byCh[ch].forEach((p) => {
+          const safe = String(p.name || p.id).replace(/"/g, "&quot;");
+          let icon = "";
+          if (typeof wiIcon === "function") icon = wiIcon(p.id, { size: 22, stroke: "#1B2747", sw: 2.2 });
+          html += `<button type="button" class="trade-pick-row" data-want="${p.id}">
+            <span class="sr-thumb">${icon}</span>
+            <span class="sr-meta"><span class="sr-name">${safe}</span><span class="sr-sub">${ch}</span></span>
+          </button>`;
+        });
+      });
+      body.innerHTML = html;
+      body.querySelectorAll("[data-want]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const want = placeById(btn.dataset.want);
+          const wantName = (want && want.name) || btn.dataset.want;
+          closeTradeOfferSheet();
+          softToast(`Offered against ${wantName}`);
+        });
+      });
+      return;
+    }
+
+    /* countries step */
+    if (title) title.textContent = "Make an offer";
+    if (lede) lede.textContent = `Exchange your ${giveName} — pick a collection, then a stamp.`;
+    if (back) back.hidden = true;
+    const countries = liveCountriesForOffer();
+    if (!countries.length) {
+      body.innerHTML = `<p class="trade-offer-empty">No collections available.</p>`;
+      return;
+    }
+    body.innerHTML = countries
+      .map((c) => {
+        const code = String(c.id || c.code || "").toUpperCase();
+        const n = placesForCountryCode(code).length;
+        return `<button type="button" class="trade-pick-country" data-offer-country="${c.id}">
+          <span class="tpc-name">${c.name || code}</span>
+          <span class="tpc-sub">${n} stamps</span>
+        </button>`;
+      })
+      .join("");
+    body.querySelectorAll("[data-offer-country]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const row = countriesAll().find((c) => c.id === btn.dataset.offerCountry);
+        if (!row) return;
+        state.tradeOfferStep = "stamps";
+        state.tradeOfferCountry = row;
+        fillTradeOfferBody();
+      });
+    });
+  }
+
+  function openTradeOfferSheet(placeId) {
+    state.tradeOfferPlaceId = placeId;
+    state.tradeOfferStep = "countries";
+    state.tradeOfferCountry = null;
+    fillTradeOfferBody();
     const bd = document.getElementById("trade-offer-sheet");
     if (bd) bd.classList.add("on");
   }
 
   function closeTradeOfferSheet() {
     state.tradeOfferPlaceId = null;
+    state.tradeOfferStep = "countries";
+    state.tradeOfferCountry = null;
     const bd = document.getElementById("trade-offer-sheet");
     if (bd) bd.classList.remove("on");
+  }
+
+  function refreshTradeCountdowns() {
+    document.querySelectorAll("[data-countdown-for]").forEach((el) => {
+      const id = el.getAttribute("data-countdown-for");
+      const v = el.querySelector(".tc-v");
+      const label = formatCountdown(tradeCountdownMs(id));
+      if (v) v.textContent = label;
+      else el.innerHTML = `<span class="tc-k">Again in</span><span class="tc-v">${label}</span>`;
+    });
+  }
+
+  function ensureTradeCountdownTicker() {
+    if (state.tradeCountdownTimer) return;
+    state.tradeCountdownTimer = setInterval(() => {
+      if (state.screen !== "trade") return;
+      refreshTradeCountdowns();
+    }, 1000);
   }
 
   function renderTrade() {
     const root = document.getElementById("trade-root");
     if (!root) return;
     renderBalanceChrome();
+    ensureTradeCountdownTicker();
     if (state.meStatus === "loading" || state.meStatus === "idle") {
       root.innerHTML = `<div class="trade-empty"><p class="trade-empty-title">Loading trades…</p><p class="trade-empty-sub">Fetching your duplicates.</p></div>`;
       if (state.meStatus === "idle") loadMe().then(renderTrade);
@@ -777,6 +939,7 @@
             const country = countryNameForPlace(place);
             const copies = ownedCopyCount(dup);
             const stampHtml = tradeStampHtml(dup, i);
+            const cd = formatCountdown(tradeCountdownMs(dup.id));
             return `<div class="trade-card" data-dup="${dup.id}">
               <div class="trade-card-main">
                 <div class="trade-thumb">${stampHtml}</div>
@@ -784,10 +947,14 @@
                   <p class="trade-name">${name}</p>
                   <p class="trade-meta">${country || "Stamp"} · ${copies} ${copies === 1 ? "copy" : "copies"}</p>
                 </div>
+                <div class="trade-countdown" data-countdown-for="${dup.id}" title="Available again">
+                  <span class="tc-k">Again in</span>
+                  <span class="tc-v">${cd}</span>
+                </div>
               </div>
               <div class="trade-actions">
-                <button type="button" class="btn-primary" data-offer="${dup.id}">Offer</button>
-                <button type="button" class="btn-secondary" data-offer-coins="${dup.id}">For coins</button>
+                <button type="button" class="btn-primary" data-offer="${dup.id}">Make an offer</button>
+                <button type="button" class="btn-secondary" data-offer-coins="${dup.id}">Exchange for Coins</button>
               </div>
             </div>`;
           })
@@ -1306,27 +1473,17 @@
       });
     });
 
-    const offerStamp = document.getElementById("offer-for-stamp");
-    const offerCoins = document.getElementById("offer-for-coins");
     const offerCancel = document.getElementById("offer-cancel");
+    const offerBack = document.getElementById("offer-back");
     const offerSheet = document.getElementById("trade-offer-sheet");
-    if (offerStamp) {
-      offerStamp.addEventListener("click", () => {
-        const place = placeById(state.tradeOfferPlaceId);
-        const name = (place && place.name) || state.tradeOfferPlaceId || "stamp";
-        closeTradeOfferSheet();
-        softToast(`Listed ${name} for exchange`);
-      });
-    }
-    if (offerCoins) {
-      offerCoins.addEventListener("click", () => {
-        const place = placeById(state.tradeOfferPlaceId);
-        const name = (place && place.name) || state.tradeOfferPlaceId || "stamp";
-        closeTradeOfferSheet();
-        softToast(`Listed ${name} for 40 coins`);
-      });
-    }
     if (offerCancel) offerCancel.addEventListener("click", closeTradeOfferSheet);
+    if (offerBack) {
+      offerBack.addEventListener("click", () => {
+        state.tradeOfferStep = "countries";
+        state.tradeOfferCountry = null;
+        fillTradeOfferBody();
+      });
+    }
     if (offerSheet) {
       offerSheet.addEventListener("click", (e) => {
         if (e.target.id === "trade-offer-sheet") closeTradeOfferSheet();

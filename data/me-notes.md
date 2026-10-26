@@ -60,3 +60,11 @@ Ledger sample is in `coin_ledger_sample` (which chapters/seasonals actually comp
 - `collected_place_ids` unchanged (26 unique).
 - Duplicates (spares): ['colosseum', 'trevi', 'gelato', 'garni', 'republic-square', 'pizza']
 - Offers reference Italy wants (`pompeii`, `tower-of-pisa`, `positano`) that exist in places.json but are not yet collected.
+
+
+## v4 update (26 Oct 2026 Asia/Yerevan)
+
+- `me.json` country list expanded to all **50** live cloth countries (passport covers available).
+- `collected_place_ids` **unchanged** (still AM/IT sample stamps); all those ids still exist in `places.json`.
+- `stamps_total_in_catalog` now reflects full country album sizes (AM 21, IT 22, others typically 16).
+- Visited flags remain AM + IT only for the sample traveller.
