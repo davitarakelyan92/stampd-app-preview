@@ -379,10 +379,44 @@
     return `<span class="stamp-thumb ${cls}" title="${title}" aria-hidden="true">${svg}</span>`;
   }
 
+  function remainingCountThumb(left) {
+    const n = Math.max(0, Number(left) || 0);
+    const w = 150;
+    const h = 218;
+    const P = 6;
+    const id = "rem" + Math.random().toString(36).slice(2, 8);
+    const mask =
+      typeof wiPerfMask === "function"
+        ? wiPerfMask(id + "m", w, h, 5.2, 13)
+        : "";
+    const paper = mask
+      ? `<g filter="url(#${id}sh)"><rect width="${w}" height="${h}" fill="#FFFFFF" mask="url(#${id}m)"/></g>`
+      : `<rect width="${w}" height="${h}" rx="10" fill="#FFFFFF"/>`;
+    const svg = `<svg class="d-stamp rem-stamp" width="${w + 2 * P}" height="${h + 2 * P}" viewBox="${-P} ${-P} ${w + 2 * P} ${h + 2 * P}" aria-hidden="true">
+      <defs>
+        ${mask}
+        <filter id="${id}sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#1B2747" flood-opacity=".14"/></filter>
+        <linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF1EE"/><stop offset="1" stop-color="#FFDCD5"/></linearGradient>
+      </defs>
+      ${paper}
+      <rect x="14" y="14" width="${w - 28}" height="${h - 28}" rx="10" fill="url(#${id}g)"/>
+      <text x="${w / 2}" y="${h / 2 - 6}" text-anchor="middle" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-weight="800" font-size="64" fill="#1B2747">${n}</text>
+      <text x="${w / 2}" y="${h / 2 + 36}" text-anchor="middle" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-weight="700" font-size="22" letter-spacing="1.2" fill="#C8372A">LEFT</text>
+    </svg>`;
+    const title = n === 1 ? "1 stamp left" : `${n} stamps left`;
+    return `<span class="stamp-thumb is-remaining" title="${title}" aria-label="${title}">${svg}</span>`;
+  }
+
   function thumbsRowHtml(c) {
     const entries = pickThumbPlaces(c);
-    if (!entries.length) return "";
-    return `<div class="stamp-thumbs">${entries.map((e, i) => thumbHtml(e, i)).join("")}</div>`;
+    const preview = stampsListForCountryPreview(c);
+    const total = preview.length || stampsAvailableForCountry(c) || 0;
+    const collected = preview.filter((s) => s.state === "earned").length;
+    const left = Math.max(0, total - collected);
+    const placeThumbs = entries.map((e, i) => thumbHtml(e, i)).join("");
+    const rem = remainingCountThumb(left);
+    if (!placeThumbs && !rem) return "";
+    return `<div class="stamp-thumbs">${placeThumbs}${rem}</div>`;
   }
 
   /* ── Screens ── */

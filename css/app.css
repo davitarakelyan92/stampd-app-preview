@@ -310,6 +310,8 @@ body{
   max-width:none;max-height:none;
 }
 .stamp-thumb.is-missing{filter:grayscale(1);opacity:0.72}
+.stamp-thumb.is-remaining{opacity:1;filter:none}
+.stamp-thumb.is-remaining .rem-stamp text{paint-order:normal}
 .country-card.on{box-shadow:0 1px 0 #1B27470a,0 6px 16px -12px #1B274733} /* selection check removed */
 
 /* Coming Soon cards — grey shell, opacity 1 */
