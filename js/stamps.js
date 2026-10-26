@@ -126,9 +126,10 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
   const id="ds"+(++uid); const [c4,c1,c0,c7]=COL[color]; name=(name||wiIconDef(icon).label).toUpperCase();
   const locked=state==="locked", seasonal=state==="seasonal";
   const pad=11, iw=w-pad*2, ih=hideLabel?(h-pad*2):(h-pad*2-34);
-  const paper= locked?"#F7F8FA":"#FFFFFF";
-  const tileTop= locked?"#EEF0F4":c0, tileBot= locked?"#E3E6EC":c1;
-  const ink= locked?"#A3AABA":NAVY;
+  /* Locked keeps palette color (Armenia-style) — lock badge shows state, not gray art */
+  const paper= "#FFFFFF";
+  const tileTop= seasonal?"#F7F3FF":c0, tileBot= seasonal?"#EEE7FA":c1;
+  const ink= NAVY;
   const iconSize=Math.min(iw,ih)*0.78, ix=pad+(iw-iconSize)/2, iy=pad+(ih-iconSize)/2+4;
   const sunR=iconSize*0.2;
   const hasPhoto = !!(photo && String(photo).trim());
@@ -139,11 +140,11 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
     ? `<image href="${String(photo).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;")}" x="${pad}" y="${pad}" width="${iw}" height="${ih}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id}clip)"${photoFilter}/>
     <rect x="${pad}" y="${pad+ih*0.72}" width="${iw}" height="${ih*0.28}" fill="${locked?"#1B2747":(seasonal?"#6B3FC4":c4)}" opacity="${locked?.45:.28}"/>`
     : `<rect x="${pad}" y="${pad}" width="${iw}" height="${ih}" rx="8" fill="url(#${id}g)"/>
-    ${locked?"":`<circle cx="${pad+iw*0.76}" cy="${pad+ih*0.27}" r="${sunR}" fill="${seasonal?"#6B3FC4":c4}" opacity="${seasonal?.22:.28}"/>`}
-    <rect x="${pad}" y="${pad+ih*0.8}" width="${iw}" height="${ih*0.2}" fill="${locked?"#DADDE4":c4}" opacity="${locked?1:.35}"/>
-    ${wiIconG(icon,{x:ix,y:iy,size:iconSize,stroke:ink,sw:2.3,fill:locked?null:(seasonal?"#ffffff":c4),offset:locked?0:iconSize*0.06})}`;
+    <circle cx="${pad+iw*0.76}" cy="${pad+ih*0.27}" r="${sunR}" fill="${seasonal?"#6B3FC4":c4}" opacity="${locked?(seasonal?0.14:0.18):(seasonal?0.22:0.28)}"/>
+    <rect x="${pad}" y="${pad+ih*0.8}" width="${iw}" height="${ih*0.2}" fill="${seasonal?"#6B3FC4":c4}" opacity="${locked?0.22:0.35}"/>
+    ${wiIconG(icon,{x:ix,y:iy,size:iconSize,stroke:ink,sw:2.3,fill:seasonal?"#ffffff":c4,offset:iconSize*0.06})}`;
   const tile = art;
-  const label=hideLabel?"":`<text x="${w/2}" y="${h-pad-15}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${locked?"#5C6680":NAVY}">${name}</text>`;
+  const label=hideLabel?"":`<text x="${w/2}" y="${h-pad-15}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${NAVY}" opacity="${locked?0.72:1}">${name}</text>`;
   const sub = (!hideLabel && note)?`<text x="${w/2}" y="${h-pad-1}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="600" font-size="10" fill="${locked?"#5C6680":(state==="resting"?"#5C6680":c7)}">${note}</text>`:"";
   const lvl = level>1?`<g transform="translate(${pad+8} ${pad+8})"><rect width="30" height="19" rx="9.5" fill="${NAVY}"/><text x="15" y="13.6" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="11" fill="#fff">×${level}</text></g>`:"";
   const ribbon = seasonal?`<g transform="translate(${pad+8} ${pad+8})"><rect width="72" height="19" rx="9.5" fill="#6B3FC4"/><text x="36" y="13.4" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="10" letter-spacing=".5" fill="#fff">SEASONAL</text></g>`:"";
