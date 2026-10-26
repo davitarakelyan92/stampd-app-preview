@@ -85,26 +85,6 @@ body{
 .countries-title{
   font-weight:800;font-size:28px;letter-spacing:-.03em;color:var(--navy);margin:0;
 }
-.cover-hero{
-  display:flex;flex-direction:column;align-items:center;
-  padding:12px 28px 8px;gap:14px;
-}
-.passport-book{
-  width:187px;height:267px; /* ~85% of 220×314 */
-  border-radius:12px;position:relative;
-  box-shadow:0 22px 44px -20px #0008, inset 0 0 0 1px #fff2;
-  transition:background .25s ease;
-  cursor:pointer;flex:none;
-}
-.passport-book .hinge{
-  position:absolute;left:0;top:0;bottom:0;width:16px;
-  background:#0003;border-radius:14px 0 0 14px;pointer-events:none;
-}
-.passport-book .lockup{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  padding:18px;pointer-events:none;
-}
-.cover-actions{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%;}
 .btn-primary{
   appearance:none;border:0;cursor:pointer;
   background:var(--coral-600);color:#fff;
@@ -120,17 +100,6 @@ body{
   padding:8px 12px;
 }
 .btn-ghost:hover{color:var(--navy)}
-.cover-meta{
-  text-align:center;margin-top:12px;line-height:1.4;
-  display:flex;flex-direction:column;align-items:center;gap:2px;
-}
-.cover-meta b{
-  display:block;font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-.01em;
-}
-.cover-meta-sub,.cover-meta .cover-meta-sub{
-  display:block;font-size:12.5px;font-weight:600;color:var(--muted);
-}
-
 /* ── Album (Rome) ── */
 .topbar{
   display:flex;justify-content:space-between;align-items:center;
@@ -320,9 +289,10 @@ body{
 }
 .stamp-thumb.is-unavailable{
   background:#EEEAE3;border:1px dashed #C8C4BC;
-  opacity:0.85;filter:grayscale(0.35);
+  filter:grayscale(0.35);
 }
-.stamp-thumb.is-unavailable svg{opacity:0.5}
+.stamp-thumb.is-unavailable svg{opacity:0.55}
+.stamp-thumb.is-unavailable svg path{stroke:#C8C4BC}
 .stamp-thumb-check{
   position:absolute;right:-3px;bottom:-3px;
   width:10px;height:10px;border-radius:50%;

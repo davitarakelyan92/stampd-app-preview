@@ -1,0 +1,180 @@
+[
+  {
+    "id": "sagrada-familia",
+    "name": "Sagrada Família",
+    "city": "Barcelona",
+    "chapter": "Monuments",
+    "lat": 41.4036,
+    "lng": 2.1744,
+    "precision": "venue",
+    "description": "Antoni Gaudí’s unfinished basilica rises with sculpted towers over Eixample. Inside, coloured light filters through tall stained-glass windows.",
+    "source": "https://en.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia"
+  },
+  {
+    "id": "alhambra",
+    "name": "Alhambra",
+    "city": "Granada",
+    "chapter": "Monuments",
+    "lat": 37.176,
+    "lng": -3.5881,
+    "precision": "venue",
+    "description": "A Nasrid palace-fortress crowns a hill above Granada. Courtyards, carved stucco and reflecting pools reward a slow walk.",
+    "source": "https://en.wikipedia.org/wiki/Alhambra"
+  },
+  {
+    "id": "prado",
+    "name": "Museo del Prado",
+    "city": "Madrid",
+    "chapter": "Monuments",
+    "lat": 40.4138,
+    "lng": -3.6921,
+    "precision": "venue",
+    "description": "Spain’s great art museum faces the Paseo del Prado. Rooms of Velázquez, Goya and more fill a neoclassical block.",
+    "source": "https://en.wikipedia.org/wiki/Museo_del_Prado"
+  },
+  {
+    "id": "mezquita-cordoba",
+    "name": "Mosque-Cathedral of Córdoba",
+    "city": "Córdoba",
+    "chapter": "Monuments",
+    "lat": 37.8789,
+    "lng": -4.7794,
+    "precision": "venue",
+    "description": "A forest of striped arches fills the former Great Mosque, later a cathedral. The dual history is visible in one continuous floor.",
+    "source": "https://en.wikipedia.org/wiki/Mosque%E2%80%93Cathedral_of_C%C3%B3rdoba"
+  },
+  {
+    "id": "park-guell",
+    "name": "Park Güell",
+    "city": "Barcelona",
+    "chapter": "Monuments",
+    "lat": 41.4145,
+    "lng": 2.1527,
+    "precision": "venue",
+    "description": "Gaudí’s park spreads mosaic benches and stone colonnades over a Carmel hillside. City and sea views open from the terrace.",
+    "source": "https://en.wikipedia.org/wiki/Park_G%C3%BCell"
+  },
+  {
+    "id": "retiro-park",
+    "name": "El Retiro",
+    "city": "Madrid",
+    "chapter": "Visit",
+    "lat": 40.4153,
+    "lng": -3.6845,
+    "precision": "venue",
+    "description": "Madrid’s central park holds a boating lake, formal gardens and the Crystal Palace. Locals walk, row and picnic between the avenues.",
+    "source": "https://en.wikipedia.org/wiki/Parque_del_Buen_Retiro"
+  },
+  {
+    "id": "plaza-mayor-madrid",
+    "name": "Plaza Mayor",
+    "city": "Madrid",
+    "chapter": "Visit",
+    "lat": 40.4155,
+    "lng": -3.7074,
+    "precision": "venue",
+    "description": "An arcaded square anchors old Madrid with uniform façades and café terraces. Street life fills the centre from morning onward.",
+    "source": "https://en.wikipedia.org/wiki/Plaza_Mayor,_Madrid"
+  },
+  {
+    "id": "ramblas",
+    "name": "La Rambla",
+    "city": "Barcelona",
+    "chapter": "Visit",
+    "lat": 41.381,
+    "lng": 2.1734,
+    "precision": "venue",
+    "description": "Barcelona’s tree-lined promenade runs from Plaça de Catalunya toward the waterfront. Flower stalls and side streets keep it busy.",
+    "source": "https://en.wikipedia.org/wiki/La_Rambla"
+  },
+  {
+    "id": "guggenheim-bilbao",
+    "name": "Guggenheim Museum Bilbao",
+    "city": "Bilbao",
+    "chapter": "Visit",
+    "lat": 43.2687,
+    "lng": -2.934,
+    "precision": "venue",
+    "description": "Frank Gehry’s titanium curves sit on the Nervión riverside. The building itself is as much a draw as the collection inside.",
+    "source": "https://en.wikipedia.org/wiki/Guggenheim_Museum_Bilbao"
+  },
+  {
+    "id": "toledo-old-town",
+    "name": "Toledo Old Town",
+    "city": "Toledo",
+    "chapter": "Visit",
+    "lat": 39.8586,
+    "lng": -4.0244,
+    "precision": "city",
+    "description": "Winding lanes climb a hill ringed by the Tagus. Churches, synagogues and workshops share the compact historic core.",
+    "source": "https://en.wikipedia.org/wiki/Toledo,_Spain"
+  },
+  {
+    "id": "boqueria",
+    "name": "La Boqueria",
+    "city": "Barcelona",
+    "chapter": "Foods",
+    "lat": 41.3816,
+    "lng": 2.1719,
+    "precision": "venue",
+    "description": "Barcelona’s covered market opens off La Rambla with seafood, fruit and tapas counters. Arrive early for the fullest stalls.",
+    "source": "https://en.wikipedia.org/wiki/La_Boqueria"
+  },
+  {
+    "id": "san-miguel-market",
+    "name": "Mercado de San Miguel",
+    "city": "Madrid",
+    "chapter": "Foods",
+    "lat": 40.4155,
+    "lng": -3.7089,
+    "precision": "venue",
+    "description": "A glass-and-iron food hall beside Plaza Mayor serves pintxos, oysters and wine by the glass. Stand at the counters and share plates.",
+    "source": "https://en.wikipedia.org/wiki/Mercado_de_San_Miguel"
+  },
+  {
+    "id": "central-market-valencia",
+    "name": "Central Market of Valencia",
+    "city": "Valencia",
+    "chapter": "Foods",
+    "lat": 39.4736,
+    "lng": -0.3787,
+    "precision": "venue",
+    "description": "A large modernist market hall fills with produce and seafood. Look for local oranges and rice ingredients used in paella.",
+    "source": "https://en.wikipedia.org/wiki/Mercat_Central_(Valencia)"
+  },
+  {
+    "id": "san-sebastian-old-town",
+    "name": "Parte Vieja pintxos",
+    "city": "San Sebastián",
+    "chapter": "Foods",
+    "lat": 43.324,
+    "lng": -1.986,
+    "precision": "city",
+    "description": "San Sebastián’s Old Town is lined with bars of Basque pintxos. Hop between counters for small bites and txakoli.",
+    "source": "https://en.wikipedia.org/wiki/Old_Town_of_San_Sebasti%C3%A1n"
+  },
+  {
+    "id": "mercado-san-anton",
+    "name": "Mercado de San Antón",
+    "city": "Madrid",
+    "chapter": "Foods",
+    "lat": 40.4221,
+    "lng": -3.6976,
+    "precision": "venue",
+    "description": "A multi-level Chueca market mixes grocery stalls with ready-to-eat counters upstairs. Good for a casual lunch overlooking the square.",
+    "source": "https://en.wikipedia.org/wiki/Mercado_de_San_Ant%C3%B3n"
+  },
+  {
+    "id": "feria-abril",
+    "name": "Feria de Abril",
+    "city": "Seville",
+    "chapter": "Seasonal",
+    "lat": 37.352,
+    "lng": -5.983,
+    "precision": "approximate",
+    "description": "Seville’s April Fair fills fairground casetas with flamenco dress, horse parades and late-night dancing after Holy Week.",
+    "source": "https://en.wikipedia.org/wiki/Seville_Fair",
+    "seasonal": true,
+    "seasonal_label": "Feria de Abril"
+  }
+]

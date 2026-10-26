@@ -1,0 +1,3 @@
+Place tuple schema (10 fields):
+  id, name, city, chapter, lat, lng, precision, description, source, seasonal_label
+  seasonal_label is None unless chapter == Seasonal

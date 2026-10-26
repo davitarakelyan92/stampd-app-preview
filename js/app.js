@@ -299,22 +299,29 @@
     places.forEach((p) => {
       buckets[thumbKindForPlace(p, collected)].push(p);
     });
+    /* Order: collected → open → unavailable. Reserve 1 open + 1 unavailable
+       when present so the 4-up still shows all three states (Arp). */
     const out = [];
-    const take = (kind) => {
-      if (buckets[kind].length) out.push({ place: buckets[kind].shift(), kind });
-    };
-    /* Ensure all three states appear when the country has them */
-    take("collected");
-    take("open");
-    take("unavailable");
-    const rest = []
-      .concat(buckets.collected.map((p) => ({ place: p, kind: "collected" })))
-      .concat(buckets.open.map((p) => ({ place: p, kind: "open" })))
-      .concat(buckets.unavailable.map((p) => ({ place: p, kind: "unavailable" })));
-    rest.sort((a, b) => placeKm(a.place) - placeKm(b.place));
-    while (out.length < 4 && rest.length) out.push(rest.shift());
-    out.sort((a, b) => placeKm(a.place) - placeKm(b.place));
-    return out.slice(0, 4);
+    const reserveOpen = buckets.open.length ? 1 : 0;
+    const reserveUnavail = buckets.unavailable.length ? 1 : 0;
+    const maxCollected = Math.min(buckets.collected.length, Math.max(0, 4 - reserveOpen - reserveUnavail));
+    for (let i = 0; i < maxCollected; i++) {
+      out.push({ place: buckets.collected.shift(), kind: "collected" });
+    }
+    const maxOpen = Math.min(buckets.open.length, Math.max(0, 4 - out.length - reserveUnavail));
+    for (let i = 0; i < maxOpen; i++) {
+      out.push({ place: buckets.open.shift(), kind: "open" });
+    }
+    while (out.length < 4 && buckets.unavailable.length) {
+      out.push({ place: buckets.unavailable.shift(), kind: "unavailable" });
+    }
+    while (out.length < 4 && buckets.open.length) {
+      out.push({ place: buckets.open.shift(), kind: "open" });
+    }
+    while (out.length < 4 && buckets.collected.length) {
+      out.push({ place: buckets.collected.shift(), kind: "collected" });
+    }
+    return out;
   }
 
   function thumbHtml(entry) {
@@ -324,8 +331,14 @@
       kind === "collected" ? "is-collected" : kind === "unavailable" ? "is-unavailable" : "is-open";
     const stroke =
       kind === "collected" ? "#1B2747" : kind === "unavailable" ? "#C8C4BC" : "#A3AABA";
-    const icon =
-      typeof wiIcon === "function" ? wiIcon(place.id, { size: 18, stroke, sw: 2.2 }) : "";
+    /* Always draw place line-art (or WI_ICON_FALLBACK pin) — never a blank tile */
+    let icon = "";
+    if (typeof wiIcon === "function") {
+      icon = wiIcon(place.id, { size: 18, stroke, sw: 2.2 });
+    } else if (typeof wiIconDef === "function") {
+      const d = wiIconDef(place.id);
+      icon = `<svg width="18" height="18" viewBox="0 0 64 64" fill="none" stroke="${stroke}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="${d.line}"/></svg>`;
+    }
     const check =
       kind === "collected"
         ? `<span class="stamp-thumb-check" aria-hidden="true"><svg width="7" height="7" viewBox="0 0 12 12"><path d="M2.5 6.2l2.4 2.4 4.6-5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`
@@ -347,8 +360,8 @@
     document.querySelectorAll(".tab [data-tab]").forEach((btn) => {
       const tab = btn.dataset.tab;
       const on =
-        (tab === "countries" && name === "home") ||
-        (tab === "album" && name === "album") ||
+        (tab === "countries" && (name === "home" || (state.galleryFromCountries && (name === "album" || name === "detail")))) ||
+        (tab === "album" && name === "album" && !state.galleryFromCountries) ||
         (tab === "support" && name === "support") ||
         (tab === "map" && name === "map") ||
         (tab === "trade" && name === "trade") ||
@@ -363,16 +376,8 @@
   }
 
   function renderHome() {
-    const book = document.getElementById("passport-book");
-    const lock = document.getElementById("cover-lockup");
-    const meta = document.getElementById("cover-meta");
     const c = country();
     state.countryId = c.id;
-    const hex = clothHex(c);
-    book.style.background = hex;
-    lock.innerHTML = coverCountryFace({ cloth: hex, name: c.name, size: 36, withSlogan: false });
-    const n = stampsAvailableForCountry(c);
-    meta.innerHTML = `<b>${c.name}</b><span class="cover-meta-sub">${n} stamps available</span>`;
     renderCountriesLists();
   }
 
@@ -619,20 +624,17 @@
     const c = country();
     const k = document.querySelector('[data-screen="album"] .ttl .k');
     const h1 = document.querySelector('[data-screen="album"] .ttl h1');
-    const lede = document.querySelector('[data-screen="album"] .ttl > p:not(.sub)');
     if (k && h1) {
+      /* Davit: no brand slogan on gallery / inner pages */
       if (c.id === "am") {
         k.textContent = "STAMPD · ARMENIA";
         h1.textContent = "Armenia";
-        if (lede) lede.textContent = "Stamp anywhere you visit.";
       } else if (c.id === "it") {
         k.textContent = "STAMPD · ITALY";
         h1.textContent = "Italy";
-        if (lede) lede.textContent = "Stamp anywhere you visit.";
       } else {
-        k.textContent = "STAMPD · SAMPLE";
-        h1.textContent = "Sample";
-        if (lede) lede.textContent = "Pick a country for a full album.";
+        k.textContent = "STAMPD";
+        h1.textContent = c.name || "Gallery";
       }
     }
 
@@ -675,6 +677,7 @@
     state.countryId = resolved;
     localStorage.setItem("stampd-preview-country", resolved);
     rebuildStampsFromPlaces();
+    state.galleryFromCountries = true;
     showScreen("album");
   }
 
@@ -834,6 +837,7 @@
     document.querySelectorAll(".tab [data-tab]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const t = btn.dataset.tab;
+        state.galleryFromCountries = false;
         if (t === "countries") showScreen("home");
         else if (t === "album") showScreen("album");
         else if (t === "support") showScreen("support");
@@ -849,8 +853,6 @@
       });
     });
 
-    document.getElementById("open-passport").addEventListener("click", () => showScreen("album"));
-    document.getElementById("passport-book").addEventListener("click", () => showScreen("album"));
 
     document.getElementById("album-back").addEventListener("click", () => showScreen("home"));
     const faq = document.getElementById("support-faq");

@@ -59,7 +59,7 @@ Active tab tint: coral 600 `#C8372A`. Phone frame 390×844 inside dark bezel (se
 ## Countries screen (Arp locked · Oct 26)
 
 - Tab label **Countries** (was Passport). CTA **Open album**. Country/cloth picking lives here (Available + Coming soon) — **Covers tab retired → Contact support**.
-- Layout: topbar **Countries** → hero cover (~85%) → `.cover-meta` → **Open album** only → **Available now** → live cards → **Coming soon** → grey soon cards. **No Default/unset. No Change cover cloth.**
+- Layout: topbar **Countries** → **Available now** → live cards → **Coming soon** → grey soon cards. **No Default/unset. No Change cover cloth.**
 - Data: `data/places.json` v3 (Kar). Prefer `cloth_hex`; cloth red locked `#8B1E2D`. Do not invent TW cloth.
 
 ### Passport face
@@ -159,3 +159,8 @@ Active tab tint: coral 600 `#C8372A`. Phone frame 390×844 inside dark bezel (se
 - **Me → Visited passports:** visited countries only (sample AM, IT); cloth = locked family hex (`CLOTH[family]`), e.g. AM `#8B1E2D`, IT `#1E3B32`. No pastel/coming-soon books.
 - **Support → Email support:** Coral 600 `#C8372A` + coral shadow. Cloth red is for passport covers only.
 - **Change cover cloth:** removed. Available row tap opens that country’s Gallery; album **Back** returns to Countries.
+
+
+### Countries hero removed (Davit, 2026-10-26)
+The `.cover-hero` block (big passport book, `.cover-meta` “N stamps available”, Open album button) was removed. Countries leads with Available now + Coming soon; tapping an Available card opens that country’s Gallery (with Back). Me visited mini covers unchanged.
+Gallery opened from a Countries card keeps the **Countries** tab active (Album tab not highlighted); Back returns to the list. Tapping the Album tab directly still highlights Album.

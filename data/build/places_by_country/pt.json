@@ -1,0 +1,180 @@
+[
+  {
+    "id": "jeronimos",
+    "name": "Jerónimos Monastery",
+    "city": "Lisbon",
+    "chapter": "Monuments",
+    "lat": 38.6979,
+    "lng": -9.2065,
+    "precision": "venue",
+    "description": "Manueline stonework wraps this riverside monastery in Belém. The cloister is a quiet counterpoint to the busy waterfront.",
+    "source": "https://en.wikipedia.org/wiki/Jer%C3%B3nimos_Monastery"
+  },
+  {
+    "id": "belem-tower",
+    "name": "Belém Tower",
+    "city": "Lisbon",
+    "chapter": "Monuments",
+    "lat": 38.6916,
+    "lng": -9.216,
+    "precision": "venue",
+    "description": "A fortified tower stands in the Tagus where ships once left for the Age of Discovery. Walk the bastion for river views.",
+    "source": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower"
+  },
+  {
+    "id": "pena-palace",
+    "name": "Pena Palace",
+    "city": "Sintra",
+    "chapter": "Monuments",
+    "lat": 38.7876,
+    "lng": -9.3906,
+    "precision": "venue",
+    "description": "A colourful Romantic palace crowns a Sintra hill above forest parks. Bright façades and terraces look toward the Atlantic.",
+    "source": "https://en.wikipedia.org/wiki/Pena_Palace"
+  },
+  {
+    "id": "clerigos",
+    "name": "Clérigos Church and Tower",
+    "city": "Porto",
+    "chapter": "Monuments",
+    "lat": 41.1457,
+    "lng": -8.614,
+    "precision": "venue",
+    "description": "Porto’s baroque Clérigos tower rises above the old city. Climb for a 360-degree view of roofs and the Douro.",
+    "source": "https://en.wikipedia.org/wiki/Cl%C3%A9rigos_Church"
+  },
+  {
+    "id": "lisbon-cathedral",
+    "name": "Lisbon Cathedral",
+    "city": "Lisbon",
+    "chapter": "Monuments",
+    "lat": 38.7098,
+    "lng": -9.133,
+    "precision": "venue",
+    "description": "The Sé of Lisbon mixes Romanesque fortress walls with later chapels. It anchors the Alfama slope above the river.",
+    "source": "https://en.wikipedia.org/wiki/Lisbon_Cathedral"
+  },
+  {
+    "id": "alfama",
+    "name": "Alfama",
+    "city": "Lisbon",
+    "chapter": "Visit",
+    "lat": 38.712,
+    "lng": -9.13,
+    "precision": "city",
+    "description": "Lisbon’s oldest district tumbles in alleys and miradouros above the Tagus. Fado houses and tiled façades fill the lanes.",
+    "source": "https://en.wikipedia.org/wiki/Alfama"
+  },
+  {
+    "id": "livraria-lello",
+    "name": "Livraria Lello",
+    "city": "Porto",
+    "chapter": "Visit",
+    "lat": 41.1467,
+    "lng": -8.6147,
+    "precision": "venue",
+    "description": "A neo-Gothic bookshop famous for its crimson stair and stained glass. Timed entry helps manage the queues.",
+    "source": "https://en.wikipedia.org/wiki/Livraria_Lello"
+  },
+  {
+    "id": "ribeira-porto",
+    "name": "Ribeira district",
+    "city": "Porto",
+    "chapter": "Visit",
+    "lat": 41.1406,
+    "lng": -8.613,
+    "precision": "city",
+    "description": "Porto’s riverside quarter lines the Douro with colourful houses and cafés. Cross Dom Luís I bridge for the classic view.",
+    "source": "https://en.wikipedia.org/wiki/Ribeira_(Porto)"
+  },
+  {
+    "id": "cabo-da-roca",
+    "name": "Cabo da Roca",
+    "city": "Sintra area",
+    "chapter": "Visit",
+    "lat": 38.7804,
+    "lng": -9.4987,
+    "precision": "venue",
+    "description": "A cliff-top cape marks mainland Europe’s westernmost point. Windswept paths look straight onto the Atlantic.",
+    "source": "https://en.wikipedia.org/wiki/Cabo_da_roca"
+  },
+  {
+    "id": "oceanario",
+    "name": "Oceanário de Lisboa",
+    "city": "Lisbon",
+    "chapter": "Visit",
+    "lat": 38.7806,
+    "lng": -9.093,
+    "precision": "venue",
+    "description": "A large aquarium in Parque das Nações groups ocean habitats around a vast central tank.",
+    "source": "https://en.wikipedia.org/wiki/Ocean%C3%A1rio_de_Lisboa"
+  },
+  {
+    "id": "time-out-market",
+    "name": "Time Out Market",
+    "city": "Lisbon",
+    "chapter": "Foods",
+    "lat": 38.7071,
+    "lng": -9.1457,
+    "precision": "venue",
+    "description": "A food hall in Cais do Sodré gathers Portuguese chefs and stalls under one roof. Share small plates at communal tables.",
+    "source": "https://en.wikipedia.org/wiki/Time_Out_Market_Lisboa"
+  },
+  {
+    "id": "mercado-bolhao",
+    "name": "Mercado do Bolhão",
+    "city": "Porto",
+    "chapter": "Foods",
+    "lat": 41.1495,
+    "lng": -8.6067,
+    "precision": "venue",
+    "description": "Porto’s historic market hall sells fresh produce, fish and flowers. The renovated building keeps the open-court feel.",
+    "source": "https://en.wikipedia.org/wiki/Bolh%C3%A3o_Market"
+  },
+  {
+    "id": "pasteis-belem",
+    "name": "Pastéis de Belém",
+    "city": "Lisbon",
+    "chapter": "Foods",
+    "lat": 38.6975,
+    "lng": -9.2033,
+    "precision": "venue",
+    "description": "The bakery that popularised pastéis de nata still serves warm custard tarts beside the monastery. Expect a queue that moves quickly.",
+    "source": "https://en.wikipedia.org/wiki/Past%C3%A9is_de_Bel%C3%A9m"
+  },
+  {
+    "id": "pinhao-terraces",
+    "name": "Pinhão wine terraces",
+    "city": "Pinhão",
+    "chapter": "Foods",
+    "lat": 41.191,
+    "lng": -7.545,
+    "precision": "city",
+    "description": "Douro Valley terraces around Pinhão grow grapes for port and table wine. Quinta tastings pair river views with local bottles.",
+    "source": "https://en.wikipedia.org/wiki/Pinh%C3%A3o"
+  },
+  {
+    "id": "cafe-a-brasileira",
+    "name": "Café A Brasileira",
+    "city": "Lisbon",
+    "chapter": "Foods",
+    "lat": 38.7107,
+    "lng": -9.1422,
+    "precision": "venue",
+    "description": "A historic Chiado café known for bica coffee and its Pessoa statue outside. An easy stop between shops and tram rides.",
+    "source": "https://en.wikipedia.org/wiki/Caf%C3%A9_A_Brasileira"
+  },
+  {
+    "id": "festas-santo-antonio",
+    "name": "Festas de Santo António",
+    "city": "Lisbon",
+    "chapter": "Seasonal",
+    "lat": 38.713,
+    "lng": -9.132,
+    "precision": "approximate",
+    "description": "Lisbon’s June saint festivals fill Alfama with grilled sardines, marches and street parties for Santo António.",
+    "source": "https://en.wikipedia.org/wiki/Santos_Populares",
+    "seasonal": true,
+    "seasonal_label": "Festas de Santo António"
+  }
+]
