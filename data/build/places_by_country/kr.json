@@ -1,0 +1,180 @@
+[
+  {
+    "id": "gyeongbokgung",
+    "name": "Gyeongbokgung Palace",
+    "city": "Seoul",
+    "chapter": "Monuments",
+    "lat": 37.5796,
+    "lng": 126.977,
+    "precision": "venue",
+    "description": "The largest of Seoul’s Five Grand Palaces with changing of the guard ceremonies.",
+    "source": "https://en.wikipedia.org/wiki/Gyeongbokgung"
+  },
+  {
+    "id": "bukchon",
+    "name": "Bukchon Hanok Village",
+    "city": "Seoul",
+    "chapter": "Monuments",
+    "lat": 37.5825,
+    "lng": 126.983,
+    "precision": "city",
+    "description": "Traditional hanok houses climb hills between Gyeongbokgung and Changdeokgung.",
+    "source": "https://en.wikipedia.org/wiki/Bukchon_Hanok_Village"
+  },
+  {
+    "id": "bulguksa",
+    "name": "Bulguksa",
+    "city": "Gyeongju",
+    "chapter": "Monuments",
+    "lat": 35.785,
+    "lng": 129.332,
+    "precision": "venue",
+    "description": "A Silla-era Buddhist temple complex with stone pagodas near Gyeongju.",
+    "source": "https://en.wikipedia.org/wiki/Bulguksa"
+  },
+  {
+    "id": "hwaseong",
+    "name": "Hwaseong Fortress",
+    "city": "Suwon",
+    "chapter": "Monuments",
+    "lat": 37.287,
+    "lng": 127.012,
+    "precision": "venue",
+    "description": "An 18th-century fortress wall encircles parts of Suwon with gates and watchtowers.",
+    "source": "https://en.wikipedia.org/wiki/Hwaseong_Fortress"
+  },
+  {
+    "id": "dongdaemun-design",
+    "name": "Dongdaemun Design Plaza",
+    "city": "Seoul",
+    "chapter": "Monuments",
+    "lat": 37.567,
+    "lng": 127.009,
+    "precision": "venue",
+    "description": "Zaha Hadid’s curved complex anchors a fashion and design district.",
+    "source": "https://en.wikipedia.org/wiki/Dongdaemun_Design_Plaza"
+  },
+  {
+    "id": "namsan",
+    "name": "N Seoul Tower",
+    "city": "Seoul",
+    "chapter": "Visit",
+    "lat": 37.5512,
+    "lng": 126.9882,
+    "precision": "venue",
+    "description": "A hilltop tower with city views above Namsan Park.",
+    "source": "https://en.wikipedia.org/wiki/N_Seoul_Tower"
+  },
+  {
+    "id": "jeju",
+    "name": "Jeju Island",
+    "city": "Jeju",
+    "chapter": "Visit",
+    "lat": 33.5,
+    "lng": 126.53,
+    "precision": "city",
+    "description": "Volcanic landscapes, beaches and trails on Korea’s largest island.",
+    "source": "https://en.wikipedia.org/wiki/Jeju_Island"
+  },
+  {
+    "id": "busan-haeundae",
+    "name": "Haeundae Beach",
+    "city": "Busan",
+    "chapter": "Visit",
+    "lat": 35.1587,
+    "lng": 129.1604,
+    "precision": "venue",
+    "description": "A popular urban beach with a wide sand stretch in eastern Busan.",
+    "source": "https://en.wikipedia.org/wiki/Haeundae_Beach"
+  },
+  {
+    "id": "seoraksan",
+    "name": "Seoraksan National Park",
+    "city": "Sokcho area",
+    "chapter": "Visit",
+    "lat": 38.12,
+    "lng": 128.47,
+    "precision": "city",
+    "description": "Granite peaks and autumn colours in Gangwon Province.",
+    "source": "https://en.wikipedia.org/wiki/Seoraksan"
+  },
+  {
+    "id": "dmz-imjingak",
+    "name": "Imjingak",
+    "city": "Paju",
+    "chapter": "Visit",
+    "lat": 37.889,
+    "lng": 126.74,
+    "precision": "venue",
+    "description": "A park and observation area near the DMZ north of Seoul.",
+    "source": "https://en.wikipedia.org/wiki/Imjingak"
+  },
+  {
+    "id": "gwangjang",
+    "name": "Gwangjang Market",
+    "city": "Seoul",
+    "chapter": "Foods",
+    "lat": 37.57,
+    "lng": 126.999,
+    "precision": "venue",
+    "description": "A historic market famous for bindaetteok, mayak gimbap and noodles.",
+    "source": "https://en.wikipedia.org/wiki/Gwangjang_Market"
+  },
+  {
+    "id": "noryangjin",
+    "name": "Noryangjin Fish Market",
+    "city": "Seoul",
+    "chapter": "Foods",
+    "lat": 37.525,
+    "lng": 126.928,
+    "precision": "venue",
+    "description": "Seafood auction halls with upstairs restaurants cooking your purchase.",
+    "source": "https://en.wikipedia.org/wiki/Noryangjin_Fisheries_Wholesale_Market"
+  },
+  {
+    "id": "jagalchi",
+    "name": "Jagalchi Market",
+    "city": "Busan",
+    "chapter": "Foods",
+    "lat": 35.097,
+    "lng": 129.03,
+    "precision": "venue",
+    "description": "Korea’s large seafood market on Busan’s waterfront.",
+    "source": "https://en.wikipedia.org/wiki/Jagalchi_Market"
+  },
+  {
+    "id": "jeonju-hanok-food",
+    "name": "Jeonju Hanok Village eateries",
+    "city": "Jeonju",
+    "chapter": "Foods",
+    "lat": 35.815,
+    "lng": 127.15,
+    "precision": "city",
+    "description": "Bibimbap and street snacks fill the hanok village lanes.",
+    "source": "https://en.wikipedia.org/wiki/Jeonju_Hanok_Village"
+  },
+  {
+    "id": "insadong",
+    "name": "Insadong tea & snacks",
+    "city": "Seoul",
+    "chapter": "Foods",
+    "lat": 37.574,
+    "lng": 126.984,
+    "precision": "city",
+    "description": "Traditional tea houses and snack shops along Insadong-gil.",
+    "source": "https://en.wikipedia.org/wiki/Insadong"
+  },
+  {
+    "id": "cherry-blossom-yeouido",
+    "name": "Yeouido Cherry Blossom Festival",
+    "city": "Seoul",
+    "chapter": "Seasonal",
+    "lat": 37.528,
+    "lng": 126.933,
+    "precision": "venue",
+    "description": "Spring cherry trees line Yeouido Park with weekend crowds.",
+    "source": "https://en.wikipedia.org/wiki/Yeouido",
+    "seasonal": true,
+    "seasonal_label": "Yeouido Cherry Blossom"
+  }
+]

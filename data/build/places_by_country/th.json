@@ -1,0 +1,180 @@
+[
+  {
+    "id": "wat-arun",
+    "name": "Wat Arun",
+    "city": "Bangkok",
+    "chapter": "Monuments",
+    "lat": 13.7437,
+    "lng": 100.4888,
+    "precision": "venue",
+    "description": "A riverside prang temple of porcelain mosaics opposite Thonburi’s shore.",
+    "source": "https://en.wikipedia.org/wiki/Wat_Arun"
+  },
+  {
+    "id": "wat-pho",
+    "name": "Wat Pho",
+    "city": "Bangkok",
+    "chapter": "Monuments",
+    "lat": 13.7465,
+    "lng": 100.493,
+    "precision": "venue",
+    "description": "Home of a giant Reclining Buddha and a historic massage school.",
+    "source": "https://en.wikipedia.org/wiki/Wat_Pho"
+  },
+  {
+    "id": "grand-palace-bkk",
+    "name": "Grand Palace",
+    "city": "Bangkok",
+    "chapter": "Monuments",
+    "lat": 13.75,
+    "lng": 100.4914,
+    "precision": "venue",
+    "description": "Gilded halls and Wat Phra Kaew share a walled riverside complex.",
+    "source": "https://en.wikipedia.org/wiki/Grand_Palace_(Bangkok)"
+  },
+  {
+    "id": "ayutthaya-wat-mahathat",
+    "name": "Wat Mahathat",
+    "city": "Ayutthaya",
+    "chapter": "Monuments",
+    "lat": 14.357,
+    "lng": 100.567,
+    "precision": "venue",
+    "description": "Ruined towers and a famous Buddha head in tree roots mark Ayutthaya’s park.",
+    "source": "https://en.wikipedia.org/wiki/Wat_Mahathat_(Ayutthaya)"
+  },
+  {
+    "id": "doi-suthep",
+    "name": "Wat Phra That Doi Suthep",
+    "city": "Chiang Mai",
+    "chapter": "Monuments",
+    "lat": 18.805,
+    "lng": 98.922,
+    "precision": "venue",
+    "description": "A golden chedi temple overlooks Chiang Mai from a mountain road.",
+    "source": "https://en.wikipedia.org/wiki/Wat_Phra_That_Doi_Suthep"
+  },
+  {
+    "id": "chiang-mai-old-city",
+    "name": "Chiang Mai Old City",
+    "city": "Chiang Mai",
+    "chapter": "Visit",
+    "lat": 18.788,
+    "lng": 98.985,
+    "precision": "city",
+    "description": "A moated square of temples, cafés and night markets in northern Thailand.",
+    "source": "https://en.wikipedia.org/wiki/Chiang_Mai"
+  },
+  {
+    "id": "phi-phi",
+    "name": "Maya Bay / Ko Phi Phi",
+    "city": "Ko Phi Phi",
+    "chapter": "Visit",
+    "lat": 7.677,
+    "lng": 98.767,
+    "precision": "city",
+    "description": "Limestone cliffs and beaches on Phi Phi islands (Maya Bay has managed access).",
+    "source": "https://en.wikipedia.org/wiki/Ko_Phi_Phi"
+  },
+  {
+    "id": "railay",
+    "name": "Railay Beach",
+    "city": "Krabi",
+    "chapter": "Visit",
+    "lat": 8.011,
+    "lng": 98.836,
+    "precision": "venue",
+    "description": "Cliffs and beaches reachable by longtail from Ao Nang.",
+    "source": "https://en.wikipedia.org/wiki/Railay_Beach"
+  },
+  {
+    "id": "sukothai",
+    "name": "Sukhothai Historical Park",
+    "city": "Sukhothai",
+    "chapter": "Visit",
+    "lat": 17.017,
+    "lng": 99.703,
+    "precision": "city",
+    "description": "Khmer-influenced temple ruins spread across a UNESCO park.",
+    "source": "https://en.wikipedia.org/wiki/Sukhothai_Historical_Park"
+  },
+  {
+    "id": "floating-damnoen",
+    "name": "Damnoen Saduak Floating Market",
+    "city": "Ratchaburi",
+    "chapter": "Visit",
+    "lat": 13.519,
+    "lng": 99.959,
+    "precision": "venue",
+    "description": "Canal vendors sell produce and snacks from boats — busy and tourist-oriented.",
+    "source": "https://en.wikipedia.org/wiki/Damnoen_Saduak_Floating_Market"
+  },
+  {
+    "id": "chatuchak",
+    "name": "Chatuchak Weekend Market",
+    "city": "Bangkok",
+    "chapter": "Foods",
+    "lat": 13.8,
+    "lng": 100.55,
+    "precision": "venue",
+    "description": "A vast weekend market with food courts among thousands of stalls.",
+    "source": "https://en.wikipedia.org/wiki/Chatuchak_Weekend_Market"
+  },
+  {
+    "id": "yaowarat",
+    "name": "Yaowarat Road",
+    "city": "Bangkok",
+    "chapter": "Foods",
+    "lat": 13.74,
+    "lng": 100.51,
+    "precision": "venue",
+    "description": "Bangkok’s Chinatown street of seafood, noodles and night stalls.",
+    "source": "https://en.wikipedia.org/wiki/Yaowarat_Road"
+  },
+  {
+    "id": "chiang-mai-night",
+    "name": "Chiang Mai Night Bazaar food",
+    "city": "Chiang Mai",
+    "chapter": "Foods",
+    "lat": 18.785,
+    "lng": 99.0,
+    "precision": "city",
+    "description": "Evening stalls of khao soi, satay and desserts along Chang Klan.",
+    "source": "https://en.wikipedia.org/wiki/Chiang_Mai_Night_Bazaar"
+  },
+  {
+    "id": "or-tor-kor",
+    "name": "Or Tor Kor Market",
+    "city": "Bangkok",
+    "chapter": "Foods",
+    "lat": 13.8005,
+    "lng": 100.5505,
+    "precision": "venue",
+    "description": "A high-quality produce market beside Chatuchak with ready-to-eat southern dishes.",
+    "source": "https://en.wikipedia.org/wiki/Or_Tor_Kor_Market"
+  },
+  {
+    "id": "phuket-sunday",
+    "name": "Phuket Weekend Market / Old Town food",
+    "city": "Phuket",
+    "chapter": "Foods",
+    "lat": 7.885,
+    "lng": 98.39,
+    "precision": "city",
+    "description": "Sino-Portuguese Old Town cafés and Sunday walking-street snacks.",
+    "source": "https://en.wikipedia.org/wiki/Phuket_City"
+  },
+  {
+    "id": "loi-krathong",
+    "name": "Loi Krathong",
+    "city": "Bangkok",
+    "chapter": "Seasonal",
+    "lat": 13.75,
+    "lng": 100.5,
+    "precision": "city",
+    "description": "Floating krathong offerings light rivers and canals on a full-moon night.",
+    "source": "https://en.wikipedia.org/wiki/Loi_Krathong",
+    "seasonal": true,
+    "seasonal_label": "Loi Krathong"
+  }
+]

@@ -143,6 +143,35 @@
         </div>
       </section>
 
+
+      <!-- STAMPS LIST (chrome tap) -->
+      <section class="screen" data-screen="stamps-list" aria-label="Collected stamps">
+        <div class="sb"><span>9:41</span><span class="sig">●●● ▮</span></div>
+        <div class="scroll stamps-list-scroll">
+          <div class="topbar chrome-topbar">
+            <button type="button" class="icon-btn" id="stamps-list-back" aria-label="Back">
+              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <h1 class="chrome-screen-title">Stamps</h1>
+          </div>
+          <div id="stamps-list-root" class="stamps-list-root"></div>
+        </div>
+      </section>
+
+      <!-- BALANCE (chrome tap) -->
+      <section class="screen" data-screen="balance" aria-label="Coin balance">
+        <div class="sb"><span>9:41</span><span class="sig">●●● ▮</span></div>
+        <div class="scroll balance-scroll">
+          <div class="topbar chrome-topbar">
+            <button type="button" class="icon-btn" id="balance-back" aria-label="Back">
+              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <h1 class="chrome-screen-title">Balance</h1>
+          </div>
+          <div id="balance-root" class="balance-root"></div>
+        </div>
+      </section>
+
       <!-- Check-in modal (over any screen) -->
       <div class="modal-backdrop" id="checkin-modal" role="dialog" aria-modal="true" aria-labelledby="checkin-title">
         <div class="sheet">
@@ -183,7 +212,7 @@
           Countries
         </button>
         <button type="button" data-tab="trade">
-          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h11l-3-3"/><path d="M17 16H6l3 3"/><path d="M18 8v3"/><path d="M6 16v-3"/></svg></span>
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h11"/><path d="M12 4.5 15.5 8 12 11.5"/><path d="M20 16H9"/><path d="M12 12.5 8.5 16 12 19.5"/></svg></span>
           Trade
         </button>
         <button type="button" class="c" data-tab="stamp" aria-label="Stamp">

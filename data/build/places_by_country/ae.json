@@ -1,0 +1,180 @@
+[
+  {
+    "id": "sheikh-zayed-mosque",
+    "name": "Sheikh Zayed Grand Mosque",
+    "city": "Abu Dhabi",
+    "chapter": "Monuments",
+    "lat": 24.4128,
+    "lng": 54.475,
+    "precision": "venue",
+    "description": "A vast white marble mosque with reflecting pools and space for tens of thousands of worshippers.",
+    "source": "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque"
+  },
+  {
+    "id": "burj-khalifa",
+    "name": "Burj Khalifa",
+    "city": "Dubai",
+    "chapter": "Monuments",
+    "lat": 25.1972,
+    "lng": 55.2744,
+    "precision": "venue",
+    "description": "The world’s tallest tower rises above Downtown Dubai with observation decks.",
+    "source": "https://en.wikipedia.org/wiki/Burj_Khalifa"
+  },
+  {
+    "id": "burj-al-arab",
+    "name": "Burj Al Arab",
+    "city": "Dubai",
+    "chapter": "Monuments",
+    "lat": 25.1412,
+    "lng": 55.1853,
+    "precision": "venue",
+    "description": "A sail-shaped luxury hotel on an artificial island off Jumeirah.",
+    "source": "https://en.wikipedia.org/wiki/Burj_Al_Arab"
+  },
+  {
+    "id": "louvre-abu-dhabi",
+    "name": "Louvre Abu Dhabi",
+    "city": "Abu Dhabi",
+    "chapter": "Monuments",
+    "lat": 24.5335,
+    "lng": 54.3981,
+    "precision": "venue",
+    "description": "A domed museum on Saadiyat Island presenting global art under a patterned roof.",
+    "source": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi"
+  },
+  {
+    "id": "dubai-frame",
+    "name": "Dubai Frame",
+    "city": "Dubai",
+    "chapter": "Monuments",
+    "lat": 25.235,
+    "lng": 55.3,
+    "precision": "venue",
+    "description": "A large picture-frame structure in Zabeel Park overlooking old and new Dubai.",
+    "source": "https://en.wikipedia.org/wiki/Dubai_Frame"
+  },
+  {
+    "id": "desert-conservation",
+    "name": "Dubai Desert Conservation Reserve",
+    "city": "Dubai",
+    "chapter": "Visit",
+    "lat": 24.85,
+    "lng": 55.6,
+    "precision": "city",
+    "description": "Protected dunes for wildlife and guided desert experiences inland from the city.",
+    "source": "https://en.wikipedia.org/wiki/Dubai_Desert_Conservation_Reserve"
+  },
+  {
+    "id": "palm-jumeirah",
+    "name": "Palm Jumeirah",
+    "city": "Dubai",
+    "chapter": "Visit",
+    "lat": 25.112,
+    "lng": 55.139,
+    "precision": "city",
+    "description": "A palm-shaped artificial island with beaches and a monorail spine.",
+    "source": "https://en.wikipedia.org/wiki/Palm_Jumeirah"
+  },
+  {
+    "id": "al-ain-oasis",
+    "name": "Al Ain Oasis",
+    "city": "Al Ain",
+    "chapter": "Visit",
+    "lat": 24.216,
+    "lng": 55.75,
+    "precision": "venue",
+    "description": "A UNESCO palm oasis with falaj irrigation channels in Al Ain.",
+    "source": "https://en.wikipedia.org/wiki/Al_Ain_Oasis"
+  },
+  {
+    "id": "yas-island",
+    "name": "Yas Island",
+    "city": "Abu Dhabi",
+    "chapter": "Visit",
+    "lat": 24.49,
+    "lng": 54.6,
+    "precision": "city",
+    "description": "Entertainment island with parks, marina and motorsport venues.",
+    "source": "https://en.wikipedia.org/wiki/Yas_Island"
+  },
+  {
+    "id": "hatta",
+    "name": "Hatta heritage & dams",
+    "city": "Hatta",
+    "chapter": "Visit",
+    "lat": 24.8,
+    "lng": 56.12,
+    "precision": "city",
+    "description": "Mountain village with heritage houses and reservoir landscapes near Oman.",
+    "source": "https://en.wikipedia.org/wiki/Hatta,_United_Arab_Emirates"
+  },
+  {
+    "id": "dubai-spice-souk",
+    "name": "Spice Souk",
+    "city": "Dubai",
+    "chapter": "Foods",
+    "lat": 25.267,
+    "lng": 55.297,
+    "precision": "venue",
+    "description": "Covered lanes in Deira sell spices, teas and sweets.",
+    "source": "https://en.wikipedia.org/wiki/Dubai_Spice_Souk"
+  },
+  {
+    "id": "global-village",
+    "name": "Global Village food pavilions",
+    "city": "Dubai",
+    "chapter": "Foods",
+    "lat": 25.07,
+    "lng": 55.32,
+    "precision": "venue",
+    "description": "Seasonal cultural park with national food stalls (open in cooler months).",
+    "source": "https://en.wikipedia.org/wiki/Global_Village_(Dubai)"
+  },
+  {
+    "id": "al-qattara",
+    "name": "Al Qattara Arts Centre café area",
+    "city": "Al Ain",
+    "chapter": "Foods",
+    "lat": 24.22,
+    "lng": 55.74,
+    "precision": "city",
+    "description": "Heritage and arts precinct with cafés in Al Ain’s cultural district.",
+    "source": "https://en.wikipedia.org/wiki/Al_Ain"
+  },
+  {
+    "id": "abu-dhabi-fish",
+    "name": "Mina Fish Market",
+    "city": "Abu Dhabi",
+    "chapter": "Foods",
+    "lat": 24.52,
+    "lng": 54.38,
+    "precision": "venue",
+    "description": "A working fish market near the port with fresh catch and simple grills.",
+    "source": "https://en.wikipedia.org/wiki/Abu_Dhabi"
+  },
+  {
+    "id": "dubai-mall-food",
+    "name": "Dubai Mall dining",
+    "city": "Dubai",
+    "chapter": "Foods",
+    "lat": 25.1985,
+    "lng": 55.2796,
+    "precision": "venue",
+    "description": "Hundreds of restaurants surround the fountain court beneath Burj Khalifa.",
+    "source": "https://en.wikipedia.org/wiki/The_Dubai_Mall"
+  },
+  {
+    "id": "dubai-shopping-festival",
+    "name": "Dubai Shopping Festival",
+    "city": "Dubai",
+    "chapter": "Seasonal",
+    "lat": 25.2,
+    "lng": 55.27,
+    "precision": "city",
+    "description": "A winter festival of sales, fireworks and events across Dubai.",
+    "source": "https://en.wikipedia.org/wiki/Dubai_Shopping_Festival",
+    "seasonal": true,
+    "seasonal_label": "Dubai Shopping Festival"
+  }
+]

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "western-wall",
+    "name": "Western Wall",
+    "city": "Jerusalem",
+    "chapter": "Monuments",
+    "lat": 31.7767,
+    "lng": 35.2345,
+    "precision": "venue",
+    "description": "A retaining wall of the Temple Mount, a sacred prayer site in Jerusalem’s Old City.",
+    "source": "https://en.wikipedia.org/wiki/Western_Wall"
+  },
+  {
+    "id": "dome-of-the-rock",
+    "name": "Dome of the Rock",
+    "city": "Jerusalem",
+    "chapter": "Monuments",
+    "lat": 31.778,
+    "lng": 35.2354,
+    "precision": "venue",
+    "description": "A golden-domed shrine on the Temple Mount / Haram al-Sharif plaza.",
+    "source": "https://en.wikipedia.org/wiki/Dome_of_the_Rock"
+  },
+  {
+    "id": "church-holy-sepulchre",
+    "name": "Church of the Holy Sepulchre",
+    "city": "Jerusalem",
+    "chapter": "Monuments",
+    "lat": 31.7785,
+    "lng": 35.2296,
+    "precision": "venue",
+    "description": "A church complex in the Christian Quarter traditionally linked to crucifixion and burial sites.",
+    "source": "https://en.wikipedia.org/wiki/Church_of_the_Holy_Sepulchre"
+  },
+  {
+    "id": "masada",
+    "name": "Masada",
+    "city": "Dead Sea area",
+    "chapter": "Monuments",
+    "lat": 31.3156,
+    "lng": 35.3539,
+    "precision": "venue",
+    "description": "Herod’s desert fortress plateau above the Dead Sea, reached by cable car or Snake Path.",
+    "source": "https://en.wikipedia.org/wiki/Masada"
+  },
+  {
+    "id": "bahai-gardens",
+    "name": "Baháʼí Gardens",
+    "city": "Haifa",
+    "chapter": "Monuments",
+    "lat": 32.814,
+    "lng": 34.987,
+    "precision": "venue",
+    "description": "Terraced gardens cascade down Mount Carmel toward Haifa Bay.",
+    "source": "https://en.wikipedia.org/wiki/Shrine_of_the_B%C3%A1b"
+  },
+  {
+    "id": "old-city-jerusalem",
+    "name": "Jerusalem Old City",
+    "city": "Jerusalem",
+    "chapter": "Visit",
+    "lat": 31.7767,
+    "lng": 35.231,
+    "precision": "city",
+    "description": "Four quarters inside Ottoman walls with markets, holy sites and rampart walks.",
+    "source": "https://en.wikipedia.org/wiki/Old_City_(Jerusalem)"
+  },
+  {
+    "id": "dead-sea",
+    "name": "Dead Sea beaches",
+    "city": "Ein Bokek area",
+    "chapter": "Visit",
+    "lat": 31.2,
+    "lng": 35.37,
+    "precision": "city",
+    "description": "Hypersaline shores where floatation is easy; use nearby showers after swimming.",
+    "source": "https://en.wikipedia.org/wiki/Dead_Sea"
+  },
+  {
+    "id": "tel-aviv-beach",
+    "name": "Tel Aviv beaches",
+    "city": "Tel Aviv",
+    "chapter": "Visit",
+    "lat": 32.08,
+    "lng": 34.77,
+    "precision": "city",
+    "description": "Urban Mediterranean beaches with promenades from Jaffa northward.",
+    "source": "https://en.wikipedia.org/wiki/Tel_Aviv"
+  },
+  {
+    "id": "caesarea",
+    "name": "Caesarea Maritima",
+    "city": "Caesarea",
+    "chapter": "Visit",
+    "lat": 32.5,
+    "lng": 34.89,
+    "precision": "venue",
+    "description": "Roman and Crusader ruins on the Mediterranean with a harbour theatre.",
+    "source": "https://en.wikipedia.org/wiki/Caesarea_Maritima"
+  },
+  {
+    "id": "ramon-crater",
+    "name": "Makhtesh Ramon",
+    "city": "Mitzpe Ramon",
+    "chapter": "Visit",
+    "lat": 30.58,
+    "lng": 34.8,
+    "precision": "venue",
+    "description": "A large erosion cirque in the Negev with rim viewpoints.",
+    "source": "https://en.wikipedia.org/wiki/Makhtesh_Ramon"
+  },
+  {
+    "id": "carmel-market",
+    "name": "Carmel Market",
+    "city": "Tel Aviv",
+    "chapter": "Foods",
+    "lat": 32.068,
+    "lng": 34.769,
+    "precision": "venue",
+    "description": "A busy outdoor market for produce, spices and street snacks.",
+    "source": "https://en.wikipedia.org/wiki/Carmel_Market"
+  },
+  {
+    "id": "machane-yehuda",
+    "name": "Mahane Yehuda Market",
+    "city": "Jerusalem",
+    "chapter": "Foods",
+    "lat": 31.785,
+    "lng": 35.212,
+    "precision": "venue",
+    "description": "Jerusalem’s main market of stalls by day and bars by night.",
+    "source": "https://en.wikipedia.org/wiki/Mahane_Yehuda_Market"
+  },
+  {
+    "id": "jaffa-food",
+    "name": "Jaffa port eateries",
+    "city": "Tel Aviv-Yafo",
+    "chapter": "Foods",
+    "lat": 32.053,
+    "lng": 34.752,
+    "precision": "city",
+    "description": "Seafood and hummus restaurants around the old Jaffa harbour.",
+    "source": "https://en.wikipedia.org/wiki/Jaffa"
+  },
+  {
+    "id": "haifa-food",
+    "name": "Haifa German Colony cafés",
+    "city": "Haifa",
+    "chapter": "Foods",
+    "lat": 32.82,
+    "lng": 34.99,
+    "precision": "city",
+    "description": "Cafés along Ben-Gurion Avenue beneath the Baháʼí terraces.",
+    "source": "https://en.wikipedia.org/wiki/German_Colony,_Haifa"
+  },
+  {
+    "id": "acre-market",
+    "name": "Acre (Akko) market",
+    "city": "Acre",
+    "chapter": "Foods",
+    "lat": 32.923,
+    "lng": 35.07,
+    "precision": "city",
+    "description": "Crusader-city souk stalls for hummus, fish and knafeh.",
+    "source": "https://en.wikipedia.org/wiki/Acre,_Israel"
+  },
+  {
+    "id": "purim-tel-aviv",
+    "name": "Purim in Tel Aviv",
+    "city": "Tel Aviv",
+    "chapter": "Seasonal",
+    "lat": 32.08,
+    "lng": 34.78,
+    "precision": "city",
+    "description": "Costume street celebrations and parties mark the Purim festival.",
+    "source": "https://en.wikipedia.org/wiki/Purim",
+    "seasonal": true,
+    "seasonal_label": "Purim"
+  }
+]

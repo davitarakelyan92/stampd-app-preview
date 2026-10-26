@@ -28,8 +28,11 @@
     geoMode: "yerevan",
     detailIcon: null,
     galleryFromCountries: false,
+    galleryFromMe: false,
+    chromeReturn: "home", // screen to return to from stamps-list / balance
     coinsPreview: null, // local override for demo bumps; null = use me.json
     tradeOfferPlaceId: null,
+    detailFromStampsList: false,
   };
 
   function clothHex(c) {
@@ -362,12 +365,24 @@
     document.querySelectorAll(".screen").forEach((el) => el.classList.toggle("on", el.dataset.screen === name));
     document.querySelectorAll(".tab [data-tab]").forEach((btn) => {
       const tab = btn.dataset.tab;
+      const chromeOnCountries =
+        (name === "stamps-list" || name === "balance") && state.chromeReturn === "home";
+      const chromeOnTrade =
+        (name === "stamps-list" || name === "balance") && state.chromeReturn === "trade";
+      const chromeOnMe =
+        (name === "stamps-list" || name === "balance") && state.chromeReturn === "me";
       const on =
-        (tab === "countries" && (name === "home" || (state.galleryFromCountries && (name === "album" || name === "detail")))) ||
+        (tab === "countries" &&
+          (name === "home" ||
+            chromeOnCountries ||
+            (state.galleryFromCountries && (name === "album" || name === "detail")))) ||
         (tab === "support" && name === "support") ||
         (tab === "map" && name === "map") ||
-        (tab === "trade" && name === "trade") ||
-        (tab === "me" && name === "me");
+        (tab === "trade" && (name === "trade" || chromeOnTrade)) ||
+        (tab === "me" &&
+          (name === "me" ||
+            chromeOnMe ||
+            (state.galleryFromMe && (name === "album" || name === "detail"))));
       btn.classList.toggle("on", on);
     });
     if (name === "home") renderHome();
@@ -376,6 +391,8 @@
     if (name === "trade") renderTrade();
     if (name === "me") renderMe();
     if (name === "detail") renderDetail();
+    if (name === "stamps-list") renderStampsList();
+    if (name === "balance") renderBalance();
     if (name === "home" || name === "trade" || name === "me") renderBalanceChrome();
   }
 
@@ -514,13 +531,198 @@
       '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 10h6M9 14h4"/></svg>';
     const coinSvg =
       '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg>';
-    return `<span class="balance-pill stamps" title="Stamps collected">${stampSvg}<span>${stamps}</span></span><span class="balance-pill coins" title="Coins">${coinSvg}<span>${coins}</span></span>`;
+    return `<button type="button" class="balance-pill stamps" data-chrome-stamps title="Stamps collected" aria-label="Stamps collected, ${stamps}">${stampSvg}<span>${stamps}</span></button><button type="button" class="balance-pill coins" data-chrome-coins title="Coins" aria-label="Coins, ${coins}">${coinSvg}<span>${coins}</span></button>`;
   }
 
   function renderBalanceChrome() {
     document.querySelectorAll("[data-balance-chrome]").forEach((el) => {
       el.innerHTML = balanceChromeHtml();
+      el.querySelectorAll("[data-chrome-stamps]").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openStampsList();
+        });
+      });
+      el.querySelectorAll("[data-chrome-coins]").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openBalance();
+        });
+      });
     });
+  }
+
+  function rememberChromeReturn() {
+    if (state.screen === "stamps-list" || state.screen === "balance") return;
+    if (state.screen === "home" || state.screen === "trade" || state.screen === "me") {
+      state.chromeReturn = state.screen;
+    } else if (state.galleryFromMe) {
+      state.chromeReturn = "me";
+    } else if (state.galleryFromCountries) {
+      state.chromeReturn = "home";
+    } else {
+      state.chromeReturn = "home";
+    }
+  }
+
+  function openStampsList() {
+    rememberChromeReturn();
+    showScreen("stamps-list");
+  }
+
+  function openBalance() {
+    rememberChromeReturn();
+    showScreen("balance");
+  }
+
+  function closeChromeOverlay() {
+    const back = state.chromeReturn || "home";
+    showScreen(back);
+  }
+
+  function ownedCopyCount(dup) {
+    /* duplicates[].count = extras/spares; total copies = 1 collected + extras */
+    const extras = dup && typeof dup.extras === "number" ? dup.extras : 1;
+    return 1 + Math.max(0, extras);
+  }
+
+  function tradeStampHtml(dup, index) {
+    const place = placeById(dup.id);
+    const name = (place && place.name) || dup.id;
+    const existing = stamps.find((s) => s.icon === dup.id);
+    const color = (existing && existing.color) || STAMP_COLORS[index % STAMP_COLORS.length];
+    const opts = {
+      ...STAMP_OPTS,
+      icon: dup.id,
+      color,
+      state: "earned",
+      note: "",
+      name,
+      w: 78,
+      h: 96,
+      P: 6,
+      labelSize: 8.5,
+    };
+    if (existing && existing.level) opts.level = existing.level;
+    const svg = typeof digitalStamp === "function" ? digitalStamp(opts) : "";
+    const copies = ownedCopyCount(dup);
+    return `<div class="trade-stamp-wrap">${svg}<span class="trade-count" aria-label="${copies} copies">×${copies}</span></div>`;
+  }
+
+  function renderStampsList() {
+    const root = document.getElementById("stamps-list-root");
+    if (!root) return;
+    const ids = (state.meData && state.meData.collected_place_ids) || [];
+    const places = ids.map((id) => placeById(id)).filter(Boolean);
+    const byCountry = {};
+    places.forEach((p) => {
+      const code = String(p.country || "?").toUpperCase();
+      if (!byCountry[code]) byCountry[code] = [];
+      byCountry[code].push(p);
+    });
+    const countryOrder = Object.keys(byCountry).sort((a, b) => {
+      const na = countryNameForPlace({ country: a }) || a;
+      const nb = countryNameForPlace({ country: b }) || b;
+      return na.localeCompare(nb);
+    });
+
+    if (!places.length) {
+      root.innerHTML = `<p class="stamps-list-lede">No collected stamps yet.</p>`;
+      return;
+    }
+
+    let html = `<p class="stamps-list-lede">${places.length} collected · grouped by country &amp; chapter</p>`;
+    countryOrder.forEach((code) => {
+      const list = sortPlaces(byCountry[code]);
+      const cname = countryNameForPlace({ country: code }) || code;
+      html += `<div><div class="stamps-country-k">${cname}</div>`;
+      const byCh = {};
+      list.forEach((p) => {
+        const ch = p.chapter || "Other";
+        if (!byCh[ch]) byCh[ch] = [];
+        byCh[ch].push(p);
+      });
+      const chapters = Object.keys(byCh).sort((a, b) => chapterRank(a) - chapterRank(b));
+      chapters.forEach((ch) => {
+        html += `<div class="stamps-chapter-k">${ch}</div>`;
+        byCh[ch].forEach((p) => {
+          let icon = "";
+          if (typeof wiIcon === "function") icon = wiIcon(p.id, { size: 22, stroke: "#1B2747", sw: 2.2 });
+          const safe = String(p.name || p.id).replace(/"/g, "&quot;");
+          html += `<button type="button" class="stamps-row" data-stamp-open="${p.id}">
+            <span class="sr-thumb">${icon}</span>
+            <span class="sr-meta"><span class="sr-name">${safe}</span><span class="sr-sub">${ch}</span></span>
+          </button>`;
+        });
+      });
+      html += `</div>`;
+    });
+    root.innerHTML = html;
+    root.querySelectorAll("[data-stamp-open]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.stampOpen;
+        const place = placeById(id);
+        if (place && place.country) {
+          const code = String(place.country).toLowerCase();
+          const row = countriesAll().find(
+            (c) => String(c.id).toLowerCase() === code || String(c.code || "").toLowerCase() === code
+          );
+          if (row && row.status !== "coming_soon") {
+            state.countryId = row.id;
+            rebuildStampsFromPlaces();
+          }
+        }
+        state.detailFromStampsList = true;
+        openDetail(id);
+      });
+    });
+  }
+
+  function renderBalance() {
+    const root = document.getElementById("balance-root");
+    if (!root) return;
+    const coins = coinsBalance();
+    const ledger = (state.meData && (state.meData.coin_ledger_sample || state.meData.coin_ledger)) || [];
+    const coinSvg =
+      '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg>';
+    let ledgerHtml = "";
+    if (Array.isArray(ledger) && ledger.length) {
+      ledgerHtml =
+        `<div class="balance-ledger"><div class="bl-k">Recent</div>` +
+        ledger
+          .slice(0, 6)
+          .map((row) => {
+            const label = row.label || row.note || row.reason || "Coins";
+            const amt = typeof row.amount === "number" ? row.amount : typeof row.coins === "number" ? row.coins : 0;
+            const cls = amt >= 0 ? "plus" : "minus";
+            const sign = amt > 0 ? "+" : "";
+            return `<div class="bl-row"><span>${label}</span><span class="amt ${cls}">${sign}${amt}</span></div>`;
+          })
+          .join("") +
+        `</div>`;
+    }
+    root.innerHTML = `
+      <div class="balance-hero">
+        <div class="bh-k">Your coins</div>
+        <div class="bh-v">${coinSvg}<span>${coins}</span></div>
+        <div class="bh-sub">Preview balance · sample top-up &amp; send</div>
+      </div>
+      <div class="balance-actions">
+        <button type="button" class="btn-primary" id="bal-topup">Top up</button>
+        <button type="button" class="btn-secondary" id="bal-send">Send</button>
+        <button type="button" class="btn-secondary" id="bal-withdraw">Withdraw</button>
+      </div>
+      ${ledgerHtml}`;
+    const top = document.getElementById("bal-topup");
+    const send = document.getElementById("bal-send");
+    const wit = document.getElementById("bal-withdraw");
+    if (top)
+      top.addEventListener("click", () => {
+        bumpCoins(50, "+50 coins · top up (demo)");
+        renderBalance();
+      });
+    if (send) send.addEventListener("click", () => softToast("Send coins — preview stub"));
+    if (wit) wit.addEventListener("click", () => softToast("Withdraw — preview stub"));
   }
 
   function openTradeOfferSheet(placeId) {
@@ -569,22 +771,19 @@
       listHtml =
         `<div class="trade-section-k">Your duplicates</div><div class="trade-list">` +
         dups
-          .map((dup) => {
+          .map((dup, i) => {
             const place = placeById(dup.id);
             const name = (place && place.name) || dup.id;
             const country = countryNameForPlace(place);
-            const stroke = "#1B2747";
-            let icon = "";
-            if (typeof wiIcon === "function") icon = wiIcon(dup.id, { size: 26, stroke, sw: 2.2 });
-            const qty = dup.extras > 1 ? ` · ×${dup.extras}` : "";
+            const copies = ownedCopyCount(dup);
+            const stampHtml = tradeStampHtml(dup, i);
             return `<div class="trade-card" data-dup="${dup.id}">
               <div class="trade-card-main">
-                <div class="trade-thumb">${icon}</div>
+                <div class="trade-thumb">${stampHtml}</div>
                 <div class="trade-info">
                   <p class="trade-name">${name}</p>
-                  <p class="trade-meta">${country || "Stamp"}${qty}</p>
+                  <p class="trade-meta">${country || "Stamp"} · ${copies} ${copies === 1 ? "copy" : "copies"}</p>
                 </div>
-                <span class="trade-badge">Duplicate</span>
               </div>
               <div class="trade-actions">
                 <button type="button" class="btn-primary" data-offer="${dup.id}">Offer</button>
@@ -754,12 +953,7 @@
 
     root.querySelectorAll("[data-me-country]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        if (btn.dataset.soon) {
-          softToast("Coming soon");
-          return;
-        }
-        selectCountry(btn.dataset.meCountry);
-        showScreen("home");
+        openMeCountryCollection(btn.dataset.meCountry);
       });
     });
     renderBalanceChrome();
@@ -896,6 +1090,22 @@
     localStorage.setItem("stampd-preview-country", resolved);
     rebuildStampsFromPlaces();
     state.galleryFromCountries = true;
+    state.galleryFromMe = false;
+    showScreen("album");
+  }
+
+  function openMeCountryCollection(id) {
+    const resolved = resolveCountryId(id);
+    const row = countriesAll().find((c) => c.id === resolved || String(c.id).toLowerCase() === String(id).toLowerCase());
+    if (!row || row.status === "coming_soon") {
+      softToast("Coming soon");
+      return;
+    }
+    state.countryId = row.id;
+    localStorage.setItem("stampd-preview-country", row.id);
+    rebuildStampsFromPlaces();
+    state.galleryFromMe = true;
+    state.galleryFromCountries = false;
     showScreen("album");
   }
 
@@ -1066,7 +1276,10 @@
     document.querySelectorAll(".tab [data-tab]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const t = btn.dataset.tab;
-        if (t !== "stamp") state.galleryFromCountries = false;
+        if (t !== "stamp") {
+          state.galleryFromCountries = false;
+          state.galleryFromMe = false;
+        }
         if (t === "countries") showScreen("home");
         else if (t === "support") showScreen("support");
         else if (t === "map") showScreen("map");
@@ -1121,12 +1334,31 @@
     }
 
 
-    document.getElementById("album-back").addEventListener("click", () => showScreen("home"));
+    document.getElementById("album-back").addEventListener("click", () => {
+      if (state.galleryFromMe) {
+        state.galleryFromMe = false;
+        showScreen("me");
+        return;
+      }
+      state.galleryFromCountries = false;
+      showScreen("home");
+    });
+    const stampsListBack = document.getElementById("stamps-list-back");
+    if (stampsListBack) stampsListBack.addEventListener("click", closeChromeOverlay);
+    const balanceBack = document.getElementById("balance-back");
+    if (balanceBack) balanceBack.addEventListener("click", closeChromeOverlay);
     const faq = document.getElementById("support-faq");
     if (faq) faq.addEventListener("click", () => softToast("FAQ coming soon"));
     const supportBack = document.getElementById("support-back");
     if (supportBack) supportBack.addEventListener("click", () => showScreen("home"));
-    document.getElementById("detail-back").addEventListener("click", () => showScreen("album"));
+    document.getElementById("detail-back").addEventListener("click", () => {
+      if (state.detailFromStampsList) {
+        state.detailFromStampsList = false;
+        showScreen("stamps-list");
+        return;
+      }
+      showScreen("album");
+    });
 
     document.getElementById("stamp-it").addEventListener("click", openCheckin);
     document.getElementById("confirm-stamp").addEventListener("click", confirmStamp);

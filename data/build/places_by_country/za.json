@@ -1,0 +1,180 @@
+[
+  {
+    "id": "table-mountain",
+    "name": "Table Mountain",
+    "city": "Cape Town",
+    "chapter": "Monuments",
+    "lat": -33.9628,
+    "lng": 18.4098,
+    "precision": "venue",
+    "description": "A flat-topped mountain above Cape Town, reached by cableway or trails.",
+    "source": "https://en.wikipedia.org/wiki/Table_Mountain"
+  },
+  {
+    "id": "robben-island",
+    "name": "Robben Island",
+    "city": "Cape Town",
+    "chapter": "Monuments",
+    "lat": -33.807,
+    "lng": 18.366,
+    "precision": "venue",
+    "description": "Former political prison island in Table Bay, reached by ferry from the V&A Waterfront.",
+    "source": "https://en.wikipedia.org/wiki/Robben_Island"
+  },
+  {
+    "id": "union-buildings",
+    "name": "Union Buildings",
+    "city": "Pretoria",
+    "chapter": "Monuments",
+    "lat": -25.74,
+    "lng": 28.212,
+    "precision": "venue",
+    "description": "Herbert Baker’s sandstone government buildings overlook Pretoria.",
+    "source": "https://en.wikipedia.org/wiki/Union_Buildings"
+  },
+  {
+    "id": "voortrekker",
+    "name": "Voortrekker Monument",
+    "city": "Pretoria",
+    "chapter": "Monuments",
+    "lat": -25.776,
+    "lng": 28.176,
+    "precision": "venue",
+    "description": "A large granite monument on a hill south of Pretoria.",
+    "source": "https://en.wikipedia.org/wiki/Voortrekker_Monument"
+  },
+  {
+    "id": "castle-good-hope",
+    "name": "Castle of Good Hope",
+    "city": "Cape Town",
+    "chapter": "Monuments",
+    "lat": -33.9258,
+    "lng": 18.4278,
+    "precision": "venue",
+    "description": "A pentagonal fort from the Dutch East India Company era in central Cape Town.",
+    "source": "https://en.wikipedia.org/wiki/Castle_of_Good_Hope"
+  },
+  {
+    "id": "kruger",
+    "name": "Kruger National Park",
+    "city": "Mpumalanga/Limpopo",
+    "chapter": "Visit",
+    "lat": -24.0,
+    "lng": 31.5,
+    "precision": "city",
+    "description": "A vast safari park of the Big Five with rest camps and game drives.",
+    "source": "https://en.wikipedia.org/wiki/Kruger_National_Park"
+  },
+  {
+    "id": "garden-route",
+    "name": "Garden Route",
+    "city": "Knysna area",
+    "chapter": "Visit",
+    "lat": -34.04,
+    "lng": 23.05,
+    "precision": "city",
+    "description": "Coastal forests, lagoons and towns along the southern Cape.",
+    "source": "https://en.wikipedia.org/wiki/Garden_Route"
+  },
+  {
+    "id": "drakensberg",
+    "name": "uKhahlamba-Drakensberg",
+    "city": "KwaZulu-Natal",
+    "chapter": "Visit",
+    "lat": -29.4,
+    "lng": 29.5,
+    "precision": "city",
+    "description": "Basalt escarpment with hiking and San rock art sites.",
+    "source": "https://en.wikipedia.org/wiki/Drakensberg"
+  },
+  {
+    "id": "boulders-beach",
+    "name": "Boulders Beach",
+    "city": "Simonstown",
+    "chapter": "Visit",
+    "lat": -34.197,
+    "lng": 18.451,
+    "precision": "venue",
+    "description": "African penguins nest among granite boulders near Cape Town.",
+    "source": "https://en.wikipedia.org/wiki/Boulders_Penguin_Colony"
+  },
+  {
+    "id": "vanda-waterfront",
+    "name": "V&A Waterfront",
+    "city": "Cape Town",
+    "chapter": "Visit",
+    "lat": -33.903,
+    "lng": 18.42,
+    "precision": "venue",
+    "description": "A working harbour precinct of shops, museums and ferry points.",
+    "source": "https://en.wikipedia.org/wiki/Victoria_%26_Alfred_Waterfront"
+  },
+  {
+    "id": "bo-kaap-food",
+    "name": "Bo-Kaap kitchens",
+    "city": "Cape Town",
+    "chapter": "Foods",
+    "lat": -33.921,
+    "lng": 18.415,
+    "precision": "city",
+    "description": "Colourful Cape Malay neighbourhood known for spice kitchens and cobbled streets.",
+    "source": "https://en.wikipedia.org/wiki/Bo-Kaap"
+  },
+  {
+    "id": "neighbourgoods",
+    "name": "Neighbourgoods Market",
+    "city": "Cape Town",
+    "chapter": "Foods",
+    "lat": -33.928,
+    "lng": 18.457,
+    "precision": "venue",
+    "description": "A weekend food market in the Old Biscuit Mill, Woodstock.",
+    "source": "https://en.wikipedia.org/wiki/Woodstock,_Cape_Town"
+  },
+  {
+    "id": "joburg-market",
+    "name": "Neighbourgoods Braamfontein",
+    "city": "Johannesburg",
+    "chapter": "Foods",
+    "lat": -26.192,
+    "lng": 28.035,
+    "precision": "venue",
+    "description": "A popular Saturday food market in Braamfontein.",
+    "source": "https://en.wikipedia.org/wiki/Braamfontein"
+  },
+  {
+    "id": "durban-victoria",
+    "name": "Victoria Street Market",
+    "city": "Durban",
+    "chapter": "Foods",
+    "lat": -29.855,
+    "lng": 31.02,
+    "precision": "venue",
+    "description": "Indian spice and fabric market near Durban’s CBD.",
+    "source": "https://en.wikipedia.org/wiki/Durban"
+  },
+  {
+    "id": "pretoria-food",
+    "name": "Pretoria café streets",
+    "city": "Pretoria",
+    "chapter": "Foods",
+    "lat": -25.746,
+    "lng": 28.188,
+    "precision": "city",
+    "description": "Cafés around Hatfield and the CBD.",
+    "source": "https://en.wikipedia.org/wiki/Pretoria"
+  },
+  {
+    "id": "cape-town-jazz",
+    "name": "Cape Town International Jazz Festival",
+    "city": "Cape Town",
+    "chapter": "Seasonal",
+    "lat": -33.91,
+    "lng": 18.43,
+    "precision": "venue",
+    "description": "A major March jazz festival at the Cape Town International Convention Centre.",
+    "source": "https://en.wikipedia.org/wiki/Cape_Town_International_Jazz_Festival",
+    "seasonal": true,
+    "seasonal_label": "Cape Town Jazz Festival"
+  }
+]

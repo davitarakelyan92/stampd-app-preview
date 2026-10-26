@@ -1,0 +1,180 @@
+[
+  {
+    "id": "pyramids-giza",
+    "name": "Pyramids of Giza",
+    "city": "Giza",
+    "chapter": "Monuments",
+    "lat": 29.9792,
+    "lng": 31.1342,
+    "precision": "venue",
+    "description": "Khufu, Khafre and Menkaure pyramids rise on the Giza plateau beside the Sphinx.",
+    "source": "https://en.wikipedia.org/wiki/Giza_pyramid_complex"
+  },
+  {
+    "id": "sphinx",
+    "name": "Great Sphinx of Giza",
+    "city": "Giza",
+    "chapter": "Monuments",
+    "lat": 29.9753,
+    "lng": 31.1376,
+    "precision": "venue",
+    "description": "A limestone sphinx faces east below the pyramids.",
+    "source": "https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza"
+  },
+  {
+    "id": "karnak",
+    "name": "Karnak Temple",
+    "city": "Luxor",
+    "chapter": "Monuments",
+    "lat": 25.7188,
+    "lng": 32.6573,
+    "precision": "venue",
+    "description": "A vast temple complex of pylons and hypostyle halls on Luxor’s east bank.",
+    "source": "https://en.wikipedia.org/wiki/Karnak"
+  },
+  {
+    "id": "abu-simbel",
+    "name": "Abu Simbel",
+    "city": "Aswan Governorate",
+    "chapter": "Monuments",
+    "lat": 22.3372,
+    "lng": 31.6258,
+    "precision": "venue",
+    "description": "Rock-cut temples of Ramesses II relocated above Lake Nasser.",
+    "source": "https://en.wikipedia.org/wiki/Abu_Simbel"
+  },
+  {
+    "id": "egyptian-museum",
+    "name": "Egyptian Museum",
+    "city": "Cairo",
+    "chapter": "Monuments",
+    "lat": 30.0478,
+    "lng": 31.2336,
+    "precision": "venue",
+    "description": "Tahrir Square museum of pharaonic antiquities (many pieces also move to the GEM).",
+    "source": "https://en.wikipedia.org/wiki/Egyptian_Museum"
+  },
+  {
+    "id": "nile-felucca",
+    "name": "Nile felucca shores",
+    "city": "Luxor/Aswan",
+    "chapter": "Visit",
+    "lat": 25.7,
+    "lng": 32.64,
+    "precision": "approximate",
+    "description": "Traditional sailboats cruise the Nile between Upper Egypt temples.",
+    "source": "https://en.wikipedia.org/wiki/Felucca"
+  },
+  {
+    "id": "white-desert",
+    "name": "White Desert",
+    "city": "Farafra area",
+    "chapter": "Visit",
+    "lat": 27.05,
+    "lng": 27.97,
+    "precision": "city",
+    "description": "Chalk rock formations in the Western Desert near Farafra.",
+    "source": "https://en.wikipedia.org/wiki/White_Desert_National_Park"
+  },
+  {
+    "id": "siwa",
+    "name": "Siwa Oasis",
+    "city": "Siwa",
+    "chapter": "Visit",
+    "lat": 29.2,
+    "lng": 25.52,
+    "precision": "city",
+    "description": "Remote oasis of salt lakes, palms and mud-brick ruins near Libya.",
+    "source": "https://en.wikipedia.org/wiki/Siwa_Oasis"
+  },
+  {
+    "id": "alexandria-corniche",
+    "name": "Alexandria Corniche",
+    "city": "Alexandria",
+    "chapter": "Visit",
+    "lat": 31.2,
+    "lng": 29.9,
+    "precision": "venue",
+    "description": "A Mediterranean seafront promenade past the citadel and libraries.",
+    "source": "https://en.wikipedia.org/wiki/Alexandria"
+  },
+  {
+    "id": "dahab",
+    "name": "Dahab",
+    "city": "Dahab",
+    "chapter": "Visit",
+    "lat": 28.5,
+    "lng": 34.52,
+    "precision": "city",
+    "description": "Red Sea diving town on Sinai’s Gulf of Aqaba coast.",
+    "source": "https://en.wikipedia.org/wiki/Dahab"
+  },
+  {
+    "id": "khan-el-khalili",
+    "name": "Khan el-Khalili",
+    "city": "Cairo",
+    "chapter": "Foods",
+    "lat": 30.047,
+    "lng": 31.262,
+    "precision": "venue",
+    "description": "Historic bazaar cafés serve tea, grilled meats and sweets.",
+    "source": "https://en.wikipedia.org/wiki/Khan_el-Khalili"
+  },
+  {
+    "id": "old-cairo-food",
+    "name": "Old Cairo eateries",
+    "city": "Cairo",
+    "chapter": "Foods",
+    "lat": 30.006,
+    "lng": 31.231,
+    "precision": "city",
+    "description": "Restaurants near Coptic Cairo and the Amr ibn al-As Mosque area.",
+    "source": "https://en.wikipedia.org/wiki/Old_Cairo"
+  },
+  {
+    "id": "luxor-souk",
+    "name": "Luxor souk",
+    "city": "Luxor",
+    "chapter": "Foods",
+    "lat": 25.7,
+    "lng": 32.64,
+    "precision": "venue",
+    "description": "Evening market streets of spices, juices and simple grills.",
+    "source": "https://en.wikipedia.org/wiki/Luxor"
+  },
+  {
+    "id": "aswan-souk",
+    "name": "Aswan souk",
+    "city": "Aswan",
+    "chapter": "Foods",
+    "lat": 24.09,
+    "lng": 32.9,
+    "precision": "venue",
+    "description": "Nubian and Egyptian produce stalls along the Nile corniche.",
+    "source": "https://en.wikipedia.org/wiki/Aswan"
+  },
+  {
+    "id": "alexandria-fish",
+    "name": "Alexandria fish restaurants",
+    "city": "Alexandria",
+    "chapter": "Foods",
+    "lat": 31.2,
+    "lng": 29.91,
+    "precision": "city",
+    "description": "Mediterranean seafood kitchens along the corniche.",
+    "source": "https://en.wikipedia.org/wiki/Alexandria"
+  },
+  {
+    "id": "ramadan-cairo",
+    "name": "Ramadan evenings in Cairo",
+    "city": "Cairo",
+    "chapter": "Seasonal",
+    "lat": 30.044,
+    "lng": 31.235,
+    "precision": "city",
+    "description": "Iftar tents, lanterns and late-night streets mark Ramadan nights.",
+    "source": "https://en.wikipedia.org/wiki/Ramadan",
+    "seasonal": true,
+    "seasonal_label": "Ramadan evenings"
+  }
+]

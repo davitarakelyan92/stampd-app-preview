@@ -1,0 +1,180 @@
+[
+  {
+    "id": "national-archives-note",
+    "name": "Kenyatta International Conference Centre",
+    "city": "Nairobi",
+    "chapter": "Monuments",
+    "lat": -1.288,
+    "lng": 36.823,
+    "precision": "venue",
+    "description": "A landmark tower and amphitheatre complex in central Nairobi.",
+    "source": "https://en.wikipedia.org/wiki/Kenyatta_International_Convention_Centre"
+  },
+  {
+    "id": "fort-jesus",
+    "name": "Fort Jesus",
+    "city": "Mombasa",
+    "chapter": "Monuments",
+    "lat": -4.062,
+    "lng": 39.68,
+    "precision": "venue",
+    "description": "A Portuguese fort on Mombasa Island overlooking the Old Port.",
+    "source": "https://en.wikipedia.org/wiki/Fort_Jesus"
+  },
+  {
+    "id": "nairobi-cathedral",
+    "name": "All Saints' Cathedral",
+    "city": "Nairobi",
+    "chapter": "Monuments",
+    "lat": -1.2885,
+    "lng": 36.815,
+    "precision": "venue",
+    "description": "An Anglican cathedral of stone near Nairobi’s central parks.",
+    "source": "https://en.wikipedia.org/wiki/All_Saints%27_Cathedral,_Nairobi"
+  },
+  {
+    "id": "lamu-fort",
+    "name": "Lamu Fort",
+    "city": "Lamu",
+    "chapter": "Monuments",
+    "lat": -2.27,
+    "lng": 40.9,
+    "precision": "venue",
+    "description": "A stone fort on Lamu Island’s waterfront in a UNESCO Swahili town.",
+    "source": "https://en.wikipedia.org/wiki/Lamu_Fort"
+  },
+  {
+    "id": "gazi-note",
+    "name": "Gede Ruins",
+    "city": "near Watamu",
+    "chapter": "Monuments",
+    "lat": -3.31,
+    "lng": 40.01,
+    "precision": "venue",
+    "description": "Swahili stone-town ruins in coastal forest near Watamu.",
+    "source": "https://en.wikipedia.org/wiki/Ruins_of_Gedi"
+  },
+  {
+    "id": "masai-mara",
+    "name": "Maasai Mara",
+    "city": "Narok County",
+    "chapter": "Visit",
+    "lat": -1.5,
+    "lng": 35.15,
+    "precision": "city",
+    "description": "Savanna reserve famous for big cats and the Great Migration season.",
+    "source": "https://en.wikipedia.org/wiki/Maasai_Mara"
+  },
+  {
+    "id": "amboseli",
+    "name": "Amboseli National Park",
+    "city": "Kajiado",
+    "chapter": "Visit",
+    "lat": -2.65,
+    "lng": 37.25,
+    "precision": "city",
+    "description": "Elephants and wetlands with Mount Kilimanjaro views across the border.",
+    "source": "https://en.wikipedia.org/wiki/Amboseli_National_Park"
+  },
+  {
+    "id": "nairobi-np",
+    "name": "Nairobi National Park",
+    "city": "Nairobi",
+    "chapter": "Visit",
+    "lat": -1.37,
+    "lng": 36.86,
+    "precision": "venue",
+    "description": "A wildlife park on the city’s southern edge with a city skyline backdrop.",
+    "source": "https://en.wikipedia.org/wiki/Nairobi_National_Park"
+  },
+  {
+    "id": "lake-nakuru",
+    "name": "Lake Nakuru",
+    "city": "Nakuru",
+    "chapter": "Visit",
+    "lat": -0.37,
+    "lng": 36.08,
+    "precision": "venue",
+    "description": "A Rift Valley lake park known for flamingos and rhinos.",
+    "source": "https://en.wikipedia.org/wiki/Lake_Nakuru"
+  },
+  {
+    "id": "diani",
+    "name": "Diani Beach",
+    "city": "Ukunda",
+    "chapter": "Visit",
+    "lat": -4.28,
+    "lng": 39.58,
+    "precision": "venue",
+    "description": "A white-sand Indian Ocean beach south of Mombasa.",
+    "source": "https://en.wikipedia.org/wiki/Diani_Beach"
+  },
+  {
+    "id": "city-market-nairobi",
+    "name": "City Market",
+    "city": "Nairobi",
+    "chapter": "Foods",
+    "lat": -1.283,
+    "lng": 36.82,
+    "precision": "venue",
+    "description": "A central market for crafts, produce and casual bites.",
+    "source": "https://en.wikipedia.org/wiki/Nairobi"
+  },
+  {
+    "id": "maasai-market",
+    "name": "Maasai Market",
+    "city": "Nairobi",
+    "chapter": "Foods",
+    "lat": -1.29,
+    "lng": 36.81,
+    "precision": "city",
+    "description": "Rotating craft markets with snack stalls around Nairobi venues.",
+    "source": "https://en.wikipedia.org/wiki/Nairobi"
+  },
+  {
+    "id": "mombasa-old-town-food",
+    "name": "Mombasa Old Town eateries",
+    "city": "Mombasa",
+    "chapter": "Foods",
+    "lat": -4.062,
+    "lng": 39.675,
+    "precision": "city",
+    "description": "Swahili kitchens and street snacks in the Old Town lanes.",
+    "source": "https://en.wikipedia.org/wiki/Mombasa"
+  },
+  {
+    "id": "nakumatt-note",
+    "name": "Karen & Langata cafés",
+    "city": "Nairobi",
+    "chapter": "Foods",
+    "lat": -1.32,
+    "lng": 36.7,
+    "precision": "city",
+    "description": "Suburban café strips popular with visitors near the Giraffe Centre.",
+    "source": "https://en.wikipedia.org/wiki/Karen,_Kenya"
+  },
+  {
+    "id": "kisumu-food",
+    "name": "Kisumu lakefront eateries",
+    "city": "Kisumu",
+    "chapter": "Foods",
+    "lat": -0.09,
+    "lng": 34.77,
+    "precision": "city",
+    "description": "Lake Victoria fish dishes along Kisumu’s shore.",
+    "source": "https://en.wikipedia.org/wiki/Kisumu"
+  },
+  {
+    "id": "safari-rally",
+    "name": "Safari Rally Kenya",
+    "city": "Nairobi area",
+    "chapter": "Seasonal",
+    "lat": -1.3,
+    "lng": 36.8,
+    "precision": "approximate",
+    "description": "A WRC rally through Kenyan roads and bush tracks, usually mid-year.",
+    "source": "https://en.wikipedia.org/wiki/Safari_Rally_Kenya",
+    "seasonal": true,
+    "seasonal_label": "Safari Rally Kenya"
+  }
+]

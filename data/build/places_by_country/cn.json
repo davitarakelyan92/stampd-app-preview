@@ -1,0 +1,180 @@
+[
+  {
+    "id": "great-wall-badaling",
+    "name": "Great Wall at Badaling",
+    "city": "Beijing area",
+    "chapter": "Monuments",
+    "lat": 40.354,
+    "lng": 116.02,
+    "precision": "venue",
+    "description": "A heavily restored Great Wall section northwest of Beijing with cable-car options.",
+    "source": "https://en.wikipedia.org/wiki/Badaling"
+  },
+  {
+    "id": "forbidden-city",
+    "name": "Forbidden City",
+    "city": "Beijing",
+    "chapter": "Monuments",
+    "lat": 39.9163,
+    "lng": 116.3972,
+    "precision": "venue",
+    "description": "Ming–Qing imperial palaces fill a walled compound north of Tiananmen Square.",
+    "source": "https://en.wikipedia.org/wiki/Forbidden_City"
+  },
+  {
+    "id": "terracotta",
+    "name": "Terracotta Army",
+    "city": "Xi'an",
+    "chapter": "Monuments",
+    "lat": 34.3853,
+    "lng": 109.273,
+    "precision": "venue",
+    "description": "Pit museums display ranks of clay soldiers buried with Qin Shi Huang.",
+    "source": "https://en.wikipedia.org/wiki/Terracotta_Army"
+  },
+  {
+    "id": "temple-of-heaven",
+    "name": "Temple of Heaven",
+    "city": "Beijing",
+    "chapter": "Monuments",
+    "lat": 39.8822,
+    "lng": 116.4066,
+    "precision": "venue",
+    "description": "A circular hall set in parks where emperors once prayed for harvests.",
+    "source": "https://en.wikipedia.org/wiki/Temple_of_Heaven"
+  },
+  {
+    "id": "shanghai-bund",
+    "name": "The Bund historic skyline",
+    "city": "Shanghai",
+    "chapter": "Monuments",
+    "lat": 31.24,
+    "lng": 121.49,
+    "precision": "venue",
+    "description": "Colonial-era bund buildings face Pudong’s towers across the Huangpu.",
+    "source": "https://en.wikipedia.org/wiki/The_Bund"
+  },
+  {
+    "id": "li-river",
+    "name": "Li River karst",
+    "city": "Guilin/Yangshuo",
+    "chapter": "Visit",
+    "lat": 24.8,
+    "lng": 110.5,
+    "precision": "city",
+    "description": "Limestone peaks rise above river cruises between Guilin and Yangshuo.",
+    "source": "https://en.wikipedia.org/wiki/Li_River"
+  },
+  {
+    "id": "zhangjiajie",
+    "name": "Zhangjiajie National Forest Park",
+    "city": "Zhangjiajie",
+    "chapter": "Visit",
+    "lat": 29.33,
+    "lng": 110.43,
+    "precision": "city",
+    "description": "Pillar-like quartzite peaks inspired Avatar’s floating mountains.",
+    "source": "https://en.wikipedia.org/wiki/Zhangjiajie_National_Forest_Park"
+  },
+  {
+    "id": "west-lake",
+    "name": "West Lake",
+    "city": "Hangzhou",
+    "chapter": "Visit",
+    "lat": 30.25,
+    "lng": 120.15,
+    "precision": "venue",
+    "description": "Pagodas and causeways ring a classic lake landscape in Hangzhou.",
+    "source": "https://en.wikipedia.org/wiki/West_Lake"
+  },
+  {
+    "id": "jiuzhaigou",
+    "name": "Jiuzhaigou Valley",
+    "city": "Sichuan",
+    "chapter": "Visit",
+    "lat": 33.2,
+    "lng": 103.9,
+    "precision": "city",
+    "description": "Coloured lakes and waterfalls in a mountain valley of northern Sichuan.",
+    "source": "https://en.wikipedia.org/wiki/Jiuzhaigou"
+  },
+  {
+    "id": "yu-garden",
+    "name": "Yu Garden",
+    "city": "Shanghai",
+    "chapter": "Visit",
+    "lat": 31.227,
+    "lng": 121.492,
+    "precision": "venue",
+    "description": "A Ming-era garden of rockeries and pavilions beside Old City bazaars.",
+    "source": "https://en.wikipedia.org/wiki/Yu_Garden"
+  },
+  {
+    "id": "wangfujing-snack",
+    "name": "Wangfujing Snack Street",
+    "city": "Beijing",
+    "chapter": "Foods",
+    "lat": 39.91,
+    "lng": 116.41,
+    "precision": "venue",
+    "description": "Night snack stalls off Wangfujing sell skewers and regional bites.",
+    "source": "https://en.wikipedia.org/wiki/Wangfujing"
+  },
+  {
+    "id": "shanghai-yuyuan-bazaar",
+    "name": "Yuyuan Bazaar food",
+    "city": "Shanghai",
+    "chapter": "Foods",
+    "lat": 31.2275,
+    "lng": 121.4925,
+    "precision": "city",
+    "description": "Xiaolongbao and street snacks surround Yu Garden’s bazaar lanes.",
+    "source": "https://en.wikipedia.org/wiki/Yu_Garden"
+  },
+  {
+    "id": "chengdu-jinli",
+    "name": "Jinli Street",
+    "city": "Chengdu",
+    "chapter": "Foods",
+    "lat": 30.65,
+    "lng": 104.05,
+    "precision": "venue",
+    "description": "A reconstructed old street of Sichuan snacks beside Wuhou Shrine.",
+    "source": "https://en.wikipedia.org/wiki/Jinli"
+  },
+  {
+    "id": "guangzhou-food",
+    "name": "Shangxiajiu / Beijing Road eats",
+    "city": "Guangzhou",
+    "chapter": "Foods",
+    "lat": 23.12,
+    "lng": 113.25,
+    "precision": "city",
+    "description": "Cantonese restaurants and tea houses fill historic shopping streets.",
+    "source": "https://en.wikipedia.org/wiki/Guangzhou"
+  },
+  {
+    "id": "xian-muslim-quarter",
+    "name": "Muslim Quarter",
+    "city": "Xi'an",
+    "chapter": "Foods",
+    "lat": 34.265,
+    "lng": 108.945,
+    "precision": "city",
+    "description": "Night markets of noodles, roujiamo and spices near the Drum Tower.",
+    "source": "https://en.wikipedia.org/wiki/Muslim_Quarter_(Xi%27an)"
+  },
+  {
+    "id": "chinese-new-year-bj",
+    "name": "Spring Festival",
+    "city": "Beijing",
+    "chapter": "Seasonal",
+    "lat": 39.904,
+    "lng": 116.407,
+    "precision": "city",
+    "description": "Lunar New Year temple fairs, reunions and fireworks traditions across China.",
+    "source": "https://en.wikipedia.org/wiki/Chinese_New_Year",
+    "seasonal": true,
+    "seasonal_label": "Spring Festival"
+  }
+]

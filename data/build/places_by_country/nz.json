@@ -1,0 +1,180 @@
+[
+  {
+    "id": "sky-tower-akl",
+    "name": "Sky Tower",
+    "city": "Auckland",
+    "chapter": "Monuments",
+    "lat": -36.8485,
+    "lng": 174.7622,
+    "precision": "venue",
+    "description": "A communications and observation tower above downtown Auckland.",
+    "source": "https://en.wikipedia.org/wiki/Sky_Tower"
+  },
+  {
+    "id": "beehive",
+    "name": "Beehive & Parliament",
+    "city": "Wellington",
+    "chapter": "Monuments",
+    "lat": -41.278,
+    "lng": 174.777,
+    "precision": "venue",
+    "description": "New Zealand’s distinctive executive wing sits beside Parliament House.",
+    "source": "https://en.wikipedia.org/wiki/Beehive_(New_Zealand)"
+  },
+  {
+    "id": "larnach",
+    "name": "Larnach Castle",
+    "city": "Dunedin area",
+    "chapter": "Monuments",
+    "lat": -45.861,
+    "lng": 170.627,
+    "precision": "venue",
+    "description": "A 19th-century mansion and gardens on the Otago Peninsula.",
+    "source": "https://en.wikipedia.org/wiki/Larnach_Castle"
+  },
+  {
+    "id": "church-good-shepherd",
+    "name": "Church of the Good Shepherd",
+    "city": "Lake Tekapo",
+    "chapter": "Monuments",
+    "lat": -44.003,
+    "lng": 170.478,
+    "precision": "venue",
+    "description": "A lakeside stone church facing the Southern Alps.",
+    "source": "https://en.wikipedia.org/wiki/Church_of_the_Good_Shepherd,_Lake_Tekapo"
+  },
+  {
+    "id": "one-tree-hill",
+    "name": "One Tree Hill (Maungakiekie)",
+    "city": "Auckland",
+    "chapter": "Monuments",
+    "lat": -36.9,
+    "lng": 174.783,
+    "precision": "venue",
+    "description": "A volcanic cone and memorial obelisk in Cornwall Park.",
+    "source": "https://en.wikipedia.org/wiki/Maungakiekie_/_One_Tree_Hill"
+  },
+  {
+    "id": "milford",
+    "name": "Milford Sound",
+    "city": "Fiordland",
+    "chapter": "Visit",
+    "lat": -44.671,
+    "lng": 167.926,
+    "precision": "venue",
+    "description": "Steep fiord walls and waterfalls — cruises leave from the head of the sound.",
+    "source": "https://en.wikipedia.org/wiki/Milford_Sound"
+  },
+  {
+    "id": "rotorua",
+    "name": "Rotorua geothermal parks",
+    "city": "Rotorua",
+    "chapter": "Visit",
+    "lat": -38.137,
+    "lng": 176.251,
+    "precision": "city",
+    "description": "Geysers, mud pools and Māori cultural experiences around the lake.",
+    "source": "https://en.wikipedia.org/wiki/Rotorua"
+  },
+  {
+    "id": "queenstown",
+    "name": "Queenstown",
+    "city": "Queenstown",
+    "chapter": "Visit",
+    "lat": -45.0312,
+    "lng": 168.6626,
+    "precision": "city",
+    "description": "Adventure-town on Lake Wakatipu beneath The Remarkables.",
+    "source": "https://en.wikipedia.org/wiki/Queenstown,_New_Zealand"
+  },
+  {
+    "id": "tongariro",
+    "name": "Tongariro National Park",
+    "city": "Central North Island",
+    "chapter": "Visit",
+    "lat": -39.2,
+    "lng": 175.6,
+    "precision": "city",
+    "description": "Volcanic peaks and the Tongariro Alpine Crossing day hike.",
+    "source": "https://en.wikipedia.org/wiki/Tongariro_National_Park"
+  },
+  {
+    "id": "bay-of-islands",
+    "name": "Bay of Islands",
+    "city": "Paihia area",
+    "chapter": "Visit",
+    "lat": -35.28,
+    "lng": 174.09,
+    "precision": "city",
+    "description": "Island-dotted bay in Northland with boat trips and Waitangi Treaty Grounds nearby.",
+    "source": "https://en.wikipedia.org/wiki/Bay_of_Islands"
+  },
+  {
+    "id": "otago-farmers",
+    "name": "Otago Farmers Market",
+    "city": "Dunedin",
+    "chapter": "Foods",
+    "lat": -45.874,
+    "lng": 170.504,
+    "precision": "venue",
+    "description": "Saturday market beside Dunedin Railway Station.",
+    "source": "https://en.wikipedia.org/wiki/Dunedin"
+  },
+  {
+    "id": "wellington-market",
+    "name": "Harbourside Market",
+    "city": "Wellington",
+    "chapter": "Foods",
+    "lat": -41.29,
+    "lng": 174.78,
+    "precision": "venue",
+    "description": "Sunday produce and food stalls on Wellington’s waterfront.",
+    "source": "https://en.wikipedia.org/wiki/Wellington"
+  },
+  {
+    "id": "auckland-night",
+    "name": "Auckland Night Markets",
+    "city": "Auckland",
+    "chapter": "Foods",
+    "lat": -36.85,
+    "lng": 174.76,
+    "precision": "city",
+    "description": "Rotating suburban night markets of Asian and Pacific street food.",
+    "source": "https://en.wikipedia.org/wiki/Auckland"
+  },
+  {
+    "id": "christchurch-market",
+    "name": "Riverside Market",
+    "city": "Christchurch",
+    "chapter": "Foods",
+    "lat": -43.53,
+    "lng": 172.635,
+    "precision": "venue",
+    "description": "An indoor market of local producers in central Christchurch.",
+    "source": "https://en.wikipedia.org/wiki/Christchurch"
+  },
+  {
+    "id": "napier-food",
+    "name": "Napier Art Deco café streets",
+    "city": "Napier",
+    "chapter": "Foods",
+    "lat": -39.49,
+    "lng": 176.91,
+    "precision": "city",
+    "description": "Cafés among Art Deco façades on Hawke’s Bay.",
+    "source": "https://en.wikipedia.org/wiki/Napier,_New_Zealand"
+  },
+  {
+    "id": "waitangi-day",
+    "name": "Waitangi Day commemorations",
+    "city": "Waitangi",
+    "chapter": "Seasonal",
+    "lat": -35.266,
+    "lng": 174.122,
+    "precision": "venue",
+    "description": "National day events at the Treaty Grounds each 6 February.",
+    "source": "https://en.wikipedia.org/wiki/Waitangi_Day",
+    "seasonal": true,
+    "seasonal_label": "Waitangi Day"
+  }
+]

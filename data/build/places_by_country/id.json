@@ -1,0 +1,180 @@
+[
+  {
+    "id": "borobudur",
+    "name": "Borobudur",
+    "city": "Magelang area",
+    "chapter": "Monuments",
+    "lat": -7.6079,
+    "lng": 110.2038,
+    "precision": "venue",
+    "description": "A vast Mahayana Buddhist monument of stone terraces and stupas in Central Java.",
+    "source": "https://en.wikipedia.org/wiki/Borobudur"
+  },
+  {
+    "id": "prambanan",
+    "name": "Prambanan",
+    "city": "Yogyakarta area",
+    "chapter": "Monuments",
+    "lat": -7.752,
+    "lng": 110.4915,
+    "precision": "venue",
+    "description": "Tall Hindu temple towers rise on the Yogyakarta–Solo plain.",
+    "source": "https://en.wikipedia.org/wiki/Prambanan"
+  },
+  {
+    "id": "tanah-lot",
+    "name": "Tanah Lot",
+    "city": "Bali",
+    "chapter": "Monuments",
+    "lat": -8.621,
+    "lng": 115.087,
+    "precision": "venue",
+    "description": "A sea temple sits on a rock offshore of Bali’s west coast.",
+    "source": "https://en.wikipedia.org/wiki/Tanah_Lot"
+  },
+  {
+    "id": "monas",
+    "name": "National Monument",
+    "city": "Jakarta",
+    "chapter": "Monuments",
+    "lat": -6.1754,
+    "lng": 106.8272,
+    "precision": "venue",
+    "description": "A towering obelisk in Merdeka Square commemorates Indonesian independence.",
+    "source": "https://en.wikipedia.org/wiki/National_Monument_(Indonesia)"
+  },
+  {
+    "id": "ulun-danu",
+    "name": "Ulun Danu Beratan",
+    "city": "Bedugul",
+    "chapter": "Monuments",
+    "lat": -8.275,
+    "lng": 115.167,
+    "precision": "venue",
+    "description": "A lakeside temple complex on Lake Bratan in the Bali highlands.",
+    "source": "https://en.wikipedia.org/wiki/Pura_Ulun_Danu_Beratan"
+  },
+  {
+    "id": "ubud",
+    "name": "Ubud rice terraces & town",
+    "city": "Ubud",
+    "chapter": "Visit",
+    "lat": -8.5069,
+    "lng": 115.2625,
+    "precision": "city",
+    "description": "Rice terraces, yoga studios and monkey forest paths around Bali’s cultural hub.",
+    "source": "https://en.wikipedia.org/wiki/Ubud"
+  },
+  {
+    "id": "komodo",
+    "name": "Komodo National Park",
+    "city": "Labuan Bajo area",
+    "chapter": "Visit",
+    "lat": -8.55,
+    "lng": 119.48,
+    "precision": "city",
+    "description": "Islands of Komodo dragons, pink beaches and dive sites.",
+    "source": "https://en.wikipedia.org/wiki/Komodo_National_Park"
+  },
+  {
+    "id": "raja-ampat",
+    "name": "Raja Ampat",
+    "city": "Waisai area",
+    "chapter": "Visit",
+    "lat": -0.39,
+    "lng": 130.85,
+    "precision": "city",
+    "description": "Remote islands with coral reefs west of Papua.",
+    "source": "https://en.wikipedia.org/wiki/Raja_Ampat_Islands"
+  },
+  {
+    "id": "bromo",
+    "name": "Mount Bromo",
+    "city": "East Java",
+    "chapter": "Visit",
+    "lat": -7.9425,
+    "lng": 112.953,
+    "precision": "venue",
+    "description": "A smoking crater in the Tengger caldera, often viewed at sunrise.",
+    "source": "https://en.wikipedia.org/wiki/Mount_Bromo"
+  },
+  {
+    "id": "gili",
+    "name": "Gili Islands",
+    "city": "Lombok area",
+    "chapter": "Visit",
+    "lat": -8.35,
+    "lng": 116.06,
+    "precision": "city",
+    "description": "Three small islands north of Lombok known for diving and car-free lanes.",
+    "source": "https://en.wikipedia.org/wiki/Gili_Islands"
+  },
+  {
+    "id": "pasar-baru",
+    "name": "Pasar Baru",
+    "city": "Jakarta",
+    "chapter": "Foods",
+    "lat": -6.167,
+    "lng": 106.835,
+    "precision": "venue",
+    "description": "A historic shopping street with snacks and textile stalls.",
+    "source": "https://en.wikipedia.org/wiki/Pasar_Baru"
+  },
+  {
+    "id": "malioboro",
+    "name": "Malioboro Street food",
+    "city": "Yogyakarta",
+    "chapter": "Foods",
+    "lat": -7.793,
+    "lng": 110.366,
+    "precision": "venue",
+    "description": "Gudeg and street snacks line Yogyakarta’s main tourist street.",
+    "source": "https://en.wikipedia.org/wiki/Malioboro_Street"
+  },
+  {
+    "id": "jimbaran",
+    "name": "Jimbaran seafood cafés",
+    "city": "Bali",
+    "chapter": "Foods",
+    "lat": -8.77,
+    "lng": 115.17,
+    "precision": "city",
+    "description": "Beachfront grilled-seafood tables on Jimbaran Bay.",
+    "source": "https://en.wikipedia.org/wiki/Jimbaran"
+  },
+  {
+    "id": "surabaya-food",
+    "name": "Surabaya city markets",
+    "city": "Surabaya",
+    "chapter": "Foods",
+    "lat": -7.25,
+    "lng": 112.75,
+    "precision": "city",
+    "description": "East Java’s hub for rawon and street-food markets.",
+    "source": "https://en.wikipedia.org/wiki/Surabaya"
+  },
+  {
+    "id": "bandung-food",
+    "name": "Bandung factory-outlet & café streets",
+    "city": "Bandung",
+    "chapter": "Foods",
+    "lat": -6.91,
+    "lng": 107.61,
+    "precision": "city",
+    "description": "Cool highland city known for cafés and Sundanese kitchens.",
+    "source": "https://en.wikipedia.org/wiki/Bandung"
+  },
+  {
+    "id": "nyepi",
+    "name": "Nyepi",
+    "city": "Bali",
+    "chapter": "Seasonal",
+    "lat": -8.34,
+    "lng": 115.09,
+    "precision": "island",
+    "description": "Balinese Hindu Day of Silence — streets empty for meditation and rest.",
+    "source": "https://en.wikipedia.org/wiki/Nyepi",
+    "seasonal": true,
+    "seasonal_label": "Nyepi"
+  }
+]

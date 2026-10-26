@@ -1,0 +1,180 @@
+[
+  {
+    "id": "intramuros",
+    "name": "Intramuros",
+    "city": "Manila",
+    "chapter": "Monuments",
+    "lat": 14.589,
+    "lng": 120.975,
+    "precision": "city",
+    "description": "Spanish colonial walled city with Fort Santiago and cobbled streets.",
+    "source": "https://en.wikipedia.org/wiki/Intramuros"
+  },
+  {
+    "id": "san-agustin",
+    "name": "San Agustín Church",
+    "city": "Manila",
+    "chapter": "Monuments",
+    "lat": 14.5888,
+    "lng": 120.975,
+    "precision": "venue",
+    "description": "A UNESCO baroque church inside Intramuros with a quiet cloister.",
+    "source": "https://en.wikipedia.org/wiki/San_Agust%C3%ADn_Church_(Manila)"
+  },
+  {
+    "id": "rizal-monument",
+    "name": "Rizal Monument",
+    "city": "Manila",
+    "chapter": "Monuments",
+    "lat": 14.581,
+    "lng": 120.978,
+    "precision": "venue",
+    "description": "A monument to José Rizal stands in Luneta (Rizal Park).",
+    "source": "https://en.wikipedia.org/wiki/Rizal_Monument"
+  },
+  {
+    "id": "magellan-cross",
+    "name": "Magellan’s Cross",
+    "city": "Cebu City",
+    "chapter": "Monuments",
+    "lat": 10.293,
+    "lng": 123.902,
+    "precision": "venue",
+    "description": "A pavilion shelters a cross linked to Magellan’s 1521 landing.",
+    "source": "https://en.wikipedia.org/wiki/Magellan%27s_Cross"
+  },
+  {
+    "id": "vigan-calle",
+    "name": "Calle Crisólogo",
+    "city": "Vigan",
+    "chapter": "Monuments",
+    "lat": 17.573,
+    "lng": 120.387,
+    "precision": "venue",
+    "description": "Cobblestone street of Spanish-era houses in a UNESCO town.",
+    "source": "https://en.wikipedia.org/wiki/Vigan"
+  },
+  {
+    "id": "palawan-underground",
+    "name": "Puerto Princesa Underground River",
+    "city": "Palawan",
+    "chapter": "Visit",
+    "lat": 10.19,
+    "lng": 118.92,
+    "precision": "venue",
+    "description": "A navigable underground river in a UNESCO national park.",
+    "source": "https://en.wikipedia.org/wiki/Puerto_Princesa_Subterranean_River_National_Park"
+  },
+  {
+    "id": "el-nido",
+    "name": "El Nido lagoons",
+    "city": "El Nido",
+    "chapter": "Visit",
+    "lat": 11.18,
+    "lng": 119.39,
+    "precision": "city",
+    "description": "Limestone cliffs and lagoons in northern Palawan.",
+    "source": "https://en.wikipedia.org/wiki/El_Nido,_Palawan"
+  },
+  {
+    "id": "boracay",
+    "name": "Boracay White Beach",
+    "city": "Boracay",
+    "chapter": "Visit",
+    "lat": 11.967,
+    "lng": 121.925,
+    "precision": "venue",
+    "description": "A famous powder-sand beach on a small Visayan island.",
+    "source": "https://en.wikipedia.org/wiki/Boracay"
+  },
+  {
+    "id": "chocolate-hills",
+    "name": "Chocolate Hills",
+    "city": "Bohol",
+    "chapter": "Visit",
+    "lat": 9.8,
+    "lng": 124.15,
+    "precision": "city",
+    "description": "Cone-shaped hills that brown in dry season across Carmen.",
+    "source": "https://en.wikipedia.org/wiki/Chocolate_Hills"
+  },
+  {
+    "id": "banaue",
+    "name": "Banaue Rice Terraces",
+    "city": "Banaue",
+    "chapter": "Visit",
+    "lat": 16.925,
+    "lng": 121.06,
+    "precision": "city",
+    "description": "Centuries-old terraces carved into Ifugao mountains.",
+    "source": "https://en.wikipedia.org/wiki/Banaue_Rice_Terraces"
+  },
+  {
+    "id": "binondo",
+    "name": "Binondo food streets",
+    "city": "Manila",
+    "chapter": "Foods",
+    "lat": 14.6,
+    "lng": 120.975,
+    "precision": "city",
+    "description": "Manila’s Chinatown for dumplings, noodles and bakery snacks.",
+    "source": "https://en.wikipedia.org/wiki/Binondo"
+  },
+  {
+    "id": "palengke-cebu",
+    "name": "Carbon Market",
+    "city": "Cebu City",
+    "chapter": "Foods",
+    "lat": 10.2935,
+    "lng": 123.9,
+    "precision": "venue",
+    "description": "A large wet market near Cebu’s port area.",
+    "source": "https://en.wikipedia.org/wiki/Carbon_Market"
+  },
+  {
+    "id": "davao-food",
+    "name": "Davao city eateries",
+    "city": "Davao",
+    "chapter": "Foods",
+    "lat": 7.07,
+    "lng": 125.61,
+    "precision": "city",
+    "description": "Mindanao’s hub known for fruit and seafood kitchens.",
+    "source": "https://en.wikipedia.org/wiki/Davao_City"
+  },
+  {
+    "id": "iloilo-food",
+    "name": "Iloilo La Paz Batchoy stalls",
+    "city": "Iloilo City",
+    "chapter": "Foods",
+    "lat": 10.72,
+    "lng": 122.56,
+    "precision": "city",
+    "description": "Birthplace flavours of La Paz batchoy noodle soup.",
+    "source": "https://en.wikipedia.org/wiki/Batchoy"
+  },
+  {
+    "id": "baguio-market",
+    "name": "Baguio City Market",
+    "city": "Baguio",
+    "chapter": "Foods",
+    "lat": 16.412,
+    "lng": 120.593,
+    "precision": "venue",
+    "description": "Highland produce and strawberry stalls in the Cordillera city.",
+    "source": "https://en.wikipedia.org/wiki/Baguio"
+  },
+  {
+    "id": "sinulog",
+    "name": "Sinulog Festival",
+    "city": "Cebu City",
+    "chapter": "Seasonal",
+    "lat": 10.295,
+    "lng": 123.902,
+    "precision": "city",
+    "description": "January street dancing and processions honouring the Santo Niño.",
+    "source": "https://en.wikipedia.org/wiki/Sinulog",
+    "seasonal": true,
+    "seasonal_label": "Sinulog"
+  }
+]

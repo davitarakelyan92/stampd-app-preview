@@ -1,0 +1,180 @@
+[
+  {
+    "id": "petronas",
+    "name": "Petronas Towers",
+    "city": "Kuala Lumpur",
+    "chapter": "Monuments",
+    "lat": 3.1579,
+    "lng": 101.7116,
+    "precision": "venue",
+    "description": "Twin skyscrapers with a sky bridge dominate KLCC park.",
+    "source": "https://en.wikipedia.org/wiki/Petronas_Towers"
+  },
+  {
+    "id": "batu-caves",
+    "name": "Batu Caves",
+    "city": "near Kuala Lumpur",
+    "chapter": "Monuments",
+    "lat": 3.2379,
+    "lng": 101.684,
+    "precision": "venue",
+    "description": "A Hindu shrine in limestone caves climbed by a rainbow staircase.",
+    "source": "https://en.wikipedia.org/wiki/Batu_Caves"
+  },
+  {
+    "id": "george-town-fort",
+    "name": "Fort Cornwallis",
+    "city": "George Town",
+    "chapter": "Monuments",
+    "lat": 5.4203,
+    "lng": 100.344,
+    "precision": "venue",
+    "description": "A star fort on Penang’s esplanade marks early colonial George Town.",
+    "source": "https://en.wikipedia.org/wiki/Fort_Cornwallis"
+  },
+  {
+    "id": "stadthuys",
+    "name": "Stadthuys",
+    "city": "Malacca City",
+    "chapter": "Monuments",
+    "lat": 2.1944,
+    "lng": 102.2491,
+    "precision": "venue",
+    "description": "A red Dutch colonial complex on Malacca’s Dutch Square.",
+    "source": "https://en.wikipedia.org/wiki/Stadthuys"
+  },
+  {
+    "id": "kl-tower",
+    "name": "Kuala Lumpur Tower",
+    "city": "Kuala Lumpur",
+    "chapter": "Monuments",
+    "lat": 3.1528,
+    "lng": 101.7038,
+    "precision": "venue",
+    "description": "A telecommunications tower with an observation deck above Bukit Nanas.",
+    "source": "https://en.wikipedia.org/wiki/Kuala_Lumpur_Tower"
+  },
+  {
+    "id": "cameron",
+    "name": "Cameron Highlands",
+    "city": "Tanah Rata",
+    "chapter": "Visit",
+    "lat": 4.47,
+    "lng": 101.38,
+    "precision": "city",
+    "description": "Tea plantations and cool highland walks in Pahang.",
+    "source": "https://en.wikipedia.org/wiki/Cameron_Highlands"
+  },
+  {
+    "id": "langkawi",
+    "name": "Langkawi",
+    "city": "Kuah area",
+    "chapter": "Visit",
+    "lat": 6.35,
+    "lng": 99.8,
+    "precision": "city",
+    "description": "An island of beaches, mangroves and a cable car to mountain views.",
+    "source": "https://en.wikipedia.org/wiki/Langkawi"
+  },
+  {
+    "id": "kinabalu",
+    "name": "Mount Kinabalu",
+    "city": "Sabah",
+    "chapter": "Visit",
+    "lat": 6.075,
+    "lng": 116.558,
+    "precision": "venue",
+    "description": "Malaysia’s highest peak — summit climbs need permits and guides.",
+    "source": "https://en.wikipedia.org/wiki/Mount_Kinabalu"
+  },
+  {
+    "id": "perhentian",
+    "name": "Perhentian Islands",
+    "city": "Terengganu",
+    "chapter": "Visit",
+    "lat": 5.9,
+    "lng": 102.75,
+    "precision": "city",
+    "description": "Snorkel islands off the east coast with clear water.",
+    "source": "https://en.wikipedia.org/wiki/Perhentian_Islands"
+  },
+  {
+    "id": "sepilok",
+    "name": "Sepilok Orangutan Centre",
+    "city": "Sandakan",
+    "chapter": "Visit",
+    "lat": 5.86,
+    "lng": 117.95,
+    "precision": "venue",
+    "description": "A rehabilitation centre for orangutans in Sabah’s rainforest.",
+    "source": "https://en.wikipedia.org/wiki/Sepilok_Orangutan_Rehabilitation_Centre"
+  },
+  {
+    "id": "jalan-alor",
+    "name": "Jalan Alor",
+    "city": "Kuala Lumpur",
+    "chapter": "Foods",
+    "lat": 3.146,
+    "lng": 101.709,
+    "precision": "venue",
+    "description": "An evening street of satay, seafood and hawker stalls in Bukit Bintang.",
+    "source": "https://en.wikipedia.org/wiki/Jalan_Alor"
+  },
+  {
+    "id": "penang-hawker",
+    "name": "Gurney Drive / Georgetown hawker",
+    "city": "George Town",
+    "chapter": "Foods",
+    "lat": 5.43,
+    "lng": 100.31,
+    "precision": "city",
+    "description": "Penang’s hawker stalls for char kway teow, assam laksa and more.",
+    "source": "https://en.wikipedia.org/wiki/Penang_cuisine"
+  },
+  {
+    "id": "jonker",
+    "name": "Jonker Street night market",
+    "city": "Malacca City",
+    "chapter": "Foods",
+    "lat": 2.196,
+    "lng": 102.246,
+    "precision": "venue",
+    "description": "Weekend night market of snacks along Jonker Walk.",
+    "source": "https://en.wikipedia.org/wiki/Jonker_Walk"
+  },
+  {
+    "id": "kk-gaya",
+    "name": "Gaya Street Sunday Market",
+    "city": "Kota Kinabalu",
+    "chapter": "Foods",
+    "lat": 5.98,
+    "lng": 116.075,
+    "precision": "venue",
+    "description": "Sunday street market in Kota Kinabalu’s centre.",
+    "source": "https://en.wikipedia.org/wiki/Kota_Kinabalu"
+  },
+  {
+    "id": "ipoh-food",
+    "name": "Ipoh old town cafés",
+    "city": "Ipoh",
+    "chapter": "Foods",
+    "lat": 4.595,
+    "lng": 101.09,
+    "precision": "city",
+    "description": "Famous for white coffee and bean-sprout chicken in Perak.",
+    "source": "https://en.wikipedia.org/wiki/Ipoh"
+  },
+  {
+    "id": "thaipusam",
+    "name": "Thaipusam at Batu Caves",
+    "city": "near Kuala Lumpur",
+    "chapter": "Seasonal",
+    "lat": 3.2379,
+    "lng": 101.684,
+    "precision": "venue",
+    "description": "A Hindu festival of devotion with kavadi processions up the cave steps.",
+    "source": "https://en.wikipedia.org/wiki/Thaipusam",
+    "seasonal": true,
+    "seasonal_label": "Thaipusam"
+  }
+]

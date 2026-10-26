@@ -1,0 +1,180 @@
+[
+  {
+    "id": "sydney-opera",
+    "name": "Sydney Opera House",
+    "city": "Sydney",
+    "chapter": "Monuments",
+    "lat": -33.8568,
+    "lng": 151.2153,
+    "precision": "venue",
+    "description": "Shell-like roofs sit on Bennelong Point beside Sydney Harbour Bridge.",
+    "source": "https://en.wikipedia.org/wiki/Sydney_Opera_House"
+  },
+  {
+    "id": "harbour-bridge",
+    "name": "Sydney Harbour Bridge",
+    "city": "Sydney",
+    "chapter": "Monuments",
+    "lat": -33.8523,
+    "lng": 151.2108,
+    "precision": "venue",
+    "description": "A steel arch bridge with climbable arches spanning the harbour.",
+    "source": "https://en.wikipedia.org/wiki/Sydney_Harbour_Bridge"
+  },
+  {
+    "id": "parliament-canberra",
+    "name": "Parliament House",
+    "city": "Canberra",
+    "chapter": "Monuments",
+    "lat": -35.3081,
+    "lng": 149.1244,
+    "precision": "venue",
+    "description": "Australia’s parliament sits under a grassed roof on Capital Hill.",
+    "source": "https://en.wikipedia.org/wiki/Parliament_House,_Canberra"
+  },
+  {
+    "id": "shrine-remembrance",
+    "name": "Shrine of Remembrance",
+    "city": "Melbourne",
+    "chapter": "Monuments",
+    "lat": -37.8305,
+    "lng": 144.9733,
+    "precision": "venue",
+    "description": "A war memorial on St Kilda Road with a ray of light on Remembrance Day.",
+    "source": "https://en.wikipedia.org/wiki/Shrine_of_Remembrance"
+  },
+  {
+    "id": "story-bridge",
+    "name": "Story Bridge",
+    "city": "Brisbane",
+    "chapter": "Monuments",
+    "lat": -27.463,
+    "lng": 153.036,
+    "precision": "venue",
+    "description": "A steel cantilever bridge over the Brisbane River with climb experiences.",
+    "source": "https://en.wikipedia.org/wiki/Story_Bridge"
+  },
+  {
+    "id": "uluru",
+    "name": "Uluru",
+    "city": "Yulara area",
+    "chapter": "Visit",
+    "lat": -25.3444,
+    "lng": 131.0369,
+    "precision": "venue",
+    "description": "A vast sandstone monolith in the Red Centre — climb closed; base walks open.",
+    "source": "https://en.wikipedia.org/wiki/Uluru"
+  },
+  {
+    "id": "great-barrier",
+    "name": "Great Barrier Reef",
+    "city": "Cairns/Port Douglas area",
+    "chapter": "Visit",
+    "lat": -16.5,
+    "lng": 145.75,
+    "precision": "city",
+    "description": "Coral reefs off Queensland reached by reef boats and pontoons.",
+    "source": "https://en.wikipedia.org/wiki/Great_Barrier_Reef"
+  },
+  {
+    "id": "twelve-apostles",
+    "name": "Twelve Apostles",
+    "city": "Great Ocean Road",
+    "chapter": "Visit",
+    "lat": -38.665,
+    "lng": 143.105,
+    "precision": "venue",
+    "description": "Limestone stacks rise offshore along Victoria’s Great Ocean Road.",
+    "source": "https://en.wikipedia.org/wiki/Twelve_Apostles_(Victoria)"
+  },
+  {
+    "id": "blue-mountains",
+    "name": "Blue Mountains",
+    "city": "Katoomba",
+    "chapter": "Visit",
+    "lat": -33.715,
+    "lng": 150.312,
+    "precision": "city",
+    "description": "Eucalyptus valleys and lookouts west of Sydney, including the Three Sisters.",
+    "source": "https://en.wikipedia.org/wiki/Blue_Mountains_(New_South_Wales)"
+  },
+  {
+    "id": "kakadu",
+    "name": "Kakadu National Park",
+    "city": "Northern Territory",
+    "chapter": "Visit",
+    "lat": -13.0,
+    "lng": 132.5,
+    "precision": "city",
+    "description": "Wetlands, rock art and waterfalls in a vast Top End park.",
+    "source": "https://en.wikipedia.org/wiki/Kakadu_National_Park"
+  },
+  {
+    "id": "queen-victoria-market",
+    "name": "Queen Victoria Market",
+    "city": "Melbourne",
+    "chapter": "Foods",
+    "lat": -37.8076,
+    "lng": 144.9568,
+    "precision": "venue",
+    "description": "A historic open market for produce, deli goods and weekend stalls.",
+    "source": "https://en.wikipedia.org/wiki/Queen_Victoria_Market"
+  },
+  {
+    "id": "adelaide-central",
+    "name": "Adelaide Central Market",
+    "city": "Adelaide",
+    "chapter": "Foods",
+    "lat": -34.929,
+    "lng": 138.597,
+    "precision": "venue",
+    "description": "A covered market known for fresh produce and multicultural food.",
+    "source": "https://en.wikipedia.org/wiki/Adelaide_Central_Market"
+  },
+  {
+    "id": "sydney-fish",
+    "name": "Sydney Fish Market",
+    "city": "Sydney",
+    "chapter": "Foods",
+    "lat": -33.872,
+    "lng": 151.198,
+    "precision": "venue",
+    "description": "Wholesale and retail seafood with sushi bars beside Blackwattle Bay.",
+    "source": "https://en.wikipedia.org/wiki/Sydney_Fish_Market"
+  },
+  {
+    "id": "fremantle-markets",
+    "name": "Fremantle Markets",
+    "city": "Fremantle",
+    "chapter": "Foods",
+    "lat": -32.056,
+    "lng": 115.748,
+    "precision": "venue",
+    "description": "A Victorian market hall of crafts and food near Perth’s port.",
+    "source": "https://en.wikipedia.org/wiki/Fremantle_Markets"
+  },
+  {
+    "id": "brisbane-markets",
+    "name": "Davies Park / West End markets",
+    "city": "Brisbane",
+    "chapter": "Foods",
+    "lat": -27.48,
+    "lng": 153.01,
+    "precision": "city",
+    "description": "Weekend markets and cafés in Brisbane’s West End.",
+    "source": "https://en.wikipedia.org/wiki/West_End,_Queensland"
+  },
+  {
+    "id": "sydney-nye",
+    "name": "Sydney New Year’s Eve",
+    "city": "Sydney",
+    "chapter": "Seasonal",
+    "lat": -33.8568,
+    "lng": 151.2153,
+    "precision": "city",
+    "description": "Harbour fireworks launched from barges and bridges each 31 December.",
+    "source": "https://en.wikipedia.org/wiki/Sydney_New_Year%27s_Eve",
+    "seasonal": true,
+    "seasonal_label": "Sydney New Year’s Eve"
+  }
+]

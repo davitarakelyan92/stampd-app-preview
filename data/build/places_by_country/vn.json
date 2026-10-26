@@ -1,0 +1,180 @@
+[
+  {
+    "id": "hoan-kiem",
+    "name": "Hoàn Kiếm Lake & Ngọc Sơn",
+    "city": "Hanoi",
+    "chapter": "Monuments",
+    "lat": 21.0285,
+    "lng": 105.852,
+    "precision": "venue",
+    "description": "A central lake with a red bridge to Ngọc Sơn Temple in Hanoi’s old quarter.",
+    "source": "https://en.wikipedia.org/wiki/Ho%C3%A0n_Ki%E1%BA%BFm_Lake"
+  },
+  {
+    "id": "one-pillar",
+    "name": "One Pillar Pagoda",
+    "city": "Hanoi",
+    "chapter": "Monuments",
+    "lat": 21.035,
+    "lng": 105.833,
+    "precision": "venue",
+    "description": "A historic wooden pagoda rising from a square pond on a single pillar.",
+    "source": "https://en.wikipedia.org/wiki/One_Pillar_Pagoda"
+  },
+  {
+    "id": "imperial-hue",
+    "name": "Imperial City",
+    "city": "Huế",
+    "chapter": "Monuments",
+    "lat": 16.47,
+    "lng": 107.58,
+    "precision": "venue",
+    "description": "Citadel walls enclose the former Nguyễn dynasty imperial enclosure.",
+    "source": "https://en.wikipedia.org/wiki/Imperial_City,_Hu%E1%BA%BF"
+  },
+  {
+    "id": "my-son",
+    "name": "Mỹ Sơn",
+    "city": "near Hội An",
+    "chapter": "Monuments",
+    "lat": 15.764,
+    "lng": 108.103,
+    "precision": "venue",
+    "description": "Cham temple ruins in a valley southwest of Hội An.",
+    "source": "https://en.wikipedia.org/wiki/M%E1%BB%B9_S%C6%A1n"
+  },
+  {
+    "id": "notre-dame-saigon",
+    "name": "Notre-Dame Cathedral Basilica",
+    "city": "Ho Chi Minh City",
+    "chapter": "Monuments",
+    "lat": 10.7798,
+    "lng": 106.699,
+    "precision": "venue",
+    "description": "A red-brick cathedral faces Paris Commune Square in District 1.",
+    "source": "https://en.wikipedia.org/wiki/Notre-Dame_Cathedral_Basilica_of_Saigon"
+  },
+  {
+    "id": "ha-long",
+    "name": "Hạ Long Bay",
+    "city": "Hạ Long",
+    "chapter": "Visit",
+    "lat": 20.91,
+    "lng": 107.18,
+    "precision": "city",
+    "description": "Limestone karsts rise from emerald water — cruises leave from the bay towns.",
+    "source": "https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay"
+  },
+  {
+    "id": "hoi-an",
+    "name": "Hội An Ancient Town",
+    "city": "Hội An",
+    "chapter": "Visit",
+    "lat": 15.8801,
+    "lng": 108.338,
+    "precision": "city",
+    "description": "Lantern-lit streets and wooden shophouses form a UNESCO trading port.",
+    "source": "https://en.wikipedia.org/wiki/H%E1%BB%99i_An"
+  },
+  {
+    "id": "sapa",
+    "name": "Sa Pa terraces",
+    "city": "Sa Pa",
+    "chapter": "Visit",
+    "lat": 22.34,
+    "lng": 103.84,
+    "precision": "city",
+    "description": "Rice terraces and hill-tribe villages surround a mountain town in Lào Cai.",
+    "source": "https://en.wikipedia.org/wiki/Sa_Pa"
+  },
+  {
+    "id": "mekong-delta",
+    "name": "Mekong Delta canals",
+    "city": "Cần Thơ area",
+    "chapter": "Visit",
+    "lat": 10.05,
+    "lng": 105.78,
+    "precision": "city",
+    "description": "Floating markets and orchards along Mekong branches.",
+    "source": "https://en.wikipedia.org/wiki/Mekong_Delta"
+  },
+  {
+    "id": "phong-nha",
+    "name": "Phong Nha caves",
+    "city": "Phong Nha",
+    "chapter": "Visit",
+    "lat": 17.59,
+    "lng": 106.28,
+    "precision": "city",
+    "description": "Cave systems in a UNESCO park including Phong Nha and Paradise caves.",
+    "source": "https://en.wikipedia.org/wiki/Phong_Nha-K%E1%BA%BB_B%C3%A0ng_National_Park"
+  },
+  {
+    "id": "ben-thanh",
+    "name": "Bến Thành Market",
+    "city": "Ho Chi Minh City",
+    "chapter": "Foods",
+    "lat": 10.7725,
+    "lng": 106.698,
+    "precision": "venue",
+    "description": "A landmark market hall for souvenirs, produce and food stalls.",
+    "source": "https://en.wikipedia.org/wiki/B%E1%BA%BFn_Th%C3%A0nh_Market"
+  },
+  {
+    "id": "old-quarter-food",
+    "name": "Hanoi Old Quarter street food",
+    "city": "Hanoi",
+    "chapter": "Foods",
+    "lat": 21.035,
+    "lng": 105.85,
+    "precision": "city",
+    "description": "Pho, bun cha and egg coffee fill the 36 streets’ low stools.",
+    "source": "https://en.wikipedia.org/wiki/Old_Quarter,_Hanoi"
+  },
+  {
+    "id": "cho-lon",
+    "name": "Chợ Lớn markets",
+    "city": "Ho Chi Minh City",
+    "chapter": "Foods",
+    "lat": 10.75,
+    "lng": 106.66,
+    "precision": "city",
+    "description": "Chinatown markets and noodle shops west of District 1.",
+    "source": "https://en.wikipedia.org/wiki/Ch%E1%BB%A3_L%E1%BB%9Bn"
+  },
+  {
+    "id": "hoi-an-food",
+    "name": "Hội An central market",
+    "city": "Hội An",
+    "chapter": "Foods",
+    "lat": 15.877,
+    "lng": 108.328,
+    "precision": "venue",
+    "description": "Cao lầu and white rose dumplings sell beside the market hall.",
+    "source": "https://en.wikipedia.org/wiki/H%E1%BB%99i_An"
+  },
+  {
+    "id": "da-nang-food",
+    "name": "Đà Nẵng beach restaurants",
+    "city": "Đà Nẵng",
+    "chapter": "Foods",
+    "lat": 16.06,
+    "lng": 108.24,
+    "precision": "city",
+    "description": "Seafood kitchens line Mỹ Khê and city riverfronts.",
+    "source": "https://en.wikipedia.org/wiki/%C4%90%C3%A0_N%E1%BA%B5ng"
+  },
+  {
+    "id": "tet",
+    "name": "Tết (Lunar New Year)",
+    "city": "Hanoi",
+    "chapter": "Seasonal",
+    "lat": 21.028,
+    "lng": 105.854,
+    "precision": "city",
+    "description": "Vietnam’s main holiday of family reunions, flowers and temple visits.",
+    "source": "https://en.wikipedia.org/wiki/T%E1%BA%BFt",
+    "seasonal": true,
+    "seasonal_label": "Tết"
+  }
+]

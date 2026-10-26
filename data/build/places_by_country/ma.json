@@ -1,0 +1,180 @@
+[
+  {
+    "id": "koutoubia",
+    "name": "Koutoubia Mosque",
+    "city": "Marrakesh",
+    "chapter": "Monuments",
+    "lat": 31.624,
+    "lng": -7.993,
+    "precision": "venue",
+    "description": "A 12th-century minaret dominates Marrakesh’s skyline beside Jemaa el-Fnaa.",
+    "source": "https://en.wikipedia.org/wiki/Kutubiyya_Mosque"
+  },
+  {
+    "id": "hassan-ii",
+    "name": "Hassan II Mosque",
+    "city": "Casablanca",
+    "chapter": "Monuments",
+    "lat": 33.608,
+    "lng": -7.632,
+    "precision": "venue",
+    "description": "A vast seaside mosque with a towering minaret on Casablanca’s Atlantic edge.",
+    "source": "https://en.wikipedia.org/wiki/Hassan_II_Mosque"
+  },
+  {
+    "id": "bab-bou-jeloud",
+    "name": "Bab Bou Jeloud",
+    "city": "Fes",
+    "chapter": "Monuments",
+    "lat": 34.062,
+    "lng": -4.984,
+    "precision": "venue",
+    "description": "The ornate Blue Gate opens into Fes el-Bali’s medina.",
+    "source": "https://en.wikipedia.org/wiki/Bab_Bou_Jeloud"
+  },
+  {
+    "id": "ait-benhaddou",
+    "name": "Aït Benhaddou",
+    "city": "near Ouarzazate",
+    "chapter": "Monuments",
+    "lat": 31.047,
+    "lng": -7.13,
+    "precision": "venue",
+    "description": "A fortified ksar of earthen buildings on a former caravan route.",
+    "source": "https://en.wikipedia.org/wiki/A%C3%AFt_Benhaddou"
+  },
+  {
+    "id": "chefchaouen-kasbah",
+    "name": "Kasbah of Chefchaouen",
+    "city": "Chefchaouen",
+    "chapter": "Monuments",
+    "lat": 35.171,
+    "lng": -5.27,
+    "precision": "venue",
+    "description": "A restored kasbah museum sits in the blue medina’s main square.",
+    "source": "https://en.wikipedia.org/wiki/Chefchaouen"
+  },
+  {
+    "id": "jemaa-el-fnaa",
+    "name": "Jemaa el-Fnaa",
+    "city": "Marrakesh",
+    "chapter": "Visit",
+    "lat": 31.6258,
+    "lng": -7.9891,
+    "precision": "venue",
+    "description": "A square of storytellers, juice stalls and evening food smoke.",
+    "source": "https://en.wikipedia.org/wiki/Jemaa_el-Fnaa"
+  },
+  {
+    "id": "sahara-merzouga",
+    "name": "Erg Chebbi dunes",
+    "city": "Merzouga",
+    "chapter": "Visit",
+    "lat": 31.1,
+    "lng": -4.0,
+    "precision": "city",
+    "description": "Golden dunes near Merzouga for camel treks and desert camps.",
+    "source": "https://en.wikipedia.org/wiki/Erg_Chebbi"
+  },
+  {
+    "id": "todra",
+    "name": "Todra Gorge",
+    "city": "Tinghir area",
+    "chapter": "Visit",
+    "lat": 31.59,
+    "lng": -5.59,
+    "precision": "venue",
+    "description": "Sheer canyon walls rise above a river road in the High Atlas east.",
+    "source": "https://en.wikipedia.org/wiki/Todra_Gorge"
+  },
+  {
+    "id": "essaouira",
+    "name": "Essaouira ramparts",
+    "city": "Essaouira",
+    "chapter": "Visit",
+    "lat": 31.508,
+    "lng": -9.77,
+    "precision": "city",
+    "description": "Atlantic medina walls and a harbour of blue boats.",
+    "source": "https://en.wikipedia.org/wiki/Essaouira"
+  },
+  {
+    "id": "volubilis",
+    "name": "Volubilis",
+    "city": "near Meknes",
+    "chapter": "Visit",
+    "lat": 34.074,
+    "lng": -5.555,
+    "precision": "venue",
+    "description": "Roman ruins of mosaics and arches in the Moroccan countryside.",
+    "source": "https://en.wikipedia.org/wiki/Volubilis"
+  },
+  {
+    "id": "marrakech-food-square",
+    "name": "Jemaa el-Fnaa food stalls",
+    "city": "Marrakesh",
+    "chapter": "Foods",
+    "lat": 31.6258,
+    "lng": -7.9891,
+    "precision": "venue",
+    "description": "Night stalls serve grilled meats, snails and orange juice on the square.",
+    "source": "https://en.wikipedia.org/wiki/Jemaa_el-Fnaa"
+  },
+  {
+    "id": "fes-tanners-note",
+    "name": "Fes medina food streets",
+    "city": "Fes",
+    "chapter": "Foods",
+    "lat": 34.06,
+    "lng": -4.98,
+    "precision": "city",
+    "description": "Street kitchens and cafés weave through Fes el-Bali near the tanneries.",
+    "source": "https://en.wikipedia.org/wiki/Fes_el_Bali"
+  },
+  {
+    "id": "casablanca-central",
+    "name": "Central Market Casablanca",
+    "city": "Casablanca",
+    "chapter": "Foods",
+    "lat": 33.595,
+    "lng": -7.62,
+    "precision": "venue",
+    "description": "A covered market for produce and casual bites downtown.",
+    "source": "https://en.wikipedia.org/wiki/Casablanca"
+  },
+  {
+    "id": "rabat-souk",
+    "name": "Rabat medina souks",
+    "city": "Rabat",
+    "chapter": "Foods",
+    "lat": 34.025,
+    "lng": -6.835,
+    "precision": "city",
+    "description": "Souk streets sell olives, pastries and street snacks near the kasbah.",
+    "source": "https://en.wikipedia.org/wiki/Rabat"
+  },
+  {
+    "id": "tangier-cafe",
+    "name": "Tangier café streets",
+    "city": "Tangier",
+    "chapter": "Foods",
+    "lat": 35.78,
+    "lng": -5.81,
+    "precision": "city",
+    "description": "Historic cafés and pastry shops in the medina and Ville Nouvelle.",
+    "source": "https://en.wikipedia.org/wiki/Tangier"
+  },
+  {
+    "id": "moussem-tan-tan",
+    "name": "Tan-Tan Moussem",
+    "city": "Tan-Tan",
+    "chapter": "Seasonal",
+    "lat": 28.44,
+    "lng": -11.1,
+    "precision": "city",
+    "description": "A large Saharan tribal gathering of markets, camels and music (UNESCO-listed).",
+    "source": "https://en.wikipedia.org/wiki/Tan-Tan_Moussem",
+    "seasonal": true,
+    "seasonal_label": "Tan-Tan Moussem"
+  }
+]

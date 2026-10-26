@@ -1,0 +1,180 @@
+[
+  {
+    "id": "taj",
+    "name": "Taj Mahal",
+    "city": "Agra",
+    "chapter": "Monuments",
+    "lat": 27.175,
+    "lng": 78.0421,
+    "precision": "venue",
+    "description": "A white-marble mausoleum set in Mughal gardens beside the Yamuna.",
+    "source": "https://en.wikipedia.org/wiki/Taj_Mahal"
+  },
+  {
+    "id": "qutub-minar",
+    "name": "Qutb Minar",
+    "city": "Delhi",
+    "chapter": "Monuments",
+    "lat": 28.5244,
+    "lng": 77.1855,
+    "precision": "venue",
+    "description": "A soaring brick minaret anchors a complex of early Indo-Islamic ruins.",
+    "source": "https://en.wikipedia.org/wiki/Qutb_Minar"
+  },
+  {
+    "id": "red-fort",
+    "name": "Red Fort",
+    "city": "Delhi",
+    "chapter": "Monuments",
+    "lat": 28.6562,
+    "lng": 77.241,
+    "precision": "venue",
+    "description": "Mughal sandstone walls enclose palaces on Old Delhi’s eastern edge.",
+    "source": "https://en.wikipedia.org/wiki/Red_Fort"
+  },
+  {
+    "id": "amber-fort",
+    "name": "Amber Fort",
+    "city": "Jaipur",
+    "chapter": "Monuments",
+    "lat": 26.9855,
+    "lng": 75.8513,
+    "precision": "venue",
+    "description": "A hillside fort-palace of courtyards and mirrored halls above Maota Lake.",
+    "source": "https://en.wikipedia.org/wiki/Amer_Fort"
+  },
+  {
+    "id": "gateway-india",
+    "name": "Gateway of India",
+    "city": "Mumbai",
+    "chapter": "Monuments",
+    "lat": 18.922,
+    "lng": 72.8347,
+    "precision": "venue",
+    "description": "A basalt arch on Mumbai’s waterfront facing the harbour.",
+    "source": "https://en.wikipedia.org/wiki/Gateway_of_India"
+  },
+  {
+    "id": "varanasi-ghats",
+    "name": "Varanasi ghats",
+    "city": "Varanasi",
+    "chapter": "Visit",
+    "lat": 25.3109,
+    "lng": 83.0107,
+    "precision": "city",
+    "description": "Stone steps line the Ganges for rituals, boats and dawn light.",
+    "source": "https://en.wikipedia.org/wiki/Ghats_in_Varanasi"
+  },
+  {
+    "id": "kerala-backwaters",
+    "name": "Kerala backwaters",
+    "city": "Alappuzha",
+    "chapter": "Visit",
+    "lat": 9.5,
+    "lng": 76.34,
+    "precision": "city",
+    "description": "Canals and lagoons crossed by houseboats in southern Kerala.",
+    "source": "https://en.wikipedia.org/wiki/Kerala_backwaters"
+  },
+  {
+    "id": "goa-beaches",
+    "name": "Baga–Calangute stretch",
+    "city": "Goa",
+    "chapter": "Visit",
+    "lat": 15.555,
+    "lng": 73.752,
+    "precision": "city",
+    "description": "Popular Arabian Sea beaches with shacks and water sports in North Goa.",
+    "source": "https://en.wikipedia.org/wiki/Goa"
+  },
+  {
+    "id": "hampi",
+    "name": "Hampi",
+    "city": "Hampi",
+    "chapter": "Visit",
+    "lat": 15.335,
+    "lng": 76.46,
+    "precision": "city",
+    "description": "Boulder landscapes and Vijayanagara temple ruins across the Tungabhadra.",
+    "source": "https://en.wikipedia.org/wiki/Hampi"
+  },
+  {
+    "id": "ladakh-pangong",
+    "name": "Pangong Lake",
+    "city": "Ladakh",
+    "chapter": "Visit",
+    "lat": 33.75,
+    "lng": 78.66,
+    "precision": "venue",
+    "description": "A high-altitude lake of shifting blues on the Changthang plateau.",
+    "source": "https://en.wikipedia.org/wiki/Pangong_Tso"
+  },
+  {
+    "id": "chandni-chowk",
+    "name": "Chandni Chowk food lanes",
+    "city": "Delhi",
+    "chapter": "Foods",
+    "lat": 28.656,
+    "lng": 77.23,
+    "precision": "city",
+    "description": "Old Delhi lanes of chaat, paratha and sweets near the Red Fort.",
+    "source": "https://en.wikipedia.org/wiki/Chandni_Chowk"
+  },
+  {
+    "id": "crawford-market",
+    "name": "Crawford Market",
+    "city": "Mumbai",
+    "chapter": "Foods",
+    "lat": 18.948,
+    "lng": 72.834,
+    "precision": "venue",
+    "description": "A historic market hall for produce and household goods in South Mumbai.",
+    "source": "https://en.wikipedia.org/wiki/Crawford_Market"
+  },
+  {
+    "id": "kk-market-pune",
+    "name": "Mandai Market",
+    "city": "Pune",
+    "chapter": "Foods",
+    "lat": 18.52,
+    "lng": 73.86,
+    "precision": "venue",
+    "description": "Pune’s central produce market near Shaniwar Wada.",
+    "source": "https://en.wikipedia.org/wiki/Pune"
+  },
+  {
+    "id": "city-market-blr",
+    "name": "KR Market",
+    "city": "Bengaluru",
+    "chapter": "Foods",
+    "lat": 12.965,
+    "lng": 77.577,
+    "precision": "venue",
+    "description": "A sprawling wholesale flower and produce market in Bengaluru.",
+    "source": "https://en.wikipedia.org/wiki/K._R._Market"
+  },
+  {
+    "id": "newmarket-kol",
+    "name": "New Market",
+    "city": "Kolkata",
+    "chapter": "Foods",
+    "lat": 22.558,
+    "lng": 88.353,
+    "precision": "venue",
+    "description": "A colonial-era market complex for food, clothes and household goods.",
+    "source": "https://en.wikipedia.org/wiki/New_Market,_Kolkata"
+  },
+  {
+    "id": "diwali-delhi",
+    "name": "Diwali",
+    "city": "Delhi",
+    "chapter": "Seasonal",
+    "lat": 28.614,
+    "lng": 77.209,
+    "precision": "city",
+    "description": "Festival of lights with lamps, sweets and fireworks across Indian cities.",
+    "source": "https://en.wikipedia.org/wiki/Diwali",
+    "seasonal": true,
+    "seasonal_label": "Diwali"
+  }
+]

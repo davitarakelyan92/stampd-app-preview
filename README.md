@@ -6,6 +6,8 @@ Clickable mobile HTML preview for visual review. Sample content only — not liv
 
 https://davitarakelyan92.github.io/stampd-app-preview/
 
+Hard-refresh after updates (Cmd/Ctrl+Shift+R).
+
 ## Local
 
 ```bash

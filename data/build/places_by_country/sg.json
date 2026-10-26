@@ -1,0 +1,180 @@
+[
+  {
+    "id": "marina-bay-sands",
+    "name": "Marina Bay Sands",
+    "city": "Singapore",
+    "chapter": "Monuments",
+    "lat": 1.2834,
+    "lng": 103.8607,
+    "precision": "venue",
+    "description": "A triple tower with a sky park overlooks Marina Bay.",
+    "source": "https://en.wikipedia.org/wiki/Marina_Bay_Sands"
+  },
+  {
+    "id": "merlion",
+    "name": "Merlion",
+    "city": "Singapore",
+    "chapter": "Monuments",
+    "lat": 1.2868,
+    "lng": 103.8545,
+    "precision": "venue",
+    "description": "A lion-headed fish statue spouts water toward Marina Bay.",
+    "source": "https://en.wikipedia.org/wiki/Merlion"
+  },
+  {
+    "id": "sultan-mosque",
+    "name": "Sultan Mosque",
+    "city": "Singapore",
+    "chapter": "Monuments",
+    "lat": 1.302,
+    "lng": 103.86,
+    "precision": "venue",
+    "description": "A golden-domed mosque anchors Kampong Glam.",
+    "source": "https://en.wikipedia.org/wiki/Sultan_Mosque"
+  },
+  {
+    "id": "thian-hock-keng",
+    "name": "Thian Hock Keng",
+    "city": "Singapore",
+    "chapter": "Monuments",
+    "lat": 1.2808,
+    "lng": 103.8475,
+    "precision": "venue",
+    "description": "One of Singapore’s oldest Hokkien temples on Telok Ayer Street.",
+    "source": "https://en.wikipedia.org/wiki/Thian_Hock_Keng"
+  },
+  {
+    "id": "raffles-hotel",
+    "name": "Raffles Hotel",
+    "city": "Singapore",
+    "chapter": "Monuments",
+    "lat": 1.2945,
+    "lng": 103.8545,
+    "precision": "venue",
+    "description": "A colonial-era hotel known for the Singapore Sling and Palm Court.",
+    "source": "https://en.wikipedia.org/wiki/Raffles_Hotel"
+  },
+  {
+    "id": "gardens-by-the-bay",
+    "name": "Gardens by the Bay",
+    "city": "Singapore",
+    "chapter": "Visit",
+    "lat": 1.2816,
+    "lng": 103.8636,
+    "precision": "venue",
+    "description": "Supertree Grove and climate-controlled conservatories by Marina Bay.",
+    "source": "https://en.wikipedia.org/wiki/Gardens_by_the_Bay"
+  },
+  {
+    "id": "sentosa",
+    "name": "Sentosa",
+    "city": "Singapore",
+    "chapter": "Visit",
+    "lat": 1.2494,
+    "lng": 103.8303,
+    "precision": "city",
+    "description": "A resort island of beaches, parks and attractions linked by boardwalk and cable car.",
+    "source": "https://en.wikipedia.org/wiki/Sentosa"
+  },
+  {
+    "id": "botanic-gardens",
+    "name": "Singapore Botanic Gardens",
+    "city": "Singapore",
+    "chapter": "Visit",
+    "lat": 1.3138,
+    "lng": 103.8159,
+    "precision": "venue",
+    "description": "A UNESCO garden with an orchid collection and lakeside lawns.",
+    "source": "https://en.wikipedia.org/wiki/Singapore_Botanic_Gardens"
+  },
+  {
+    "id": "chinatown-sg",
+    "name": "Chinatown",
+    "city": "Singapore",
+    "chapter": "Visit",
+    "lat": 1.283,
+    "lng": 103.844,
+    "precision": "city",
+    "description": "Temples, shophouses and street markets west of the CBD.",
+    "source": "https://en.wikipedia.org/wiki/Chinatown,_Singapore"
+  },
+  {
+    "id": "little-india-sg",
+    "name": "Little India",
+    "city": "Singapore",
+    "chapter": "Visit",
+    "lat": 1.306,
+    "lng": 103.851,
+    "precision": "city",
+    "description": "Serangoon Road’s colourful shops, temples and eateries.",
+    "source": "https://en.wikipedia.org/wiki/Little_India,_Singapore"
+  },
+  {
+    "id": "maxwell",
+    "name": "Maxwell Food Centre",
+    "city": "Singapore",
+    "chapter": "Foods",
+    "lat": 1.2803,
+    "lng": 103.8448,
+    "precision": "venue",
+    "description": "A famous hawker centre known for Tian Tian Hainanese chicken rice queues.",
+    "source": "https://en.wikipedia.org/wiki/Maxwell_Food_Centre"
+  },
+  {
+    "id": "lau-pa-sat",
+    "name": "Lau Pa Sat",
+    "city": "Singapore",
+    "chapter": "Foods",
+    "lat": 1.2807,
+    "lng": 103.8505,
+    "precision": "venue",
+    "description": "A Victorian cast-iron market turned hawker hub for satay at night.",
+    "source": "https://en.wikipedia.org/wiki/Lau_Pa_Sat"
+  },
+  {
+    "id": "tekka",
+    "name": "Tekka Centre",
+    "city": "Singapore",
+    "chapter": "Foods",
+    "lat": 1.3063,
+    "lng": 103.8505,
+    "precision": "venue",
+    "description": "Little India’s market and food centre for thosai and biryani.",
+    "source": "https://en.wikipedia.org/wiki/Tekka_Centre"
+  },
+  {
+    "id": "newton",
+    "name": "Newton Food Centre",
+    "city": "Singapore",
+    "chapter": "Foods",
+    "lat": 1.312,
+    "lng": 103.838,
+    "precision": "venue",
+    "description": "An open-air hawker centre by Newton MRT popular with visitors.",
+    "source": "https://en.wikipedia.org/wiki/Newton_Food_Centre"
+  },
+  {
+    "id": "east-coast-lagoon",
+    "name": "East Coast Lagoon Food Village",
+    "city": "Singapore",
+    "chapter": "Foods",
+    "lat": 1.306,
+    "lng": 103.93,
+    "precision": "venue",
+    "description": "Beachside hawker stalls for seafood and BBQ along East Coast Park.",
+    "source": "https://en.wikipedia.org/wiki/East_Coast_Park"
+  },
+  {
+    "id": "chingay",
+    "name": "Chingay Parade",
+    "city": "Singapore",
+    "chapter": "Seasonal",
+    "lat": 1.29,
+    "lng": 103.85,
+    "precision": "city",
+    "description": "A major street parade of floats and performers around Lunar New Year period.",
+    "source": "https://en.wikipedia.org/wiki/Chingay_Parade",
+    "seasonal": true,
+    "seasonal_label": "Chingay Parade"
+  }
+]

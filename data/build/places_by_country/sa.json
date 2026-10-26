@@ -1,0 +1,180 @@
+[
+  {
+    "id": "masjid-al-haram",
+    "name": "Masjid al-Haram",
+    "city": "Mecca",
+    "chapter": "Monuments",
+    "lat": 21.4225,
+    "lng": 39.8262,
+    "precision": "venue",
+    "description": "Islam’s holiest mosque surrounds the Kaaba — access governed by pilgrimage rules.",
+    "source": "https://en.wikipedia.org/wiki/Masjid_al-Haram"
+  },
+  {
+    "id": "prophets-mosque",
+    "name": "Al-Masjid an-Nabawi",
+    "city": "Medina",
+    "chapter": "Monuments",
+    "lat": 24.4672,
+    "lng": 39.6111,
+    "precision": "venue",
+    "description": "The Prophet’s Mosque in Medina is among Islam’s most sacred sites.",
+    "source": "https://en.wikipedia.org/wiki/Al-Masjid_an-Nabawi"
+  },
+  {
+    "id": "diriyah",
+    "name": "At-Turaif District",
+    "city": "Diriyah",
+    "chapter": "Monuments",
+    "lat": 24.733,
+    "lng": 46.572,
+    "precision": "venue",
+    "description": "Najdi adobe ruins of the first Saudi state’s capital near Riyadh.",
+    "source": "https://en.wikipedia.org/wiki/At-Turaif_District"
+  },
+  {
+    "id": "mamlaka",
+    "name": "Kingdom Centre",
+    "city": "Riyadh",
+    "chapter": "Monuments",
+    "lat": 24.711,
+    "lng": 46.674,
+    "precision": "venue",
+    "description": "A skyscraper with a distinctive sky bridge overlooks Riyadh.",
+    "source": "https://en.wikipedia.org/wiki/Kingdom_Centre"
+  },
+  {
+    "id": "historic-jeddah",
+    "name": "Historic Jeddah (Al-Balad)",
+    "city": "Jeddah",
+    "chapter": "Monuments",
+    "lat": 21.485,
+    "lng": 39.188,
+    "precision": "city",
+    "description": "Coral-stone tower houses fill Jeddah’s UNESCO old town.",
+    "source": "https://en.wikipedia.org/wiki/Al-Balad,_Jeddah"
+  },
+  {
+    "id": "edge-of-world",
+    "name": "Edge of the World",
+    "city": "near Riyadh",
+    "chapter": "Visit",
+    "lat": 24.95,
+    "lng": 45.99,
+    "precision": "venue",
+    "description": "Cliff escarpment viewpoints northwest of Riyadh (4x4 access).",
+    "source": "https://en.wikipedia.org/wiki/Jubu%CA%BEin"
+  },
+  {
+    "id": "alula",
+    "name": "Hegra (AlUla)",
+    "city": "AlUla",
+    "chapter": "Visit",
+    "lat": 26.8,
+    "lng": 37.95,
+    "precision": "city",
+    "description": "Nabataean tombs carved in sandstone north of AlUla town.",
+    "source": "https://en.wikipedia.org/wiki/Hegra_(Mada%27in_Salih)"
+  },
+  {
+    "id": "red-sea-coast",
+    "name": "Red Sea coast near Jeddah",
+    "city": "Jeddah",
+    "chapter": "Visit",
+    "lat": 21.5,
+    "lng": 39.1,
+    "precision": "city",
+    "description": "Coral reefs and beach clubs along the Red Sea.",
+    "source": "https://en.wikipedia.org/wiki/Jeddah"
+  },
+  {
+    "id": "asir-mountains",
+    "name": "Asir highlands",
+    "city": "Abha area",
+    "chapter": "Visit",
+    "lat": 18.22,
+    "lng": 42.5,
+    "precision": "city",
+    "description": "Green mountain towns and parks in southwest Saudi Arabia.",
+    "source": "https://en.wikipedia.org/wiki/Asir"
+  },
+  {
+    "id": "jubail-mangrove",
+    "name": "Jubail Mangrove Park",
+    "city": "Jubail",
+    "chapter": "Visit",
+    "lat": 26.98,
+    "lng": 49.65,
+    "precision": "venue",
+    "description": "Boardwalks through mangroves on Saudi Arabia’s Gulf coast near Jubail.",
+    "source": "https://en.wikipedia.org/wiki/Jubail"
+  },
+  {
+    "id": "diriyah-food",
+    "name": "Diriyah dining district",
+    "city": "Diriyah",
+    "chapter": "Foods",
+    "lat": 24.735,
+    "lng": 46.575,
+    "precision": "city",
+    "description": "Restored mud-brick streets with restaurants near At-Turaif.",
+    "source": "https://en.wikipedia.org/wiki/Diriyah"
+  },
+  {
+    "id": "jeddah-balad-food",
+    "name": "Al-Balad food streets",
+    "city": "Jeddah",
+    "chapter": "Foods",
+    "lat": 21.485,
+    "lng": 39.188,
+    "precision": "city",
+    "description": "Traditional restaurants and cafés in Historic Jeddah.",
+    "source": "https://en.wikipedia.org/wiki/Al-Balad,_Jeddah"
+  },
+  {
+    "id": "riyadh-takhasusi",
+    "name": "Tahlia & Olaya dining",
+    "city": "Riyadh",
+    "chapter": "Foods",
+    "lat": 24.7,
+    "lng": 46.68,
+    "precision": "city",
+    "description": "Modern restaurant strips in central Riyadh.",
+    "source": "https://en.wikipedia.org/wiki/Riyadh"
+  },
+  {
+    "id": "khobar-corniche-food",
+    "name": "Khobar Corniche eateries",
+    "city": "Khobar",
+    "chapter": "Foods",
+    "lat": 26.28,
+    "lng": 50.2,
+    "precision": "city",
+    "description": "Gulf-front restaurants in the Eastern Province.",
+    "source": "https://en.wikipedia.org/wiki/Khobar"
+  },
+  {
+    "id": "abha-food",
+    "name": "Abha highland cafés",
+    "city": "Abha",
+    "chapter": "Foods",
+    "lat": 18.216,
+    "lng": 42.505,
+    "precision": "city",
+    "description": "Cool-climate cafés in the Asir regional capital.",
+    "source": "https://en.wikipedia.org/wiki/Abha"
+  },
+  {
+    "id": "janadriyah",
+    "name": "Janadriyah Festival",
+    "city": "near Riyadh",
+    "chapter": "Seasonal",
+    "lat": 25.1,
+    "lng": 46.3,
+    "precision": "approximate",
+    "description": "A heritage and culture festival with crafts, camel shows and performances.",
+    "source": "https://en.wikipedia.org/wiki/Janadriyah_Festival",
+    "seasonal": true,
+    "seasonal_label": "Janadriyah Festival"
+  }
+]

@@ -164,3 +164,12 @@ Active tab tint: coral 600 `#C8372A`. Phone frame 390×844 inside dark bezel (se
 ### Countries hero removed (Davit, 2026-10-26)
 The `.cover-hero` block (big passport book, `.cover-meta` “N stamps available”, Open album button) was removed. Countries leads with Available now + Coming soon; tapping an Available card opens that country’s Gallery (with Back). Me visited mini covers unchanged.
 Gallery opened from a Countries card keeps the **Countries** tab active (Album tab not highlighted); Back returns to the list. Tapping the Album tab directly still highlights Album.
+
+## Map CTA on stamp detail (Davit · Oct 26)
+- `.detail-meta` is a row: `.meta-rows` (Distance + Coordinates) + `.detail-map-cta` (48×48, r14, Coral `#FF5B4A`, white pin).
+- CTA only when place has lat/lng. `href` = `https://www.google.com/maps/search/?api=1&query={lat},{lng}` · `target=_blank` · `rel=noopener`.
+- Shot: `/workspace/screenshots/stampd-davit-map-cta.png`
+
+## Balance chrome (Arp Trade QA · Oct 26)
+- `.balance-pill` white · 1px `#E3E1DA` · Navy `#1B2747` type 13/700 — stamps + coins identical.
+- Coin glyph = simple disc with Coral rim (not gold fill / `#A35A00` / `#FFA234`).
