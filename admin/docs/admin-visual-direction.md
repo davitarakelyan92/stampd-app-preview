@@ -1,6 +1,4 @@
-# Stampd Admin — visual direction
-
-The shipped admin follows this direction. Data on screen comes from `data/places.json`, `data/countries.json`, and `data/me.json`.
+# Stampd Admin — visual direction (draft)
 
 Desktop-first product ops console. Same brand as the mobile app; denser, table-forward, no marketing chrome.
 

@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Stampd — app preview (sample)</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="css/tokens.css?v=top-stamp-1">
-<link rel="stylesheet" href="css/app.css?v=top-stamp-1">
-<script src="js/icons.js?v=top-stamp-1"></script>
-<script src="js/stamps.js?v=top-stamp-1"></script>
-<script src="js/logo.js?v=top-stamp-1"></script>
-<script src="js/achievement-icons.js?v=top-stamp-1"></script>
+<link rel="stylesheet" href="css/tokens.css?v=nearby-stamp-1">
+<link rel="stylesheet" href="css/app.css?v=nearby-stamp-1">
+<script src="js/icons.js?v=nearby-stamp-1"></script>
+<script src="js/stamps.js?v=nearby-stamp-1"></script>
+<script src="js/logo.js?v=nearby-stamp-1"></script>
+<script src="js/achievement-icons.js?v=nearby-stamp-1"></script>
 </head>
 <body>
 <div class="preview-chrome">
@@ -222,17 +222,18 @@
         </div>
       </section>
 
-      <!-- Check-in modal (over any screen) -->
+      <!-- Nearby stamp sheet (FAB) -->
       <div class="modal-backdrop" id="checkin-modal" role="dialog" aria-modal="true" aria-labelledby="checkin-title">
-        <div class="sheet">
+        <div class="sheet nearby-sheet">
           <div class="handle"></div>
-          <div class="earned-banner" id="earned-banner"><b>✓ Stamped</b> — Trevi is in your album</div>
-          <h2 id="checkin-title">Collect Trevi Fountain?</h2>
-          <p class="lede" id="checkin-lede">Confirm collecting Trevi for October. Sample content — monthly rule.</p>
-          <div class="stamp-preview" id="checkin-stamp"></div>
-          <div class="row-btns">
+          <div class="earned-banner" id="earned-banner"><b>✓ Stamped</b> — added to your collection</div>
+          <h2 id="checkin-title">Nearby places</h2>
+          <p class="lede" id="checkin-lede">You’re within 100 m of these spots. Pick one to stamp.</p>
+          <div id="nearby-list" class="nearby-list" role="listbox" aria-label="Nearby places"></div>
+          <div class="stamp-preview" id="checkin-stamp" hidden></div>
+          <div class="row-btns nearby-btns">
             <button type="button" class="btn-secondary" id="cancel-stamp">Not now</button>
-            <button type="button" class="btn-primary" id="confirm-stamp">Stamp it</button>
+            <button type="button" class="btn-primary" id="confirm-stamp" disabled>Stamp now</button>
             <button type="button" class="btn-primary" id="done-stamp" style="display:none">Done</button>
           </div>
         </div>
@@ -302,6 +303,6 @@
   window.addEventListener('resize', fitPhone);
 })();
 </script>
-<script src="js/app.js?v=top-stamp-1"></script>
+<script src="js/app.js?v=nearby-stamp-1"></script>
 </body>
 </html>

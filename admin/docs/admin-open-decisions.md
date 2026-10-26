@@ -1,7 +1,5 @@
 # Stampd Admin — open decisions for Davit
 
-The admin ships the proposed defaults below: Plus Jakarta Sans, navy sidebar, Preview badge, drag-reorder on Available countries, quiet danger `#B42318`, and the Admin / Editor / Support stub. They are still product calls, not new brand rules.
-
 Items still open are **proposed, not decided**. Locked brand below is for reference only.
 
 ## Proposed (need Davit)
@@ -41,5 +39,5 @@ Items still open are **proposed, not decided**. Locked brand below is for refere
 - Shell / paper / line / ink neutrals as product tokens.  
 - Twilight `#6B3FC4` seasonal only.  
 - Cloth families locked; cloth red ≠ UI danger.  
-- No gold / foil. No other-brand or past-employer references.  
+- No gold / foil. No VBET or past-employer references.  
 - App product font: Plus Jakarta Sans (admin font = open #1).

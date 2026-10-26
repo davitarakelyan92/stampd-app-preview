@@ -3,13 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#FF5B4A">
 <title>Stampd Admin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23FF5B4A'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="css/admin.css?v=20261026b">
+<link rel="stylesheet" href="css/admin.css?v=admin-ux-2">
 </head>
 <body>
 <div class="admin" id="art">
@@ -61,49 +59,251 @@
         Settings / roles
       </button>
     </nav>
-    <div class="side-foot">Stampd Admin<br>Edits stay in this browser<br><a href="../">Open app preview</a></div>
+    <div class="side-foot">Admin · Stampd<br><a href="../">← App preview</a></div>
   </aside>
 
   <div class="main">
     <header class="topbar">
       <div class="search" role="search">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5L13.5 13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <input id="global-search" type="search" placeholder="Search places, users, countries…" aria-label="Search places, users, countries" autocomplete="off">
-        <div id="search-pop" class="search-pop" hidden></div>
+        <input type="search" id="global-search" placeholder="Search places, users, countries…" aria-label="Search">
       </div>
-      <span class="env" title="Static preview. Edits stay in this browser until you export JSON.">Preview</span>
+      <span class="env" id="env-label" title="Working in the preview catalog">Preview</span>
+      <span class="status-pill dirty-pill" id="dirty-pill">All changes saved</span>
+      <div class="topbar-actions">
+        <button type="button" class="btn-ghost" id="btn-reset" title="Discard unsaved changes">Reset</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btn-import" title="Load JSON file">Import</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btn-export" title="Download JSON to put in the app">Export</button>
+        <button type="button" class="btn btn-primary btn-sm" id="btn-save" title="Keep on this browser">Save</button>
+        <input type="file" id="import-file" class="file-hidden" accept="application/json,.json">
+      </div>
       <div class="admin-chip">
-        <div class="meta"><b>Arp</b><span>Admin</span></div>
-        <div class="av" aria-hidden="true">AR</div>
+        <div class="meta"><b>Davit</b><span>Owner</span></div>
+        <div class="av" aria-hidden="true">DA</div>
       </div>
     </header>
-    <div class="data-bar" id="data-bar">
-      <span class="dirty" id="dirty-pill">Loading</span>
-      <span class="data-meta" id="data-meta">Loading catalog…</span>
-      <div class="ph-actions">
-        <button type="button" class="btn btn-sm btn-secondary" id="btn-save">Save</button>
-        <button type="button" class="btn btn-sm btn-secondary" id="btn-reset">Reset to repo</button>
-        <button type="button" class="btn btn-sm btn-secondary" id="btn-export">Export JSON</button>
-        <button type="button" class="btn btn-sm btn-secondary" id="btn-import">Import JSON</button>
-      </div>
-    </div>
+
     <div class="content" id="content">
-      <section class="view on" data-view="overview" aria-label="Overview"><div class="ph"><div><h1>Overview</h1><p>Loading catalog…</p></div></div></section>
-      <section class="view" data-view="countries" aria-label="Countries"></section>
-      <section class="view" data-view="places" aria-label="Places and stamps"></section>
-      <section class="view" data-view="users" aria-label="Users"></section>
-      <section class="view" data-view="ads" aria-label="Ads and promotions"></section>
-      <section class="view" data-view="trade" aria-label="Trade and coins"></section>
-      <section class="view" data-view="moderation" aria-label="Moderation and support"></section>
-      <section class="view" data-view="settings" aria-label="Settings and roles"></section>
+      <div class="loading" id="boot">Loading catalog…</div>
+
+      <section class="view" data-view="overview" aria-label="Overview" hidden>
+        <div class="ph">
+          <div>
+            <h1>Overview</h1>
+            <p>What’s live in the Stampd catalog.</p>
+          </div>
+          <div class="ph-actions">
+            <button type="button" class="btn btn-primary" data-go="places" id="ov-new-place">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+              New place
+            </button>
+          </div>
+        </div>
+        <div class="kpi-row" id="kpi-row"></div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-h"><h2>Catalog mix</h2><span class="chip chip-live">By chapter</span></div>
+            <div class="card-b" id="ov-mix"></div>
+          </div>
+          <div class="card">
+            <div class="card-h"><h2>Snapshot</h2><span class="chip chip-draft">At a glance</span></div>
+            <div class="card-b" id="ov-activity"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" data-view="countries" aria-label="Countries" hidden>
+        <div class="ph">
+          <div>
+            <h1>Countries</h1>
+            <p>Turn countries live or coming soon, reorder Available, and set cover cloth.</p>
+          </div>
+          <div class="ph-actions">
+            <button type="button" class="btn btn-primary" id="btn-add-country">Add country</button>
+          </div>
+        </div>
+        <div class="split">
+          <div class="card list-card">
+            <div class="card-h"><h2>Available now</h2><span class="chip chip-live" id="live-count">0 live</span></div>
+            <div class="card-b"><ul class="clist" id="clist-live"></ul></div>
+          </div>
+          <div class="card list-card">
+            <div class="card-h"><h2>Coming soon</h2><span class="chip chip-soon" id="soon-count">0 queued</span></div>
+            <div class="card-b"><ul class="clist" id="clist-soon"></ul>
+              <p class="note" style="margin:8px 12px 12px"><b>Tip:</b> toggle flips live ↔ coming soon. Use ↑↓ to reorder within Available.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" data-view="places" aria-label="Places and stamps" hidden>
+        <div class="ph">
+          <div>
+            <h1>Places / stamps</h1>
+            <p>Search and edit every stamp in the catalog.</p>
+          </div>
+          <div class="ph-actions">
+            <button type="button" class="btn btn-primary" id="btn-add-place">Add place</button>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="filter-pills" id="place-filters"></div>
+          <div class="spacer"></div>
+          <span class="empty-hint" id="place-count-label">—</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>Place</th>
+                <th>Country</th>
+                <th>Chapter</th>
+                <th>Coords</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="places-tbody"></tbody>
+          </table>
+        </div>
+        <div class="pager" id="places-pager"></div>
+      </section>
+
+      <section class="view" data-view="users" aria-label="Users" hidden>
+        <div class="ph">
+          <div>
+            <h1>Users</h1>
+            <p>Travellers in the preview — edit coins, stamps, and status.</p>
+          </div>
+          <div class="ph-actions">
+            <button type="button" class="btn btn-primary" id="btn-add-user">Add user</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Home</th>
+                <th>Passport</th>
+                <th class="num">Stamps</th>
+                <th class="num">Coins</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="users-tbody"></tbody>
+          </table>
+        </div>
+        <p class="note"><b>Tip:</b> The primary user is what the app preview shows as “you”. Export to sync coins and collected stamps.</p>
+      </section>
+
+      <section class="view" data-view="ads" aria-label="Ads and promotions" hidden>
+        <div class="ph">
+          <div>
+            <h1>Ads / promotions</h1>
+            <p>Schedule in-app promo banners and seasonal slots.</p>
+          </div>
+          <div class="ph-actions">
+            <button type="button" class="btn btn-primary" id="btn-add-ad">Schedule promo</button>
+          </div>
+        </div>
+        <div class="ads-layout">
+          <div class="card">
+            <div class="card-h"><h2>Scheduled</h2></div>
+            <div class="table-wrap" style="border:0;border-radius:0;box-shadow:none">
+              <table class="data">
+                <thead><tr><th>Promo</th><th>Slot</th><th>Window</th><th>Status</th><th></th></tr></thead>
+                <tbody id="ads-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-h"><h2>Compose</h2><span class="chip chip-draft">Editor</span></div>
+            <div class="card-b" id="ad-compose">
+              <p class="empty-hint">Select a promo or click Schedule promo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" data-view="trade" aria-label="Trade and coins rules" hidden>
+        <div class="ph">
+          <div>
+            <h1>Trade &amp; coins</h1>
+            <p>Set coin rewards and how trading works in the preview.</p>
+          </div>
+          <div class="ph-actions">
+            <button type="button" class="btn btn-primary" id="btn-save-trade">Save rules</button>
+          </div>
+        </div>
+        <div class="rules-grid" id="trade-rules"></div>
+      </section>
+
+      <section class="view" data-view="moderation" aria-label="Moderation and support" hidden>
+        <div class="ph">
+          <div>
+            <h1>Moderation / support</h1>
+            <p>Review support tickets and flagged activity.</p>
+          </div>
+          <div class="ph-actions">
+            <button type="button" class="btn btn-secondary" id="btn-add-ticket">Add ticket</button>
+          </div>
+        </div>
+        <div class="mod-layout">
+          <div class="card" style="overflow:hidden">
+            <div class="card-h"><h2>Inbox</h2><span class="chip chip-flag" id="mod-open-count">0 open</span></div>
+            <ul class="thread-list" id="mod-list"></ul>
+          </div>
+          <div class="card thread-detail" id="mod-detail">
+            <p class="empty-hint" style="padding:24px">Select a ticket.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" data-view="settings" aria-label="Settings and roles" hidden>
+        <div class="ph">
+          <div>
+            <h1>Settings / roles</h1>
+            <p>Who can edit catalog, users, and moderation.</p>
+          </div>
+          <div class="ph-actions">
+            <button type="button" class="btn btn-primary" id="btn-add-role">Add role</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-h"><h2>Roles</h2><span class="chip chip-draft">Editable</span></div>
+          <div class="card-b" style="padding:0">
+            <table class="matrix" id="roles-table">
+              <thead>
+                <tr>
+                  <th>Role</th>
+                  <th>Catalog</th>
+                  <th>Users / coins</th>
+                  <th>Moderation</th>
+                  <th>Manage roles</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="roles-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </div>
-<dialog id="modal" class="modal"></dialog>
-<div id="toast" class="toast" hidden></div>
-<input type="file" id="file-import" accept="application/json,.json" multiple hidden>
-<noscript><p style="padding:24px;font-family:sans-serif">Stampd Admin needs JavaScript. It only edits a copy in this browser.</p></noscript>
-<script src="js/store.js?v=20261026"></script>
-<script src="js/admin.js?v=20261026"></script>
+
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" hidden>
+  <div class="modal">
+    <div class="modal-h">
+      <h2 id="modal-title">Edit</h2>
+      <button type="button" class="icon-btn" id="modal-close" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-b" id="modal-body"></div>
+    <div class="modal-f" id="modal-foot"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/admin.js?v=admin-ux-2"></script>
 </body>
 </html>

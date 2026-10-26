@@ -9,6 +9,7 @@
   };
 
   const STAMP_OPTS = { w: 150, h: 218, P: 10, labelFont: "Plus Jakarta Sans", labelW: 800, labelSize: 11.5 };
+  const STAMP_RADIUS_M = 100;
   const STAMP_COLORS = ["coral", "sky", "sunny", "mint", "twilight"];
   const CHAPTER_ORDER = ["Monuments", "Foods", "Visit", "Seasonal"];
   const DEMO_ICON_IDS = ["eiffel", "taj", "lantern", "colosseum", "trevi", "pantheon", "pizza", "gelato"];
@@ -20,6 +21,8 @@
     countryId: localStorage.getItem("stampd-preview-country") || "",
     collected: 0,
     treviEarned: false,
+    nearbySelectedId: null,
+    nearbyCandidates: [],
     chip: "All",
     placesData: null,
     meData: null,
@@ -1676,6 +1679,113 @@
     }
   }
 
+  function placeMeters(place) {
+    const km = placeKm(place);
+    if (!isFinite(km)) return Number.POSITIVE_INFINITY;
+    return km * 1000;
+  }
+
+  /** Places within STAMP_RADIUS_M of the user (or preview origin). */
+  function nearbyStampPlaces() {
+    const places = (state.placesData && state.placesData.places) || [];
+    const collected = collectedIdSet();
+    const origin = originPoint();
+    /* Preview fallback: if home/geo yields none in range, stand at the closest
+       uncollected place so the FAB sheet is demoable (still 100 m rule). */
+    let list = places
+      .filter((p) => p && typeof p.lat === "number" && typeof p.lng === "number")
+      .map((p) => ({ place: p, m: placeMeters(p) }))
+      .filter((x) => x.m <= STAMP_RADIUS_M)
+      .sort((a, b) => a.m - b.m);
+
+    if (!list.length && state.geoMode !== "geolocation") {
+      const uncollected = places
+        .filter((p) => p && typeof p.lat === "number" && !collected.has(p.id) && p.chapter !== "Seasonal")
+        .map((p) => ({ place: p, m: placeMeters(p) }))
+        .sort((a, b) => a.m - b.m);
+      if (uncollected.length) {
+        const anchor = uncollected[0].place;
+        state.userPos = { lat: anchor.lat, lng: anchor.lng };
+        state.geoMode = "preview-near";
+        list = places
+          .filter((p) => p && typeof p.lat === "number" && typeof p.lng === "number")
+          .map((p) => ({ place: p, m: haversineKm(state.userPos, p) * 1000 }))
+          .filter((x) => x.m <= STAMP_RADIUS_M)
+          .sort((a, b) => a.m - b.m);
+      }
+    }
+    return list;
+  }
+
+  function markPlaceCollected(placeId) {
+    if (!placeId) return;
+    if (!state.meData) state.meData = {};
+    const ids = Array.isArray(state.meData.collected_place_ids)
+      ? state.meData.collected_place_ids.slice()
+      : [];
+    if (!ids.includes(placeId)) ids.push(placeId);
+    state.meData.collected_place_ids = ids;
+    if (placeId === "trevi") state.treviEarned = true;
+    try {
+      localStorage.setItem("stampd-preview-collected", JSON.stringify(ids));
+    } catch (_) {}
+    rebuildStampsFromPlaces();
+  }
+
+  function renderNearbyList() {
+    const root = document.getElementById("nearby-list");
+    const confirmBtn = document.getElementById("confirm-stamp");
+    if (!root) return;
+    const list = state.nearbyCandidates || [];
+    if (!list.length) {
+      root.innerHTML =
+        '<div class="nearby-empty">No stampable places within 100 m.<br/>Move closer to a landmark, then try again.</div>';
+      if (confirmBtn) confirmBtn.disabled = true;
+      return;
+    }
+    root.innerHTML = list
+      .map(({ place, m }, i) => {
+        const selected = state.nearbySelectedId === place.id;
+        const color = stampColorForId(place.id, i);
+        let svg = "";
+        if (typeof digitalStamp === "function") {
+          svg = digitalStamp({
+            ...STAMP_OPTS,
+            icon: place.id,
+            color,
+            state: "earned",
+            name: place.name || place.id,
+            hideLabel: true,
+            hideBadge: true,
+            w: 150,
+            h: 218,
+            P: 4,
+            photo: "",
+          });
+        }
+        const meters = Math.max(1, Math.round(m));
+        const country = place.country_name || place.country || "";
+        const safe = String(place.name || place.id).replace(/"/g, "&quot;");
+        return `<button type="button" class="nearby-row ${selected ? "is-selected" : ""}" role="option" aria-selected="${selected}" data-nearby-id="${place.id}" aria-label="${safe}">
+          <span class="nearby-row-ico" aria-hidden="true">${svg}</span>
+          <span class="nearby-row-text">
+            <span class="nearby-row-name">${String(place.name || place.id).replace(/</g, "&lt;")}</span>
+            <span class="nearby-row-meta">${meters} m${country ? " · " + String(country).replace(/</g, "&lt;") : ""}</span>
+          </span>
+        </button>`;
+      })
+      .join("");
+    root.querySelectorAll("[data-nearby-id]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.nearbySelectedId = btn.dataset.nearbyId;
+        renderNearbyList();
+        const confirm = document.getElementById("confirm-stamp");
+        if (confirm) confirm.disabled = !state.nearbySelectedId;
+      });
+    });
+    if (confirmBtn) confirmBtn.disabled = !state.nearbySelectedId;
+  }
+
   function openCheckin() {
     const bd = document.getElementById("checkin-modal");
     const preview = document.getElementById("checkin-stamp");
@@ -1683,64 +1793,82 @@
     const confirmBtn = document.getElementById("confirm-stamp");
     const title = document.getElementById("checkin-title");
     const lede = document.getElementById("checkin-lede");
+    const listEl = document.getElementById("nearby-list");
 
     earned.classList.remove("on");
+    if (preview) {
+      preview.hidden = true;
+      preview.innerHTML = "";
+    }
+    if (listEl) listEl.hidden = false;
     confirmBtn.style.display = "";
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = "Stamp now";
     document.getElementById("cancel-stamp").style.display = "";
     document.getElementById("done-stamp").style.display = "none";
-    title.textContent = "Collect Trevi Fountain?";
-    lede.textContent = "Confirm collecting Trevi for October. Sample content — monthly rule.";
-    preview.innerHTML = digitalStamp({
-      ...STAMP_OPTS,
-      icon: "trevi",
-      color: "sky",
-      state: "locked",
-      here: true,
-      note: "You're here",
-      w: 140,
-      h: 170,
-      photo: photoForPlace("trevi") || "",
-    });
+
+    state.nearbyCandidates = nearbyStampPlaces();
+    state.nearbySelectedId = state.nearbyCandidates.length === 1 ? state.nearbyCandidates[0].place.id : null;
+
+    const n = state.nearbyCandidates.length;
+    title.textContent = n ? "Nearby places" : "Nothing nearby";
+    lede.textContent = n
+      ? n === 1
+        ? "You’re within 100 m of this place. Stamp it now."
+        : `You’re within 100 m of ${n} places. Select one, then Stamp now.`
+      : "Get within about 100 m of a Stampd place to collect it.";
+
+    renderNearbyList();
     bd.classList.add("on");
   }
 
   function closeCheckin() {
     document.getElementById("checkin-modal").classList.remove("on");
+    state.nearbySelectedId = null;
+    state.nearbyCandidates = [];
   }
 
   function confirmStamp() {
-    const trevi = stamps.find((s) => s.icon === "trevi");
-    if (trevi && trevi.state !== "earned") {
-      trevi.state = "earned";
-      trevi.here = false;
-      trevi.color = "sky";
-      trevi.note = "Collected Oct 2026";
-      state.treviEarned = true;
-      state.collected = Math.min(stamps.length, state.collected + 1);
-    }
+    const id = state.nearbySelectedId;
+    if (!id) return;
+    const place = placeById(id);
+    const name = (place && place.name) || id;
+    markPlaceCollected(id);
+
     const preview = document.getElementById("checkin-stamp");
     const earned = document.getElementById("earned-banner");
     const confirmBtn = document.getElementById("confirm-stamp");
     const title = document.getElementById("checkin-title");
     const lede = document.getElementById("checkin-lede");
+    const listEl = document.getElementById("nearby-list");
 
-    preview.innerHTML = digitalStamp({
-      ...STAMP_OPTS,
-      icon: "trevi",
-      color: "sky",
-      state: "earned",
-      note: "Collected Oct 2026",
-      w: 140,
-      h: 170,
-      photo: photoForPlace("trevi") || "",
-    });
+    if (listEl) listEl.hidden = true;
+    if (preview) {
+      preview.hidden = false;
+      const color = stampColorForId(id, 0);
+      preview.innerHTML = digitalStamp({
+        ...STAMP_OPTS,
+        icon: id,
+        color,
+        state: "earned",
+        note: "Collected",
+        name,
+        w: 140,
+        h: 170,
+        hideBadge: false,
+        photo: "",
+      });
+    }
+    earned.innerHTML = `<b>✓ Stamped</b> — ${String(name).replace(/</g, "&lt;")} is in your collection`;
     earned.classList.add("on");
     confirmBtn.style.display = "none";
     document.getElementById("cancel-stamp").style.display = "none";
     document.getElementById("done-stamp").style.display = "";
-    title.textContent = "Trevi stamped";
-    lede.textContent = "Added to your album for October.";
+    title.textContent = "Stamped";
+    lede.textContent = `${name} was added to your collection.`;
     renderAlbum();
+    renderHome();
+    renderBalanceChrome();
   }
 
   function wire() {
@@ -1759,22 +1887,8 @@
         else if (t === "trade") showScreen("trade");
         else if (t === "me") showScreen("me");
         else if (t === "stamp") {
-          /* FAB: open check-in when Trevi available; else current-country gallery (Countries tab stays on) */
-          const needIt = state.countryId !== "it";
-          if (needIt) {
-            state.countryId = "it";
-            localStorage.setItem("stampd-preview-country", "it");
-            rebuildStampsFromPlaces();
-          }
-          const trevi = stamps.find((s) => s.icon === "trevi");
-          if (trevi && trevi.state !== "earned" && !state.treviEarned) {
-            state.galleryFromCountries = true;
-            showScreen("album");
-            openCheckin();
-          } else {
-            openCountryGallery(state.countryId || firstLiveCountryId());
-            softToast("Gallery · Stamp FAB");
-          }
+          /* FAB: bottom sheet — nearby places within 100 m → Stamp now */
+          openCheckin();
         }
       });
     });
