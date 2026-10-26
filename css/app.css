@@ -467,7 +467,7 @@ body{
 
 /* ── Contact support (was Covers) ── */
 .support-scroll{padding-bottom:110px}
-.support-topbar{padding:4px 24px 0}
+.support-topbar{padding:4px 24px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .support-title{font-weight:800;font-size:28px;letter-spacing:-.03em;color:var(--navy);margin:0}
 .support-body{padding:16px 24px 24px}
 .support-lede{font-size:15px;font-weight:500;color:var(--muted);line-height:1.45;margin:0 0 22px}
@@ -605,13 +605,14 @@ body{
   display:inline-flex;align-items:center;gap:6px;flex:none;
 }
 .balance-pill{
-  display:inline-flex;align-items:center;gap:5px;
-  height:28px;padding:0 10px;border-radius:999px;
+  display:inline-flex;align-items:center;gap:6px;
+  height:32px;padding:0 11px;border-radius:999px;
   background:#fff;border:1px solid #E3E1DA;
   box-shadow:0 1px 0 #1B27470a;
-  font-size:13px;font-weight:700;color:var(--navy);letter-spacing:-.01em;
+  font-size:13px;font-weight:500;color:var(--navy);letter-spacing:-.01em;
 }
-.balance-pill svg{display:block;flex:none;color:var(--navy)}
+.balance-pill span{font-weight:500}
+.balance-pill svg{display:block;flex:none;color:var(--navy);width:15px;height:15px}
 .balance-pill.coins,
 .balance-pill.stamps{color:var(--navy)}
 .balance-pill.coins svg{color:var(--coral)}
@@ -829,3 +830,5 @@ button.balance-pill{
 }
 .balance-pill{cursor:pointer}
 .balance-pill:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+
+.map-topbar{padding:6px 16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}

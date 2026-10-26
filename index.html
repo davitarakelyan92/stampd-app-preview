@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Stampd — app preview (sample)</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="css/tokens.css?v=topplaces2">
-<link rel="stylesheet" href="css/app.css?v=topplaces2">
-<script src="js/icons.js?v=topplaces2"></script>
-<script src="js/stamps.js?v=topplaces2"></script>
-<script src="js/logo.js?v=topplaces2"></script>
-<script src="js/achievement-icons.js?v=topplaces2"></script>
+<link rel="stylesheet" href="css/tokens.css?v=chrome-all1">
+<link rel="stylesheet" href="css/app.css?v=chrome-all1">
+<script src="js/icons.js?v=chrome-all1"></script>
+<script src="js/stamps.js?v=chrome-all1"></script>
+<script src="js/logo.js?v=chrome-all1"></script>
+<script src="js/achievement-icons.js?v=chrome-all1"></script>
 </head>
 <body>
 <div class="preview-chrome">
@@ -47,6 +47,7 @@
             <button type="button" class="icon-btn album-back-btn" id="album-back" aria-label="Back to Countries">
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
+            <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
           </div>
           <div class="ttl">
             <div class="k">STAMPD</div>
@@ -79,6 +80,7 @@
         <div class="scroll support-scroll">
           <div class="support-topbar">
             <h1 class="support-title">Support</h1>
+            <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
           </div>
           <div class="support-body">
             <p class="support-lede">Questions about stamps, covers, or your account?</p>
@@ -103,6 +105,7 @@
               <svg width="20" height="20" viewBox="0 0 20 20"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <span class="detail-topbar-title" id="detail-topbar-title">Stamp</span>
+            <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
           </div>
           <div class="detail-hero" id="detail-hero"></div>
           <h1 class="detail-title" id="detail-title"></h1>
@@ -116,6 +119,10 @@
       <!-- Stub tabs -->
       <section class="screen" data-screen="map" aria-label="Map stub">
         <div class="sb"><span>9:41</span><span class="sig">●●● ▮</span></div>
+        <div class="topbar map-topbar">
+          <h1 class="chrome-screen-title" style="margin-left:8px">Map</h1>
+          <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
+        </div>
         <div class="stub">
           <h2>Map</h2>
           <p>Sample stub — map screen not in this preview. Use Countries, Trade, Stamp, or Support.</p>
@@ -158,6 +165,7 @@
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <h1 class="chrome-screen-title">Stamps</h1>
+            <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
           </div>
           <div id="stamps-list-root" class="stamps-list-root"></div>
         </div>
@@ -172,6 +180,7 @@
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <h1 class="chrome-screen-title">Balance</h1>
+            <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
           </div>
           <div id="balance-root" class="balance-root"></div>
         </div>
@@ -257,6 +266,6 @@
   window.addEventListener('resize', fitPhone);
 })();
 </script>
-<script src="js/app.js?v=topplaces2"></script>
+<script src="js/app.js?v=chrome-all1"></script>
 </body>
 </html>

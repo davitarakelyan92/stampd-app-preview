@@ -421,7 +421,7 @@
     if (name === "detail") renderDetail();
     if (name === "stamps-list") renderStampsList();
     if (name === "balance") renderBalance();
-    if (name === "home" || name === "trade" || name === "me") renderBalanceChrome();
+    renderBalanceChrome();
   }
 
 
@@ -681,9 +681,9 @@
     const stamps = stampsCollectedCount();
     const coins = coinsBalance();
     const stampSvg =
-      '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 10h6M9 14h4"/></svg>';
+      '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 10h6M9 14h4"/></svg>';
     const coinSvg =
-      '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg>';
+      '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg>';
     return `<button type="button" class="balance-pill stamps" data-chrome-stamps title="Stamps collected" aria-label="Stamps collected, ${stamps}">${stampSvg}<span>${stamps}</span></button><button type="button" class="balance-pill coins" data-chrome-coins title="Coins" aria-label="Coins, ${coins}">${coinSvg}<span>${coins}</span></button>`;
   }
 
@@ -1166,7 +1166,7 @@
 
 
   function renderSupport() {
-    /* Static HTML — nothing dynamic required */
+    renderBalanceChrome();
   }
 
   function countryRowById(id) {
@@ -1386,6 +1386,7 @@
   }
 
   function renderAlbum() {
+    renderBalanceChrome();
     const g = document.getElementById("stamp-grid");
     const toast = document.getElementById("checkin-toast");
     const progBig = document.getElementById("prog-big");
@@ -1516,6 +1517,7 @@
   }
 
   function renderDetail() {
+    renderBalanceChrome();
     const iconId = state.detailIcon;
     const stamp = stamps.find((s) => s.icon === iconId);
     const place = placeById(iconId);
