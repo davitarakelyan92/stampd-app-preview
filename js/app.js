@@ -8,15 +8,6 @@
     orange: "#7A3F18",
   };
 
-  const DEFAULT_COUNTRY = {
-    id: "default",
-    name: "Default / unset",
-    family: "blue",
-    cloth_hex: "#1B2747",
-    status: "live",
-    note: "Home until a country is chosen",
-  };
-
   const STAMP_OPTS = { w: 150, h: 182, P: 10, labelFont: "Plus Jakarta Sans", labelW: 800, labelSize: 11.5 };
   const STAMP_COLORS = ["coral", "sky", "sunny", "mint", "twilight"];
   const CHAPTER_ORDER = ["Monuments", "Foods", "Visit", "Seasonal"];
@@ -26,7 +17,7 @@
 
   const state = {
     screen: "home",
-    countryId: localStorage.getItem("stampd-preview-country") || "default",
+    countryId: localStorage.getItem("stampd-preview-country") || "",
     collected: 0,
     treviEarned: false,
     chip: "All",
@@ -46,24 +37,39 @@
 
   function countriesAll() {
     const fromFile = (state.placesData && state.placesData.countries) || [];
-    const mapped = fromFile.map((row) => ({
-      ...row,
-      cloth_hex: row.cloth_hex || CLOTH[row.family] || CLOTH.blue,
-    }));
-    if (mapped.some((c) => c.id === "default")) return mapped;
-    return [DEFAULT_COUNTRY, ...mapped];
+    return fromFile
+      .filter((row) => row && row.id && row.id !== "default")
+      .map((row) => ({
+        ...row,
+        cloth_hex: row.cloth_hex || CLOTH[row.family] || CLOTH.blue,
+      }));
   }
 
   function liveCountries() {
-    return countriesAll().filter((c) => c.status === "live");
+    return countriesAll().filter((c) => c.status === "live" && c.id !== "default");
   }
 
   function soonCountries() {
     return countriesAll().filter((c) => c.status === "coming_soon");
   }
 
+  function firstLiveCountryId() {
+    const live = liveCountries();
+    const am = live.find((c) => c.id === "am");
+    if (am) return "am";
+    return live.length ? live[0].id : "am";
+  }
+
+  function resolveCountryId(id) {
+    if (!id || id === "default") return firstLiveCountryId();
+    const row = countriesAll().find((c) => c.id === id);
+    if (!row || row.status === "coming_soon" || row.id === "default") return firstLiveCountryId();
+    return id;
+  }
+
   function country() {
-    return countriesAll().find((x) => x.id === state.countryId) || DEFAULT_COUNTRY;
+    const id = resolveCountryId(state.countryId);
+    return countriesAll().find((x) => x.id === id) || liveCountries()[0] || { id: "am", name: "Armenia", family: "red", cloth_hex: CLOTH.red, status: "live" };
   }
 
   function placeById(id) {
@@ -95,19 +101,32 @@
     return R * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
   }
 
-  function formatDistance(km, fromYerevan) {
+  function originPoint() {
+    if (state.userPos && typeof state.userPos.lat === "number") return state.userPos;
+    return homePoint();
+  }
+
+  function formatDistance(km) {
     if (km == null || !isFinite(km)) return "Distance unavailable";
     if (km < 1) {
       const m = Math.round(km * 1000);
-      return fromYerevan ? `${m.toLocaleString("en-US")} m from Yerevan` : `${m.toLocaleString("en-US")} m away`;
+      return `${m.toLocaleString("en-US")} m from you`;
     }
     const whole = Math.round(km);
-    const n = whole.toLocaleString("en-US");
-    return fromYerevan ? `${n} km from Yerevan` : `${n} km away`;
+    return `${whole.toLocaleString("en-US")} km from you`;
+  }
+
+  function placeKm(place) {
+    if (!place || typeof place.lat !== "number" || typeof place.lng !== "number") return Number.POSITIVE_INFINITY;
+    return haversineKm(originPoint(), place);
+  }
+
+  function countryKm(c) {
+    if (!c || typeof c.lat !== "number" || typeof c.lng !== "number") return Number.POSITIVE_INFINITY;
+    return haversineKm(originPoint(), c);
   }
 
   function shouldShowDistance(s) {
-    if (s.state === "locked" && !s.here) return false;
     return true;
   }
 
@@ -117,13 +136,7 @@
     if (!place || typeof place.lat !== "number" || typeof place.lng !== "number") {
       return "Distance unavailable";
     }
-    if (state.userPos) {
-      const km = haversineKm(state.userPos, place);
-      return formatDistance(km, false);
-    }
-    const home = homePoint();
-    const km = haversineKm(home, place);
-    return formatDistance(km, true);
+    return formatDistance(placeKm(place));
   }
 
   function chapterRank(ch) {
@@ -133,8 +146,18 @@
 
   function sortPlaces(list) {
     return list.slice().sort((a, b) => {
+      const da = placeKm(a) - placeKm(b);
+      if (da) return da;
       const cr = chapterRank(a.chapter) - chapterRank(b.chapter);
       if (cr) return cr;
+      return String(a.name || a.id).localeCompare(String(b.name || b.id));
+    });
+  }
+
+  function sortLiveCountries(list) {
+    return list.slice().sort((a, b) => {
+      const d = countryKm(a) - countryKm(b);
+      if (d) return d;
       return String(a.name || a.id).localeCompare(String(b.name || b.id));
     });
   }
@@ -187,10 +210,17 @@
     } else if (cid === "it") {
       source = sortPlaces(placesForCountryCode("IT"));
     } else {
-      const byId = Object.fromEntries(places.map((p) => [p.id, p]));
-      source = DEMO_ICON_IDS.map((id) => byId[id]).filter(Boolean);
-      if (!source.length) {
-        source = places.filter((p) => p.catalog === "sample_icons").slice(0, 3);
+      const code = String(cid || "").toUpperCase();
+      const byCountry = placesForCountryCode(code);
+      if (byCountry.length) {
+        source = sortPlaces(byCountry);
+      } else {
+        const byId = Object.fromEntries(places.map((p) => [p.id, p]));
+        source = DEMO_ICON_IDS.map((id) => byId[id]).filter(Boolean);
+        if (!source.length) {
+          source = places.filter((p) => p.catalog === "sample_icons").slice(0, 3);
+        }
+        source = sortPlaces(source);
       }
     }
 
@@ -223,16 +253,21 @@
       .sort((a, b) => prefer.indexOf(a.state) - prefer.indexOf(b.state));
   }
 
+  function countryCodeFor(c) {
+    if (!c || !c.id || c.id === "default") return null;
+    if (c.id === "am") return "AM";
+    if (c.id === "it") return "IT";
+    return String(c.id).toUpperCase();
+  }
+
   function stampsAvailableForCountry(c) {
-    if (!c || c.id === "default") return 0;
-    if (c.id === "am") return placesForCountryCode("AM").length;
-    if (c.id === "it") return placesForCountryCode("IT").length;
-    return 0;
+    const code = countryCodeFor(c);
+    if (!code) return 0;
+    return placesForCountryCode(code).length;
   }
 
   function stampsListForCountryPreview(c) {
-    if (!c || c.id === "default") return [];
-    const code = c.id === "am" ? "AM" : c.id === "it" ? "IT" : null;
+    const code = countryCodeFor(c);
     if (!code) return [];
     const collected = collectedIdSet();
     const source = sortPlaces(placesForCountryCode(code));
@@ -244,16 +279,65 @@
     return list.filter((s) => s.state === "earned");
   }
 
-  function thumbHtml(stamp) {
-    const ink = "#1B2747";
-    const icon = typeof wiIcon === "function" ? wiIcon(stamp.icon, { size: 18, stroke: ink, sw: 2.2 }) : "";
-    return `<span class="stamp-thumb" title="${stamp.placeName || stamp.icon}" aria-hidden="true">${icon}</span>`;
+  function hasStampIcon(id) {
+    return !!(typeof WI_ICONS === "object" && WI_ICONS && WI_ICONS[id]);
   }
 
-  function thumbsRowHtml(list) {
-    const collected = (list || []).slice(0, 4);
-    if (!collected.length) return "";
-    return `<div class="stamp-thumbs">${collected.map(thumbHtml).join("")}</div>`;
+  function thumbKindForPlace(place, collected) {
+    if (collected.has(place.id)) return "collected";
+    /* Seasonal not yet earned, or missing art → unavailable */
+    if (place.chapter === "Seasonal" || !hasStampIcon(place.id)) return "unavailable";
+    return "open";
+  }
+
+  function pickThumbPlaces(c) {
+    const code = countryCodeFor(c);
+    if (!code) return [];
+    const collected = collectedIdSet();
+    const places = sortPlaces(placesForCountryCode(code));
+    const buckets = { collected: [], open: [], unavailable: [] };
+    places.forEach((p) => {
+      buckets[thumbKindForPlace(p, collected)].push(p);
+    });
+    const out = [];
+    const take = (kind) => {
+      if (buckets[kind].length) out.push({ place: buckets[kind].shift(), kind });
+    };
+    /* Ensure all three states appear when the country has them */
+    take("collected");
+    take("open");
+    take("unavailable");
+    const rest = []
+      .concat(buckets.collected.map((p) => ({ place: p, kind: "collected" })))
+      .concat(buckets.open.map((p) => ({ place: p, kind: "open" })))
+      .concat(buckets.unavailable.map((p) => ({ place: p, kind: "unavailable" })));
+    rest.sort((a, b) => placeKm(a.place) - placeKm(b.place));
+    while (out.length < 4 && rest.length) out.push(rest.shift());
+    out.sort((a, b) => placeKm(a.place) - placeKm(b.place));
+    return out.slice(0, 4);
+  }
+
+  function thumbHtml(entry) {
+    const place = entry.place;
+    const kind = entry.kind;
+    const cls =
+      kind === "collected" ? "is-collected" : kind === "unavailable" ? "is-unavailable" : "is-open";
+    const stroke =
+      kind === "collected" ? "#1B2747" : kind === "unavailable" ? "#C8C4BC" : "#A3AABA";
+    const icon =
+      typeof wiIcon === "function" ? wiIcon(place.id, { size: 18, stroke, sw: 2.2 }) : "";
+    const check =
+      kind === "collected"
+        ? `<span class="stamp-thumb-check" aria-hidden="true"><svg width="7" height="7" viewBox="0 0 12 12"><path d="M2.5 6.2l2.4 2.4 4.6-5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`
+        : "";
+    const title = String(place.name || place.id).replace(/"/g, "&quot;");
+    return `<span class="stamp-thumb ${cls}" title="${title}" aria-hidden="true">${icon}${check}</span>`;
+  }
+
+  function thumbsRowHtml(c) {
+    const entries = pickThumbPlaces(c);
+    if (!entries.length) return "";
+    return `<div class="stamp-thumbs">${entries.map(thumbHtml).join("")}</div>`;
   }
 
   /* ── Screens ── */
@@ -282,42 +366,26 @@
     const book = document.getElementById("passport-book");
     const lock = document.getElementById("cover-lockup");
     const meta = document.getElementById("cover-meta");
-    const hex = clothHex();
     const c = country();
+    state.countryId = c.id;
+    const hex = clothHex(c);
     book.style.background = hex;
-    /* Arp: default → coverLockup + slogan; live country → name only */
-    if (c.id === "default") {
-      lock.innerHTML = coverLockup({ cloth: hex, size: 56, withSlogan: true });
-    } else {
-      lock.innerHTML = coverCountryFace({ cloth: hex, name: c.name, size: 36, withSlogan: false });
-    }
-
-    if (c.id === "default") {
-      meta.innerHTML = `<b>Default cloth</b><span class="cover-meta-sub">Pick a country to start</span>`;
-    } else {
-      const n = stampsAvailableForCountry(c);
-      meta.innerHTML = `<b>${c.name}</b><span class="cover-meta-sub">${n} stamps available</span>`;
-    }
-
+    lock.innerHTML = coverCountryFace({ cloth: hex, name: c.name, size: 36, withSlogan: false });
+    const n = stampsAvailableForCountry(c);
+    meta.innerHTML = `<b>${c.name}</b><span class="cover-meta-sub">${n} stamps available</span>`;
     renderCountriesLists();
   }
 
   function liveCardHtml(c) {
     const hex = clothHex(c);
-    const on = c.id === state.countryId;
-    const preview = c.id === "default" ? [] : stampsListForCountryPreview(c);
-    const total = c.id === "default" ? 0 : preview.length || stampsAvailableForCountry(c);
-    const earnedList = preview.filter((s) => s.state === "earned");
-    const collected = earnedList.length;
-    const stat =
-      c.id === "default"
-        ? `<span class="stat">Pick a country</span>`
-        : `<span class="stat">${collected} of ${total} stamps</span>`;
-    const thumbs = c.id === "default" ? "" : thumbsRowHtml(earnedList);
-    return `<button type="button" class="country-card ${on ? "on" : ""}" data-country="${c.id}">
+    const preview = stampsListForCountryPreview(c);
+    const total = preview.length || stampsAvailableForCountry(c);
+    const collected = preview.filter((s) => s.state === "earned").length;
+    const stat = `<span class="stat">${collected} of ${total} stamps</span>`;
+    const thumbs = thumbsRowHtml(c);
+    return `<button type="button" class="country-card" data-country="${c.id}">
       <span class="mini" style="background:${hex}"><span class="h"></span></span>
       <span class="info"><span class="nm">${c.name}</span>${stat}${thumbs}</span>
-      <span class="check"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.2l2.4 2.4 4.6-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </button>`;
   }
 
@@ -334,11 +402,11 @@
     const soonEl = document.getElementById("countries-soon");
     if (!liveEl || !soonEl) return;
 
-    liveEl.innerHTML = liveCountries().map(liveCardHtml).join("");
+    liveEl.innerHTML = sortLiveCountries(liveCountries()).map(liveCardHtml).join("");
     soonEl.innerHTML = soonCountries().map(soonCardHtml).join("");
 
     liveEl.querySelectorAll("[data-country]").forEach((btn) => {
-      btn.addEventListener("click", () => selectCountry(btn.dataset.country));
+      btn.addEventListener("click", () => openCountryGallery(btn.dataset.country));
     });
     soonEl.querySelectorAll("[data-soon]").forEach((btn) => {
       btn.addEventListener("click", () => softToast("Coming soon"));
@@ -583,44 +651,31 @@
     toast.classList.toggle("hidden", !showTreviToast);
   }
 
-  function closeClothSheet() { document.getElementById("cloth-sheet").classList.remove("on"); }
-  function openClothSheet() {
-    const fams = ["blue", "red", "green", "black", "orange"];
-    const label = (f) => f[0].toUpperCase() + f.slice(1);
-    document.getElementById("cloth-fams").innerHTML = fams
-      .map((f) => `<span class="cloth-chip"><i style="background:${CLOTH[f]}"></i>${label(f)}</span>`).join("");
-    const rows = countriesAll();
-    const item = (c) => {
-      const hex = CLOTH[c.family] || c.cloth_hex || CLOTH.blue;
-      const soon = c.status === "coming_soon";
-      const sel = c.id === state.countryId;
-      return `<button type="button" class="cloth-row ${soon ? "soon" : ""} ${sel ? "sel" : ""}" data-cloth-id="${c.id}">
-        <span class="cloth-mini" style="background:${soon ? "#C8C4BC" : hex}"></span>
-        <span class="cloth-nm">${c.id === "default" ? "Default cloth" : c.name}</span>
-        <span class="cloth-st">${soon ? "Coming soon" : sel ? "✓" : ""}</span></button>`;
-    };
-    const list = document.getElementById("cloth-list");
-    list.innerHTML = rows.filter((c) => c.status !== "coming_soon").map(item).join("") +
-      rows.filter((c) => c.status === "coming_soon").map(item).join("");
-    list.querySelectorAll("[data-cloth-id]").forEach((b) => b.addEventListener("click", () => {
-      if (b.classList.contains("soon")) { softToast("Coming soon"); return; }
-      selectCountry(b.dataset.clothId);
-      closeClothSheet();
-    }));
-    document.getElementById("cloth-sheet").classList.add("on");
-  }
-
   function selectCountry(id) {
-    const row = countriesAll().find((c) => c.id === id);
+    const resolved = resolveCountryId(id);
+    const row = countriesAll().find((c) => c.id === resolved);
     if (!row || row.status === "coming_soon") {
       softToast("Coming soon");
       return;
     }
-    state.countryId = id;
-    localStorage.setItem("stampd-preview-country", id);
+    state.countryId = resolved;
+    localStorage.setItem("stampd-preview-country", resolved);
     rebuildStampsFromPlaces();
-    renderHome();
+    if (state.screen === "home") renderHome();
     if (state.screen === "album") renderAlbum();
+  }
+
+  function openCountryGallery(id) {
+    const resolved = resolveCountryId(id);
+    const row = countriesAll().find((c) => c.id === resolved);
+    if (!row || row.status === "coming_soon") {
+      softToast("Coming soon");
+      return;
+    }
+    state.countryId = resolved;
+    localStorage.setItem("stampd-preview-country", resolved);
+    rebuildStampsFromPlaces();
+    showScreen("album");
   }
 
   function formatCoords(lat, lng) {
@@ -796,11 +851,6 @@
 
     document.getElementById("open-passport").addEventListener("click", () => showScreen("album"));
     document.getElementById("passport-book").addEventListener("click", () => showScreen("album"));
-    document.getElementById("change-cover").addEventListener("click", openClothSheet);
-    document.getElementById("cloth-sheet").addEventListener("click", (e) => {
-      if (e.target.id === "cloth-sheet") closeClothSheet();
-    });
-    document.getElementById("cloth-done").addEventListener("click", closeClothSheet);
 
     document.getElementById("album-back").addEventListener("click", () => showScreen("home"));
     const faq = document.getElementById("support-faq");
@@ -898,9 +948,8 @@
           home: { name: "Yerevan", lat: 40.1777, lng: 44.5126 },
           places: [],
           countries: [
-            { id: "default", name: "Default / unset", family: "blue", cloth_hex: CLOTH.blue, status: "live" },
-            { id: "it", name: "Italy", family: "green", cloth_hex: CLOTH.green, status: "live" },
-            { id: "am", name: "Armenia", family: "red", cloth_hex: CLOTH.red, status: "live" },
+            { id: "am", name: "Armenia", family: "red", cloth_hex: CLOTH.red, status: "live", lat: 40.1777, lng: 44.5126 },
+            { id: "it", name: "Italy", family: "green", cloth_hex: CLOTH.green, status: "live", lat: 41.9028, lng: 12.4964 },
           ],
         };
         rebuildStampsFromPlaces();
@@ -910,10 +959,11 @@
   document.addEventListener("DOMContentLoaded", () => {
     wire();
     Promise.all([loadPlaces(), tryGeolocation(), loadMe()]).then(() => {
-      const cur = countriesAll().find((c) => c.id === state.countryId);
-      if (!cur || cur.status === "coming_soon") {
-        state.countryId = "default";
-        localStorage.setItem("stampd-preview-country", "default");
+      const resolved = resolveCountryId(state.countryId);
+      state.countryId = resolved;
+      localStorage.setItem("stampd-preview-country", resolved);
+      if (localStorage.getItem("stampd-preview-country") === "default") {
+        localStorage.setItem("stampd-preview-country", resolved);
       }
       rebuildStampsFromPlaces();
       showScreen("home");

@@ -33,7 +33,6 @@
             <div class="cover-meta" id="cover-meta"></div>
             <div class="cover-actions">
               <button type="button" class="btn-primary" id="open-passport">Open album</button>
-              <button type="button" class="btn-ghost" id="change-cover">Change cover cloth</button>
             </div>
           </div>
           <div class="section-k available">Available now</div>
@@ -48,8 +47,9 @@
         <div class="sb"><span>9:41</span><span class="sig">●●● ▮</span></div>
         <div class="scroll">
           <div class="topbar">
-            <button type="button" class="icon-btn" id="album-back" aria-label="Back">
-              <svg width="20" height="20" viewBox="0 0 20 20"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <button type="button" class="icon-btn album-back-btn" id="album-back" aria-label="Back to Countries">
+              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="#1B2747" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="album-back-label">Back</span>
             </button>
             <span class="sample-tag">Sample</span>
           </div>
@@ -162,17 +162,6 @@
             <button type="button" class="btn-primary" id="confirm-stamp">Stamp it</button>
             <button type="button" class="btn-primary" id="done-stamp" style="display:none">Done</button>
           </div>
-        </div>
-      </div>
-
-      <!-- Cover cloth sheet -->
-      <div class="modal-backdrop" id="cloth-sheet" role="dialog" aria-modal="true" aria-labelledby="cloth-title">
-        <div class="sheet">
-          <div class="handle"></div>
-          <h2 id="cloth-title">Choose cover cloth</h2>
-          <div class="cloth-fams" id="cloth-fams"></div>
-          <div class="cloth-list" id="cloth-list"></div>
-          <div class="row-btns"><button type="button" class="btn-primary" id="cloth-done">Done</button></div>
         </div>
       </div>
 

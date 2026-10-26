@@ -59,41 +59,43 @@ Active tab tint: coral 600 `#C8372A`. Phone frame 390×844 inside dark bezel (se
 ## Countries screen (Arp locked · Oct 26)
 
 - Tab label **Countries** (was Passport). CTA **Open album**. Country/cloth picking lives here (Available + Coming soon) — **Covers tab retired → Contact support**.
-- Layout: topbar **Countries** → hero cover (~85%) → `.cover-meta` → Open album + Change cover cloth → **Available now** → live cards → **Coming soon** → grey soon cards.
+- Layout: topbar **Countries** → hero cover (~85%) → `.cover-meta` → **Open album** only → **Available now** → live cards → **Coming soon** → grey soon cards. **No Default/unset. No Change cover cloth.**
 - Data: `data/places.json` v3 (Kar). Prefer `cloth_hex`; cloth red locked `#8B1E2D`. Do not invent TW cloth.
 
 ### Passport face
 - Live country → `coverCountryFace({ cloth, name, size:36, withSlogan:false })` — name only; never slogan / Pin Stamp / family / hex on cloth.
-- Default/unset → `coverLockup` **+ slogan OK**.
+- No Default/unset — cover always a live country via `coverCountryFace` (name only).
 
 ### Hero `.cover-meta` (under the book — NOT thumbs)
 - Live: `<b>{Country name}</b>` 15px/800 navy + `{n} stamps available` 12.5px/600 muted.
-- Default: **Default cloth** + **Pick a country to start** (no stamp count).
+- Always real country: **{Name}** + **{n} stamps available**.
 - No hex / family / old pick-a-country variants. Meta `margin-top:12px`, centered, `line-height:1.4`.
 
 ### Available `.country-card` (live only)
-- Row: `[mini cloth 44×62]` | name · `{collected} of {total} stamps` (`.stat` 12px/600 muted, mt 3px) · up to 4 collected thumbs · check.
+- Row: `[mini cloth 44×62]` | name · `{collected} of {total} stamps` (`.stat` 12px/600 muted, mt 3px) · up to 4 thumbs (3 states). Tap → **Gallery/album** for that country (not select/check). Lists + thumbs sorted closest-first.
 - Padding `12px 14px`; gap mini↔body `14px`. Selected: coral inset + check.
 - **No** `.hx` family/hex on Available rows.
 
-### `.stamp-thumbs`
-- Up to 4 collected (earned / seasonal / gifted; resting optional). Prefer those; show 4 max, no +N.
-- Each ~28×34, radius 6px; `wiIcon` on `#F4ECDA` tile + 1px `#E3E1DA`. Gap 6px; row mt 8px; `pointer-events:none`.
-- 0 collected → omit thumb row.
+### `.stamp-thumbs` (Arp · 3 states)
+- Up to **4** thumbs, ordered closest-first; prefer showing collected + open + unavailable when present.
+- Size **28×34**, r6, icon centered; gap 6px; mt 8px; `pointer-events: none`.
+- `.is-collected` — paper `#FFF`, border `#E3E1DA`, Navy icon, optional Coral `#C8372A` 10px check pip.
+- `.is-open` — paper `#F7F8FA`, border `#E3E6EC`, icon `#A3AABA`, no badge.
+- `.is-unavailable` — paper `#EEEAE3`, dashed `#C8C4BC`, icon `#C8C4BC` @ ~0.5 + light grayscale (seasonal locked / missing art).
 
 ### Coming Soon
 - Unchanged grey + COMING SOON pill — **no** count, **no** thumbs. Tap → soft toast.
 
 ## Country cover face (locked Oct 26)
 - Live country cloth: `coverCountryFace({cloth, name, size:36, withSlogan:false})` — **country name only**.
-- Default/unset: `coverLockup` + slogan.
+- No Default/unset cover state.
 - Hero meta under the book shows country name + stamp count (not hex). Thumbs live on Available cards only.
 
 ## Distance row (`.stamp-dist`)
 
 - Outside SVG under each `.stamp-card` — do **not** edit `stamps.js`.
 - 11.5px / 600 / `var(--muted)` / lh 1.3 / ls 0 · margin-top 6px · max-width ~150 · center · min-height 16px.
-- Copy: `<1km` → `240 m away`; else `12 km away` / `1,240 km away`. Yerevan fallback: `N km from Yerevan`. No coords: `Distance unavailable`.
+- Copy always **`{N} km from you`** (or `{N} m from you` under 1 km). Geo when allowed; else home lat/lng stand-in — UI still says “from you”. Album grids + thumbs + live countries sorted closest-first.
 - Show for earned / seasonal / gifted / resting / here-locked. Hide for plain locked.
 
 ## Phone frame
@@ -129,7 +131,7 @@ Active tab tint: coral 600 `#C8372A`. Phone frame 390×844 inside dark bezel (se
 
 ## Country passport face (Davit / Arp Oct 26)
 - Live cover shows **country name only** (Plus Jakarta Sans 900, white / navy on light cloth) — **not** Pin Stamp lockup, **not** slogan on the cloth.
-- Default / unset: `coverLockup` + slogan OK.
+- No Default / unset.
 - No colour name or cloth family label on the cover face.
 - Cloth red locked `#8B1E2D` (was `#6B2428` oxblood — Davit Oct 26: more reddish, still navy-weight).
 
@@ -156,4 +158,4 @@ Active tab tint: coral 600 `#C8372A`. Phone frame 390×844 inside dark bezel (se
 ## QA nits (Arp · Oct 26)
 - **Me → Visited passports:** visited countries only (sample AM, IT); cloth = locked family hex (`CLOTH[family]`), e.g. AM `#8B1E2D`, IT `#1E3B32`. No pastel/coming-soon books.
 - **Support → Email support:** Coral 600 `#C8372A` + coral shadow. Cloth red is for passport covers only.
-- **Change cover cloth:** opens bottom sheet “Choose cover cloth” — family swatch chips, live countries (default/AM/IT) selectable, coming soon greyed (`#C8C4BC`, toast). Close via backdrop or Done.
+- **Change cover cloth:** removed. Available row tap opens that country’s Gallery; album **Back** returns to Countries.
