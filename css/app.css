@@ -312,15 +312,7 @@ body{
   overflow:visible;position:relative;background:transparent;border:0;
 }
 .stamp-thumb > svg{display:block;width:36px;height:44px}
-.stamp-thumb.is-unavailable{opacity:0.55;filter:grayscale(0.25)}
-.stamp-thumb-check{
-  position:absolute;right:-2px;bottom:-2px;z-index:2;
-  width:11px;height:11px;border-radius:50%;
-  background:#0F7F5F;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 0 1.5px #fff;
-}
-.stamp-thumb-check svg{display:block}
+.stamp-thumb.is-missing{filter:grayscale(1);opacity:0.72}
 .country-card.on{box-shadow:0 1px 0 #1B27470a,0 6px 16px -12px #1B274733} /* selection check removed */
 
 /* Coming Soon cards — grey shell, opacity 1 */

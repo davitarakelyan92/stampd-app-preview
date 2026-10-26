@@ -122,7 +122,7 @@ function badge(kind,x,y){
     resting:`<circle r="5.4" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M0-2.8V0.4L2.2 1.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round"/>`}[kind];
   return `<g transform="translate(${x} ${y})"><circle r="13" fill="#fff"/><circle r="11" fill="${bg}"/>${g}</g>`;
 }
-window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle="",hideLabel=false,photo="",distance="",countdown=""}={}){
+window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle="",hideLabel=false,hideBadge=false,photo="",distance="",countdown=""}={}){
   const id="ds"+(++uid); const [c4,c1,c0,c7]=COL[color]; name=(name||wiIconDef(icon).label).toUpperCase();
   /* Ellipsize title when it won't fit the stamp width */
   const _labelMaxW = (w - 22) - 6;
@@ -183,7 +183,7 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
    <g filter="url(#${id}sh)"><rect width="${w}" height="${h}" fill="${seasonal?`url(#${id}sg)`:paper}" mask="url(#${id}m)"/></g>
    ${here?`<rect x="-5" y="-5" width="${w+10}" height="${h+10}" rx="10" fill="none" stroke="#FF5B4A" stroke-width="2.5" stroke-dasharray="6 5"/>`:""}
    ${tile}${giftFrame}${label}${sub}${distLine}${lvl}${ribbon}${cdPill}
-   ${badge(state,w-16,h-16)}
+   ${hideBadge?"":badge(state,w-16,h-16)}
   </svg>`;
 };
 })();

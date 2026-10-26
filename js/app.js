@@ -351,18 +351,16 @@
 
   function thumbHtml(entry, index) {
     const place = entry.place;
-    const kind = entry.kind;
-    const cls =
-      kind === "collected" ? "is-collected" : kind === "unavailable" ? "is-unavailable" : "is-open";
+    const obtained = entry.kind === "collected";
+    const cls = obtained ? "is-obtained" : "is-missing";
     const color = stampColorForId(place.id, index || 0);
-    const state = kind === "collected" ? "earned" : kind === "unavailable" && place.chapter === "Seasonal" ? "seasonal" : "locked";
     let svg = "";
     if (typeof digitalStamp === "function") {
       svg = digitalStamp({
         ...STAMP_OPTS,
         icon: place.id,
-        color: state === "seasonal" ? "twilight" : color,
-        state,
+        color,
+        state: "earned",
         name: place.name || place.id,
         note: "",
         w: 36,
@@ -370,15 +368,12 @@
         P: 2,
         labelSize: 6,
         hideLabel: true,
+        hideBadge: true,
         photo: "",
       });
     }
-    const check =
-      kind === "collected"
-        ? `<span class="stamp-thumb-check" aria-hidden="true"><svg width="7" height="7" viewBox="0 0 12 12"><path d="M2.5 6.2l2.4 2.4 4.6-5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`
-        : "";
     const title = String(place.name || place.id).replace(/"/g, "&quot;");
-    return `<span class="stamp-thumb ${cls}" title="${title}" aria-hidden="true">${svg}${check}</span>`;
+    return `<span class="stamp-thumb ${cls}" title="${title}" aria-hidden="true">${svg}</span>`;
   }
 
   function thumbsRowHtml(c) {
