@@ -3,7 +3,7 @@
    Seasonal spark may use twilight #6B3FC4 (still reads when locked via opacity). */
 (function () {
   const S =
-    'width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+    'width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
 
   function svg(inner) {
     return `<svg ${S}>${inner}</svg>`;

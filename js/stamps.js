@@ -132,11 +132,11 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
   const iconSize=Math.min(iw,ih)*0.78, ix=pad+(iw-iconSize)/2, iy=pad+(ih-iconSize)/2+4;
   const sunR=iconSize*0.2;
   const hasPhoto = !!(photo && String(photo).trim());
-  /* Prefer real place photo over pin fallback — Davit: no gray pin placeholders */
+  /* Prefer place photo for all 812 — Davit: no gray pin placeholders on locked stamps */
   const usePhoto = hasPhoto;
   const photoFilter = locked ? ` filter="url(#${id}pg)"` : (seasonal ? ` filter="url(#${id}ps)"` : "");
   const art = usePhoto
-    ? `<image href="${String(photo).replace(/"/g,"")}" x="${pad}" y="${pad}" width="${iw}" height="${ih}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id}clip)"${photoFilter}/>
+    ? `<image href="${String(photo).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;")}" x="${pad}" y="${pad}" width="${iw}" height="${ih}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id}clip)"${photoFilter}/>
     <rect x="${pad}" y="${pad+ih*0.72}" width="${iw}" height="${ih*0.28}" fill="${locked?"#1B2747":(seasonal?"#6B3FC4":c4)}" opacity="${locked?.45:.28}"/>`
     : `<rect x="${pad}" y="${pad}" width="${iw}" height="${ih}" rx="8" fill="url(#${id}g)"/>
     ${locked?"":`<circle cx="${pad+iw*0.76}" cy="${pad+ih*0.27}" r="${sunR}" fill="${seasonal?"#6B3FC4":c4}" opacity="${seasonal?.22:.28}"/>`}

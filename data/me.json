@@ -650,84 +650,96 @@
       "title": "First stamp",
       "description": "You collected your first place. The passport is open.",
       "earned_at": "2024-06-02",
-      "theme": "milestone"
+      "theme": "milestone",
+      "coin_reward": 25
     },
     {
       "id": "home-passport",
       "title": "Home cloth",
       "description": "You chose Armenia as a passport cover — red cloth, white type.",
       "earned_at": "2024-06-02",
-      "theme": "country"
+      "theme": "country",
+      "coin_reward": 50
     },
     {
       "id": "monument-five",
       "title": "Five monuments",
       "description": "Five monument stamps in your album. Stone, ink, done.",
       "earned_at": "2025-05-11",
-      "theme": "chapter"
+      "theme": "chapter",
+      "coin_reward": 40
     },
     {
       "id": "foods-starter",
       "title": "Table for stamps",
       "description": "You unlocked the Foods chapter with your first place to eat.",
       "earned_at": "2024-08-19",
-      "theme": "chapter"
+      "theme": "chapter",
+      "coin_reward": 40
     },
     {
       "id": "wine-days-2026",
       "title": "Wine days",
       "description": "Seasonal stamp from Yerevan Wine Days. Limited, then gone.",
       "earned_at": "2026-06-07",
-      "theme": "seasonal"
+      "theme": "seasonal",
+      "coin_reward": 35
     },
     {
       "id": "two-countries",
       "title": "Two cloths",
       "description": "Stamps from two countries. Your covers are starting a shelf.",
       "earned_at": "2025-09-20",
-      "theme": "country"
+      "theme": "country",
+      "coin_reward": 50
     },
     {
       "id": "rome-weekend",
       "title": "Rome weekend",
       "description": "Colosseum, Trevi, and Pantheon in one trip. Classic three.",
       "earned_at": "2025-09-21",
-      "theme": "travel"
+      "theme": "travel",
+      "coin_reward": 60
     },
     {
       "id": "far-from-home",
       "title": "Far from home",
       "description": "A stamp more than 2,000 km from Yerevan. Distance unlocked.",
       "earned_at": "2025-09-19",
-      "theme": "distance"
+      "theme": "distance",
+      "coin_reward": 40
     },
     {
       "id": "visit-chapter",
       "title": "Out and about",
       "description": "You opened the Visit chapter — places that aren’t monuments.",
       "earned_at": "2024-07-14",
-      "theme": "chapter"
+      "theme": "chapter",
+      "coin_reward": 40
     },
     {
       "id": "italy-half",
       "title": "Italy, halfway",
       "description": "Half of the Italy catalog stamped. Keep going for the full cloth.",
       "earned_at": null,
-      "theme": "country"
+      "theme": "country",
+      "coin_reward": 50
     },
     {
       "id": "seasonal-collector",
       "title": "Season hopper",
       "description": "Collect three seasonal stamps across different years.",
       "earned_at": null,
-      "theme": "seasonal"
+      "theme": "seasonal",
+      "coin_reward": 35
     },
     {
       "id": "ten-countries",
       "title": "Ten cloths",
       "description": "Visit ten countries and fill ten passport covers.",
       "earned_at": null,
-      "theme": "travel"
+      "theme": "travel",
+      "coin_reward": 60
     }
   ],
   "coins": 260,

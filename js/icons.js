@@ -343,16 +343,62 @@ window.WI_ICONS = {
     fill:`M22 30H38V36Q38 50 30 54Q22 50 22 36Z M10 14H54V22H10Z`}
 };
 
-/* Generic pin mark for unknown ids (Kar expansion). Do not invent landmark art. */
-window.WI_ICON_FALLBACK = {
-  label: "Place",
-  chapter: "Visit",
-  line: `M32 6C22 6 14 14 14 24c0 14 18 34 18 34s18-20 18-34c0-10-8-18-18-18z M32 30a6 6 0 1 1 0-12a6 6 0 1 1 0 12`,
-  fill: `M32 6C22 6 14 14 14 24c0 14 18 34 18 34s18-20 18-34c0-10-8-18-18-18z`
+/* Chapter graphic marks when a place has no custom landmark icon (never a bare pin). */
+window.WI_ICON_CHAPTER_FALLBACK = {
+  Monuments: {
+    label: "Monument",
+    chapter: "Monuments",
+    line: `M10 54H54 M16 54V28H48V54 M20 28V18H44V28 M24 18V12H40V18 M18 12H46 M28 36H36V54 M22 40H26 M38 40H42 M22 46H26 M38 46H42`,
+    fill: `M20 28H44V18H20Z M16 54V28H48V54H16Z`
+  },
+  Fountains: {
+    label: "Fountain",
+    chapter: "Fountains",
+    line: `M32 10c0 8-10 12-10 20a10 10 0 0 0 20 0c0-8-10-12-10-20z M18 52H46 M22 46H42 M26 40H38`,
+    fill: `M32 14c-2 6-8 10-8 16a8 8 0 0 0 16 0c0-6-6-10-8-16z`
+  },
+  "Natural wonders": {
+    label: "Nature",
+    chapter: "Natural wonders",
+    line: `M8 48L24 20L32 34L40 16L56 48Z M8 52H56`,
+    fill: `M8 48L24 20L32 34L40 16L56 48Z`
+  },
+  Foods: {
+    label: "Food",
+    chapter: "Foods",
+    line: `M12 38c0-10 8-16 20-16s20 6 20 16v4H12v-4z M18 28c2-6 8-10 14-10s12 4 14 10 M20 48H44 M24 52H40`,
+    fill: `M14 38c0-8 7-14 18-14s18 6 18 14v2H14v-2z`
+  },
+  Festivals: {
+    label: "Festival",
+    chapter: "Festivals",
+    line: `M32 8L36 20H48L38 28L42 40L32 32L22 40L26 28L16 20H28Z M18 50H46 M24 54H40`,
+    fill: `M32 12L35 21H44L37 27L40 36L32 30L24 36L27 27L20 21H29Z`
+  },
+  Seasonal: {
+    label: "Seasonal",
+    chapter: "Seasonal",
+    line: `M32 10v6 M32 48v6 M10 32h6 M48 32h6 M16 16l4 4 M44 44l4 4 M48 16l-4 4 M16 48l4-4 M32 20a12 12 0 1 1 0 24a12 12 0 1 1 0-24`,
+    fill: `M32 22a10 10 0 1 1 0 20a10 10 0 1 1 0-20`
+  },
+  Visit: {
+    label: "Visit",
+    chapter: "Visit",
+    line: `M12 44c8-16 20-22 32-22 M20 48c6-10 14-14 24-14 M28 18a6 6 0 0 1 6 6c0 6-6 12-6 12s-6-6-6-12a6 6 0 0 1 6-6z M28 24a2.5 2.5 0 1 0 0.01 0`,
+    fill: `M28 18a6 6 0 0 1 6 6c0 6-6 12-6 12s-6-6-6-12a6 6 0 0 1 6-6z`
+  },
 };
+window.WI_ICON_FALLBACK = window.WI_ICON_CHAPTER_FALLBACK.Visit;
 
 window.wiIconDef = function(name){
-  return (WI_ICONS && WI_ICONS[name]) || WI_ICON_FALLBACK;
+  if (WI_ICONS && WI_ICONS[name]) return WI_ICONS[name];
+  /* Prefer chapter graphic from place data when available */
+  let chapter = null;
+  try {
+    if (typeof window.stampdPlaceChapter === "function") chapter = window.stampdPlaceChapter(name);
+  } catch (_) {}
+  const fb = (chapter && WI_ICON_CHAPTER_FALLBACK[chapter]) || WI_ICON_FALLBACK;
+  return Object.assign({ label: name }, fb);
 };
 
 window.wiIcon = function(name,{size=64,stroke="currentColor",sw=2.4,cls=""}={}){

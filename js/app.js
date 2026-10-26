@@ -81,6 +81,11 @@
     return countriesAll().find((x) => x.id === id) || liveCountries()[0] || { id: "am", name: "Armenia", family: "red", cloth_hex: CLOTH.red, status: "live" };
   }
 
+  window.stampdPlaceChapter = function (id) {
+    const p = placeById(id);
+    return (p && p.chapter) || null;
+  };
+
   function placeById(id) {
     const places = (state.placesData && state.placesData.places) || [];
     return places.find((p) => p.id === id) || null;
@@ -1046,7 +1051,36 @@
     return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   }
 
-  function achievementIcon(id, earned, theme) {
+  const ACH_THEME_STYLE = {
+    milestone: { accent: "#FF5B4A", tint: "#FFE4DE", ink: "#C8372A" },
+    chapter: { accent: "#2E9BEA", tint: "#DCEFFB", ink: "#1471B8" },
+    country: { accent: "#1B2747", tint: "#E4E8F0", ink: "#1B2747" },
+    seasonal: { accent: "#6B3FC4", tint: "#EDE6FA", ink: "#6B3FC4" },
+    travel: { accent: "#FFA234", tint: "#FFE8C8", ink: "#A35A00" },
+    distance: { accent: "#34D1A0", tint: "#D5F5EA", ink: "#0F7F5F" },
+  };
+
+  function achThemeStyle(theme) {
+    return ACH_THEME_STYLE[theme] || ACH_THEME_STYLE.milestone;
+  }
+
+  function claimedAchievementIds() {
+    try {
+      const raw = localStorage.getItem("stampd-ach-claimed");
+      const arr = raw ? JSON.parse(raw) : [];
+      return new Set(Array.isArray(arr) ? arr : []);
+    } catch (_) {
+      return new Set();
+    }
+  }
+
+  function markAchievementClaimed(id) {
+    const set = claimedAchievementIds();
+    set.add(id);
+    localStorage.setItem("stampd-ach-claimed", JSON.stringify([...set]));
+  }
+
+    function achievementIcon(id, earned, theme) {
     if (typeof window.achievementIconSvg === "function") {
       return window.achievementIconSvg(id, theme);
     }
@@ -1092,15 +1126,29 @@
       })
       .join("");
 
+    const claimed = claimedAchievementIds();
     const achHtml = achievements
       .map((a) => {
         const earned = !!a.earned_at;
         const title = a.title || a.name || "Achievement";
         const desc = a.description || a.desc || "";
-        return `<div class="me-ach ${earned ? "" : "locked"}">
+        const reward = Number(a.coin_reward) || 30;
+        const style = achThemeStyle(a.theme);
+        const isClaimed = claimed.has(a.id);
+        let cta;
+        if (!earned) {
+          cta = `<button type="button" class="me-ach-cta is-locked-hint" disabled>Locked · +${reward} coins</button>`;
+        } else if (isClaimed) {
+          cta = `<button type="button" class="me-ach-cta is-claimed" disabled>Coins collected</button>`;
+        } else {
+          cta = `<button type="button" class="me-ach-cta" data-ach-claim="${a.id}" data-ach-coins="${reward}">Collect ${reward} coins</button>`;
+        }
+        return `<div class="me-ach ${earned ? "" : "locked"}" style="--ach-accent:${style.accent};--ach-tint:${style.tint};--ach-ink:${style.ink}">
           <div class="me-ach-ico">${achievementIcon(a.id, earned, a.theme)}</div>
           <p class="me-ach-title">${title}</p>
           <p class="me-ach-desc">${desc}</p>
+          <span class="me-ach-reward"><b>+${reward}</b> coins</span>
+          ${cta}
         </div>`;
       })
       .join("");
@@ -1140,6 +1188,25 @@
     root.querySelectorAll("[data-me-country]").forEach((btn) => {
       btn.addEventListener("click", () => {
         openMeCountryCollection(btn.dataset.meCountry);
+      });
+    });
+
+    root.querySelectorAll("[data-ach-claim]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.achClaim;
+        const coins = Number(btn.dataset.achCoins) || 0;
+        if (!id || claimedAchievementIds().has(id)) return;
+        markAchievementClaimed(id);
+        const cur = coinsBalance();
+        state.coinsPreview = cur + coins;
+        syncChromeBalance();
+        renderMe();
+        const toast = document.getElementById("checkin-toast");
+        if (toast) {
+          toast.textContent = `+${coins} coins from achievement`;
+          toast.classList.add("on");
+          setTimeout(() => toast.classList.remove("on"), 2200);
+        }
       });
     });
     renderBalanceChrome();
