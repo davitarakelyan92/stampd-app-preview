@@ -50,8 +50,12 @@
 
   function markDirty(flag) {
     state.dirty = !!flag;
-    $("#dirty-pill").classList.toggle("on", state.dirty);
-    $("#env-label").textContent = state.dirty ? "Unsaved draft" : "Synced draft";
+    const pill = $("#dirty-pill");
+    pill.classList.toggle("on", state.dirty);
+    pill.classList.toggle("is-dirty", state.dirty);
+    pill.classList.toggle("is-clean", !state.dirty);
+    pill.textContent = state.dirty ? "Unsaved changes" : "All changes saved";
+    $("#env-label").textContent = "Preview";
   }
 
   function recomputeDirty() {
@@ -252,10 +256,10 @@
     const stamps = (state.meDoc.collected_place_ids || []).length;
     const trades = (state.meDoc.trade_offers || []).length;
     $("#kpi-row").innerHTML = [
-      kpi("Countries live", live, soon ? soon + " coming soon" : "all live"),
-      kpi("Places", places.toLocaleString(), "full catalog"),
-      kpi("Stamps collected", stamps, "primary user"),
-      kpi("Coins", coins, trades + " open trade offers"),
+      kpi("Countries live", live, soon ? soon + " coming soon" : "All live"),
+      kpi("Places", places.toLocaleString(), "In the catalog"),
+      kpi("Stamps collected", stamps, "On your preview profile"),
+      kpi("Coins", coins, trades ? trades + " open trade offers" : "No open trades"),
     ].join("");
     const chapters = {};
     state.placesDoc.places.forEach((p) => {
@@ -267,13 +271,16 @@
       .map(([k, v]) => `<div class="rule-stat"><div class="l">${esc(k)}</div><div class="r">${v}</div></div>`)
       .join("");
     $("#ov-mix").innerHTML = chRows || "<p class='empty-hint'>No places</p>";
+    const adsN = (state.extras.ads || []).length;
+    const ticketsN = (state.extras.tickets || []).length;
     $("#ov-activity").innerHTML = `
       <ul class="activity">
-        <li><span class="dot"></span><div><div class="t">${places} places across ${countries.length} countries</div><div class="m">places.json · v${state.placesDoc.version}</div></div></li>
-        <li><span class="dot mint"></span><div><div class="t">${stamps} stamps · ${coins} coins on primary user</div><div class="m">me.json</div></div></li>
-        <li><span class="dot sky"></span><div><div class="t">${(state.extras.ads || []).length} promo slots · ${(state.extras.tickets || []).length} tickets</div><div class="m">admin-extras</div></div></li>
-        <li><span class="dot tw"></span><div><div class="t">Working copy ${state.dirty ? "has unsaved edits" : "matches last Save/Reset snapshot"}</div><div class="m">localStorage · ${LS_KEY}</div></div></li>
-      </ul>`;
+        <li><span class="dot"></span><div><div class="t">${places.toLocaleString()} places across ${countries.length} countries</div><div class="m">Ready to explore in the app</div></div></li>
+        <li><span class="dot mint"></span><div><div class="t">${stamps} stamps collected · ${coins} coins</div><div class="m">Your preview traveller</div></div></li>
+        <li><span class="dot sky"></span><div><div class="t">${adsN} promo${adsN === 1 ? "" : "s"} · ${ticketsN} support ticket${ticketsN === 1 ? "" : "s"}</div><div class="m">Growth &amp; ops</div></div></li>
+        <li><span class="dot tw"></span><div><div class="t">${state.dirty ? "You have unsaved changes" : "Everything is saved in this browser"}</div><div class="m">${state.dirty ? "Click Save to keep them" : "Export when you want them in the app"}</div></div></li>
+      </ul>
+      <p class="files-note">Files used by the app: <code>places.json</code>, <code>countries.json</code>, <code>me.json</code>, <code>admin-extras.json</code></p>`;
   }
 
   function kpi(k, v, d) {
@@ -1193,7 +1200,7 @@
 
   async function boot(forceRemote) {
     $("#boot").hidden = false;
-    $("#boot").textContent = "Loading catalog…";
+    $("#boot").textContent = "Loading Stampd catalog…";
     try {
       let packed = null;
       if (!forceRemote) {

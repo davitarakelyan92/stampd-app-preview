@@ -1,7 +1,28 @@
 /* Stampd Admin — desktop mock */
-@import url("../css/tokens.css");
+@import url("../../css/tokens.css");
 
 :root{
+  /* Brand fallbacks if tokens.css fails to load */
+  --stampd-coral:#FF5B4A;
+  --stampd-coral-600:#C8372A;
+  --stampd-coral-100:#FFDCD5;
+  --stampd-coral-50:#FFF1EE;
+  --stampd-navy:#1B2747;
+  --stampd-navy-600:#5C6680;
+  --stampd-navy-200:#D5D9E3;
+  --stampd-navy-50:#F3F5F9;
+  --ink:#2A2420;
+  --paper:#F4ECDA;
+  --paper-aged:#E7D9BA;
+  --shell:#FFF7F1;
+  --white:#FFFFFF;
+  --muted:#5C6680;
+  --mint:#34D1A0; --mint-700:#0F7F5F; --mint-100:#C6F1E1;
+  --sunny:#FFA234; --sunny-700:#A35A00; --sunny-100:#FFE3BD;
+  --sky:#2E9BEA; --sky-700:#1471B8; --sky-100:#CDE7FA;
+  --twilight:#6B3FC4; --twilight-100:#E6DCFA;
+  --f:"Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --r-m:14px;
   --admin-sidebar:248px;
   --admin-top:56px;
   --line:#E3E1DA;
@@ -10,7 +31,7 @@
   --shadow:0 1px 2px rgba(27,39,71,.06), 0 4px 16px rgba(27,39,71,.04);
 }
 
-html,body{height:100%;background:var(--shell);color:var(--ink);font-family:var(--f)}
+html,body{height:100%;background:var(--shell,#FFF7F1);color:var(--ink,#2A2420);font-family:var(--f),"Plus Jakarta Sans",system-ui,sans-serif}
 body{overflow:hidden}
 
 /* —— Shell —— */
@@ -21,17 +42,20 @@ body{overflow:hidden}
   height:100vh;
 }
 .sidebar{
-  background:var(--stampd-navy);
+  background:var(--stampd-navy,#1B2747);
   color:#fff;
   display:flex;flex-direction:column;
   padding:0 0 16px;
   z-index:2;
+  min-height:100vh;
+  overflow:hidden;
 }
 .brand{
   display:flex;align-items:center;gap:10px;
   padding:18px 20px 20px;
-  background:var(--stampd-coral);
+  background:var(--stampd-coral,#FF5B4A);
   border-bottom:1px solid rgba(255,255,255,.12);
+  flex:none;
 }
 .brand img,.brand svg{width:28px;height:28px;flex:none}
 .brand .word{
@@ -41,7 +65,7 @@ body{overflow:hidden}
   font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   color:rgba(255,255,255,.75);margin-top:3px;
 }
-.nav{flex:1;padding:12px 10px;overflow:auto;display:flex;flex-direction:column;gap:2px}
+.nav{flex:1;min-height:0;padding:12px 10px;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;gap:2px}
 .nav button{
   all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;
   padding:10px 12px;border-radius:10px;color:rgba(255,255,255,.72);
@@ -341,12 +365,15 @@ table.data .row-actions{display:flex;gap:4px;justify-content:flex-end}
 
 /* —— Admin v1: persistence chrome + modal —— */
 .topbar-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
-.dirty-pill{
-  font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
-  padding:5px 10px;border-radius:99px;background:var(--sunny-100);color:var(--sunny-700);
-  border:1px solid #FFD9A0;display:none
+.status-pill,.dirty-pill{
+  font-size:11px;font-weight:700;letter-spacing:.02em;
+  padding:5px 10px;border-radius:99px;display:inline-flex;align-items:center;
+  white-space:nowrap;
+  background:var(--mint-100,#C6F1E1);color:var(--mint-700,#0F7F5F);border:1px solid #A7E8D0;
 }
-.dirty-pill.on{display:inline-flex}
+.status-pill.is-dirty,.dirty-pill.on{
+  background:var(--sunny-100,#FFE3BD);color:var(--sunny-700,#A35A00);border:1px solid #FFD9A0;
+}
 .btn-ghost{
   all:unset;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--muted);
   padding:7px 10px;border-radius:8px
@@ -387,3 +414,19 @@ table.data .row-actions{display:flex;gap:4px;justify-content:flex-end}
 .topbar .admin-chip{margin-left:0}
 .file-hidden{position:absolute;width:0;height:0;opacity:0;pointer-events:none}
 .side-foot a{color:rgba(255,255,255,.7)}
+
+/* status env preview */
+.env{
+  background:var(--stampd-navy-50,#F3F5F9)!important;
+  color:var(--stampd-navy,#1B2747)!important;
+  border:1px solid var(--stampd-navy-200,#D5D9E3)!important;
+  letter-spacing:.04em;text-transform:none;font-weight:800;
+}
+.files-note{
+  margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--stampd-navy-50,#F3F5F9);
+  border:1px solid var(--line);font-size:11.5px;color:var(--muted);font-weight:500;line-height:1.45
+}
+.files-note code{font-size:11px;font-weight:700;color:var(--stampd-navy,#1B2747)}
+.side-foot{flex:none}
+.nav button{flex:none}
+.btn-primary{background:var(--stampd-coral-600,#C8372A);color:#fff}

@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/admin.css?v=admin-1">
+<link rel="stylesheet" href="css/admin.css?v=admin-ux-2">
 </head>
 <body>
 <div class="admin" id="art">
@@ -59,7 +59,7 @@
         Settings / roles
       </button>
     </nav>
-    <div class="side-foot">Stampd Admin · live catalog<br><a href="../">← App preview</a></div>
+    <div class="side-foot">Admin · Stampd<br><a href="../">← App preview</a></div>
   </aside>
 
   <div class="main">
@@ -68,13 +68,13 @@
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5L13.5 13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         <input type="search" id="global-search" placeholder="Search places, users, countries…" aria-label="Search">
       </div>
-      <span class="env" id="env-label" title="Environment">Local draft</span>
-      <span class="dirty-pill" id="dirty-pill">Unsaved</span>
+      <span class="env" id="env-label" title="Working in the preview catalog">Preview</span>
+      <span class="status-pill dirty-pill" id="dirty-pill">All changes saved</span>
       <div class="topbar-actions">
-        <button type="button" class="btn-ghost" id="btn-reset" title="Reload from repo snapshot">Reset</button>
-        <button type="button" class="btn btn-secondary btn-sm" id="btn-import">Import</button>
-        <button type="button" class="btn btn-secondary btn-sm" id="btn-export">Export</button>
-        <button type="button" class="btn btn-primary btn-sm" id="btn-save">Save</button>
+        <button type="button" class="btn-ghost" id="btn-reset" title="Discard unsaved changes">Reset</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btn-import" title="Load JSON file">Import</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btn-export" title="Download JSON to put in the app">Export</button>
+        <button type="button" class="btn btn-primary btn-sm" id="btn-save" title="Keep on this browser">Save</button>
         <input type="file" id="import-file" class="file-hidden" accept="application/json,.json">
       </div>
       <div class="admin-chip">
@@ -90,7 +90,7 @@
         <div class="ph">
           <div>
             <h1>Overview</h1>
-            <p>Live KPIs from the working catalog (local draft until you export &amp; commit).</p>
+            <p>What’s live in the Stampd catalog.</p>
           </div>
           <div class="ph-actions">
             <button type="button" class="btn btn-primary" data-go="places" id="ov-new-place">
@@ -102,11 +102,11 @@
         <div class="kpi-row" id="kpi-row"></div>
         <div class="grid-2">
           <div class="card">
-            <div class="card-h"><h2>Catalog mix</h2><span class="chip chip-live">Live data</span></div>
+            <div class="card-h"><h2>Catalog mix</h2><span class="chip chip-live">By chapter</span></div>
             <div class="card-b" id="ov-mix"></div>
           </div>
           <div class="card">
-            <div class="card-h"><h2>Snapshot</h2></div>
+            <div class="card-h"><h2>Snapshot</h2><span class="chip chip-draft">At a glance</span></div>
             <div class="card-b" id="ov-activity"></div>
           </div>
         </div>
@@ -116,7 +116,7 @@
         <div class="ph">
           <div>
             <h1>Countries</h1>
-            <p>Toggle live vs coming soon, reorder Available, edit cloth family.</p>
+            <p>Turn countries live or coming soon, reorder Available, and set cover cloth.</p>
           </div>
           <div class="ph-actions">
             <button type="button" class="btn btn-primary" id="btn-add-country">Add country</button>
@@ -140,7 +140,7 @@
         <div class="ph">
           <div>
             <h1>Places / stamps</h1>
-            <p>Full catalog — search, filter, edit, add, delete.</p>
+            <p>Search and edit every stamp in the catalog.</p>
           </div>
           <div class="ph-actions">
             <button type="button" class="btn btn-primary" id="btn-add-place">Add place</button>
@@ -172,7 +172,7 @@
         <div class="ph">
           <div>
             <h1>Users</h1>
-            <p>Travellers stub — coins and collected stamps editable. Seeded from me.json.</p>
+            <p>Travellers in the preview — edit coins, stamps, and status.</p>
           </div>
           <div class="ph-actions">
             <button type="button" class="btn btn-primary" id="btn-add-user">Add user</button>
@@ -194,14 +194,14 @@
             <tbody id="users-tbody"></tbody>
           </table>
         </div>
-        <p class="note"><b>Note:</b> Primary user mirrors <code>me.json</code> profile / coins / collected_place_ids on export.</p>
+        <p class="note"><b>Tip:</b> The primary user is what the app preview shows as “you”. Export to sync coins and collected stamps.</p>
       </section>
 
       <section class="view" data-view="ads" aria-label="Ads and promotions" hidden>
         <div class="ph">
           <div>
             <h1>Ads / promotions</h1>
-            <p>In-app promo slots (stored in admin-extras.json).</p>
+            <p>Schedule in-app promo banners and seasonal slots.</p>
           </div>
           <div class="ph-actions">
             <button type="button" class="btn btn-primary" id="btn-add-ad">Schedule promo</button>
@@ -230,7 +230,7 @@
         <div class="ph">
           <div>
             <h1>Trade &amp; coins</h1>
-            <p>Edit coin_rules and trade settings from me.json.</p>
+            <p>Set coin rewards and how trading works in the preview.</p>
           </div>
           <div class="ph-actions">
             <button type="button" class="btn btn-primary" id="btn-save-trade">Save rules</button>
@@ -243,7 +243,7 @@
         <div class="ph">
           <div>
             <h1>Moderation / support</h1>
-            <p>Editable sample tickets (admin-extras).</p>
+            <p>Review support tickets and flagged activity.</p>
           </div>
           <div class="ph-actions">
             <button type="button" class="btn btn-secondary" id="btn-add-ticket">Add ticket</button>
@@ -264,7 +264,7 @@
         <div class="ph">
           <div>
             <h1>Settings / roles</h1>
-            <p>Editable roles stub in admin-extras.</p>
+            <p>Who can edit catalog, users, and moderation.</p>
           </div>
           <div class="ph-actions">
             <button type="button" class="btn btn-primary" id="btn-add-role">Add role</button>
@@ -304,6 +304,6 @@
   </div>
 </div>
 <div class="toast" id="toast" role="status"></div>
-<script src="js/admin.js?v=admin-1"></script>
+<script src="js/admin.js?v=admin-ux-2"></script>
 </body>
 </html>
