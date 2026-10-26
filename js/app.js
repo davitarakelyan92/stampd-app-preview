@@ -1199,7 +1199,7 @@
         markAchievementClaimed(id);
         const cur = coinsBalance();
         state.coinsPreview = cur + coins;
-        syncChromeBalance();
+        renderBalanceChrome();
         renderMe();
         const toast = document.getElementById("checkin-toast");
         if (toast) {
