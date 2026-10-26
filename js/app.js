@@ -935,7 +935,8 @@
           const giveId = state.tradeOfferPlaceId;
           postTradeOffer(giveId, wantId);
           closeTradeOfferSheet();
-          renderTrade();
+          if (state.screen === "trade") renderTrade();
+          if (state.screen === "detail") renderDetail();
           softToast(`Offer posted · want ${wantName}`);
         });
       });
@@ -1509,7 +1510,7 @@
       ? `https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`
       : null;
     const mapCta = mapsUrl
-      ? `<a class="detail-map-cta" href="${mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open in Google Maps" title="Open in Google Maps"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-6.5-5.2-6.5-10.2A6.5 6.5 0 0 1 12 4.3a6.5 6.5 0 0 1 6.5 6.5C18.5 15.8 12 21 12 21z" fill="#fff"/><circle cx="12" cy="10.8" r="2.35" fill="#FF5B4A"/></svg></a>`
+      ? `<a class="detail-map-cta" href="${mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="View on Google Maps" title="View on Google Maps"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-6.5-5.2-6.5-10.2A6.5 6.5 0 0 1 12 4.3a6.5 6.5 0 0 1 6.5 6.5C18.5 15.8 12 21 12 21z" fill="#fff"/><circle cx="12" cy="10.8" r="2.35" fill="#FF5B4A"/></svg><span>View</span></a>`
       : "";
     meta.innerHTML = `
       <div class="meta-rows">
@@ -1517,6 +1518,25 @@
         <div class="meta-row"><span class="meta-k">Coordinates</span><span class="meta-v">${coords}</span></div>
       </div>
       ${mapCta}`;
+
+    const actions = document.getElementById("detail-actions");
+    if (actions) {
+      const sellPrice = tradeSellPrice(iconId);
+      actions.innerHTML = `
+        <button type="button" class="btn-primary" id="detail-offer">Make an offer</button>
+        <button type="button" class="btn-secondary" id="detail-sell">Sell for ${sellPrice}</button>`;
+      const offerBtn = document.getElementById("detail-offer");
+      const sellBtn = document.getElementById("detail-sell");
+      if (offerBtn) {
+        offerBtn.addEventListener("click", () => openTradeOfferSheet(iconId));
+      }
+      if (sellBtn) {
+        sellBtn.addEventListener("click", () => {
+          sellDuplicateForCoins(iconId);
+          renderDetail();
+        });
+      }
+    }
 
     const src = (place && (place.photo || place.photo_url)) || null;
     const safeName = String(name)

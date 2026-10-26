@@ -354,16 +354,25 @@ body{
   font-variant-numeric:tabular-nums;
 }
 .detail-map-cta{
-  flex:none;width:48px;height:48px;border-radius:14px;
+  flex:none;height:48px;min-width:48px;padding:0 14px;border-radius:14px;gap:8px;
   background:var(--coral);color:#fff;
   display:inline-flex;align-items:center;justify-content:center;
   text-decoration:none;box-shadow:0 1px 0 #1B27470a,0 6px 14px -8px #FF5B4A66;
   transition:transform .12s ease,filter .12s ease;
+  font-family:"Plus Jakarta Sans",system-ui,sans-serif;
+  font-size:14px;font-weight:800;letter-spacing:-.01em;
 }
 .detail-map-cta:hover{filter:brightness(1.04)}
 .detail-map-cta:active{transform:scale(.96)}
 .detail-map-cta svg{display:block;flex:none}
 .detail-map-cta:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.detail-actions{
+  margin:14px 24px 0;display:flex;flex-direction:column;gap:10px;
+}
+.detail-actions .btn-primary,
+.detail-actions .btn-secondary{
+  width:100%;height:48px;font-size:15px;
+}
 .detail-topbar-title{
   flex:1;min-width:0;margin:0 8px 0 4px;
   font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-.01em;
