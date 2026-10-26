@@ -1521,17 +1521,16 @@
 
     const actions = document.getElementById("detail-actions");
     if (actions) {
-      const sellPrice = tradeSellPrice(iconId);
       actions.innerHTML = `
         <button type="button" class="btn-primary" id="detail-offer">Make an offer</button>
-        <button type="button" class="btn-secondary" id="detail-sell">Sell for ${sellPrice}</button>`;
+        <button type="button" class="btn-secondary" id="detail-exchange">Exchange</button>`;
       const offerBtn = document.getElementById("detail-offer");
-      const sellBtn = document.getElementById("detail-sell");
+      const exchangeBtn = document.getElementById("detail-exchange");
       if (offerBtn) {
         offerBtn.addEventListener("click", () => openTradeOfferSheet(iconId));
       }
-      if (sellBtn) {
-        sellBtn.addEventListener("click", () => {
+      if (exchangeBtn) {
+        exchangeBtn.addEventListener("click", () => {
           sellDuplicateForCoins(iconId);
           renderDetail();
         });
