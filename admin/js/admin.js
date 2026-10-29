@@ -132,10 +132,10 @@
           id: "t-1043",
           who: "Luca Romano",
           type: "Support",
-          subject: "Passport cloth",
-          preview: "Can I change passport cloth without resetting album?",
+          subject: "Stamp check-in",
+          preview: "Stamp didn’t register at the Pantheon — I was right at the entrance.",
           status: "open",
-          messages: [{ from: "user", text: "Can I change passport cloth without resetting album?", when: "yesterday" }],
+          messages: [{ from: "user", text: "Stamp didn’t register at the Pantheon — I was right at the entrance.", when: "yesterday" }],
         },
       ],
       roles: [
@@ -273,12 +273,13 @@
     $("#ov-mix").innerHTML = chRows || "<p class='empty-hint'>No places</p>";
     const adsN = (state.extras.ads || []).length;
     const ticketsN = (state.extras.tickets || []).length;
+    const nextAd = (state.extras.ads || []).filter((a) => a.status === "scheduled").sort((a, b) => String(a.starts).localeCompare(String(b.starts)))[0];
     $("#ov-activity").innerHTML = `
       <ul class="activity">
         <li><span class="dot"></span><div><div class="t">${places.toLocaleString()} places across ${countries.length} countries</div><div class="m">Ready to explore in the app</div></div></li>
         <li><span class="dot mint"></span><div><div class="t">${stamps} stamps collected · ${coins} coins</div><div class="m">Your preview traveller</div></div></li>
         <li><span class="dot sky"></span><div><div class="t">${adsN} promo${adsN === 1 ? "" : "s"} · ${ticketsN} support ticket${ticketsN === 1 ? "" : "s"}</div><div class="m">Growth &amp; ops</div></div></li>
-        <li><span class="dot tw"></span><div><div class="t">${state.dirty ? "You have unsaved changes" : "Everything is saved in this browser"}</div><div class="m">${state.dirty ? "Click Save to keep them" : "Export when you want them in the app"}</div></div></li>
+        <li><span class="dot tw"></span><div><div class="t">${nextAd ? "Next promo: " + esc(nextAd.title) : "No promos scheduled"}</div><div class="m">${nextAd ? "Starts " + new Date(nextAd.starts + "T00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" }) + " · " + esc(nextAd.slot) : "Schedule one in Ads / promotions"}</div></div></li>
       </ul>`; /* Audit Oct 29 — internal "Files used by the app" note removed */
   }
 

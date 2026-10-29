@@ -1374,7 +1374,8 @@
         const isClaimed = claimed.has(a.id);
         let cta;
         if (!earned) {
-          cta = `<button type="button" class="me-ach-cta is-locked-hint" disabled>Locked · +${reward} coins</button>`;
+          /* Audit Oct 29 — "Locked · +N coins" wrapped at 390: shorter label + the app's coin icon, one row */
+          cta = `<button type="button" class="me-ach-cta is-locked-hint" disabled aria-label="Locked, ${reward} coins">Locked · +${reward}<svg class="me-ach-coin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg></button>`;
         } else if (isClaimed) {
           cta = `<button type="button" class="me-ach-cta is-claimed" disabled>Coins collected</button>`;
         } else {

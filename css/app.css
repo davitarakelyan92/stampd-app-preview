@@ -581,6 +581,9 @@ body{
 .me-ach-cta.is-locked-hint{
   background:#F3F1EC;color:#5B616E;box-shadow:none;cursor:default;
 }
+/* Audit Oct 29 — locked CTA on one row: "Locked · +N" + coin icon */
+.me-ach-cta.is-locked-hint{display:flex;align-items:center;justify-content:center;gap:4px;white-space:nowrap}
+.me-ach-cta .me-ach-coin{flex:none;display:block}
 .me-details .meta-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #EEF0F4}
 .me-details .meta-row:last-child{border-bottom:0;padding-bottom:0}
 .me-details .meta-row:first-child{padding-top:0}
