@@ -655,8 +655,8 @@
     },
     {
       "id": "home-passport",
-      "title": "Home cloth",
-      "description": "You chose Armenia as a passport cover — red cloth, white type.",
+      "title": "Home passport",
+      "description": "You started your Armenia passport. Welcome home.",
       "earned_at": "2024-06-02",
       "theme": "country",
       "coin_reward": 50
@@ -687,8 +687,8 @@
     },
     {
       "id": "two-countries",
-      "title": "Two cloths",
-      "description": "Stamps from two countries. Your covers are starting a shelf.",
+      "title": "Two passports",
+      "description": "Stamps from two countries. Your passport shelf is growing.",
       "earned_at": "2025-09-20",
       "theme": "country",
       "coin_reward": 50
@@ -720,7 +720,7 @@
     {
       "id": "italy-half",
       "title": "Italy, halfway",
-      "description": "Half of the Italy catalog stamped. Keep going for the full cloth.",
+      "description": "Half of the Italy catalog stamped. Keep going to complete Italy.",
       "earned_at": null,
       "theme": "country",
       "coin_reward": 50
@@ -735,8 +735,8 @@
     },
     {
       "id": "ten-countries",
-      "title": "Ten cloths",
-      "description": "Visit ten countries and fill ten passport covers.",
+      "title": "Ten passports",
+      "description": "Visit ten countries and fill ten passports.",
       "earned_at": null,
       "theme": "travel",
       "coin_reward": 60
@@ -792,30 +792,34 @@
     {
       "type": "welcome_grant",
       "coins": 100,
-      "note": "Preview-only starting coins"
+      "note": "Welcome bonus"
     },
     {
       "type": "chapter_complete",
       "country": "am",
       "chapter": "Monuments",
-      "coins": 50
+      "coins": 50,
+      "note": "Armenia · Monuments chapter complete"
     },
     {
       "type": "chapter_complete",
       "country": "am",
       "chapter": "Visit",
-      "coins": 50
+      "coins": 50,
+      "note": "Armenia · Visit chapter complete"
     },
     {
       "type": "chapter_complete",
       "country": "am",
       "chapter": "Seasonal",
-      "coins": 50
+      "coins": 50,
+      "note": "Armenia · Seasonal chapter complete"
     },
     {
       "type": "seasonal_collect",
       "place_id": "wine-days",
-      "coins": 10
+      "coins": 10,
+      "note": "Seasonal stamp · Yerevan Wine Days"
     }
   ],
   "coin_rules": {

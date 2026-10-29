@@ -127,14 +127,21 @@
     return homePoint();
   }
 
-  function formatDistance(km) {
-    if (km == null || !isFinite(km)) return "Distance unavailable";
+  /* Audit Oct 29 #14 — one distance source: every surface (album, detail,
+     nearby sheet) measures from originPoint() and formats here. */
+  function formatDistanceShort(km) {
+    if (km == null || !isFinite(km)) return "";
     if (km < 1) {
-      const m = Math.round(km * 1000);
-      return `${m.toLocaleString("en-US")} m from you`;
+      const m = Math.max(1, Math.round(km * 1000));
+      return `${m.toLocaleString("en-US")} m`;
     }
     const whole = Math.round(km);
-    return `${whole.toLocaleString("en-US")} km from you`;
+    return `${whole.toLocaleString("en-US")} km`;
+  }
+
+  function formatDistance(km) {
+    if (km == null || !isFinite(km)) return "Distance unavailable";
+    return `${formatDistanceShort(km)} from you`;
   }
 
   function placeKm(place) {
@@ -591,7 +598,12 @@
     if (!liveEl || !soonEl) return;
 
     liveEl.innerHTML = sortLiveCountries(liveCountries()).map(liveCardHtml).join("");
-    soonEl.innerHTML = soonCountries().map(soonCardHtml).join("");
+    const soonList = soonCountries();
+    soonEl.innerHTML = soonList.map(soonCardHtml).join("");
+    /* Audit Oct 29 #13 — no empty "Coming soon" heading */
+    const soonHead = document.getElementById("countries-soon-k");
+    if (soonHead) soonHead.hidden = !soonList.length;
+    soonEl.hidden = !soonList.length;
 
     liveEl.querySelectorAll("[data-country]").forEach((btn) => {
       btn.addEventListener("click", () => openCountryGallery(btn.dataset.country));
@@ -993,7 +1005,7 @@
         ledger
           .slice(0, 6)
           .map((row) => {
-            const label = row.label || row.note || row.reason || "Coins";
+            const label = row.label || row.note || row.reason || "Coin reward";
             const amt = typeof row.amount === "number" ? row.amount : typeof row.coins === "number" ? row.coins : 0;
             const cls = amt >= 0 ? "plus" : "minus";
             const sign = amt > 0 ? "+" : "";
@@ -1006,7 +1018,7 @@
       <div class="balance-hero">
         <div class="bh-k">Your coins</div>
         <div class="bh-v">${coinSvg}<span>${coins}</span></div>
-        <div class="bh-sub">Preview balance · sample top-up &amp; send</div>
+        <div class="bh-sub">Sample coins for this concept preview</div>
       </div>
       <div class="balance-actions">
         <button type="button" class="btn-primary" id="bal-topup">Top up</button>
@@ -1019,11 +1031,11 @@
     const wit = document.getElementById("bal-withdraw");
     if (top)
       top.addEventListener("click", () => {
-        bumpCoins(50, "+50 coins · top up (demo)");
+        bumpCoins(50, "+50 sample coins added");
         renderBalance();
       });
-    if (send) send.addEventListener("click", () => softToast("Send coins — preview stub"));
-    if (wit) wit.addEventListener("click", () => softToast("Withdraw — preview stub"));
+    if (send) send.addEventListener("click", () => softToast("Sending coins is coming soon"));
+    if (wit) wit.addEventListener("click", () => softToast("Withdrawals are coming soon"));
   }
 
   function liveCountriesForOffer() {
@@ -1175,7 +1187,6 @@
 
     const callout = `<div class="trade-callout">
       <p>Complete a country set to earn coins. Chapter +${chapterBonus} · full country +${countryBonus}. Duplicates don’t mint coins — they power Trade.</p>
-      <button type="button" class="btn-primary" id="demo-complete-set">Demo: complete a set (+${chapterBonus})</button>
     </div>`;
 
     let listHtml;
@@ -1239,12 +1250,6 @@
 
     root.innerHTML = callout + listHtml + offersHtml;
 
-    const demo = document.getElementById("demo-complete-set");
-    if (demo) {
-      demo.addEventListener("click", () => {
-        bumpCoins(chapterBonus, `+${chapterBonus} coins · chapter complete (demo)`);
-      });
-    }
     root.querySelectorAll("[data-offer]").forEach((btn) => {
       btn.addEventListener("click", () => openTradeOfferSheet(btn.dataset.offer));
     });
@@ -1543,7 +1548,7 @@
     const sub = document.getElementById("album-sub");
     if (sub) {
       const chapters = Object.keys(chapterCounts()).filter((key) => key !== "All").length;
-      sub.textContent = `${total} icons in ${chapters} chapters`;
+      sub.textContent = `${total} ${total === 1 ? "stamp" : "stamps"} in ${chapters} ${chapters === 1 ? "chapter" : "chapters"}`;
     }
 
     const trevi = stamps.find((s) => s.icon === "trevi");
@@ -1730,23 +1735,37 @@
       .filter((x) => x.m <= STAMP_RADIUS_M)
       .sort((a, b) => a.m - b.m);
 
-    if (!list.length && state.geoMode !== "geolocation") {
-      const uncollected = places
-        .filter((p) => p && typeof p.lat === "number" && !collected.has(p.id) && p.chapter !== "Seasonal")
+    if (!list.length && state.geoMode !== "geolocation" && ensurePreviewOrigin()) {
+      list = places
+        .filter((p) => p && typeof p.lat === "number" && typeof p.lng === "number")
         .map((p) => ({ place: p, m: placeMeters(p) }))
+        .filter((x) => x.m <= STAMP_RADIUS_M)
         .sort((a, b) => a.m - b.m);
-      if (uncollected.length) {
-        const anchor = uncollected[0].place;
-        state.userPos = { lat: anchor.lat, lng: anchor.lng };
-        state.geoMode = "preview-near";
-        list = places
-          .filter((p) => p && typeof p.lat === "number" && typeof p.lng === "number")
-          .map((p) => ({ place: p, m: haversineKm(state.userPos, p) * 1000 }))
-          .filter((x) => x.m <= STAMP_RADIUS_M)
-          .sort((a, b) => a.m - b.m);
-      }
     }
     return list;
+  }
+
+  /* Audit Oct 29 #14 — choose the preview origin ONCE (at boot), instead of
+     moving the user only when the stamp sheet opens. Album, detail and the
+     nearby sheet then all read the same originPoint(). The preview stands
+     ~40 m from the closest uncollected place so the 100 m rule is demoable. */
+  function ensurePreviewOrigin() {
+    if (state.geoMode === "geolocation" || state.geoMode === "preview-near") return false;
+    const places = (state.placesData && state.placesData.places) || [];
+    const collected = collectedIdSet();
+    const inRange = places.some(
+      (p) => p && typeof p.lat === "number" && typeof p.lng === "number" && placeMeters(p) <= STAMP_RADIUS_M
+    );
+    if (inRange) return false;
+    const uncollected = places
+      .filter((p) => p && typeof p.lat === "number" && typeof p.lng === "number" && !collected.has(p.id) && p.chapter !== "Seasonal")
+      .map((p) => ({ place: p, m: placeMeters(p) }))
+      .sort((a, b) => a.m - b.m);
+    if (!uncollected.length) return false;
+    const anchor = uncollected[0].place;
+    state.userPos = { lat: anchor.lat + 0.00036, lng: anchor.lng };
+    state.geoMode = "preview-near";
+    return true;
   }
 
   function markPlaceCollected(placeId) {
@@ -1795,14 +1814,13 @@
             photo: "",
           });
         }
-        const meters = Math.max(1, Math.round(m));
         const country = place.country_name || place.country || "";
         const safe = String(place.name || place.id).replace(/"/g, "&quot;");
         return `<button type="button" class="nearby-row ${selected ? "is-selected" : ""}" role="option" aria-selected="${selected}" data-nearby-id="${place.id}" aria-label="${safe}">
           <span class="nearby-row-ico" aria-hidden="true">${svg}</span>
           <span class="nearby-row-text">
             <span class="nearby-row-name">${String(place.name || place.id).replace(/</g, "&lt;")}</span>
-            <span class="nearby-row-meta">${meters} m${country ? " · " + String(country).replace(/</g, "&lt;") : ""}</span>
+            <span class="nearby-row-meta">${formatDistanceShort(m / 1000)}${country ? " · " + String(country).replace(/</g, "&lt;") : ""}</span>
           </span>
         </button>`;
       })
@@ -2078,6 +2096,7 @@
       if (localStorage.getItem("stampd-preview-country") === "default") {
         localStorage.setItem("stampd-preview-country", resolved);
       }
+      ensurePreviewOrigin();
       rebuildStampsFromPlaces();
       if (smokeCountry) {
         openCountryGallery(resolved);

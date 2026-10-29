@@ -122,13 +122,48 @@ function badge(kind,x,y){
     resting:`<circle r="5.4" stroke="#fff" stroke-width="1.8" fill="none"/><path d="M0-2.8V0.4L2.2 1.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round"/>`}[kind];
   return `<g transform="translate(${x} ${y})"><circle r="13" fill="#fff"/><circle r="11" fill="${bg}"/>${g}</g>`;
 }
+/* Audit Oct 29 #15 — measure label width (letter-spacing included) */
+let _stampMeasureCtx=null;
+function stampLabelWidth(str,font,weight,size,ls){
+  try{
+    if(typeof document!=="undefined"){
+      if(!_stampMeasureCtx) _stampMeasureCtx=document.createElement("canvas").getContext("2d");
+      const f=`${weight} ${size}px "${font}"`;
+      const ready=!document.fonts||document.fonts.check(f);
+      if(_stampMeasureCtx&&ready){
+        _stampMeasureCtx.font=f;
+        return _stampMeasureCtx.measureText(str).width+ls*str.length;
+      }
+    }
+  }catch(_){}
+  /* Fallback before the web font loads: conservative bold-caps estimate */
+  return str.length*(size*0.74+ls);
+}
+function fitStampLabel(name,maxW,font,weight,size,ls){
+  if(stampLabelWidth(name,font,weight,size,ls)<=maxW) return name;
+  let n=name.length-1;
+  while(n>1&&stampLabelWidth(name.slice(0,n).trimEnd()+"…",font,weight,size,ls)>maxW) n--;
+  return name.slice(0,n).trimEnd()+"…";
+}
 window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned",w=156,h=192,level=0,from="",note="",P=14,here=false,labelFont="Nunito",labelW=900,labelSize=12.5,hard=false,labelStyle="",hideLabel=false,hideBadge=false,photo="",distance="",countdown=""}={}){
   const id="ds"+(++uid); const [c4,c1,c0,c7]=COL[color]; name=(name||wiIconDef(icon).label).toUpperCase();
-  /* Ellipsize title when it won't fit the stamp width */
-  const _labelMaxW = (w - 22) - 6;
-  const _avgCh = labelSize * 0.56 + 0.6;
-  const _maxChars = Math.max(6, Math.floor(_labelMaxW / _avgCh));
-  const displayName = name.length > _maxChars ? name.slice(0, Math.max(1, _maxChars - 1)) + "…" : name;
+  /* Ellipsize title when it won't fit the stamp width.
+     Audit Oct 29 #15: the old 0.56em/char estimate was too narrow for bold
+     uppercase, so long names overflowed the face and the "…" was clipped.
+     Measure the real width (canvas, label font) and trim until it fits. */
+  /* The state badge (r=13 at w-16,h-16) clips the label baseline row when there is
+     no distance line, so the label must end left of it (x <= w-27 at the baseline). Short
+     names stay centred; long names use the space left of the badge. */
+  const _badgeOnRow = !hideBadge && !distance;
+  const _fullW = (w - 22) - 6;
+  let labelX = w / 2, displayName = name;
+  if (!_badgeOnRow) {
+    displayName = fitStampLabel(name, _fullW, labelFont, labelW, labelSize, 0.6);
+  } else if (stampLabelWidth(name, labelFont, labelW, labelSize, 0.6) > w - 52) {
+    const left = 14, right = w - 27;
+    labelX = (left + right) / 2;
+    displayName = fitStampLabel(name, right - left, labelFont, labelW, labelSize, 0.6);
+  }
   const nameEsc = displayName.replace(/&/g,"&amp;").replace(/</g,"&lt;");
   const locked=state==="locked", seasonal=state==="seasonal";
   const pad=11;
@@ -156,7 +191,7 @@ window.digitalStamp=function({icon="colosseum",name,color="coral",state="earned"
   const noteFill = (state==="earned") ? statusGreen : (locked || state==="resting" ? "#5C6680" : c7);
   const labelY = distance ? (h-pad-36) : (h-pad-15);
   const noteY = distance ? (h-pad-22) : (h-pad-1);
-  const label=hideLabel?"":`<text x="${w/2}" y="${labelY}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${NAVY}" opacity="${locked?0.72:1}">${nameEsc}</text>`;
+  const label=hideLabel?"":`<text x="${labelX}" y="${labelY}" text-anchor="middle" font-family="${labelFont}" font-weight="${labelW}" font-size="${labelSize}" letter-spacing=".6" style="${labelStyle}" fill="${NAVY}" opacity="${locked?0.72:1}">${nameEsc}</text>`;
   const sub = (!hideLabel && note)?`<text x="${w/2}" y="${noteY}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="10" fill="${noteFill}">${note}</text>`:"";
   const distLine = (!hideLabel && distance)?`<text x="${w/2}" y="${h-pad-6}" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="600" font-size="9.5" fill="#5C6680">${String(distance).replace(/&/g,"&amp;").replace(/</g,"&lt;")}</text>`:"";
   const cdEsc = String(countdown||"").replace(/&/g,"&amp;").replace(/</g,"&lt;");

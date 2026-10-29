@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Stampd — app preview (sample)</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="css/tokens.css?v=nearby-stamp-1">
-<link rel="stylesheet" href="css/app.css?v=nearby-stamp-1">
-<script src="js/icons.js?v=nearby-stamp-1"></script>
-<script src="js/stamps.js?v=nearby-stamp-1"></script>
-<script src="js/logo.js?v=nearby-stamp-1"></script>
-<script src="js/achievement-icons.js?v=nearby-stamp-1"></script>
+<link rel="stylesheet" href="css/tokens.css?v=audit-oct29-1">
+<link rel="stylesheet" href="css/app.css?v=audit-oct29-1">
+<script src="js/icons.js?v=audit-oct29-1"></script>
+<script src="js/stamps.js?v=audit-oct29-1"></script>
+<script src="js/logo.js?v=audit-oct29-1"></script>
+<script src="js/achievement-icons.js?v=audit-oct29-1"></script>
 </head>
 <body>
 <div class="preview-chrome">
-  <div class="preview-banner">Stampd · local clickable preview · sample content · not live data</div>
+  <div class="preview-banner">Stampd concept preview · Fictional sample&nbsp;data</div>
   <div class="phone-scale" id="phone-scale">
   <div class="phone">
     <div class="isl" aria-hidden="true"></div>
@@ -38,7 +38,7 @@
           </div>
           <div class="section-k available">Available now</div>
           <div class="country-list live" id="countries-live"></div>
-          <div class="section-k soon">Coming soon</div>
+          <div class="section-k soon" id="countries-soon-k">Coming soon</div>
           <div class="country-list soon" id="countries-soon"></div>
         </div>
       </section>
@@ -60,7 +60,7 @@
           <div class="ttl">
             <div class="k">STAMPD</div>
             <h1>Rome</h1>
-            <p class="sub" id="album-sub">Sample</p>
+            <p class="sub" id="album-sub"></p>
           </div>
           <div class="prog">
             <div class="row">
@@ -71,7 +71,7 @@
               <i class="on"></i><i class="on"></i><i class="on"></i>
               <i></i><i></i><i></i>
             </div>
-            <small>Gifted postcards don’t count. Album rebuilds from the selected country.</small>
+            <small>Gifted postcards don’t count.</small>
           </div>
           <div class="toast" id="checkin-toast">
             <div class="tx"><b>You’re at the Trevi Fountain</b>Collect it for October?</div>
@@ -95,14 +95,14 @@
             <div class="balance-chrome" data-balance-chrome aria-label="Stamps and coins"></div>
           </div>
           <div class="support-body">
-            <p class="support-lede">Questions about stamps, covers, or your account?</p>
+            <p class="support-lede">Questions about stamps, coins, or your account?</p>
             <a class="btn-primary support-mail" href="mailto:support@stampd.app?subject=Stampd%20preview%20feedback">Email support</a>
             <button type="button" class="btn-ghost support-faq" id="support-faq">FAQ</button>
             <div class="support-cards">
               <div class="support-card"><span class="sc-k">Hours</span><span class="sc-v">Mon–Fri · 10:00–18:00</span></div>
               <div class="support-card"><span class="sc-k">Response time</span><span class="sc-v">Usually within 1 day</span></div>
             </div>
-            <p class="support-note">Sample preview · mailto only</p>
+            <p class="support-note">Concept preview. Email support opens your mail app.</p>
           </div>
         </div>
       </section>
@@ -133,7 +133,7 @@
       </section>
 
       <!-- Stub tabs -->
-      <section class="screen" data-screen="map" aria-label="Map stub">
+      <section class="screen" data-screen="map" aria-label="Map">
         <div class="sb"><span>9:41</span><span class="sig" aria-hidden="true">
               <svg class="sig-cell" width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="0.6"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="0.6"/><rect x="9" y="3" width="3" height="9" rx="0.6"/><rect x="13.5" y="0" width="3" height="12" rx="0.6"/></svg>
               <svg class="sig-wifi" width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1.2 4.2a9.2 9.2 0 0 1 13.6 0"/><path d="M3.4 6.5a6.2 6.2 0 0 1 9.2 0"/><path d="M5.6 8.7a3.2 3.2 0 0 1 4.8 0"/><circle cx="8" cy="10.6" r="1.1" fill="currentColor" stroke="none"/></svg>
@@ -145,7 +145,7 @@
         </div>
         <div class="stub">
           <h2>Map</h2>
-          <p>Sample stub — map screen not in this preview. Use Countries, Trade, Stamp, or Support.</p>
+          <p>The map is coming soon. For now, explore Countries, Trade, Stamp, Support, or Me.</p>
         </div>
       </section>
       <section class="screen" data-screen="trade" aria-label="Trade">
@@ -303,6 +303,6 @@
   window.addEventListener('resize', fitPhone);
 })();
 </script>
-<script src="js/app.js?v=stamp-graphic-1"></script>
+<script src="js/app.js?v=audit-oct29-1"></script>
 </body>
 </html>

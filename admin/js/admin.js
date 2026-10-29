@@ -279,8 +279,7 @@
         <li><span class="dot mint"></span><div><div class="t">${stamps} stamps collected · ${coins} coins</div><div class="m">Your preview traveller</div></div></li>
         <li><span class="dot sky"></span><div><div class="t">${adsN} promo${adsN === 1 ? "" : "s"} · ${ticketsN} support ticket${ticketsN === 1 ? "" : "s"}</div><div class="m">Growth &amp; ops</div></div></li>
         <li><span class="dot tw"></span><div><div class="t">${state.dirty ? "You have unsaved changes" : "Everything is saved in this browser"}</div><div class="m">${state.dirty ? "Click Save to keep them" : "Export when you want them in the app"}</div></div></li>
-      </ul>
-      <p class="files-note">Files used by the app: <code>places.json</code>, <code>countries.json</code>, <code>me.json</code>, <code>admin-extras.json</code></p>`;
+      </ul>`; /* Audit Oct 29 — internal "Files used by the app" note removed */
   }
 
   function kpi(k, v, d) {
